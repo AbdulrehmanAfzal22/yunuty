@@ -1,0 +1,582 @@
+/* PerformanceDashboard.css - Fully Responsive */
+.performance-dashboard {
+  min-height: 90vh;
+background-color: #05061c;
+  /* position: relative; */
+  overflow: hidden;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.background-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(147, 51, 234, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(236, 72, 153, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.background-pattern::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(45deg, transparent 45%, rgba(59, 130, 246, 0.03) 50%, transparent 55%),
+    linear-gradient(-45deg, transparent 45%, rgba(147, 51, 234, 0.03) 50%, transparent 55%);
+  background-size: 60px 60px;
+}
+
+.container {
+  /* max-width: 1400px;  */
+  margin: 0 auto;
+  padding: 80px 20px;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  margin-bottom: 60px;
+  min-height: 76vh;
+}
+
+/* Left Section */
+.left-section {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-left: 80px;
+}
+
+.indicator-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: #94a3b8;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.decoration-img {
+  width: auto;
+  height: 17px;
+  object-fit: contain;
+}
+
+.text {
+  color: rgb(149, 158, 254);
+  font-weight: 500;
+}
+
+.main-heading {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 40px;
+  color: white;
+  margin-top: 0;
+}
+
+.highlight {
+  font-weight: 700;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.rating-section {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: auto;
+  border: 1px solid rgba(7, 11, 236, 0.1);
+  border-radius: 30px;
+  padding: 16px;
+}
+
+.profile-images {
+  display: flex;
+  align-items: center;
+}
+
+.profile-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  object-fit: cover;
+}
+
+.profile-img:not(:first-child) {
+  margin-left: -12px;
+}
+
+.rating-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rating-number {
+  font-weight: 600;
+  color: white;
+  font-size: 18px;
+}
+
+.star-icons {
+  display: flex;
+  gap: 2px;
+}
+
+.star {
+  color: #fbbf24;
+  font-size: 16px;
+}
+
+.rating-text {
+  font-size: 14px;
+  color: #94a3b8;
+  margin: 0;
+}
+
+/* Right Section */
+.right-section {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.metric-card {
+  border-radius: 16px;
+  padding: 24px;
+  text-align: left;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.metric-card.full-width {
+  grid-column: 1 / -1;
+  max-width: 240px;
+}
+
+.metric-value {
+  font-size: 80px;
+  font-weight: 400;
+  margin: 0 0 8px 0;
+  line-height: 1;
+}
+
+.metric-label {
+  font-size: 20px;
+  margin: 0;
+  opacity: 0.8;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #fdfdfd;
+}
+
+/* Metric Colors */
+.metric-card.blue .metric-value {
+  color: #3b82f6;
+}
+
+.metric-card.light-blue .metric-value {
+  color: #60a5fa;
+}
+
+.metric-card.pink .metric-value {
+  color: #ec4899;
+}
+
+.metric-card.purple .metric-value {
+  color: #8b5cf6;
+}
+
+.metric-card.purple-pink .metric-value {
+  background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Bottom Text */
+.bottom-text {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.bottom-text p {
+  color: #cac9d1;
+  font-size: 16px;
+  margin: 0;
+  opacity: 0.8;
+}
+
+/* Responsive Design - Large Desktop */
+@media (max-width: 1400px) {
+  .left-section {
+    padding-left: 100px;
+  }
+
+  .metrics-grid {
+    max-width: 450px;
+  }
+
+  .metric-value {
+    font-size: 70px;
+  }
+
+  .metric-label {
+    font-size: 18px;
+  }
+}
+
+/* Responsive Design - Desktop */
+@media (max-width: 1200px) {
+  .left-section {
+    padding-left: 50px;
+  }
+
+  .content-wrapper {
+    gap: 60px;
+  }
+
+  .metric-value {
+    font-size: 60px;
+  }
+
+  .metric-label {
+    font-size: 17px;
+  }
+
+  .metrics-grid {
+    max-width: 400px;
+  }
+}
+
+/* Responsive Design - Tablet */
+@media (max-width: 1024px) {
+  .container {
+    padding: 60px 20px;
+  }
+
+  .left-section {
+    padding-left: 20px;
+  }
+
+  .content-wrapper {
+    gap: 50px;
+    min-height: auto;
+  }
+
+  .main-heading {
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+  }
+
+  .metric-value {
+    font-size: 55px;
+  }
+
+  .metric-label {
+    font-size: 16px;
+  }
+
+  .metrics-grid {
+    max-width: 350px;
+  }
+
+  .profile-img {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* Responsive Design - Tablet Portrait */
+@media (max-width: 900px) {
+  .content-wrapper {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .left-section {
+    padding-left: 0;
+    align-items: center;
+    text-align: center;
+  }
+
+  .right-section {
+    justify-content: center;
+  }
+
+  .main-heading {
+    text-align: center;
+  }
+
+  .indicator-badge {
+    justify-content: center;
+  }
+
+  .rating-section {
+    justify-content: center;
+  }
+
+  .metrics-grid {
+    margin: 0 auto;
+  }
+}
+
+/* Responsive Design - Mobile */
+@media (max-width: 768px) {
+  .container {
+    padding: 40px 16px;
+  }
+
+  .content-wrapper {
+    gap: 40px;
+  }
+
+  .main-heading {
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+  }
+
+  .metric-value {
+    font-size: 50px;
+  }
+
+  .metric-label {
+    font-size: 15px;
+  }
+
+  .metrics-grid {
+    max-width: 320px;
+    gap: 20px;
+  }
+
+  .metric-card {
+    padding: 20px;
+  }
+
+  .indicator-badge {
+    font-size: 13px;
+    gap: 10px;
+  }
+
+  .decoration-img {
+    height: 15px;
+  }
+
+  .profile-img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .rating-number {
+    font-size: 16px;
+  }
+
+  .star {
+    font-size: 14px;
+  }
+
+  .rating-text {
+    font-size: 13px;
+  }
+
+  .bottom-text p {
+    font-size: 15px;
+    padding: 0 20px;
+  }
+}
+
+/* Responsive Design - Small Mobile */
+@media (max-width: 640px) {
+  .metrics-grid {
+    grid-template-columns: 1fr;
+    max-width: 280px;
+    gap: 16px;
+  }
+
+  .metric-card.full-width {
+    grid-column: 1;
+    max-width: none;
+  }
+
+  .metric-value {
+    font-size: 45px;
+  }
+
+  .metric-label {
+    font-size: 14px;
+  }
+
+  .main-heading {
+    font-size: 1.9rem;
+  }
+
+  .rating-section {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .metric-card {
+    padding: 18px;
+  }
+}
+
+/* Responsive Design - Extra Small Mobile */
+@media (max-width: 480px) {
+  .container {
+    padding: 30px 12px;
+  }
+
+  .content-wrapper {
+    gap: 30px;
+  }
+
+  .main-heading {
+    font-size: 1.7rem;
+    margin-bottom: 20px;
+  }
+
+  .metric-value {
+    font-size: 40px;
+  }
+
+  .metric-label {
+    font-size: 13px;
+  }
+
+  .metrics-grid {
+    max-width: 250px;
+  }
+
+  .metric-card {
+    padding: 16px;
+  }
+
+  .indicator-badge {
+    font-size: 12px;
+    gap: 8px;
+  }
+
+  .decoration-img {
+    height: 13px;
+  }
+
+  .profile-img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .rating-section {
+    gap: 10px;
+  }
+
+  .rating-number {
+    font-size: 15px;
+  }
+
+  .star {
+    font-size: 13px;
+  }
+
+  .rating-text {
+    font-size: 12px;
+  }
+
+  .bottom-text p {
+    font-size: 14px;
+  }
+}
+
+/* Responsive Design - Very Small Screens */
+@media (max-width: 360px) {
+  .main-heading {
+    font-size: 1.5rem;
+  }
+
+  .metric-value {
+    font-size: 35px;
+  }
+
+  .metric-label {
+    font-size: 12px;
+  }
+
+  .metrics-grid {
+    max-width: 220px;
+  }
+
+  .metric-card {
+    padding: 14px;
+  }
+
+  .profile-img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .bottom-text p {
+    font-size: 13px;
+  }
+}
+
+/* Smooth Transitions */
+.metric-card,
+.profile-img,
+.decoration-img {
+  transition: all 0.3s ease;
+}
+
+/* Ensure proper box-sizing */
+* {
+  box-sizing: border-box;
+}
+
+/* Prevent text selection issues on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .metric-card {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+.group-image {
+  display: flex;
+  justify-content: center;  /* horizontal center */
+  align-items: center;      /* vertical center (if container has height) */
+  width: 100%;
+}

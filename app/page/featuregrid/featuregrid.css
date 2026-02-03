@@ -1,0 +1,460 @@
+/* Base Container */
+.grid11 {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.feature-grid-container {
+    background-color: #05061c;
+    min-height: 100vh;
+    padding: 4rem 2rem;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.feature-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* Feature Cards - All same height and aligned */
+.feature-card {
+    background: linear-gradient(135deg, rgba(20, 24, 50, 0.7), rgba(15, 19, 40, 0.5));
+    border: 1px solid rgba(79, 70, 229, 0.3);
+    border-radius: 1.25rem;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    min-height: 500px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.feature-card1 {
+    background: linear-gradient(135deg, rgba(20, 24, 50, 0.7), rgba(15, 19, 40, 0.5));
+    border: 1px solid rgba(79, 70, 229, 0.3);
+    border-radius: 1.25rem;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    min-height: 500px;
+    box-sizing: border-box;
+    width: 611px;
+}
+
+.feature-card:hover {
+    border-color: rgba(99, 102, 241, 0.6);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 40px rgba(99, 102, 241, 0.2);
+}
+
+/* Desktop Layout - 3 columns on top, 2 columns on bottom */
+@media (min-width: 1201px) {
+    .feature-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* First 3 cards take 1 column each */
+    .feature-card:nth-child(1),
+    .feature-card:nth-child(2),
+    .feature-card:nth-child(3) {
+        grid-column: span 1;
+    }
+
+    /* Box 4 spans 2 columns */
+      .feature-card:nth-child(4) {
+        grid-column: span 2; /* Box 4 */
+    }
+
+    .feature-card:nth-child(5) {
+        grid-column: span 1; /* Box 5 */
+    }
+}
+
+/* Tablet Layout (769px - 1200px) */
+@media (min-width: 769px) and (max-width: 1200px) {
+    .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+        padding: 0 15px;
+    }
+
+    .feature-card {
+        min-height: 450px;
+        padding: 1.75rem;
+    }
+
+    /* All cards span 1 column */
+    .feature-card:nth-child(1),
+    .feature-card:nth-child(2),
+    .feature-card:nth-child(3),
+    .feature-card:nth-child(4),
+    .feature-card:nth-child(5) {
+        grid-column: span 1;
+    }
+}
+
+/* Mobile Layout (max 768px) */
+@media (max-width: 768px) {
+    .feature-grid-container {
+        padding: 3rem 1rem;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        padding: 0 10px;
+    }
+
+    .feature-card {
+        min-height: 400px;
+        padding: 1.5rem;
+    }
+
+    .feature-card:nth-child(1),
+    .feature-card:nth-child(2),
+    .feature-card:nth-child(3),
+    .feature-card:nth-child(4),
+    .feature-card:nth-child(5) {
+        grid-column: span 1;
+    }
+}
+
+/* Small Mobile (max 480px) */
+@media (max-width: 480px) {
+    .feature-grid-container {
+        padding: 2rem 0.75rem;
+    }
+
+    .feature-grid {
+        gap: 1rem;
+        padding: 0 5px;
+    }
+
+    .feature-card {
+        min-height: 350px;
+        padding: 1.25rem;
+    }
+}
+
+/* Card Header - Consistent spacing */
+.card-header {
+    margin-bottom: 1.5rem;
+}
+
+.card-title {
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 1rem 0;
+    line-height: 1.3;
+}
+
+.card-description {
+    font-size: clamp(0.875rem, 1.5vw, 0.95rem);
+    color: #94a3b8;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Card Content - Centered and aligned */
+.card-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    width: 100%;
+}
+
+/* Platform Grid (Box 1) */
+.platform-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+    width: 100%;
+}
+
+.platform-icon {
+    aspect-ratio: 1;
+    background: rgba(30, 35, 60, 0.5);
+    border: 1px solid rgba(79, 70, 229, 0.2);
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.platform-icon:hover {
+    background: rgba(40, 45, 70, 0.7);
+    border-color: rgba(99, 102, 241, 0.4);
+    transform: scale(1.05);
+}
+
+.icon-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(0.6rem, 1vw, 0.7rem);
+    color: #64748b;
+    text-align: center;
+    padding: 0.5rem;
+}
+
+/* Image Containers - All aligned */
+.visualization-container,
+.ideas-container,
+.dashboard-container,
+.insights-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Images - Properly sized and aligned */
+.visualization-image,
+.ideas-image,
+.dashboard-image,
+.insight-image {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    max-height: 300px;
+    object-fit: contain;
+    border-radius: 0.75rem;
+}
+
+/* Responsive image adjustments */
+@media (max-width: 1200px) {
+    .visualization-image,
+    .ideas-image,
+    .dashboard-image,
+    .insight-image {
+        max-height: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .visualization-image,
+    .ideas-image,
+    .dashboard-image,
+    .insight-image {
+        max-height: 250px;
+    }
+
+    .platform-grid {
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .visualization-image,
+    .ideas-image,
+    .dashboard-image,
+    .insight-image {
+        max-height: 200px;
+    }
+
+    .platform-grid {
+        gap: 0.4rem;
+    }
+}
+
+/* Explore More Button */
+.explore-more-container {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 0 20px;
+    margin-bottom: 2rem;
+}
+
+.explore-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2.5rem;
+    background: transparent;
+    color: #ffffff;
+    border: 2px solid rgba(99, 102, 241, 0.5);
+    border-radius: 2rem;
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+.explore-more-btn:hover {
+    background: rgba(99, 102, 241, 0.1);
+    border-color: rgba(99, 102, 241, 0.8);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
+}
+
+.explore-more-btn:active {
+    transform: translateY(0);
+}
+
+.arrow-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.explore-more-btn:hover .arrow-icon {
+    transform: translateX(4px);
+}
+
+/* Mobile Button Adjustments */
+@media (max-width: 768px) {
+    .explore-more-btn {
+        padding: 0.875rem 2rem;
+        gap: 0.5rem;
+    }
+
+    .arrow-icon {
+        width: 1rem;
+        height: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .explore-more-btn {
+        padding: 0.75rem 1.75rem;
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* Platform icon images */
+.platform-icon img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+}
+
+/* Very small screens */
+@media (max-width: 360px) {
+    .feature-card {
+        padding: 1rem;
+        min-height: 320px;
+    }
+
+    .card-title {
+        font-size: 1.125rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .card-description {
+        font-size: 0.8125rem;
+    }
+
+    .platform-grid {
+        gap: 0.3rem;
+    }
+
+    .visualization-image,
+    .ideas-image,
+    .dashboard-image,
+    .insight-image {
+        max-height: 180px;
+    }
+}
+
+/* Full-width image support */
+.twelve-image {
+    width: 100vw;
+    height: auto;
+    display: block;
+    margin: 0;
+    padding: 0;
+    max-width: 100vw;
+    object-fit: cover;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+@media (max-width: 1200px) {
+    .twelve-image {
+        max-height: 800px;
+    }
+}
+
+@media (max-width: 768px) {
+    .twelve-image {
+        max-height: 600px;
+    }
+}
+
+@media (max-width: 480px) {
+    .twelve-image {
+        max-height: 400px;
+    }
+}
+
+/* Smooth transitions */
+* {
+    box-sizing: border-box;
+}
+
+.feature-grid,
+.feature-card,
+.platform-grid {
+    transition: all 0.3s ease;
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .feature-card:hover {
+        transform: none;
+    }
+
+    .platform-icon:hover {
+        transform: none;
+    }
+
+    .explore-more-btn:hover {
+        transform: none;
+    }
+}
+
+/* Ensure all cards align properly */
+.feature-grid {
+    align-items: stretch;
+}
+
+.feature-card {
+    height: 100%;
+}
+
+
+.w1 {
+    width: 611px;
+}
+
+.flex{
+    display: flex;
+    gap: 20px;
+}
+
