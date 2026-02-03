@@ -1,4 +1,7 @@
-/* PerformanceDashboard.css - Fully Responsive */
+body{
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
 .performance-dashboard {
   min-height: 90vh;
 background-color: #05061c;
@@ -87,6 +90,8 @@ background-color: #05061c;
   font-size: clamp(2.5rem, 4vw, 3.5rem);
   font-weight: 700;
   line-height: 1.2;
+font-family: 'Montserrat', sans-serif;
+
   margin-bottom: 40px;
   color: white;
   margin-top: 0;
@@ -210,26 +215,33 @@ background-color: #05061c;
 
 /* Metric Colors */
 .metric-card.blue .metric-value {
-  color: #3b82f6;
+        background: linear-gradient(94.64deg, #4a64ea 8.04%, #596fe3 77.29%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .metric-card.light-blue .metric-value {
-  color: #60a5fa;
+ background: linear-gradient(94.64deg, #624de9 8.04%, #999999 77.29%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .metric-card.pink .metric-value {
-  color: #ec4899;
+     background: linear-gradient(94.64deg, #9e53fe 8.04%, #aa6ff5 77.29%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .metric-card.purple .metric-value {
-  color: #8b5cf6;
+  background: linear-gradient(94.65deg, #d54ff7 8.04%, #e6a9f6 44.56%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .metric-card.purple-pink .metric-value {
-  background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+    background: linear-gradient(94.65deg, #d54ff7 8.04%, #e6a9f6 44.56%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 /* Bottom Text */
