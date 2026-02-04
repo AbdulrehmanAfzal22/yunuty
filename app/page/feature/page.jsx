@@ -159,6 +159,7 @@ function Page() {
     <div className="built-right">
         {/* <h3>Realtime-Tracking Data</h3> */}
         {/* <p>Track your content performance and leverage data-driven insights.</p> */}
+        
      <div
       className="card-preview"
       onClick={nextImage}

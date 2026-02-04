@@ -52,7 +52,8 @@
         .container {
           position: relative;
           z-index: 2;
-          max-width: 1400px;
+              max-width: 1693px;
+
           margin: 0 auto;
           padding: 80px 20px;
         }
@@ -185,6 +186,7 @@
 
         .cta-section {
           text-align: center;
+          margin-top: 35px;
         }
 
         .cta-title {
