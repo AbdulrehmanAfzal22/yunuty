@@ -3,7 +3,7 @@ import React from "react";
 import "./grid.css";
 import { Diamond } from "lucide-react";
 
-const features = [
+const featureItems = [
   { id: 1, text: "Inventory Visibility" },
   { id: 2, text: "Customer Portal Access" },
   { id: 3, text: "Interconnectivity" },
@@ -18,8 +18,8 @@ const features = [
   { id: 12, text: "Online Payment" },
 ];
 
-export default function FeaturesTags() {
-  const colors = [
+export default function FeatureChips() {
+  const chipColors = [
     "#ff8c00",
     "#ffd700",
     "#00bfff",
@@ -35,21 +35,17 @@ export default function FeaturesTags() {
   ];
 
   return (
-    <section className="features-section">
-      <div className="features-wrapper">
-        {features.map((item, index) => (
-          <div key={item.id} className="feature-pill feature-tag">
+    <section className="chip-section">
+      <div className="chip-container">
+        {featureItems.map((item, index) => (
+          <div key={item.id} className="chip-pill chip-hover">
             <span
-              className="feature-icon"
-              style={{ color: colors[index % colors.length] }}
+              className="chip-icon"
+              style={{ color: chipColors[index % chipColors.length] }}
             >
-              <Diamond
-                size={16}
-                fill="currentColor"
-                stroke="none"
-              />
+              <Diamond size={16} fill="currentColor" stroke="none" />
             </span>
-            <span className="feature-text">{item.text}</span>
+            <span className="chip-label">{item.text}</span>
           </div>
         ))}
       </div>
