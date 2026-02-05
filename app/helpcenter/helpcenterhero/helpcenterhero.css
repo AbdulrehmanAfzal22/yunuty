@@ -29,12 +29,11 @@
 
 .hero p {
   font-size: clamp(15px, 2.5vw, 18px);
-  color: #959efe;
+  color: #e0e2f1;
   margin-bottom: 40px;
   line-height: 1.5;
 }
 
-/* SUBTITLE DECOR */
 .subtitle-row {
   display: flex;
   align-items: center;

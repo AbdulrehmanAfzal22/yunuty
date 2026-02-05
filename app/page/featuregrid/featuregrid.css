@@ -61,6 +61,13 @@
     box-shadow: 0 10px 40px rgba(99, 102, 241, 0.2);
 }
 
+.feature-card1:hover {
+    border-color: rgba(99, 102, 241, 0.6);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 40px rgba(99, 102, 241, 0.2);
+}
+
+
 /* Desktop Layout - 3 columns on top, 2 columns on bottom */
 @media (min-width: 1201px) {
     .feature-grid {

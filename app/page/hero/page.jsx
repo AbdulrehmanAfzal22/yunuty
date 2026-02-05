@@ -36,23 +36,24 @@ export default function Hero() {
       <div className="hero-container">
         <div className="hero-content">
           <div className="hero-subtitle">
-            {/* <Image
-              src="/sub-title-left.svg"
+            <Image
+              src={left}
               alt=""
               width={79}
               height={17}
               className="no-shrink"
-            /> */}
-            <div className="sub-text">
+            /> 
+            {/* <div className="sub-text">
               <Image src={future} className="left-svg" alt="Star Icon" />
-            </div>
-            {/* <Image
-              src="/sub-title-right.svg"
+            </div> */}
+            <p className="feature-text">Future-Ready ERP Solutions</p>
+            <Image
+              src={right}
               alt=""
               width={79}
               height={17}
               className="no-shrink"
-            /> */}
+            />
           </div>
 
           <h1 className="hero-title">
