@@ -1,0 +1,396 @@
+body {
+  margin: 0;
+  background: rgb(5, 6, 28);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+/* ================= HEADER ================= */
+.vision-page-container {
+  padding: 2rem 1rem 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.vision-page-container h5 {
+  font-size: clamp(1.8rem, 5vw, 2.2rem);
+  font-weight: 650;
+  line-height: 1.05;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.subtitle {
+  color: rgb(203, 213, 225);
+  max-width: 600px;
+  margin: 15px auto 2.2rem;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+/* ================= SECTION ================= */
+.vision-section {
+  background: #05061c;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  padding: 40px 20px;
+  display: flex;
+  margin-top: -75px;
+}
+
+/* ================= MAIN CARD ================= */
+.vision-card {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  padding: 30px 35px;
+  border-radius: 26px;
+  min-height: 430px;
+
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(58, 64, 136, 0.22),
+      transparent 45%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(9, 12, 44, 0.96) 0%,
+      rgba(9, 12, 44, 0.94) 55%,
+      rgba(6, 9, 45, 0.75) 78%,
+      rgba(13, 15, 35, 0.45) 100%
+    );
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(90, 110, 255, 0.28);
+
+  box-shadow:
+    inset 0 0 0 1px rgba(120, 140, 255, 0.12),
+    0 40px 120px rgba(0, 0, 0, 0.65);
+
+  text-align: center;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+/* Grid overlay */
+.vision-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  opacity: 0.75;
+  pointer-events: none;
+}
+
+/* ================= ICON WITH THREE CIRCLES ================= */
+.vision-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: #ffffff;
+}
+
+.icon-ring {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.icon-inner,
+.icon-middle {
+  position: absolute;
+  border-radius: 50%;
+  border: 1.5px solid #5a6eff;
+  pointer-events: none;
+}
+
+.icon-middle {
+  inset: -18px;
+  opacity: 0.70;
+}
+
+.icon-inner {
+  inset: -9px;
+  opacity: 0.90;
+}
+
+/* Optional: outer circle if needed */
+.icon-outer {
+  position: absolute;
+  border-radius: 50%;
+  border: 1.5px solid #5a6eff;
+  inset: -28px;
+  opacity: 0.50;
+  pointer-events: none;
+}
+
+/* Icon on top */
+.vision-icon svg {
+  position: relative;
+  z-index: 2;
+}
+
+/* ================= TITLE & TEXT BOX - ANIMATION ================= */
+.vision-title,
+.vision-text {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0s;
+}
+
+.vision-card.card-visible .vision-title,
+.vision-card.card-visible .vision-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.vision-card.card-visible .vision-title {
+  transition:
+    opacity 0.75s cubic-bezier(0.23, 1, 0.32, 1),
+    transform 0.75s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.vision-card.card-visible .vision-text {
+  transition:
+    opacity 0.95s cubic-bezier(0.23, 1, 0.32, 1) 0.18s,
+    transform 0.95s cubic-bezier(0.23, 1, 0.32, 1) 0.18s;
+}
+
+/* ================= TEXT STYLES ================= */
+.vision-title {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 30px;
+  margin-bottom: 4.5rem;
+  color: #ffffff;
+  width: 100%;
+  margin-top: 40px;
+}
+
+.vision-text {
+  position: relative;
+  margin: 0 auto;
+  padding: 26px 32px;
+  max-width: 520px;
+  border-radius: 20px;
+  background: #050a29;
+}
+
+.vision-text::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  border-top: 1.5px solid rgba(56, 70, 150, 0.8);
+  border-left: 1.5px solid rgba(56, 70, 150, 0.8);
+  border-top-left-radius: 20px;
+  background: transparent;
+}
+
+.vision-text p {
+  font-size: clamp(14px, 2vw, 16px);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.92);
+  margin-top: 24px;
+}
+
+/* ================= GRID LAYOUTS FOR CARDS ================= */
+.vision-row-1,
+.vision-row-2,
+.vision-row-3 {
+  display: grid;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 60px;
+  padding: 0 20px;
+}
+
+/* Desktop: 2 columns */
+.vision-row-1,
+.vision-row-2,
+.vision-row-3 {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* ================= RESPONSIVE BREAKPOINTS ================= */
+@media (max-width: 968px) {
+  .vision-row-1,
+  .vision-row-2,
+  .vision-row-3 {
+    gap: clamp(30px, 5vw, 50px);
+    margin-bottom: 40px;
+  }
+  
+  .vision-card {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .vision-page-container {
+    padding: 1.5rem 1rem 2rem;
+  }
+
+  .vision-card {
+    padding: 24px 20px;
+    min-height: 360px;
+  }
+
+  .vision-title {
+    margin-bottom: 16px;
+  }
+
+  .vision-text {
+    padding: 18px 20px;
+  }
+
+  .vision-text p {
+    margin-top: 16px;
+  }
+
+  .vision-icon {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 12px;
+  }
+
+  .vision-icon svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .icon-outer {
+    inset: -24px;
+  }
+
+  .icon-middle {
+    inset: -16px;
+  }
+
+  .icon-inner {
+    inset: -8px;
+  }
+
+  .vision-row-1,
+  .vision-row-2,
+  .vision-row-3 {
+    gap: 30px;
+    margin-bottom: 30px;
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 380px) {
+  .vision-card {
+    padding: 20px 16px;
+    min-height: 340px;
+  }
+
+  .vision-text {
+    padding: 16px 18px;
+  }
+
+  .vision-text::before {
+    width: 50px;
+    height: 50px;
+  }
+
+  .vision-row-1,
+  .vision-row-2,
+  .vision-row-3 {
+    gap: 20px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .vision-row-1,
+  .vision-row-2,
+  .vision-row-3 {
+    grid-template-columns: repeat(2, minmax(400px, 600px));
+    justify-content: center;
+  }
+}
+
+/* ================= HERO SECTION V2 ================= */
+.hero-section-v2 {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    180deg,
+    #05071c 0%,
+    #05071c 82%,
+    #181953 100%
+  );
+  color: #ffffff;
+  overflow: hidden;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  text-align: center;
+}
+
+/* Grid lines overlay */
+.hero-grid-v2 {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+}
+
+/* Hero content */
+.hero-container-v2 {
+  position: relative;
+  max-width: 700px;
+  z-index: 1;
+}
+
+.hero-title-v2 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+.hero-subtitle-v2 {
+  font-size: 1rem;
+  color: #c0c0c0;
+  margin-bottom: 40px;
+}
+
+/* Button styling */
+.hero-button-v2 {
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0a0a2a;
+  background: #dce4ff;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hero-button-v2:hover {
+  background: #ffffff;
+  transform: translateY(-2px);
+}
+
