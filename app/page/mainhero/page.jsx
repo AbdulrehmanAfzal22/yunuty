@@ -10,14 +10,14 @@ import Footer from '../footer/page'
 function Mainhero() {
   return (
 <>
-{/* <Navbar />
+<Navbar />
       <Hero />
       <AboutSection />
 <Feature/>
        <FeatureGrid/>
        <Indicator/>
        <TestimonialCards/>
-   <Footer/> */}
+   <Footer/>
 </>
   )
 }

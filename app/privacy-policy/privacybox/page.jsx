@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { Grid2x2 , Zap, Fan, DiamondPlus,Users} from "lucide-react";
 import DiscoverSection from "@/app/about/discover/page";
 import Footer from "@/app/page/footer/page";
+import Privacy from "../privacyhero/page";
 import "./privacybox.css";
 
 export default function Vision() {
@@ -37,7 +38,7 @@ export default function Vision() {
 
   return (
     <>
-      {/* First & Second Cards */}
+<Privacy/>
       <div className="vision-row vision-row-1">
         <section className="vision-section">
           <div

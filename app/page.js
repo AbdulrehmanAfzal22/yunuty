@@ -6,20 +6,9 @@ import Helpcenterhero from "./helpcenter/helpcenterhero/page";
 export default function Home() {
   return (
     <>
-    {/* <section id="heropage">
-      <Mainhero />
-
-    {/* <Helpcenterhero/> */}
-    {/* <section id="heropage">
-    </section> */}
-    {/* <section id="aboutpage">
-      <Mainabout />
-    </section> */}
-
-   <Privacy />
 
 
-<Privacybox/>
+<Mainhero/>
 
     </>
   );

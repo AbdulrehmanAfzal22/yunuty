@@ -65,7 +65,7 @@ export default function Navbar() {
           </li>
           <li>
             <Link
-              href="/help"
+              href="/helpcenter/helpcenterhero"
               className={pathname === "/help" ? "active" : ""}
               onClick={closeMenu}
             >
@@ -82,7 +82,7 @@ export default function Navbar() {
             </Link>
           </li> */}
           <li>
-            <Link href="/pages" onClick={closeMenu}>
+            <Link href="/privacy-policy/privacybox" onClick={closeMenu}>
               Privacy Policy
             </Link>
           </li>
