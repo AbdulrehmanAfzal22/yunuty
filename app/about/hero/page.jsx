@@ -79,7 +79,7 @@ export default function Hero1() {
           <Image src={decorLeft} alt="decor left" width={80} height={24} />
            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
           <p className="section-label">About Us</p>
-             
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <Image src={decorRight} alt="decor right" width={80} height={24} />
         </div>
 
