@@ -9,13 +9,14 @@ function Mainabout() {
   return (
    <>
    
-      <Navbar />
+      {/* <Navbar />
       <Hero1 />
       
          <FeaturesTags/> 
-       <DiscoverSection/>
+       
        <Vision/>
-       <Footer/>
+       <DiscoverSection/>
+       <Footer/> */}
    </>
   )
 }

@@ -3,7 +3,6 @@
 .hero-about-section {
   position: relative;
   min-height: 100vh;
-  background: #05061c;
   color: white;
   display: flex;
   flex-direction: column;
