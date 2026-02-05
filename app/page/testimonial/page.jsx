@@ -5,28 +5,40 @@ import "./testimonial.css";
 import Image from "next/image";
 import right from "../../../public/assests/sub-title-right.svg";
 import left from "../../../public/assests/sub-title-left.svg";
+import evan from '../../../public/assests/evan.png'
+import ariyna from '../../../public/assests/ariyna.png'
+import girl from  '../../../public/assests/girl.png'
+
 export default function TestimonialCards() {
   const [particles, setParticles] = useState([]);
+  const [isMobile, setIsMobile] = useState(false);
   const cardsContainerRef = useRef(null);
+
   const testimonials = [
     {
-      content: "YuntuConnect has streamlined our order-to-delivery process, keeping sales and operations perfectly aligned. It helps us move deals faster, reduce team friction, improve the customer experience, and close more efficiently.",
+      content:
+        "YuntuConnect has streamlined our order-to-delivery process, keeping sales and operations perfectly aligned. It helps us move deals faster, reduce team friction, improve the customer experience, and close more efficiently.",
       author: "Jennifer Reed",
       title: "Operations Manager",
-      initial: "J"
+      initial: "J",
+      image: evan,
     },
     {
-      content: "YuntuConnect gave us the structure and scalability our branch operations desperately needed. The system supports our growth, improves cross-departmental collaboration, and delivers clear operational insights. It’s not just software.",
+      content:
+        "YuntuConnect gave us the structure and scalability our branch operations desperately needed. The system supports our growth, improves cross-departmental collaboration, and delivers clear operational insights. It's not just software.",
       author: "Marcus Chen",
       title: "Marketing Director",
-      initial: "M"
+      initial: "M",
+      image: girl,
     },
     {
-      content: "YuntuConnect has streamlined our entire order-to-delivery workflow, keeping sales and operations perfectly aligned. We can now move deals forward faster, reduce friction between teams, deliver a better customer experience, and close more deals efficiently.",
+      content:
+        "YuntuConnect has streamlined our entire order-to-delivery workflow, keeping sales and operations perfectly aligned. We can now move deals forward faster, reduce friction between teams, deliver a better customer experience, and close more deals efficiently.",
       author: "Sarah Johnson",
       title: "CEO",
-      initial: "S"
-    }
+      initial: "S",
+      image: ariyna,
+    },
   ];
 
   useEffect(() => {
@@ -37,6 +49,16 @@ export default function TestimonialCards() {
       duration: Math.random() * 10 + 15
     }));
     setParticles(particleArray);
+
+    // Check if mobile
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
+    return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
   return (
@@ -57,11 +79,9 @@ export default function TestimonialCards() {
 
       <div className="container">
         <div className="center-content">
-            <Image src={left} alt="Left Decoration" className="decoration-left" />
-            &nbsp;&nbsp;&nbsp;
+          <Image src={left} alt="Left Decoration" className="decoration-left" />
           <span className="testimonial-badge1">Testimonial</span>
-          &nbsp;&nbsp;&nbsp;
-            <Image src={right} alt="Right Decoration" className="decoration-right" />
+          <Image src={right} alt="Right Decoration" className="decoration-right" />
         </div>
 
         <h1>
@@ -79,6 +99,7 @@ export default function TestimonialCards() {
               testimonial={testimonial}
               index={index}
               containerRef={cardsContainerRef}
+              isMobile={isMobile}
             />
           ))}
         </div>
@@ -91,12 +112,10 @@ export default function TestimonialCards() {
 
         <div className="cta-section">
           <h2 className="cta-title">
-            Discover the future of productivity, optimize your<br />
-            processes and make every minute count.
+            Discover the future of productivity, optimize your processes and make every minute count.
           </h2>
           <p className="cta-subtitle">
-            Harness AI-powered automation for a more efficient and high-<br />
-            yield work in great importance
+            Harness AI-powered automation for a more efficient and high-yield work in great importance
           </p>
           <button className="cta-button">Start a Project</button>
         </div>
@@ -105,55 +124,54 @@ export default function TestimonialCards() {
   );
 }
 
-function DraggableCard({ testimonial, index, containerRef }) {
+function DraggableCard({ testimonial, index, containerRef, isMobile }) {
   const cardRef = useRef(null);
   const [isDragging, setIsDragging] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [initialPosition, setInitialPosition] = useState({ x: 0, y: 0 });
   const [rotation, setRotation] = useState(0);
   const dragStart = useRef({ x: 0, y: 0 });
-  const offset = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
-    if (containerRef.current && cardRef.current) {
-      const containerWidth = containerRef.current.offsetWidth;
-      const containerHeight = containerRef.current.offsetHeight;
-      const cardWidth = 320;
+    if (isMobile || !containerRef.current || !cardRef.current) return;
 
-      let left, top, rot;
+    const containerWidth = containerRef.current.offsetWidth;
+    const containerHeight = containerRef.current.offsetHeight;
+    const cardWidth = 320;
 
-      if (index === 0) {
-        left = containerWidth / 2 - 500;
-        top = containerHeight / 2 - 150;
-        rot = -5;
-      } else if (index === 1) {
-        left = containerWidth / 2 - cardWidth / 2;
-        top = containerHeight / 2 - 200;
-        rot = 0;
-      } else {
-        left = containerWidth / 2 + 180;
-        top = containerHeight / 2 - 150;
-        rot = 5;
-      }
+    let left, top, rot;
 
-      setPosition({ x: left, y: top });
-      setInitialPosition({ x: left, y: top });
-      setRotation(rot);
+    if (index === 0) {
+      left = containerWidth / 2 - 500;
+      top = containerHeight / 2 - 150;
+      rot = -5;
+    } else if (index === 1) {
+      left = containerWidth / 2 - cardWidth / 2;
+      top = containerHeight / 2 - 200;
+      rot = 0;
+    } else {
+      left = containerWidth / 2 + 180;
+      top = containerHeight / 2 - 150;
+      rot = 5;
     }
-  }, [index, containerRef]);
+
+    setPosition({ x: left, y: top });
+    setInitialPosition({ x: left, y: top });
+    setRotation(rot);
+  }, [index, containerRef, isMobile]);
 
   const handleMouseDown = (e) => {
+    if (isMobile) return;
     e.preventDefault();
     setIsDragging(true);
     dragStart.current = {
       x: e.clientX || e.touches?.[0]?.clientX,
       y: e.clientY || e.touches?.[0]?.clientY
     };
-    offset.current = { x: 0, y: 0 };
   };
 
   const handleMouseMove = (e) => {
-    if (!isDragging) return;
+    if (!isDragging || isMobile) return;
 
     const clientX = e.clientX || e.touches?.[0]?.clientX;
     const clientY = e.clientY || e.touches?.[0]?.clientY;
@@ -170,7 +188,7 @@ function DraggableCard({ testimonial, index, containerRef }) {
   };
 
   const handleMouseUp = () => {
-    if (!isDragging) return;
+    if (!isDragging || isMobile) return;
     setIsDragging(false);
 
     setTimeout(() => {
@@ -180,7 +198,7 @@ function DraggableCard({ testimonial, index, containerRef }) {
   };
 
   useEffect(() => {
-    if (isDragging) {
+    if (isDragging && !isMobile) {
       document.addEventListener("mousemove", handleMouseMove);
       document.addEventListener("mouseup", handleMouseUp);
       document.addEventListener("touchmove", handleMouseMove);
@@ -193,7 +211,15 @@ function DraggableCard({ testimonial, index, containerRef }) {
         document.removeEventListener("touchend", handleMouseUp);
       };
     }
-  }, [isDragging]);
+  }, [isDragging, isMobile]);
+
+  const cardStyle = isMobile ? {} : {
+    left: `${position.x}px`,
+    top: `${position.y}px`,
+    transform: `rotate(${rotation}deg)`,
+    zIndex: index === 1 ? 10 : isDragging ? 100 : 1,
+    transition: isDragging ? "none" : "all 0.5s cubic-bezier(0.4, 0, 0.2, 1)"
+  };
 
   return (
     <div
@@ -201,17 +227,17 @@ function DraggableCard({ testimonial, index, containerRef }) {
       className={`testimonial-card card-float-${index}`}
       onMouseDown={handleMouseDown}
       onTouchStart={handleMouseDown}
-      style={{
-        left: `${position.x}px`,
-        top: `${position.y}px`,
-        transform: `rotate(${rotation}deg)`,
-        zIndex: index === 1 ? 10 : isDragging ? 100 : 1,
-        transition: isDragging ? "none" : "all 0.5s cubic-bezier(0.4, 0, 0.2, 1)"
-      }}
+      style={cardStyle}
     >
       <div className="card-content">{testimonial.content}</div>
       <div className="card-author">
-        <div className="author-avatar">{testimonial.initial}</div>
+        <Image 
+          src={testimonial.image} 
+          alt={testimonial.author}
+          className="author-avatar"
+          width={40}
+          height={40}
+        />
         <div className="author-info">
           <div className="author-name">{testimonial.author}</div>
           <div className="author-title">{testimonial.title}</div>

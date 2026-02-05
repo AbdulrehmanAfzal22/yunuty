@@ -87,9 +87,10 @@ background-color: #05061c;
 }
 
 .main-heading {
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
-  font-weight: 700;
-  line-height: 1.2;
+      font-size: 48px;
+    font-weight: 500;
+    line-height: 56px;
+    letter-spacing: -0.03em;
 font-family: 'Montserrat', sans-serif;
 
   margin-bottom: 40px;

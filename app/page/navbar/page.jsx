@@ -2,12 +2,22 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";  
-import logo from "../../../public/assests/logo-bg.png"; 
+import { usePathname } from "next/navigation";
+import { useState } from "react";
+import logo from "../../../public/assests/logo-bg.png";
 import "./navbar.css";
 
 export default function Navbar() {
-  const pathname = usePathname();   
+  const pathname = usePathname();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
 
   return (
     <nav className="navbar">
@@ -22,36 +32,75 @@ export default function Navbar() {
           />
         </div>
 
-        <ul className="nav-links">
-     <li>
-  <Link href="/page/mainhero" className={pathname === "/" ? "active" : ""}>
-    Home
-  </Link>
-</li>
-<li>
-  <Link href="/about/mainabout" className={pathname === "/about" ? "active" : ""}>
-    About
-  </Link>
-</li>
+        {/* Hamburger Menu */}
+        <button
+          className={`hamburger ${isMenuOpen ? "active" : ""}`}
+          onClick={toggleMenu}
+          aria-label="Toggle menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        {/* Navigation Links */}
+        <ul className={`nav-links ${isMenuOpen ? "active" : ""}`}>
           <li>
-            <Link href="/help" className={pathname === "/help" ? "active" : ""}>
+            <Link
+              href="/page/mainhero"
+              className={pathname === "/" ? "active" : ""}
+              onClick={closeMenu}
+            >
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/about/mainabout"
+              className={pathname === "/about" ? "active" : ""}
+              onClick={closeMenu}
+            >
+              About
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/help"
+              className={pathname === "/help" ? "active" : ""}
+              onClick={closeMenu}
+            >
               Help Center
             </Link>
           </li>
-          <li>
-            <Link href="/pricing" className={pathname === "/pricing" ? "active" : ""}>
+          {/* <li>
+            <Link
+              href="/pricing"
+              className={pathname === "/pricing" ? "active" : ""}
+              onClick={closeMenu}
+            >
               Pricing
             </Link>
-          </li>
+          </li> */}
           <li>
-            <Link href="/pages">
-            Privacy Policy
+            <Link href="/pages" onClick={closeMenu}>
+              Privacy Policy
             </Link>
+          </li>
+
+          {/* Mobile Get Started Button */}
+          <li className="mobile-btn-wrapper">
+            <button className="get-started-btn mobile" onClick={closeMenu}>
+              Get Started
+            </button>
           </li>
         </ul>
 
-        <button className="get-started-btn">Get Started</button>
+        {/* Desktop Get Started Button */}
+        <button className="get-started-btn desktop">Get Started</button>
       </div>
+
+      {/* Overlay for mobile menu */}
+      {isMenuOpen && <div className="overlay" onClick={closeMenu}></div>}
     </nav>
   );
 }

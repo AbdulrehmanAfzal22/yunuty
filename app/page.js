@@ -1,14 +1,17 @@
 import Mainhero from "./page/mainhero/page";
 import Mainabout from "../app/about/mainabout/page";
+import Helpcenterhero from "./helpcenter/helpcenterhero/page";
 export default function Home() {
   return (
     <>
-    <section id="heropage">
       <Mainhero />
-    </section>
-    <section id="aboutpage">
+
+    {/* <Helpcenterhero/> */}
+    {/* <section id="heropage">
+    </section> */}
+    {/* <section id="aboutpage">
       <Mainabout />
-    </section>
+    </section> */}
     </>
   );
 }

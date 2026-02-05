@@ -7,6 +7,9 @@ import profile2 from '../../../public/assests/man1.png';
 import left from '../../../public/assests/sub-title-left.svg';
 import right from '../../../public/assests/sub-title-right.svg';
 import group from '../../../public/assests/group.png';
+import evan from '../../../public/assests/evan.png'
+import ariyna from '../../../public/assests/ariyna.png'
+import girl from '../../../public/assests/girl.png'
 const PerformanceDashboard = () => {
   return (
     <div className="performance-dashboard">
@@ -31,8 +34,8 @@ const PerformanceDashboard = () => {
             
             <div className="rating-section">
               <div className="profile-images">
-                <Image src={profile1} alt="Profile 1" className="profile-img" />
-                <Image src={profile2} alt="Profile 2" className="profile-img" />
+                <Image src={evan} alt="Profile 1" className="profile-img" />
+                <Image src={ariyna} alt="Profile 2" className="profile-img" />
               </div>
               <div className="rating-info">
                 <div className="stars">

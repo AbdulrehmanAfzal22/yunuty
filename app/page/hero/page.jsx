@@ -3,11 +3,12 @@
 import { useState } from "react";
 import Image from "next/image";
 import "./hero.css";
-import bg from "../../../public/assests/background.png";
+import bg from "../../../public/assests/bgcolor.jpeg";
 import right from "../../../public/assests/sub-title-right.svg";
 import left from "../../../public/assests/sub-title-left.svg";
 import image from "../../../public/assests/hero-img.png";
 import future from "../../../public/assests/Future.png";
+
 export default function Hero() {
   const [email, setEmail] = useState("");
 

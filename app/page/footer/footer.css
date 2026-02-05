@@ -63,17 +63,25 @@
 }
 
 .footer-center h4 {
-  font-size: 14px;
-  margin-bottom: 8px;
+      font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
   opacity: 0.7;
 }
 
+
 .footer-center p {
   margin-bottom: 12px;
-      font-size: 18px;
+         font-size: 18px;
     font-weight: 400;
     line-height: 28px;
+    
 }
+
+.footer-center p:hover{
+  color: #73799b;
+}
+
 .year{
    font-weight: 400;
     font-size: 16px;
@@ -127,7 +135,7 @@ color: #73799b;
   gap: 15px;
 }
 
-.icon {
+.icon1 {
     cursor: pointer;
     border: 1px solid #fff;
     border-radius: 50%;
@@ -139,7 +147,7 @@ color: #73799b;
     display: flex;
 }
 
-.icon:hover {
+.icon1:hover {
   background: white;
   color: black;
 }
