@@ -55,6 +55,7 @@
   color: #959efe;
   font-size: clamp(14px, 2vw, 16px);
   white-space: nowrap;
+  margin-top: 13px;
 }
 
 /* SEARCH BOX */

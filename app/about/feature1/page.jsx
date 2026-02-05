@@ -38,7 +38,7 @@ export default function FeaturesTags() {
     <section className="features-section">
       <div className="features-wrapper">
         {features.map((item, index) => (
-          <div key={item.id} className="feature-pill">
+          <div key={item.id} className="feature-pill feature-tag">
             <span
               className="feature-icon"
               style={{ color: colors[index % colors.length] }}

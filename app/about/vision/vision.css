@@ -217,7 +217,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 14px;
   margin: 0 auto 32px;
   max-width: 100%;
   flex-wrap: wrap;
