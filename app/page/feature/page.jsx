@@ -10,6 +10,7 @@ import laptop from "../../../public/assests/laptop.png";
 import ten from "../../../public/assests/ten.png";
 import layer from "../../../public/assests/Layer.png";
 import benefit from "../../../public/assests/Benfits.png";
+import box from "../../../public/assests/box.png"
 import "./feature.css";
 function Page() {
 
@@ -160,17 +161,19 @@ React.useEffect(() => {
       <button className="built-btn">Explore More →</button>
     </div>
 
-    <div className="built-right">
-        {/* <h3>Realtime-Tracking Data</h3> */}
-        {/* <p>Track your content performance and leverage data-driven insights.</p> */}
-        
-    <div
-  className="card-preview"
-  style={{
-    backgroundImage: `url(${images[index]})`,
-  }}
-></div>
+  <div className="built-right">
+  <div
+    className="card-preview"
+    style={{
+      backgroundImage: `url(${images[index]})`,
+    }}
+  ></div>
+
+  <div className="box-image">
+    <Image src={box} className="boximg"/>
+  </div>
 </div>
+
   </div>
 </div>
 

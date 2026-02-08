@@ -26,12 +26,11 @@
 }
 
 .logo-image {
-  height: 80px;
-  width: auto;
-  object-fit: contain;
-  display: block;
+    object-fit: contain;
+    width: 122px;
+    height: 57px;
+    display: block;
 }
-
 /* Hamburger Menu */
 .hamburger {
   display: none;

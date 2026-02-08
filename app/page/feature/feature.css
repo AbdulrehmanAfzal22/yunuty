@@ -8,16 +8,13 @@
   box-sizing: border-box;
 }
 
-/* Feature Images - Responsive */
-.feature-img {
+/* Layers Section */
+.layers {
   width: 100%;
-  height: auto;
-  max-height: 800px;
-  object-fit: cover;
-  display: block;
-  margin: 2rem auto;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
 }
-
 
 .layers img {
   width: 100%;
@@ -27,6 +24,12 @@
   display: block;
   margin: 0 auto;
   padding: 0;
+}
+
+@media (max-width: 1100px) {
+  .layers img {
+    display: none;
+  }
 }
 
 /* Grid Layout */
@@ -73,12 +76,6 @@
   box-shadow: 0 10px 40px rgba(59, 130, 246, 0.2);
 }
 
-@media (max-width: 1100px) {
-  .layers img {
-    display: none;
-  }
-}
-
 @media (min-width: 768px) {
   .feature-box {
     padding: 2.5rem;
@@ -107,7 +104,7 @@
   justify-content: center;
 }
 
-.icon11{
+.icon11 {
   width: 1.75rem;
   height: 1.75rem;
   color: #ffffff;
@@ -119,7 +116,7 @@
     height: 3rem;
   }
 
-  .icon1 {
+  .icon11 {
     width: 1.5rem;
     height: 1.5rem;
   }
@@ -453,7 +450,7 @@
 
 .built-subtitle p {
   text-transform: uppercase;
-  font-size: clamp(10px, 1.5vw, 11px);
+  font-size: clamp(10px, 1.5vw, 13px);
   letter-spacing: 2px;
   color: #a5b4fc;
   margin: 0;
@@ -515,21 +512,21 @@
   transform: translateY(-2px);
 }
 
-/* Built Right */
+/* Built Right - Fixed positioning container */
 .built-right {
   flex: 1;
   width: 100%;
-  height: 350px;
-  border-radius: 18px;
+  height: 450px;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: visible;
 }
 
 @media (min-width: 768px) {
   .built-right {
-    height: 450px;
+    height: 500px;
   }
 }
 
@@ -539,7 +536,7 @@
   }
 }
 
-/* Card Preview Animation */
+/* Card Preview Animation - FRONT LAYER */
 @keyframes floatHint {
   0% { transform: translateY(0); }
   50% { transform: translateY(-6px); }
@@ -560,49 +557,173 @@
   animation: floatHint 3s ease-in-out infinite;
   overflow: hidden;
   position: relative;
+  z-index: 3;
 }
 
-/* .card-preview::after {
-  content: "Click to preview →";
+/* Box Image - BACK LAYER (stays in place) */
+.box-image {
   position: absolute;
-  bottom: 16px;
-  right: 16px;
-  background: rgba(0,0,0,0.6);
-  color: white;
-  font-size: 12px;
-  padding: 6px 10px;
-  border-radius: 6px;
-  opacity: 0;
-  transition: 0.3s ease;
-} */
-/* 
-.card-preview:hover::after {
-  opacity: 1;
+  bottom: -50px;
+  right: -20px;
+  z-index: 1;
+  pointer-events: none;
 }
 
-.card-preview:hover {
-  transform: scale(1.02);
-} */
+.box-image img,
+.boximg {
+  width: 587px;
+  height: 312px;
+  object-fit: contain;
+}
 
-/* Tablet Responsive */
+/* Responsive adjustments for box image */
+@media (max-width: 1200px) {
+  .box-image {
+    bottom: -40px;
+    right: -15px;
+  }
+
+  .box-image img,
+  .boximg {
+    width: 500px;
+    height: 266px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .built-right {
+    height: 450px;
+  }
+
+  .box-image {
+    bottom: -35px;
+    right: -10px;
+  }
+
+  .box-image img,
+  .boximg {
+    width: 450px;
+    height: 240px;
+  }
+
+  .card-preview {
+    max-width: 420px;
+  }
+}
+
+@media (max-width: 900px) {
+  /* When stacked vertically */
+  .built-right {
+    height: 400px;
+  }
+
+  .box-image {
+    bottom: -30px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+
+  .box-image img,
+  .boximg {
+    width: 400px;
+    height: 213px;
+  }
+
+  .card-preview {
+    max-width: 380px;
+  }
+}
+
+@media (max-width: 768px) {
+  .built-right {
+    height: 380px;
+  }
+
+  .box-image {
+    bottom: -25px;
+  }
+
+  .box-image img,
+  .boximg {
+    width: 350px;
+    height: 186px;
+  }
+
+  .card-preview {
+    max-width: 340px;
+  }
+}
+
+@media (max-width: 640px) {
+  .built-right {
+    height: 350px;
+  }
+
+  .box-image {
+    bottom: -20px;
+  }
+
+  .box-image img,
+  .boximg {
+    width: 300px;
+    height: 160px;
+  }
+
+  .card-preview {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .built-right {
+    height: 320px;
+  }
+
+  .box-image {
+    bottom: -15px;
+  }
+
+  .box-image img,
+  .boximg {
+    width: 250px;
+    height: 133px;
+  }
+
+  .card-preview {
+    max-width: 260px;
+  }
+}
+
+@media (max-width: 360px) {
+  .built-right {
+    height: 280px;
+  }
+
+  .box-image {
+    bottom: -12px;
+  }
+
+  .box-image img,
+  .boximg {
+    width: 220px;
+    height: 117px;
+  }
+
+  .card-preview {
+    max-width: 240px;
+  }
+}
+
+/* Responsive Container Adjustments */
 @media (max-width: 1024px) {
   .container {
     padding: 3rem 1rem;
   }
-
-  .fifth {
-    max-height: 700px;
-  }
 }
 
-/* Tablet Portrait */
 @media (max-width: 768px) {
   .container {
     padding: 2.5rem 0.75rem;
-  }
-
-  .fifth {
-    max-height: 600px;
   }
 
   .grid {
@@ -613,20 +734,11 @@
   .feature-box {
     padding: 1.5rem;
   }
-
-  .card-preview {
-    max-width: 400px;
-  }
 }
 
-/* Mobile Large */
 @media (max-width: 640px) {
   .container {
     padding: 2rem 0.5rem;
-  }
-
-  .fifth {
-    max-height: 500px;
   }
 
   .grid {
@@ -650,24 +762,11 @@
   .built-section {
     padding: 3rem 0.75rem;
   }
-
-  .built-right {
-    height: 300px;
-  }
-
-  .card-preview {
-    max-width: 350px;
-  }
 }
 
-/* Mobile Medium */
 @media (max-width: 480px) {
   .container {
     padding: 1.75rem 0.5rem;
-  }
-
-  .fifth {
-    max-height: 400px;
   }
 
   .feature-box {
@@ -690,29 +789,11 @@
     padding: 1.5rem 1rem;
     margin: 2rem 0.5rem;
   }
-
-  .built-right {
-    height: 280px;
-  }
-
-  .card-preview {
-    max-width: 300px;
-  }
-
-  .card-preview::after {
-    font-size: 11px;
-    padding: 5px 8px;
-  }
 }
 
-/* Mobile Small */
 @media (max-width: 360px) {
   .container {
     padding: 1.5rem 0.25rem;
-  }
-
-  .fifth {
-    max-height: 350px;
   }
 
   .feature-box {
@@ -731,49 +812,18 @@
     max-height: 160px;
   }
 
-  .built-right {
-    height: 260px;
-  }
-
-  .card-preview {
-    max-width: 280px;
-    border-radius: 20px;
-  }
-
   .cta-banner {
     padding: 1.25rem 0.875rem;
-    margin: 1.5rem 0.26rem;
+    margin: 1.5rem 0.25rem;
   }
 }
 
-/* Extra Small Mobile */
-@media (max-width: 320px) {
-  .fifth {
-    max-height: 300px;
-  }
-
-  .built-right {
-    height: 240px;
-  }
-
-  .card-preview {
-    max-width: 260px;
-  }
-}
-
-/* Ensure images scale properly */
- .layers img{
-
-  max-width: 1851px;
-  height: 800px;
-
-}
-
-/* Smooth transitions */
+/* Ensure proper box-sizing */
 * {
   box-sizing: border-box;
 }
 
+/* Smooth transitions */
 .feature-box,
 .cta-button,
 .built-btn,
@@ -793,27 +843,19 @@
     transform: none;
   }
 
-  .card-preview:hover {
-    transform: none;
-  }
-
-  .card-preview:hover::after {
-    opacity: 0;
-  }
-
   .card-preview {
     animation: none;
   }
 }
 
-/* Additional utility class for no-shrink */
+/* Utility classes */
 .no-shrink {
   flex-shrink: 0;
   max-width: 100%;
   height: auto;
 }
 
-/* Landscape orientation */
+/* Landscape orientation adjustments */
 @media (max-height: 600px) and (orientation: landscape) {
   .container {
     padding: 2rem 1rem;
@@ -827,7 +869,9 @@
     height: 300px;
   }
 
-  .fifth {
-    max-height: 400px;
+  .box-image img,
+  .boximg {
+    width: 300px;
+    height: 160px;
   }
 }
