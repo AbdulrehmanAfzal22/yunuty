@@ -2,7 +2,7 @@
 import React, { useState } from "react"; 
 import Image from 'next/image';
 import fourth from ".././../../public/assests/fourth.jpg";
-import fifth from ".././../../public/assests/fifth.jpg";
+import Layers from ".././../../public/assests/Layers.png";
 import right from "../../../public/assests/sub-title-right.svg";
 import left from "../../../public/assests/sub-title-left.svg";
 import mobile from "../../../public/assests/mobile.png";
@@ -13,12 +13,16 @@ import benefit from "../../../public/assests/Benfits.png";
 import "./feature.css";
 function Page() {
 
-     const images = ["/assests/f1.png", "/assests/f2.png", "/assests/f3.png"];
-  const [index, setIndex] = useState(0);
+const images = ["/assests/f1.png", "/assests/f2.png", "/assests/f3.png"];
+const [index, setIndex] = useState(0);
 
-  const nextImage = () => {
+React.useEffect(() => {
+  const interval = setInterval(() => {
     setIndex((prev) => (prev + 1) % images.length);
-  };
+  }, 3000); 
+
+  return () => clearInterval(interval);
+}, []);
   return (
     <>
     
@@ -97,12 +101,12 @@ function Page() {
 
       </div>
     </div>
-
+<div className="layers">
 <Image
-        src={fifth}
+        src={Layers}
         alt="Feature Image"
-        className="fifth"
-        />
+        // className="fifth"
+        /></div>
 
 <div className="cta">
   <section className="cta-banner">
@@ -160,14 +164,13 @@ function Page() {
         {/* <h3>Realtime-Tracking Data</h3> */}
         {/* <p>Track your content performance and leverage data-driven insights.</p> */}
         
-     <div
-      className="card-preview"
-      onClick={nextImage}
-      style={{
-        backgroundImage: `url(${images[index]})`,
-        cursor: "pointer",
-      }}
-    > </div>   </div>
+    <div
+  className="card-preview"
+  style={{
+    backgroundImage: `url(${images[index]})`,
+  }}
+></div>
+</div>
   </div>
 </div>
 

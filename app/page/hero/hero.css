@@ -93,8 +93,8 @@
     padding: 10px 0px 0px 0px;
 }
 .feature-text {
-    margin-top: 39px;
-    color: #818cf8;
+    margin-top: 39px ;
+    color: #818cf8 !important;
 }
 .hero-desc1 {
   font-family: "Poppins", sans-serif;

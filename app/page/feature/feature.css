@@ -18,8 +18,8 @@
   margin: 2rem auto;
 }
 
-/* Fifth Image - Fully Responsive */
-.fifth {
+
+.layers img {
   width: 100%;
   height: auto;
   max-height: 945px;
@@ -71,6 +71,12 @@
   border-color: rgba(59, 130, 246, 0.5);
   transform: translateY(-4px);
   box-shadow: 0 10px 40px rgba(59, 130, 246, 0.2);
+}
+
+@media (max-width: 1100px) {
+  .layers img {
+    display: none;
+  }
 }
 
 @media (min-width: 768px) {
@@ -378,7 +384,7 @@
   padding: 4rem 1rem;
   display: flex;
   justify-content: center;
-  background-image: url("../../../public/assests/bgcolor.jpeg");
+  background-image: url("../../../public/assests/background.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -469,7 +475,7 @@
 
 .built-desc {
   font-size: clamp(0.875rem, 1.5vw, 1rem);
-  color: #cbd5f5;
+  color: #ffffff;
   max-width: 100%;
   margin: 0 auto 24px;
   line-height: 1.7;
@@ -548,7 +554,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  border-radius: 26px;
+  border-radius: 16px;
   cursor: pointer;
   background-color: transparent;
   animation: floatHint 3s ease-in-out infinite;
@@ -556,7 +562,7 @@
   position: relative;
 }
 
-.card-preview::after {
+/* .card-preview::after {
   content: "Click to preview →";
   position: absolute;
   bottom: 16px;
@@ -568,15 +574,15 @@
   border-radius: 6px;
   opacity: 0;
   transition: 0.3s ease;
-}
-
+} */
+/* 
 .card-preview:hover::after {
   opacity: 1;
 }
 
 .card-preview:hover {
   transform: scale(1.02);
-}
+} */
 
 /* Tablet Responsive */
 @media (max-width: 1024px) {
@@ -736,7 +742,7 @@
 
   .cta-banner {
     padding: 1.25rem 0.875rem;
-    margin: 1.5rem 0.25rem;
+    margin: 1.5rem 0.26rem;
   }
 }
 
@@ -756,10 +762,11 @@
 }
 
 /* Ensure images scale properly */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+ .layers img{
+
+  max-width: 1851px;
+  height: 800px;
+
 }
 
 /* Smooth transitions */
