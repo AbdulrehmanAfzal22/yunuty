@@ -2,7 +2,7 @@ import React from "react";
 import "./footer.css";
 import Image from "next/image";
 import logo from "../../../public/assests/logo.png";
-import { FaFacebookF, FaLinkedinIn, FaDribbble } from "react-icons/fa";
+import { FaFacebookF, FaLinkedinIn, FaDribbble,FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -31,8 +31,8 @@ const Footer = () => {
 
           <div>
             <h4>Email</h4>
-            <p>notify@yunak.com</p>
-            <p>asenol.yunakinstitute@gmail.com</p>
+            <p>notify@yunuak.com</p>
+            <p>asenol.yunuakinstitute@gmail.com</p>
           </div>
         </div>
 
@@ -48,9 +48,9 @@ const Footer = () => {
           </div>
 
           <div className="social-icons">
-            <div className="icon1"><FaFacebookF /></div>
+            <div className="icon1"><FaInstagram /></div>
             <div className="icon1"><FaLinkedinIn /></div>
-            <div className="icon1"><FaDribbble /></div>
+            {/* <div className="icon1"><FaDribbble /></div> */}
           </div>
         </div>
 

@@ -21,6 +21,9 @@ export default function Navbar() {
     setIsPagesOpen(false);
   };
 
+  const isHomeActive =
+    pathname === "/" || pathname === "/page/mainhero";
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
@@ -50,7 +53,7 @@ export default function Navbar() {
           <li>
             <Link
               href="/page/mainhero"
-              className={pathname === "/page/mainhero" ? "active" : ""}
+              className={isHomeActive ? "active" : ""}
               onClick={closeMenu}
             >
               Home
@@ -70,7 +73,9 @@ export default function Navbar() {
           <li>
             <Link
               href="/helpcenter/helpcenterhero"
-              className={pathname === "/helpcenter/helpcenterhero" ? "active" : ""}
+              className={
+                pathname === "/helpcenter/helpcenterhero" ? "active" : ""
+              }
               onClick={closeMenu}
             >
               Help Center
@@ -88,15 +93,6 @@ export default function Navbar() {
               Privacy Policy
             </Link>
           </li>
-
-          {/* Pages Toggle (Mobile) */}
-          {/* <li
-            className="pages-toggle"
-            onClick={() => setIsPagesOpen(!isPagesOpen)}
-          >
-            <span>Pages</span>
-            <span className={`arrow ${isPagesOpen ? "open" : ""}`}>▾</span>
-          </li> */}
 
           {isPagesOpen && (
             <>

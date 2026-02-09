@@ -126,15 +126,15 @@
 
 /* CATEGORY SECTIONS */
 .categories {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 30px;
-  padding: 15px 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    width: 100%;
+    max-width: 1286px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
 }
 
 /* CARD STYLING */
@@ -359,7 +359,7 @@
 }
 
 .secimg1 p {
-  font-size: clamp(13px, 2.5vw, 15px);
+  font-size: clamp(13px, 2.5vw, 17px);
   line-height: 1.47;
   color: rgb(149, 158, 254);
   white-space: nowrap;
@@ -368,7 +368,7 @@
 }
 
 .secimg1 img {
-  width: auto;
-  height: auto;
-  max-width: 40px;
+    width: auto;
+    max-width: 151px;
+    height: auto;
 }

@@ -1,36 +1,95 @@
 /* Main Container */
 .container {
   min-height: 100vh;
-  background: linear-gradient(#05071c 0% 82%, #181953 100%);
+  background: #05061c;
   padding: 4rem 1rem;
   width: 100%;
   position: relative;
   box-sizing: border-box;
 }
 
+.layers-bg {
+    background: #05061c;
+    width: 110%;
+    margin: 0px;
+    padding: 0;
+    margin-left: -68px;
+}
 /* Layers Section - Keep Content Bright */
 .layers {
-  width: 100%;
-  overflow: hidden;
-  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #05061c;
+  align-items: center;
+  border: 1px solid #fff;
+  width: 84%;
+  margin-left: 122px;
   padding: 0;
   position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.clearbg {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: absolute;
+  top: 116px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100px 100px;
+  padding: 20px;
+  z-index: 10;
 }
 
 .layers img {
-  width: 100%;
-  height: auto;
-  max-height: 945px;
   object-fit: cover;
-  display: block;
+  width: 97%;
+  height: 1369px;
+  max-height: 836px;
   margin: 0 auto;
   padding: 0;
-  /* Keep Layers.png bright - it's content, not background */
+  display: block;
 }
 
 @media (max-width: 1100px) {
   .layers img {
     display: none;
+  }
+  
+  .layers {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-left: 5%;
+  }
+}
+
+@media (max-width: 768px) {
+  .layers {
+    width: 95%;
+    margin-left: 2.5%;
+  }
+  
+  .clearbg {
+    top: 60px;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .layers {
+    width: 100%;
+    margin-left: 0;
+    border-radius: 10px;
+  }
+  
+  .clearbg {
+    top: 40px;
+    padding: 10px;
   }
 }
 
@@ -211,31 +270,39 @@
   }
 }
 
-/* CTA Section */
+/* CTA Section - FIXED */
 .cta {
-  display: flex;
-  justify-content: center;
-  background: #05061C;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+    box-sizing: border-box;
+      background: linear-gradient(#05071c 0% 82%, #181953 100%);
+    justify-content: center;
+    width: 102%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    
 }
 
 .cta-banner {
-  position: relative;
-  width: 100%;
-  max-width: 1200px;
-  background: #0a0e27;
-  border: 1px solid rgb(99, 98, 98);
-  border-radius: 12px;
-  overflow: hidden;
-  padding: 2rem 1.5rem;
-  margin: 4rem 1rem;
-  box-sizing: border-box;
+    box-sizing: border-box;
+    background: #0a0e27;
+    border: 1px solid #636262;
+    border-radius: 12px;
+    width: 102%;
+    max-width: none;
+    margin: 4rem 0 4rem 122px;
+    padding: 2rem 1.5rem;
+    position: relative;
+    left: -66px;
+    overflow: hidden;
+}
+@media (max-width: 1100px) {
+  .cta-banner {
+    width: 90%;
+    margin: 4rem auto;
+  }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1100px) {
   .cta-banner {
     width: 90%;
     padding: 2.5rem 2rem;
@@ -243,10 +310,28 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1024px) and (max-width: 1100px) {
+  .cta-banner {
+    width: 90%;
+    padding: 40px 20px;
+    margin: 4rem auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .cta-banner {
+    width: 95%;
+    padding: 2rem 1.5rem;
+    margin: 3rem auto;
+  }
+}
+
+@media (max-width: 480px) {
   .cta-banner {
     width: 100%;
-    padding: 40px 20px;
+    padding: 1.5rem 1rem;
+    margin: 2rem auto;
+    border-radius: 8px;
   }
 }
 
@@ -303,6 +388,13 @@
   }
 }
 
+@media (max-width: 480px) {
+  .cta-container {
+    gap: 1rem;
+    padding: 0 0.5rem;
+  }
+}
+
 /* CTA Content */
 .cta-content {
   flex: 1;
@@ -329,6 +421,13 @@
   color: #ffffff;
   margin: 0;
   letter-spacing: -0.01em;
+}
+
+@media (max-width: 480px) {
+  .cta-text {
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    line-height: 1.5;
+  }
 }
 
 /* CTA Button */
@@ -367,6 +466,13 @@
   }
 }
 
+@media (max-width: 480px) {
+  .cta-button {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+}
+
 .cta-button:hover {
   background: linear-gradient(135deg, #7c3aed 0%, #a78bfa 100%);
   transform: translateY(-2px);
@@ -401,8 +507,8 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.5; /* Slightly dull - 50% opacity */
-  filter: brightness(0.8) saturate(0.85); /* Subtle dulling */
+  opacity: 0.5;
+  filter: brightness(0.8) saturate(0.85);
   z-index: 0;
 }
 
@@ -415,6 +521,18 @@
 @media (min-width: 1024px) {
   .built-section {
     padding: 120px 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .built-section {
+    padding: 3rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .built-section {
+    padding: 2.5rem 0.5rem;
   }
 }
 
@@ -445,6 +563,18 @@
   }
 }
 
+@media (max-width: 640px) {
+  .built-container {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .built-container {
+    gap: 1.5rem;
+  }
+}
+
 /* Built Left */
 .built-left {
   flex: 1;
@@ -466,6 +596,12 @@
 @media (min-width: 768px) {
   .built-subtitle {
     justify-content: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .built-subtitle {
+    gap: 8px;
   }
 }
 
@@ -492,6 +628,13 @@
   }
 }
 
+@media (max-width: 480px) {
+  .built-left h2 {
+    font-size: clamp(1.5rem, 5vw, 1.75rem);
+    margin-bottom: 10px;
+  }
+}
+
 .built-desc {
   font-size: clamp(0.875rem, 1.5vw, 1rem);
   color: #ffffff;
@@ -506,6 +649,14 @@
     max-width: 460px;
     margin: 0 0 24px 0;
     text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .built-desc {
+    font-size: clamp(0.8rem, 1.8vw, 0.875rem);
+    margin-bottom: 16px;
+    line-height: 1.6;
   }
 }
 
@@ -526,6 +677,13 @@
   .built-btn {
     display: inline-block;
     margin: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .built-btn {
+    padding: 10px 18px;
+    font-size: 0.875rem;
   }
 }
 
@@ -559,6 +717,12 @@
   }
 }
 
+@media (max-width: 640px) {
+  .built-right {
+    height: 350px;
+  }
+}
+
 /* Card Preview Animation - FRONT LAYER */
 @keyframes floatHint {
   0% { transform: translateY(0); }
@@ -583,6 +747,19 @@
   z-index: 3;
 }
 
+@media (max-width: 640px) {
+  .card-preview {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-preview {
+    max-width: 260px;
+    border-radius: 12px;
+  }
+}
+
 /* Box Image - BACK LAYER (stays in place) - BRIGHT */
 .box-image {
   position: absolute;
@@ -597,8 +774,8 @@
   width: 587px;
   height: 312px;
   object-fit: contain;
-  opacity: 1; /* Keep box image bright */
-  filter: none; /* No dulling effect */
+  opacity: 1;
+  filter: none;
 }
 
 /* Responsive adjustments for box image */
@@ -637,7 +814,6 @@
 }
 
 @media (max-width: 900px) {
-  /* When stacked vertically */
   .built-right {
     height: 400px;
   }
@@ -778,15 +954,6 @@
     min-height: 180px;
     padding: 1rem;
   }
-
-  .cta-banner {
-    padding: 1.5rem 1rem;
-    margin: 2rem 0.5rem;
-  }
-
-  .built-section {
-    padding: 3rem 0.75rem;
-  }
 }
 
 @media (max-width: 480px) {
@@ -809,11 +976,6 @@
   .mobile {
     max-height: 180px;
   }
-
-  .cta-banner {
-    padding: 1.5rem 1rem;
-    margin: 2rem 0.5rem;
-  }
 }
 
 @media (max-width: 360px) {
@@ -835,11 +997,6 @@
 
   .mobile {
     max-height: 160px;
-  }
-
-  .cta-banner {
-    padding: 1.25rem 0.875rem;
-    margin: 1.5rem 0.25rem;
   }
 }
 
@@ -898,5 +1055,54 @@
   .boximg {
     width: 300px;
     height: 160px;
+  }
+}
+
+/* Clear bg headings */
+.clear-h2 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  position: relative;
+  z-index: 2;
+  margin: 0 0 10px 0;
+  color: #ffffff;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .clear-h2 {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .clear-h2 {
+    font-size: clamp(1.25rem, 5vw, 1.75rem);
+  }
+}
+
+.clear-p {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 400;
+  line-height: 1.5;
+  color: white;
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  text-align: center;
+  max-width: 90%;
+}
+
+@media (max-width: 768px) {
+  .clear-p {
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    max-width: 95%;
+  }
+}
+
+@media (max-width: 480px) {
+  .clear-p {
+    font-size: clamp(0.8rem, 2vw, 0.875rem);
+    line-height: 1.4;
+    max-width: 100%;
   }
 }

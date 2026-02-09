@@ -604,6 +604,14 @@
 /* Ensure proper spacing between sections */
 .about-section + .features-tags-section {
   margin-top: 0;
+ background: linear-gradient(
+  to bottom,
+  #181953 0%,
+  #05071c 30%,
+  #05071c 100%
+);
+
+
 }
 
 

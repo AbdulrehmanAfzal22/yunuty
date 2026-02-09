@@ -209,22 +209,28 @@ body {
   margin-top: 24px;
 }
 
-/* ================= GRID LAYOUTS FOR CARDS ================= */
+/* ================= FLEX LAYOUTS FOR CARDS ================= */
 .vision-row-1,
 .vision-row-2,
 .vision-row-3 {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto 60px;
   padding: 0 20px;
+  gap: 50px;
 }
 
-/* Desktop: 2 columns */
-.vision-row-1,
-.vision-row-2,
-.vision-row-3 {
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+/* Each section takes equal space in flex */
+.vision-row-1 .vision-section,
+.vision-row-2 .vision-section,
+.vision-row-3 .vision-section {
+  flex: 1 1 280px;
+  max-width: 600px;
+  min-width: 280px;
 }
 
 /* ================= RESPONSIVE BREAKPOINTS ================= */
@@ -238,6 +244,13 @@ body {
   
   .vision-card {
     max-width: 100%;
+  }
+
+  .vision-row-1 .vision-section,
+  .vision-row-2 .vision-section,
+  .vision-row-3 .vision-section {
+    flex: 1 1 100%;
+    max-width: 600px;
   }
 }
 
@@ -293,6 +306,12 @@ body {
     margin-bottom: 30px;
     padding: 0 10px;
   }
+
+  .vision-row-1 .vision-section,
+  .vision-row-2 .vision-section,
+  .vision-row-3 .vision-section {
+    flex: 1 1 100%;
+  }
 }
 
 @media (max-width: 380px) {
@@ -321,8 +340,14 @@ body {
   .vision-row-1,
   .vision-row-2,
   .vision-row-3 {
-    grid-template-columns: repeat(2, minmax(400px, 600px));
     justify-content: center;
+  }
+
+  .vision-row-1 .vision-section,
+  .vision-row-2 .vision-section,
+  .vision-row-3 .vision-section {
+    flex: 0 1 600px;
+    max-width: 600px;
   }
 }
 
@@ -361,25 +386,27 @@ body {
   position: relative;
   max-width: 700px;
   z-index: 1;
+  padding: 0 20px;
 }
 
 .hero-title-v2 {
-  font-size: 2.5rem;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
   font-weight: 400;
   line-height: 1.4;
   margin-bottom: 20px;
 }
 
 .hero-subtitle-v2 {
-  font-size: 1rem;
+  font-size: clamp(0.875rem, 2vw, 1rem);
   color: #c0c0c0;
   margin-bottom: 40px;
+  line-height: 1.6;
 }
 
 /* Button styling */
 .hero-button-v2 {
   padding: 12px 28px;
-  font-size: 1rem;
+  font-size: clamp(0.875rem, 2vw, 1rem);
   font-weight: 600;
   color: #0a0a2a;
   background: #dce4ff;
@@ -392,5 +419,49 @@ body {
 .hero-button-v2:hover {
   background: #ffffff;
   transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(220, 228, 255, 0.4);
 }
 
+.hero-button-v2:active {
+  transform: translateY(0);
+}
+
+/* Responsive Hero Section */
+@media (max-width: 768px) {
+  .hero-section-v2 {
+    min-height: 60vh;
+    padding: 40px 20px;
+  }
+
+  .hero-container-v2 {
+    max-width: 100%;
+  }
+
+  .hero-title-v2 {
+    margin-bottom: 16px;
+  }
+
+  .hero-subtitle-v2 {
+    margin-bottom: 30px;
+  }
+
+  .hero-button-v2 {
+    padding: 10px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section-v2 {
+    min-height: 50vh;
+    padding: 30px 15px;
+  }
+
+  .hero-title-v2 br {
+    display: none;
+  }
+
+  .hero-button-v2 {
+    width: 100%;
+    max-width: 280px;
+  }
+}

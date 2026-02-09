@@ -61,11 +61,8 @@ const Helpcenterhero = () => {
           and availability in real time.
         </p>
       </div>
-    </section>
 
-
-        <section className="categories">
-      <div className="card">
+        <div className="card">
         <h2>CRM</h2>
         <p>
          Manage leads, track 
@@ -74,6 +71,11 @@ const Helpcenterhero = () => {
         </p>
       </div>
 
+    </section>
+
+
+        <section className="categories">
+    
       <div className="card">
         <h2>Sales</h2>
         <p>
@@ -82,11 +84,8 @@ const Helpcenterhero = () => {
           sales performance tracking..
         </p>
       </div>
-    </section>
 
-
-        <section className="categories">
-      <div className="card">
+        <div className="card">
         <h2>
 Accounting</h2>
         <p>
@@ -96,7 +95,7 @@ Accounting</h2>
         </p>
       </div>
 
-      <div className="card">
+        <div className="card">
         <h2>WMS</h2>
         <p>
          Control inventory, orders, and
@@ -106,8 +105,12 @@ Accounting</h2>
       </div>
     </section>
 
+
         <section className="categories">
-      <div className="card">
+    
+
+    
+       <div className="card">
         <h2>
 Purchase</h2>
         <p>
@@ -116,8 +119,7 @@ Purchase</h2>
         orders, and procurement...
         </p>
       </div>
-
-      <div className="card">
+        <div className="card">
         <h2>
 Dashboards</h2>
         <p>
@@ -127,6 +129,7 @@ Dashboards</h2>
         </p>
       </div>
     </section>
+
     </div>
     <FAQSection/>
     <ProductivityHero/>

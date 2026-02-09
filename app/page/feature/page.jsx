@@ -2,7 +2,7 @@
 import React, { useState } from "react"; 
 import Image from 'next/image';
 import fourth from ".././../../public/assests/fourth.jpg";
-import Layers from ".././../../public/assests/Layers.png";
+import Layers from ".././../../public/assests/layerbg.png";
 import right from "../../../public/assests/sub-title-right.svg";
 import left from "../../../public/assests/sub-title-left.svg";
 import mobile from "../../../public/assests/mobile.png";
@@ -11,6 +11,7 @@ import ten from "../../../public/assests/ten.png";
 import layer from "../../../public/assests/Layer.png";
 import benefit from "../../../public/assests/Benfits.png";
 import box from "../../../public/assests/box.png"
+import fan from "../../../public/assests/fan.png"
 import "./feature.css";
 function Page() {
 
@@ -102,13 +103,18 @@ React.useEffect(() => {
 
       </div>
     </div>
+    <div className="layers-bg">
 <div className="layers">
-<Image
-        src={Layers}
-        alt="Feature Image"
-        // className="fifth"
-        /></div>
-
+  <div className="clearbg">
+      <h2 className="clear-h2">Seamless Client Communication</h2>
+      <p className="clear-p">YunutyConnect enhances trust and alignment with seamless updates, clear insights, and teamwork.</p>
+  </div>
+  <Image
+    src={Layers}
+    alt="Feature Image"
+  />
+</div>
+</div>
 <div className="cta">
   <section className="cta-banner">
       <div className="cta-container">
