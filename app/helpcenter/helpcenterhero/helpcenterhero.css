@@ -28,11 +28,12 @@
 }
 
 .hero p {
-  font-size: clamp(15px, 2.5vw, 18px);
-  color: #e0e2f1;
-  margin-bottom: 40px;
-  line-height: 1.5;
+    color: #e0e2f1;
+    margin-bottom: 7px;
+    font-size: clamp(15px, 2.5vw, 18px);
+    line-height: 1.5;
 }
+
 
 .subtitle-row {
   display: flex;
