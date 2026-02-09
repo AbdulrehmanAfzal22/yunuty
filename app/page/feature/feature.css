@@ -8,12 +8,13 @@
   box-sizing: border-box;
 }
 
-/* Layers Section */
+/* Layers Section - Keep Content Bright */
 .layers {
   width: 100%;
   overflow: hidden;
   margin: 0;
   padding: 0;
+  position: relative;
 }
 
 .layers img {
@@ -24,6 +25,7 @@
   display: block;
   margin: 0 auto;
   padding: 0;
+  /* Keep Layers.png bright - it's content, not background */
 }
 
 @media (max-width: 1100px) {
@@ -375,18 +377,33 @@
   transform: translateY(0);
 }
 
-/* Built Section */
+/* Built Section with Dull Background */
 .built-section {
   width: 100%;
   padding: 4rem 1rem;
   display: flex;
   justify-content: center;
+  position: relative;
+  margin: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Dull Background Image Layer - Only slightly dull */
+.built-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-image: url("../../../public/assests/background.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  margin: 0;
-  box-sizing: border-box;
+  opacity: 0.5; /* Slightly dull - 50% opacity */
+  filter: brightness(0.8) saturate(0.85); /* Subtle dulling */
+  z-index: 0;
 }
 
 @media (min-width: 768px) {
@@ -401,7 +418,7 @@
   }
 }
 
-/* Built Container */
+/* Built Container - Above Background */
 .built-container {
   max-width: 1200px;
   width: 100%;
@@ -410,6 +427,8 @@
   align-items: center;
   gap: 3rem;
   box-sizing: border-box;
+  position: relative;
+  z-index: 1;
 }
 
 @media (min-width: 768px) {
@@ -431,6 +450,8 @@
   flex: 1;
   color: white;
   width: 100%;
+  position: relative;
+  z-index: 2;
 }
 
 .built-subtitle {
@@ -462,6 +483,7 @@
   margin-bottom: 14px;
   text-align: center;
   margin-top: 0;
+  color: #ffffff;
 }
 
 @media (min-width: 768px) {
@@ -522,6 +544,7 @@
   align-items: center;
   justify-content: center;
   overflow: visible;
+  z-index: 2;
 }
 
 @media (min-width: 768px) {
@@ -560,10 +583,10 @@
   z-index: 3;
 }
 
-/* Box Image - BACK LAYER (stays in place) */
+/* Box Image - BACK LAYER (stays in place) - BRIGHT */
 .box-image {
   position: absolute;
-  bottom: -50px;
+  bottom: -130px;
   right: -20px;
   z-index: 1;
   pointer-events: none;
@@ -574,6 +597,8 @@
   width: 587px;
   height: 312px;
   object-fit: contain;
+  opacity: 1; /* Keep box image bright */
+  filter: none; /* No dulling effect */
 }
 
 /* Responsive adjustments for box image */

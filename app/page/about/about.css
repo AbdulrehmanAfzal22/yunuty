@@ -5,7 +5,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #05061c;
+  background: linear-gradient(#05071c 0% 82%, #181953 100%);;
   position: relative;
   overflow: hidden;
   padding: 100px 20px;
