@@ -36,6 +36,7 @@ function ScrollAnimatedParagraph({ text, className }) {
       words.forEach((word, index) => {
         const threshold = index / words.length - WORD_LEAD;
 
+
         if (progress > threshold - FADE_WINDOW) {
           word.classList.add("active");
         } else {
