@@ -2,7 +2,7 @@
 import React, { useState } from "react"; 
 import Image from 'next/image';
 import fourth from ".././../../public/assests/fourth.jpg";
-import fifth from ".././../../public/assests/fifth.jpg";
+import Layers from ".././../../public/assests/layerbg.png";
 import right from "../../../public/assests/sub-title-right.svg";
 import left from "../../../public/assests/sub-title-left.svg";
 import mobile from "../../../public/assests/mobile.png";
@@ -10,15 +10,21 @@ import laptop from "../../../public/assests/laptop.png";
 import ten from "../../../public/assests/ten.png";
 import layer from "../../../public/assests/Layer.png";
 import benefit from "../../../public/assests/Benfits.png";
+import box from "../../../public/assests/box.png"
+import fan from "../../../public/assests/fan.png"
 import "./feature.css";
 function Page() {
 
-     const images = ["/assests/f1.png", "/assests/f2.png", "/assests/f3.png"];
-  const [index, setIndex] = useState(0);
+const images = ["/assests/f1.png", "/assests/f2.png", "/assests/f3.png"];
+const [index, setIndex] = useState(0);
 
-  const nextImage = () => {
+React.useEffect(() => {
+  const interval = setInterval(() => {
     setIndex((prev) => (prev + 1) % images.length);
-  };
+  }, 3000); 
+
+  return () => clearInterval(interval);
+}, []);
   return (
     <>
     
@@ -30,7 +36,7 @@ function Page() {
           {/* Icon */}
           <div className="icon-wrapper">
             <div className="icon-circle">
-              <svg className="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="icon11" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
               </svg>
             </div>
@@ -64,7 +70,7 @@ function Page() {
           {/* Icon */}
           <div className="icon-wrapper">
             <div className="icon-circle">
-              <svg className="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="icon11" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
               </svg>
             </div>
@@ -97,13 +103,18 @@ function Page() {
 
       </div>
     </div>
-
-<Image
-        src={fifth}
-        alt="Feature Image"
-        className="fifth"
-        />
-
+    <div className="layers-bg">
+<div className="layers">
+  <div className="clearbg">
+      <h2 className="clear-h2">Seamless Client Communication</h2>
+      <p className="clear-p">YunutyConnect enhances trust and alignment with seamless updates, clear insights, and teamwork.</p>
+  </div>
+  <Image
+    src={Layers}
+    alt="Feature Image"
+  />
+</div>
+</div>
 <div className="cta">
   <section className="cta-banner">
       <div className="cta-container">
@@ -156,18 +167,19 @@ function Page() {
       <button className="built-btn">Explore More →</button>
     </div>
 
-    <div className="built-right">
-        {/* <h3>Realtime-Tracking Data</h3> */}
-        {/* <p>Track your content performance and leverage data-driven insights.</p> */}
-        
-     <div
-      className="card-preview"
-      onClick={nextImage}
-      style={{
-        backgroundImage: `url(${images[index]})`,
-        cursor: "pointer",
-      }}
-    > </div>   </div>
+  <div className="built-right">
+  <div
+    className="card-preview"
+    style={{
+      backgroundImage: `url(${images[index]})`,
+    }}
+  ></div>
+
+  <div className="box-image">
+    <Image src={box} className="boximg"/>
+  </div>
+</div>
+
   </div>
 </div>
 

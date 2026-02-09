@@ -92,12 +92,15 @@
     line-height: 70px;
     padding: 10px 0px 0px 0px;
 }
-
-.hero-desc {
+.feature-text {
+    margin-top: -1px ;
+    color: #818cf8 !important;
+}
+.hero-desc1 {
   font-family: "Poppins", sans-serif;
   font-size: clamp(0.9rem, 2.5vw, 1.25rem);
   line-height: 1.6;
-  color: #e0e7ff;
+  color: #ffffff;
   max-width: 720px;
   margin: 0 auto 2.5rem;
   opacity: 0.95;
@@ -269,7 +272,7 @@
     width: 100%;
   }
   
-  .hero-desc {
+  .hero-desc1 {
     font-size: clamp(0.9rem, 2vw, 1.1rem);
   }
   
@@ -304,7 +307,7 @@
     padding: 0 8px;
   }
 
-  .hero-desc {
+  .hero-desc1 {
     margin-bottom: 2rem;
     padding: 0 8px;
   }
@@ -349,7 +352,7 @@
     margin-bottom: 1rem;
   }
 
-  .hero-desc {
+  .hero-desc1 {
     margin-bottom: 1.8rem;
   }
   
@@ -390,7 +393,7 @@
     padding: 0 5px;
   }
 
-  .hero-desc {
+  .hero-desc1 {
     padding: 0 5px;
   }
 
@@ -444,7 +447,7 @@
     margin-bottom: 0.8rem;
   }
 
-  .hero-desc {
+  .hero-desc1 {
     margin-bottom: 1.5rem;
   }
 

@@ -134,16 +134,16 @@
 }
 
 .secimg p {
-  font-size: clamp(13px, 2.5vw, 15px);
+  font-size: clamp(13px, 2.5vw, 17px);
   line-height: 1.47;
   color: rgb(149, 158, 254);
   white-space: nowrap;
 }
 
 .secimg img {
-  width: auto;
-  height: auto;
-  max-width: 40px;
+width: auto;
+    max-width: 107px;
+    height: auto;
 }
 
 /* Tablet Styles */

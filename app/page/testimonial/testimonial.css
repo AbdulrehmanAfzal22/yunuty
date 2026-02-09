@@ -371,9 +371,9 @@ h1 {
 
 /* Mobile */
 @media (max-width: 480px) {
-  .testimonial-section {
+  /* .testimonial-section {
     padding: 20px 0;
-  }
+  } */
 
   .container {
     padding: 40px 10px;

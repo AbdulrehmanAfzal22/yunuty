@@ -10,6 +10,7 @@
   padding: 60px 20px;
   overflow: hidden;
   font-family: poppins,sans-serif;
+  margin-top: 40px;
 }
 
 /* Subtitle */
@@ -28,8 +29,8 @@
 .section-label {
      text-align: center;
     position: absolute;
-    top: -3px;
-    right: 97px;
+    top: 0px;
+    right: 94px;
     color: #959efe;
 }
 

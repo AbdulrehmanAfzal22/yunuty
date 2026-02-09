@@ -35,7 +35,7 @@ const PerformanceDashboard = () => {
             <div className="rating-section">
               <div className="profile-images">
                 <Image src={evan} alt="Profile 1" className="profile-img" />
-                <Image src={ariyna} alt="Profile 2" className="profile-img" />
+                <Image src={girl} alt="Profile 2" className="profile-img" />
               </div>
               <div className="rating-info">
                 <div className="stars">

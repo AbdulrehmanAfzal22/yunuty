@@ -10,6 +10,7 @@ import "./navbar.css";
 export default function Navbar() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isPagesOpen, setIsPagesOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -17,7 +18,11 @@ export default function Navbar() {
 
   const closeMenu = () => {
     setIsMenuOpen(false);
+    setIsPagesOpen(false);
   };
+
+  const isHomeActive =
+    pathname === "/" || pathname === "/page/mainhero";
 
   return (
     <nav className="navbar">
@@ -48,44 +53,66 @@ export default function Navbar() {
           <li>
             <Link
               href="/page/mainhero"
-              className={pathname === "/" ? "active" : ""}
+              className={isHomeActive ? "active" : ""}
               onClick={closeMenu}
             >
               Home
             </Link>
           </li>
+
           <li>
             <Link
               href="/about/mainabout"
-              className={pathname === "/about" ? "active" : ""}
+              className={pathname === "/about/mainabout" ? "active" : ""}
               onClick={closeMenu}
             >
               About
             </Link>
           </li>
+
           <li>
             <Link
               href="/helpcenter/helpcenterhero"
-              className={pathname === "/help" ? "active" : ""}
+              className={
+                pathname === "/helpcenter/helpcenterhero" ? "active" : ""
+              }
               onClick={closeMenu}
             >
               Help Center
             </Link>
           </li>
-          {/* <li>
+
+          <li>
             <Link
-              href="/pricing"
-              className={pathname === "/pricing" ? "active" : ""}
+              href="/privacy-policy/privacybox"
+              className={
+                pathname === "/privacy-policy/privacybox" ? "active" : ""
+              }
               onClick={closeMenu}
             >
-              Pricing
-            </Link>
-          </li> */}
-          <li>
-            <Link href="/privacy-policy/privacybox" onClick={closeMenu}>
               Privacy Policy
             </Link>
           </li>
+
+          {isPagesOpen && (
+            <>
+              <li>
+                <Link href="/pricing" onClick={closeMenu}>
+                  Pricing
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" onClick={closeMenu}>
+                  Contact
+                </Link>
+              </li>
+              <li>
+                <Link href="/faq" onClick={closeMenu}>
+                  FAQ
+                </Link>
+              </li>
+            </>
+          )}
 
           {/* Mobile Get Started Button */}
           <li className="mobile-btn-wrapper">
