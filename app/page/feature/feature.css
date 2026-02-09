@@ -33,21 +33,21 @@ body {
   margin: 0;
   padding: 0;
 }
-
 .layers {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background: #05061c;
-  align-items: center;
-  width: 86%;
-  max-width: 1280px;
-  border: 1px solid #33415580;
-  margin: 0 auto;
-  padding: 0;
-  position: relative;
-  overflow: hidden;
-  border-radius: 15px;
+    border: 1px solid #33415580;
+    border-image: initial;
+    background: #05061c;
+    border-radius: 15px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    position: relative;
+    overflow: hidden;
 }
 
 .clearbg {
@@ -66,13 +66,13 @@ body {
 
 
 .layers img {
-  object-fit: cover;
-  width: 103%;
-  height: auto;
-  max-height: 836px;
-  margin: 0 auto;
-  padding: 0;
-  display: block;
+    object-fit: cover;
+    width: 93%;
+    height: 759px;
+    max-height: 836px;
+    margin: 0 auto;
+    padding: 0;
+    display: block;
 }
 
 /* ===================================
@@ -278,16 +278,16 @@ body {
 }
 
 .cta-banner {
-  box-sizing: border-box;
-  background: #0a0e27;
-  border: 1px solid #33415580;
-  border-radius: 12px;
-  width: 86%;
-  max-width: 1280px;
-  margin: 4rem auto;
-  padding: 2rem 1.5rem;
-  position: relative;
-  overflow: hidden;
+    box-sizing: border-box;
+    background: #0a0e27;
+    border: 1px solid #33415580;
+    border-radius: 12px;
+    width: 96%;
+    max-width: 1280px;
+    margin: 4rem auto;
+    padding: 2rem 1.5rem;
+    position: relative;
+    overflow: hidden;
 }
 
 /* Grid Background */
