@@ -49,7 +49,7 @@ React.useEffect(() => {
 
           {/* Description */}
           <p className="description">
-            With YunuityConnect, clients gain real-time insights into inventory and operations across the entire supply chain.
+            With YunutyConnect, clients gain real-time insights into inventory and operations across the entire supply chain.
           </p>
 
           {/* Image Placeholder */}

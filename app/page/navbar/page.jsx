@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import logo from "../../../public/assests/logo-bg.png";
+import logo from "../../../public/assests/logo.png";
 import "./navbar.css";
 
 export default function Navbar() {
@@ -28,13 +28,13 @@ export default function Navbar() {
     <nav className="navbar">
       <div className="navbar-container">
         <div className="logo">
-          <Image
-            src={logo}
-            alt="Logo"
-            width={79}
-            height={17}
-            className="logo-image"
-          />
+         <Image
+  src={logo}
+  alt="Logo"
+  width={250}
+  height={100}
+  className="logo-image"
+/>
         </div>
 
         {/* Hamburger Menu */}

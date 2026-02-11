@@ -1,23 +1,32 @@
-/* Navbar container */
+/* ===== REMOVE BODY PADDING - NOT NEEDED FOR NON-STICKY ===== */
+body {
+  margin: 0;
+  padding-top: 0; /* Remove padding since navbar is not fixed */
+}
+
+/* ===== NAVBAR - RELATIVE POSITION (SCROLLS WITH PAGE) ===== */
 .navbar {
-  width: 100%;
-  padding: 20px 5vw;
-  background: rgba(6, 6, 32, 0.85);
-  position: fixed;
+  position: relative; /* Changed from fixed to relative */
   top: 0;
   left: 0;
-  z-index: 1000;
+  width: 100%;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  padding: 0 5vw;
+  background: rgba(6, 6, 32, 0.95);
   backdrop-filter: blur(8px);
+  z-index: 999;
+  box-sizing: border-box;
 }
 
 .navbar-container {
+  width: 100%;
   max-width: 1400px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 40px;
-  position: relative;
 }
 
 /* Logo */
@@ -26,11 +35,10 @@
 }
 
 .logo-image {
-    object-fit: contain;
-    width: 122px;
-    height: 57px;
-    display: block;
+  object-fit: contain;
+  height: auto;
 }
+
 /* Hamburger Menu */
 .hamburger {
   display: none;
@@ -149,6 +157,7 @@
 /* Tablet Styles */
 @media (max-width: 992px) {
   .navbar {
+    height: 80px;
     padding: 16px 5vw;
   }
 
@@ -172,6 +181,10 @@
 
 /* Mobile Styles */
 @media (max-width: 768px) {
+  .navbar {
+    height: 70px;
+  }
+
   .navbar-container {
     gap: 20px;
   }
@@ -202,8 +215,8 @@
     width: 100%;
   }
 
-  /* Mobile menu */
-   .nav-links {
+  /* Mobile menu - STILL FIXED for menu overlay */
+  .nav-links {
     position: fixed;
     top: 0;
     right: -100%;
@@ -218,11 +231,9 @@
     transition: right 0.4s ease;
     box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
     overflow-y: auto;
-
-    z-index: 1001;   /* ✅ ADD THIS */
+    z-index: 10000;
   }
 
- 
   .nav-links.active {
     right: 0;
   }
@@ -253,22 +264,12 @@
   .nav-links li a.active::after {
     width: calc(100% - 24px);
   }
-
- 
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
 }
 
 /* Small Mobile */
 @media (max-width: 480px) {
   .navbar {
+    height: 65px;
     padding: 14px 4vw;
   }
 
@@ -294,6 +295,10 @@
 
 /* Extra Small Mobile */
 @media (max-width: 360px) {
+  .navbar {
+    height: 60px;
+  }
+
   .logo-image {
     height: 40px;
   }

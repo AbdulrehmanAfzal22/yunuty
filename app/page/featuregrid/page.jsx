@@ -7,7 +7,7 @@ import dashboard from '../../../public/assests/Dashboard.png';
 import twelve from '../../../public/assests/twelve.jpg';
 import write from '../../../public/assests/write.png';
 import effort from '../../../public/assests/effort.png';
-import apple from '../../../public/assests/Apple.svg'
+import apple from '../../../public/assests/Apple1.svg'
 import aws from '../../../public/assests/AWS.svg'
 import android from '../../../public/assests/Android.svg'
 import github from '../../../public/assests/Github.svg'
@@ -143,7 +143,7 @@ const FeatureGrid = () => {
             <div className="card-header">
               <h3 className="card-title">Actionable Insights</h3>
               <p className="card-description">
-                Turn real-time data into clear actions that drive smarter decisions. Yunuity transforms operational metrics into meaningful insights, helping businesses identify trends, improve performance, and act with precision.
+                Turn real-time data into clear actions that drive smarter decisions. Yunuty transforms operational metrics into meaningful insights, helping businesses identify trends, improve performance, and act with precision.
               </p>
             </div>
             

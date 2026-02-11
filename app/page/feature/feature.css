@@ -446,6 +446,7 @@ body {
   opacity: 0.5;
   filter: brightness(0.8) saturate(0.85);
   z-index: 0;
+  
 }
 
 @media (min-width: 768px) {
@@ -1062,3 +1063,4 @@ body {
   outline: 2px solid #6366f1;
   outline-offset: 2px;
 }
+

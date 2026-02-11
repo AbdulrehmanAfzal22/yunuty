@@ -17,7 +17,7 @@ export default function TestimonialCards() {
   const testimonials = [
     {
       content:
-        "YuntuConnect has streamlined our order-to-delivery process, keeping sales and operations perfectly aligned. It helps us move deals faster, reduce team friction, improve the customer experience, and close more efficiently.",
+        "YunutyConnect has streamlined our order-to-delivery process, keeping sales and operations perfectly aligned. It helps us move deals faster, reduce team friction, improve the customer experience, and close more efficiently.",
       author: "Jennifer Reed",
       title: "Operations Manager",
       initial: "J",
@@ -25,7 +25,7 @@ export default function TestimonialCards() {
     },
     {
       content:
-        "YuntuConnect gave us the structure and scalability our branch operations desperately needed. The system supports our growth, improves cross-departmental collaboration, and delivers clear operational insights. It's not just software.",
+        "YunutyConnect gave us the structure and scalability our branch operations desperately needed. The system supports our growth, improves cross-departmental collaboration, and delivers clear operational insights. It's not just software.",
       author: "Marcus Chen",
       title: "Marketing Director",
       initial: "M",
@@ -33,7 +33,7 @@ export default function TestimonialCards() {
     },
     {
       content:
-        "YuntuConnect has streamlined our entire order-to-delivery workflow, keeping sales and operations perfectly aligned. We can now move deals forward faster, reduce friction between teams, deliver a better customer experience, and close more deals efficiently.",
+        "YunutyConnect has streamlined our entire order-to-delivery workflow, keeping sales and operations perfectly aligned. We can now move deals forward faster, reduce friction between teams, deliver a better customer experience, and close more deals efficiently.",
       author: "Sarah Johnson",
       title: "CEO",
       initial: "S",

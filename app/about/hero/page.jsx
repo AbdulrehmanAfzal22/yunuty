@@ -72,7 +72,7 @@ function ScrollAnimatedParagraph({ text, className }) {
 export default function Hero1() {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
 
       <section className="hero-about-section">
         {/* Subtitle */}

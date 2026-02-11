@@ -1,7 +1,7 @@
 /* About Section Styles */
 
 .about-section {
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -93,20 +93,18 @@
 }
 
 .about {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 30px;
-  flex-wrap: wrap;
-  gap: 10px;
+    flex-flow: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    /* margin-bottom: -50px; */
+    display: flex;
 }
 
 .about p {
-  color: #818cf8;
-  font-size: clamp(14px, 2vw, 16px);
-  font-weight: 500;
   margin: 0;
+      color: #818cf8;
+    font-weight: 500;
 }
 
 .about img {

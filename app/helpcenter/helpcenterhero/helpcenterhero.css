@@ -1,7 +1,7 @@
 /* HERO SECTION */
 .hero {
   width: 100%;
-  min-height: 100vh;
+  min-height: 53vh;
   background: radial-gradient(circle at top center, #0f1a4f, #020617 70%);
   display: flex;
   justify-content: center;
