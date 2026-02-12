@@ -135,7 +135,7 @@ const AboutSection = () => {
           </div>
 
           <div className="tags-row row-4">
-            <div className="feature-tag">
+            <div className="feature-tag right-capsule">
               <span className="tag-icon purple">🔶</span>
               <span className="tag-text">Mobile Accessibility</span>
             </div>
@@ -150,10 +150,10 @@ const AboutSection = () => {
           </div>
 
           <div className="tags-row row-5">
-            <div className="feature-tag">
+            {/* <div className="feature-tag">
               <span className="tag-icon green">🔶</span>
               <span className="tag-text">Real-Time Analytics & Reporting</span>
-            </div>
+            </div> */}
             <div className="feature-tag">
               <span className="tag-icon green">🔶</span>
               <span className="tag-text">Online Payment</span>
