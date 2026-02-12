@@ -47,12 +47,12 @@ const FAQSection = () => {
         
         <section className="faq-hero">
               <div className="secimg">
-<Image src={left}/>
-&nbsp;&nbsp;&nbsp;
-<p>FAQ</p>
-&nbsp;&nbsp;&nbsp;
-<Image src={right}/>
-        </div>
+            <Image src={left} alt="Decorative left accent" />
+            &nbsp;&nbsp;&nbsp;
+            <p>FAQ</p>
+            &nbsp;&nbsp;&nbsp;
+            <Image src={right} alt="Decorative right accent" />
+                </div>
         
       <div className="faq-hero-content">
         <h3>

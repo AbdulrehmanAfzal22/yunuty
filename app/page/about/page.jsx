@@ -160,8 +160,8 @@ const AboutSection = () => {
             </div>
           </div>
             <div className="line">
-      <Image src={line}/>
-      </div>
+          <Image src={line} alt="Decorative separator line" />
+          </div>
         </div>
       </section>
     
