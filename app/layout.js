@@ -19,6 +19,53 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(() => {
+              try {
+                const explicitAttrs = ['data-new-gr-c-s-check-loaded', 'data-gr-ext-installed'];
+                function cleanNode(node) {
+                  if (!node || !node.removeAttribute) return;
+                  explicitAttrs.forEach(a => { try { node.removeAttribute(a); } catch(e){} });
+                  Array.from(node.attributes || []).forEach(attr => {
+                    if (attr && attr.name && attr.name.startsWith('data-gr')) {
+                      try { node.removeAttribute(attr.name); } catch(e){}
+                    }
+                  });
+                }
+
+                // immediate clean attempts
+                cleanNode(document.documentElement);
+                cleanNode(document.body);
+
+                // observe attribute mutations for a short window to remove attributes
+                const observer = new MutationObserver(mutations => {
+                  for (const m of mutations) {
+                    const target = m.target;
+                    if (m.type === 'attributes') {
+                      const name = m.attributeName || '';
+                      if (name.startsWith('data-gr') || explicitAttrs.includes(name)) {
+                        try { target.removeAttribute(name); } catch(e){}
+                      }
+                    }
+                  }
+                  cleanNode(document.body);
+                  cleanNode(document.documentElement);
+                });
+
+                observer.observe(document.documentElement, { attributes: true, subtree: true });
+                if (document.body) observer.observe(document.body, { attributes: true, subtree: true });
+
+                // stop observing after 2 seconds
+                setTimeout(() => { try { observer.disconnect(); } catch(e){} }, 2000);
+              } catch (e) {
+                // ignore any errors
+              }
+            })();`,
+          }}
+        />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {children}
       </body>

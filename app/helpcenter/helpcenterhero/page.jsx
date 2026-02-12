@@ -15,13 +15,13 @@ const Helpcenterhero = () => {
     <section className="hero">
          
       <div className="hero-content">
-             <div className="secimg1">
-        <Image src={left}/>
-        &nbsp;&nbsp;&nbsp;
-        <p>Help</p>
-        &nbsp;&nbsp;&nbsp;
-        <Image src={right}/>
-                </div>
+            <div className="secimg1">
+            <Image src={left} alt="Decorative left accent" />
+            &nbsp;&nbsp;&nbsp;
+            <p>Help</p>
+            &nbsp;&nbsp;&nbsp;
+            <Image src={right} alt="Decorative right accent" />
+              </div>
         <h1>
           All-in-One Intellectual <br />
           Resource Hub

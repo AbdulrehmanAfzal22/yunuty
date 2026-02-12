@@ -7,9 +7,7 @@ import "./hero.css";
 import bg from "../../../public/assests/bgcolor.jpeg";
 import right from "../../../public/assests/sub-title-right.svg";
 import left from "../../../public/assests/sub-title-left.svg";
-import image from "../../../public/assests/hero-img.png";
-import future from "../../../public/assests/Future.png";
-import hero from "../../../public/assests/hero.png"
+import hero from "../../../public/assests/hero.png";
 export default function Hero() {
   const [email, setEmail] = useState("");
 
@@ -39,12 +37,12 @@ export default function Hero() {
         <div className="hero-content">
           {/* Subtitle Section */}
           <div className="hero-subtitle">
-            <Image src={left} alt="" width={79} height={17} className="no-shrink" />
+            <Image src={left} alt="Decorative left accent" width={79} height={17} className="no-shrink" />
             {/* <div className="sub-text">
               <Image src={future} className="left-svg" alt="Star Icon" />
             </div> */}
             <p className="feature-text">Future-Ready ERP Solutions</p>
-            <Image src={right} alt="" width={79} height={17} className="no-shrink" />
+            <Image src={right} alt="Decorative right accent" width={79} height={17} className="no-shrink" />
           </div>
 
           {/* Hero Title */}
@@ -87,15 +85,18 @@ export default function Hero() {
             />
           </div> */}
 
-         <div className="dark-img">
-  <Image
-    src={hero}
-    alt="Hero Image"
-    width={1000}
-    height={600}
-    className="dark-image"
-  />
-</div>
+        <div className="dark-img">
+          <Image
+            src={hero}
+            alt="Illustration of supply chain digital transformation"
+            width={1000}
+            height={600}
+            className="dark-image"
+            priority
+            sizes="(max-width: 768px) 100vw, 1000px"
+            style={{ width: '100%', height: 'auto', borderRadius: '20px' }}
+          />
+        </div>
         </div>
       </div>
     </section>

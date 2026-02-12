@@ -141,18 +141,18 @@ React.useEffect(() => {
     <div className="built-left">
       <div className="built-subtitle">
           <Image
-                     src={left}
-                     alt=""
-                     width={79}
-                     height={17}
-                     className="no-shrink"
-                   />
+                         src={left}
+                         alt="Decorative left accent"
+                         width={79}
+                         height={17}
+                         className="no-shrink"
+                       />
 &nbsp;&nbsp;&nbsp;
         <p>Built for you</p>
         &nbsp;&nbsp;&nbsp;
              <Image
                      src={right}
-                     alt=""
+                     alt="Decorative right accent"
                      width={79}
                      height={17}
                      className="no-shrink"
@@ -176,7 +176,7 @@ React.useEffect(() => {
   ></div>
 
   <div className="box-image">
-    <Image src={box} className="boximg"/>
+    <Image src={box} alt="Illustrative box graphic" className="boximg"/>
   </div>
 </div>
 
