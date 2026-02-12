@@ -6,7 +6,7 @@ import Image from "next/image";
 import acess from "../../../public/assests/acess.jpg";
 import right from "../../../public/assests/sub-title-right.svg";
 import left from "../../../public/assests/sub-title-left.svg";
-
+import line from "../../../public/assests/line.png"
 const AboutSection = () => {
   const sectionRef = useRef(null);
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -159,8 +159,12 @@ const AboutSection = () => {
               <span className="tag-text">Online Payment</span>
             </div>
           </div>
+            <div className="line">
+      <Image src={line}/>
+      </div>
         </div>
       </section>
+    
     </>
   );
 };

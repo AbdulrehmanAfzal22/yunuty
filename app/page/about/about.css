@@ -1,5 +1,13 @@
 /* About Section Styles */
-
+.line{
+  display: flex;
+  justify-content: center;
+  object-fit: contain;
+  
+  /* position: absolute; */
+  /* width: 400px;
+  height: 400px; */
+}
 .about-section {
   height: 100vh;
   display: flex;
@@ -377,6 +385,11 @@
   animation-delay: 0.4s;
 }
 
+.capsule1{
+  display: flex;
+  justify-content: center;
+  
+}
 /* Responsive Design */
 @media (max-width: 1200px) {
   .about-heading {

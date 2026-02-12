@@ -85,9 +85,9 @@ const PerformanceDashboard = () => {
           <p>Your preferred ERP for stone and marble companies in South Florida</p>
         </div>
       </div>
-      <div className="group-image">
+      {/* <div className="group-image">
         <Image src={group} alt="Group" />
-      </div>
+      </div> */}
     </div>
   );
 };
