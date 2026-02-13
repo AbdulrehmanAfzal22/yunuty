@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { Grid2x2 , Zap, Fan, DiamondPlus,Users} from "lucide-react";
-import DiscoverSection from "@/app/about/discover/page";
+// import DiscoverSection from "@/app/about/discover/page";
 import Footer from "@/app/page/footer/page";
 import Privacy from "../privacyhero/page";
 import "./privacybox.css";

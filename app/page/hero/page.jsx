@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import "./hero.css";
 
-import bg from "../../../public/assests/bgcolor.jpeg";
+import bg from "../../../public/assests/bg-4.jpeg";
 import right from "../../../public/assests/sub-title-right.svg";
 import left from "../../../public/assests/sub-title-left.svg";
 import hero from "../../../public/assests/hero.png";
@@ -19,46 +19,39 @@ export default function Hero() {
 
   return (
     <section className="hero">
-      {/* Hero Background */}
       <div className="hero-bg">
-        <Image
-          src={bg}
-          alt="ERP Dashboard"
-          fill
-          className="hero-bg-image"
-          priority
-          quality={85}
-          sizes="100vw"
-        />
+<Image
+  src={bg}
+  alt="ERP Dashboard"
+  fill
+  priority
+  sizes="100vw"
+  quality={100}
+  unoptimized     // ⚠️ Use only for hero backgrounds
+  className="hero-bg-image"
+/>
         <div className="hero-overlay" />
       </div>
 
-      <div className="hero-container">
+       <div className="hero-container">
         <div className="hero-content">
-          {/* Subtitle Section */}
           <div className="hero-subtitle">
             <Image src={left} alt="Decorative left accent" width={79} height={17} className="no-shrink" />
-            {/* <div className="sub-text">
-              <Image src={future} className="left-svg" alt="Star Icon" />
-            </div> */}
+            
             <p className="feature-text">Future-Ready ERP Solutions</p>
             <Image src={right} alt="Decorative right accent" width={79} height={17} className="no-shrink" />
           </div>
-
-          {/* Hero Title */}
-          <h1 className="hero-title">
+<h1 className="heading-hero">
             The Future of Supply Chain <br />
             Digital Transformation
           </h1>
 
-          {/* Hero Description */}
           <p className="hero-desc">
             Refining an organization&apos;s comprehensive strategy <br />for its entire supply chain
             and operational processes to promote <br /> growth, streamline operations, and ensure
             protection with a <br /> cloud-based ERP solution.
           </p>
 
-          {/* Email Form */}
           <div className="email-wrapper mt-10">
             <form className="email-form" onSubmit={handleSubmit}>
               <input
@@ -75,15 +68,7 @@ export default function Hero() {
             </form>
           </div>
 
-          {/* Hero Image */}
-          {/* <div className="hero-image">
-            <img
-              decoding="async"
-              src="https://levprime.digitalpreps.com/wp-content/uploads/2025/10/Untitled-design-16.png"
-              alt=""
-              className="hero-img"
-            />
-          </div> */}
+        
 
         <div className="dark-img">
           <Image
@@ -98,7 +83,7 @@ export default function Hero() {
           />
         </div>
         </div>
-      </div>
+        </div>
     </section>
   );
 }

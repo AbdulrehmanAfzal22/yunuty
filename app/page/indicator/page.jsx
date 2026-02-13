@@ -10,6 +10,7 @@ import group from '../../../public/assests/group.png';
 import evan from '../../../public/assests/evan.png'
 import ariyna from '../../../public/assests/ariyna.png'
 import girl from '../../../public/assests/girl.png'
+import man from '../../../public/assests/man.png'
 const PerformanceDashboard = () => {
   return (
     <div className="performance-dashboard">
@@ -29,13 +30,14 @@ const PerformanceDashboard = () => {
             <p className="main-heading">
               We are proud to have<br />
               strong<br />
-              <span className="highlight">Performance indicators.</span>
+             Performance indicators.
             </p>
-            
+            <div className="line"></div>
             <div className="rating-section">
               <div className="profile-images">
                 <Image src={evan} alt="Profile 1" className="profile-img" />
                 <Image src={girl} alt="Profile 2" className="profile-img" />
+               <Image src={man} alt="Profile 3v " className="profile-img" />
               </div>
               <div className="rating-info">
                 <div className="stars">
@@ -82,7 +84,7 @@ const PerformanceDashboard = () => {
         </div>
         
         <div className="bottom-text">
-          <p>Your preferred ERP for stone and marble companies in South Florida</p>
+          {/* <p>Your preferred ERP for stone and marble companies in South Florida</p> */}
         </div>
       </div>
       {/* <div className="group-image">

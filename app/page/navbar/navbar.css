@@ -63,6 +63,7 @@ body {
 .hamburger.active span:nth-child(1) {
   transform: rotate(45deg) translate(8px, 8px);
   background: #8C5FFF;
+  
 }
 
 .hamburger.active span:nth-child(2) {
@@ -85,17 +86,21 @@ body {
 }
 
 .nav-links li a {
-  color: #cfd4ff;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: 500;
-  position: relative;
-  padding: 8px 4px;
-  transition: color 0.3s ease;
+    color: #7e83a8;
+    padding: 8px 4px;
+    font-size: 13px;
+    /* display: flex; */
+    /* gap: 45px; */
+    font-weight: 500;
+    text-decoration: none;
+    transition: color .3s;
+    position: relative;
 }
 
 .nav-links li a:hover {
-  color: #8C5FFF;
+      line-height: 92px;
+    position: relative;
+    font-weight: 500;
 }
 
 /* Gradient underline */
@@ -114,8 +119,8 @@ body {
 .nav-links li a:hover::after,
 .nav-links li a.active::after {
   width: 100%;
+  color: wheat;
 }
-
 /* Get started button */
 .get-started-btn {
   padding: 12px 28px;
@@ -323,3 +328,10 @@ body {
 body:has(.nav-links.active) {
   overflow: hidden;
 }
+
+
+
+.nav-links li a.active {
+  color: white;
+}
+

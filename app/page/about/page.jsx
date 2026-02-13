@@ -6,7 +6,7 @@ import Image from "next/image";
 import acess from "../../../public/assests/acess.jpg";
 import right from "../../../public/assests/sub-title-right.svg";
 import left from "../../../public/assests/sub-title-left.svg";
-import line from "../../../public/assests/line.png"
+import line from "../../../public/assests/gridarrow.png"
 const AboutSection = () => {
   const sectionRef = useRef(null);
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -98,33 +98,23 @@ const AboutSection = () => {
       <section className="features-tags-section">
         <div className="features-tags-container">
           <div className="tags-row row-1">
-            <div className="feature-tag">
+             <div className="feature-tag">
               <span className="tag-icon orange">🔶</span>
-              <span className="tag-text">Inventory Visibility</span>
+              <span className="tag-text">Live Quickbooks Connection</span>
             </div>
             <div className="feature-tag">
               <span className="tag-icon green">🔶</span>
               <span className="tag-text">Customer Portal Access</span>
             </div>
-            <div className="feature-tag">
-              <span className="tag-icon purple">🔶</span>
-              <span className="tag-text">Interconnectivity</span>
+          <div className="feature-tag">
+              <span className="tag-icon green">🔶</span>
+              <span className="tag-text">Integrated Financial Management</span>
             </div>
           </div>
 
           <div className="tags-row row-2">
-            <div className="feature-tag">
-              <span className="tag-icon green">🔶</span>
-              <span className="tag-text">Integrated Financial Management</span>
-            </div>
-            <div className="feature-tag">
-              <span className="tag-icon blue">🔶</span>
-              <span className="tag-text">Process Automation</span>
-            </div>
-          </div>
-
-          <div className="tags-row row-3">
-            <div className="feature-tag">
+        
+               <div className="feature-tag">
               <span className="tag-icon red">🔶</span>
               <span className="tag-text">Real-Time Analytics & Reporting</span>
             </div>
@@ -134,18 +124,27 @@ const AboutSection = () => {
             </div>
           </div>
 
+          <div className="tags-row row-3">
+         
+          </div>
+
           <div className="tags-row row-4">
-            <div className="feature-tag right-capsule">
+
+      <div className="feature-tag">
               <span className="tag-icon purple">🔶</span>
-              <span className="tag-text">Mobile Accessibility</span>
+              <span className="tag-text">Interconnectivity</span>
             </div>
+            
+            <div className="feature-tag">
+              <span className="tag-icon blue">🔶</span>
+              <span className="tag-text">Process Automation</span>
+            </div>
+
+           
+           
             <div className="feature-tag">
               <span className="tag-icon orange">🔶</span>
-              <span className="tag-text">Live Quickbooks Connection</span>
-            </div>
-            <div className="feature-tag">
-              <span className="tag-icon purple">🔶</span>
-              <span className="tag-text">Process Automation</span>
+              <span className="tag-text">Inventory Visibility</span>
             </div>
           </div>
 
@@ -158,9 +157,14 @@ const AboutSection = () => {
               <span className="tag-icon green">🔶</span>
               <span className="tag-text">Online Payment</span>
             </div>
+             <div className="feature-tag">
+              <span className="tag-icon purple">🔶</span>
+              <span className="tag-text">Process Automation</span>
+            </div>
           </div>
-            <div className="line">
+            <div className="line1">
           <Image src={line} alt="Decorative separator line" />
+          
           </div>
         </div>
       </section>

@@ -13,11 +13,14 @@ function Mainhero() {
 <Navbar />
       <Hero />
       <AboutSection />
+       
 <Feature/>
-       <FeatureGrid/>
-       <Indicator/>
-       <TestimonialCards/>
-   <Footer/>
+<FeatureGrid/>
+ <Indicator/>
+       <TestimonialCards/> 
+<Footer/>
+
+
 </>
   )
 }

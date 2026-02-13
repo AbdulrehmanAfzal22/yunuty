@@ -30,28 +30,37 @@ React.useEffect(() => {
     
     <div className="container">
       <div className="grid">
-        
-        {/* Box 1: High-Level Workflow Visibility */}
+        {/* <div className="client-section">
+        <h1 className="heading">Our Clients Love Us</h1>
+        <p className="client-para">Free Up Your Time to Focus on What Matters Most
+
+</p >
+</div> */}
         <div className="feature-box">
-          {/* Icon */}
-          <div className="icon-wrapper">
+          
+          
+          <div className="icon-wrapper flex-row">
             <div className="icon-circle">
               <svg className="icon11" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
               </svg>
             </div>
-          </div>
-
-          {/* Title */}
-          <h3 className="title">
+            <div className="row">
+            <h3 className="title">
             High-Level Workflow Visibility
           </h3>
-
-          {/* Description */}
-          <p className="description">
+            <p className="description">
             With YunutyConnect, clients gain real-time insights into inventory and operations across the entire supply chain.
           </p>
 
+          </div>
+          </div>
+
+          {/* Title */}
+          
+
+          {/* Description */}
+        
           {/* Image Placeholder */}
           <div className="image-placeholder">
             <div className="placeholder-content">
@@ -68,16 +77,15 @@ React.useEffect(() => {
         {/* Box 2: Mobile-App Access */}
         <div className="feature-box">
           {/* Icon */}
-          <div className="icon-wrapper">
-            <div className="icon-circle">
+          <div className="icon-wrapper flex-row">
+            <div className="icon-circle1">
               <svg className="icon11" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
               </svg>
             </div>
-          </div>
+            <div className="row">
 
-          {/* Title */}
-          <h3 className="title">
+              <h3 className="title">
             Mobile-App Access
           </h3>
 
@@ -86,6 +94,11 @@ React.useEffect(() => {
             Our mobile-friendly ERP tools put critical data and workflows at your fingertips.
           </p>
 
+            </div>
+          </div>
+
+          {/* Title */}
+          
           {/* Image Placeholder */}
           <div className="image-placeholder">
             <div className="placeholder-content">
