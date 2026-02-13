@@ -1,0 +1,226 @@
+body {
+  margin: 0;
+  background: rgb(5, 6, 28);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+/* ================= HEADER ================= */
+.vision-page-container {
+  padding: 1.6rem 1rem 0.6rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.vision-page-container h5 {
+  font-weight: 650;
+  margin-bottom: 0.4rem;
+  color: #ffffff;
+  font-size: 34px;
+  line-height: 1.2;
+  font-family: popin, sans-serif;
+}
+
+.subtitle {
+  color: rgb(203, 213, 225);
+  max-width: 620px;
+  margin: 4px auto 1rem;
+  font-size: clamp(0.92rem, 2vw, 1rem);
+  line-height: 1.5;
+  font-weight: 300;
+}
+
+/* ================= SECTION ================= */
+.mission-section {
+  background: #05061c;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 16px;
+  display: flex;
+  margin-top: -8px;
+}
+
+/* ================= GRID LAYOUT ================= */
+.firstsecond,
+.thirdfourth,
+.fifthsixth {
+  display: grid;
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto 2px;
+  padding: 0 10px;
+  gap: 2px;
+}
+
+/* Desktop: 2 columns */
+@media (min-width: 768px) {
+  .firstsecond,
+  .thirdfourth,
+  .fifthsixth {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+  }
+}
+
+/* Mobile: 1 column */
+@media (max-width: 767px) {
+  .firstsecond,
+  .thirdfourth,
+  .fifthsixth {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 0 12px;
+  }
+}
+
+/* ================= MAIN CARD + ANIMATION ================= */
+.mission-card {
+  position: relative;
+  width: 100%;
+  padding: 32px 32px 36px;
+  border-radius: 20px;
+  min-height: 400px;
+  margin: 0;
+
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(58, 64, 136, 0.18),
+      transparent 50%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(9, 12, 44, 0.97) 0%,
+      rgba(9, 12, 44, 0.95) 50%,
+      rgba(6, 9, 45, 0.78) 80%,
+      rgba(13, 15, 35, 0.5) 100%
+    );
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(90, 110, 255, 0.24);
+
+  box-shadow:
+    inset 0 0 0 1px rgba(120, 140, 255, 0.1),
+    0 28px 90px rgba(0, 0, 0, 0.68);
+
+  text-align: center;
+  color: #ffffff;
+  overflow: hidden;
+
+  /* Initial state - hidden & shifted down */
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.9s cubic-bezier(0.22, 0.9, 0.36, 1);
+}
+
+/* Visible state - animate in */
+.mission-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger the animation slightly for each card */
+.mission-card:nth-child(1) { transition-delay: 0.1s; }
+.mission-card:nth-child(2) { transition-delay: 0.25s; }
+.mission-card:nth-child(3) { transition-delay: 0.4s;  }
+.mission-card:nth-child(4) { transition-delay: 0.55s; }
+.mission-card:nth-child(5) { transition-delay: 0.7s;  }
+.mission-card:nth-child(6) { transition-delay: 0.85s; }
+
+/* Grid overlay */
+.mission-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 44px 44px;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* ================= ICON ================= */
+.mission-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 1.5px solid #5a6eff;
+}
+
+.circle.middle { inset: -18px; opacity: 0.65; }
+.circle.inner  { inset: -9px;  opacity: 0.9; }
+
+.mission-icon svg {
+  position: relative;
+  z-index: 2;
+}
+
+/* ================= TEXT ================= */
+.mission-title {
+  font-size: 24px;
+  font-weight: 550;
+  line-height: 1.28;
+  margin: 20px 0 1.2rem;
+  color: #ffffff;
+  margin-top: 35px;
+}
+
+.mission-text-box {
+  position: relative;
+  margin: 0 auto;
+  padding: 20px 26px;
+  max-width: 520px;
+  border-radius: 16px;
+  background: rgba(5, 10, 41, 0.92);
+  margin-top: 50px;
+}
+
+.mission-text-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 56px;
+  height: 56px;
+  border-top: 1.5px solid rgba(56, 70, 150, 0.75);
+  border-left: 1.5px solid rgba(56, 70, 150, 0.75);
+  border-top-left-radius: 16px;
+}
+
+.mission-text-box p {
+  font-size: clamp(14px, 2vw, 15.5px);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.94);
+  margin: 8px 0 0;
+}
+
+/* ================= SUBTITLE ROW ================= */
+.subtitle-row1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: -12px;
+}
+
+/* ================= LARGE SCREENS ================= */
+@media (min-width: 1400px) {
+  .firstsecond,
+  .thirdfourth,
+  .fifthsixth {
+    max-width: 1220px;
+    gap: 3px;
+  }
+}

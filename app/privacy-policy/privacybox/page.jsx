@@ -81,10 +81,11 @@ export default function Vision() {
             <h2 className="vision-title">Ways We Utilize Your Data</h2>
             <div className="vision-text">
               <p>
-            Your data is used to authenticate users, manage inventory, create contacts, estimates, 
-            and sales orders, and support daily business operations. We also use data to improve app
-            functionality, maintain system reliability, provide customer support, and enable 
-            integrations with authorized third-party business tools. We do not sell personal data.
+            Your data is used to authenticate users, manage inventory, create contacts, estimates,
+and sales orders, and support daily business operations. We also use data to improve app
+functionality, maintain system reliability, provide customer support, and enable
+integrations with authorized third-party business tools. We do not sell personal data,
+and we strictly limit access to authorized personnel only.
               </p>
             </div>
           </div>
