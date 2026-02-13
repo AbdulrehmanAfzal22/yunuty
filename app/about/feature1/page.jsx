@@ -159,7 +159,7 @@ const FeatureChips = () => {
           </div>
 
           <div className="tagsx-divider">
-            <Image src={lineImg} alt="Divider line" />
+            {/* <Image src={lineImg} alt="Divider line" /> */}
           </div>
         </div>
       </section>

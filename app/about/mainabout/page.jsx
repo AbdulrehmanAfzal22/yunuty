@@ -14,7 +14,8 @@ function Mainabout() {
       
          <FeatureChips /> 
        
-       <Vision/>
+        <Vision/>
+        
        <DiscoverSection/>
        <Footer/>
    </>
