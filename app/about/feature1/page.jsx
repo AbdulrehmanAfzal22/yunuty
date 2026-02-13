@@ -3,23 +3,24 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./grid.css";
 import Image from "next/image";
+import acess from "../../../public/assests/acess.jpg";
 import right from "../../../public/assests/sub-title-right.svg";
 import left from "../../../public/assests/sub-title-left.svg";
-import lineImg from "../../../public/assests/line.png";
-
+import line from "../../../public/assests/gridarrow.png"
 const FeatureChips = () => {
-  const aboutSectionRef = useRef(null);
+  const sectionRef = useRef(null);
   const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (!aboutSectionRef.current) return;
+      if (!sectionRef.current) return;
 
-      const rect = aboutSectionRef.current.getBoundingClientRect();
+      const rect = sectionRef.current.getBoundingClientRect();
       const windowHeight = window.innerHeight;
 
-      const start = windowHeight;
-      const end = -rect.height;
+      // Start when section enters viewport, finish when it leaves
+      const start = windowHeight;      // section top hits bottom of screen
+      const end = -rect.height;        // section bottom hits top of screen
 
       let progress = 0;
 
@@ -27,32 +28,37 @@ const FeatureChips = () => {
         progress = (start - rect.top) / (start - end);
       } else if (rect.top < end) {
         progress = 1;
+      } else {
+        progress = 0;
       }
 
       setScrollProgress(Math.max(0, Math.min(1, progress)));
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
+    handleScroll(); // initial check
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <>
-      {/* ================= ABOUT SECTION ================= */}
-      {/* <section className="aboutx-section" ref={aboutSectionRef}>
-        <div className="aboutx-container">
-          <div className="aboutx-header">
+      {/* <section className="about-section" ref={sectionRef}>
+        <div className="about-container">
+          <div className="about">
             <Image src={left} alt="Left decoration" />
-            <p className="aboutx-label">Who we are</p>
+            &nbsp;&nbsp;&nbsp;
+            <p>Who we are</p>
+            &nbsp;&nbsp;&nbsp;
             <Image src={right} alt="Right decoration" />
           </div>
 
-          <h1 className="aboutx-heading">
+          <h1 className="about-heading">
             <span
-              className="aboutx-heading-fill"
-              style={{ "--fill-percent": `${scrollProgress * 100}%` }}
+              className="about-heading-fill"
+              style={{
+                "--fill-percent": `${scrollProgress * 100}%`,
+              }}
             >
               At Yunuak, we help organizations transform operations <br />
               through digital innovation, process engineering, and smart <br />
@@ -65,14 +71,14 @@ const FeatureChips = () => {
             </span>
           </h1>
 
-          <button className="aboutx-button">
+          <button className="about-button">
             More About Us
             <svg
               width="20"
               height="20"
               viewBox="0 0 20 20"
               fill="none"
-              className="aboutx-arrow"
+              className="arrow-icon"
             >
               <path
                 d="M4 10H16M16 10L11 5M16 10L11 15"
@@ -85,84 +91,83 @@ const FeatureChips = () => {
           </button>
         </div>
 
-        <div className="aboutx-grid-bg"></div>
+        <div className="grid-background"></div>
       </section> */}
 
-      {/* ================= TAGS SECTION ================= */}
-      <section className="tagsx-section">
-        <div className="tagsx-container">
-          <div className="tagsx-row">
-            <div className="tagsx-pill">
-              <span className="tagsx-icon orange">🔶</span>
-              <span className="tagsx-text">Inventory Visibility</span>
+      <section className="features-tags-section">
+        <div className="features-tags-container">
+          <div className="tags-row row-1">
+             <div className="feature-tag">
+              <span className="tag-icon orange">🔶</span>
+              <span className="tag-text">Live Quickbooks Connection</span>
             </div>
-            <div className="tagsx-pill">
-              <span className="tagsx-icon green">🔶</span>
-              <span className="tagsx-text">Customer Portal Access</span>
+            <div className="feature-tag">
+              <span className="tag-icon green">🔶</span>
+              <span className="tag-text">Customer Portal Access</span>
             </div>
-            <div className="tagsx-pill">
-              <span className="tagsx-icon purple">🔶</span>
-              <span className="tagsx-text">Interconnectivity</span>
-            </div>
-          </div>
-
-          <div className="tagsx-row">
-            <div className="tagsx-pill">
-              <span className="tagsx-icon green">🔶</span>
-              <span className="tagsx-text">
-                Integrated Financial Management
-              </span>
-            </div>
-            <div className="tagsx-pill">
-              <span className="tagsx-icon blue">🔶</span>
-              <span className="tagsx-text">Process Automation</span>
+          <div className="feature-tag">
+              <span className="tag-icon green">🔶</span>
+              <span className="tag-text">Integrated Financial Management</span>
             </div>
           </div>
 
-          <div className="tagsx-row">
-            <div className="tagsx-pill">
-              <span className="tagsx-icon red">🔶</span>
-              <span className="tagsx-text">
-                Real-Time Analytics & Reporting
-              </span>
+          <div className="tags-row row-2">
+        
+               <div className="feature-tag">
+              <span className="tag-icon red">🔶</span>
+              <span className="tag-text">Real-Time Analytics & Reporting</span>
             </div>
-            <div className="tagsx-pill">
-              <span className="tagsx-icon yellow">🔶</span>
-              <span className="tagsx-text">
-                Demand Forecasting & Planning
-              </span>
+            <div className="feature-tag">
+              <span className="tag-icon yellow">🔶</span>
+              <span className="tag-text">Demand Forecasting & Planning</span>
             </div>
           </div>
 
-          <div className="tagsx-row">
-            <div className="tagsx-pill">
-              <span className="tagsx-icon purple">🔶</span>
-              <span className="tagsx-text">Mobile Accessibility</span>
+          <div className="tags-row row-3">
+         
+          </div>
+
+          <div className="tags-row row-4">
+
+      <div className="feature-tag">
+              <span className="tag-icon purple">🔶</span>
+              <span className="tag-text">Interconnectivity</span>
             </div>
-            <div className="tagsx-pill">
-              <span className="tagsx-icon orange">🔶</span>
-              <span className="tagsx-text">
-                Live Quickbooks Connection
-              </span>
+            
+            <div className="feature-tag">
+              <span className="tag-icon blue">🔶</span>
+              <span className="tag-text">Process Automation</span>
             </div>
-            <div className="tagsx-pill">
-              <span className="tagsx-icon purple">🔶</span>
-              <span className="tagsx-text">Process Automation</span>
+
+           
+           
+            <div className="feature-tag">
+              <span className="tag-icon orange">🔶</span>
+              <span className="tag-text">Inventory Visibility</span>
             </div>
           </div>
 
-          <div className="tagsx-row">
-            <div className="tagsx-pill">
-              <span className="tagsx-icon green">🔶</span>
-              <span className="tagsx-text">Online Payment</span>
+          <div className="tags-row row-5">
+            {/* <div className="feature-tag">
+              <span className="tag-icon green">🔶</span>
+              <span className="tag-text">Real-Time Analytics & Reporting</span>
+            </div> */}
+            <div className="feature-tag">
+              <span className="tag-icon green">🔶</span>
+              <span className="tag-text">Online Payment</span>
+            </div>
+             <div className="feature-tag">
+              <span className="tag-icon purple">🔶</span>
+              <span className="tag-text">Process Automation</span>
             </div>
           </div>
-
-          <div className="tagsx-divider">
-            {/* <Image src={lineImg} alt="Divider line" /> */}
+            <div className="line1">
+          <Image src={line} alt="Decorative separator line" />
+          
           </div>
         </div>
       </section>
+    
     </>
   );
 };
