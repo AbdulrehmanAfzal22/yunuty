@@ -5,12 +5,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(
-  180deg,
-  #05071c 0%,      
-  #05071c 82%,
-  #181953 100%
-);
+  background: 
+    radial-gradient(ellipse at center, #05071c 60%, #181953 100%);
   color: #ffffff;
   overflow: hidden;
   font-family: 'Segoe UI', Roboto, sans-serif;
