@@ -19,7 +19,7 @@ body {
       margin-top: -69px;
 
   min-height: 57vh;
-  background: #05061c;
+     background: linear-gradient(#05071c 0% 82%, #181953 100%);
   padding: 4rem 1rem;
   width: 100%;
   position: relative;

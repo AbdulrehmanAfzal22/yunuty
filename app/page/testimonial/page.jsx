@@ -110,7 +110,7 @@ export default function TestimonialCards() {
           <div className="dot"></div>
         </div>
 
-        <div className="cta-section">
+        {/* <div className="cta-section">
           <h2 className="cta-title">
             Discover the future of productivity, optimize your processes and make every minute count.
           </h2>
@@ -118,7 +118,7 @@ export default function TestimonialCards() {
             Harness AI-powered automation for a more efficient and high-yield work in great importance
           </p>
           <button className="cta-button">Start a Project</button>
-        </div>
+        </div> */}
       </div>
     </div>
   );
@@ -222,6 +222,7 @@ function DraggableCard({ testimonial, index, containerRef, isMobile }) {
   };
 
   return (
+    <>
     <div
       ref={cardRef}
       className={`testimonial-card card-float-${index}`}
@@ -245,5 +246,7 @@ function DraggableCard({ testimonial, index, containerRef, isMobile }) {
       </div>
       <div className="quote-icon">"</div>
     </div>
+
+    </>
   );
 }

@@ -7,6 +7,8 @@ import Indicator from '../indicator/page'
 import TestimonialCards from '../testimonial/page'
 import Feature from '../feature/page'
 import Footer from '../footer/page'
+import DiscoverSection from "@/app/about/discover/page";
+
 function Mainhero() {
   return (
 <>
@@ -18,6 +20,7 @@ function Mainhero() {
 <FeatureGrid/>
  <Indicator/>
        <TestimonialCards/> 
+       <DiscoverSection/>
 <Footer/>
 
 
