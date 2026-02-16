@@ -180,8 +180,8 @@ and we strictly limit access to authorized personnel only.
 <section className="hero-section-v2">
   <div className="hero-container-v2">
     <h1 className="hero-title-v2">
-      Discover the future of productivity, <br />
-      optimize your processes and make <br />
+      Discover the future of productivity, 
+      optimize your processes and make 
       every minute count.
     </h1>
     <p className="hero-subtitle-v2">

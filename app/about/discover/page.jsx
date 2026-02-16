@@ -7,8 +7,8 @@ export default function DiscoverSection() {
     <section className="custom-hero-section">
       <div className="custom-hero-container">
         <h1 className="custom-hero-title">
-          Discover the future of productivity, <br />
-          optimize your processes and make <br />
+          Discover the future of productivity, 
+          optimize your processes and make 
           every minute count.
         </h1>
         <p className="custom-hero-subtitle">
