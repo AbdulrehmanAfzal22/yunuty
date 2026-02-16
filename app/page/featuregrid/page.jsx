@@ -14,7 +14,8 @@ import github from '../../../public/assests/Github.svg'
 import stripe from '../../../public/assests/Stripe.svg'
 import cloud from '../../../public/assests/googlecloud.svg'
 import book from '../../../public/assests/Quickbooks.svg'
-
+import right from "../../../public/assests/sub-title-right.svg";
+import left from "../../../public/assests/sub-title-left.svg";
 const FeatureGrid = () => {
   // Platform icons array - split into two rows
   const platformIcons = [
@@ -34,10 +35,26 @@ const FeatureGrid = () => {
 
   return (
     <div className="grid11">
+
+    
+
+
       <div className="feature-grid-container">
+                  <div className="featuregrid-subtitle">
+                     <div className="subtitles">
+                       <Image src={left} alt="Decorative left accent" width={79} height={17} className="no-shrink" />
+                      
+                      <p className="feature-text">Features</p>
+                      <Image src={right} alt="Decorative right accent" width={79} height={17} className="no-shrink" />
+                     </div>
+                    <div className="feature-heading">
+                          <h1>Our Clients Love Us</h1>
+                      <p>Free Up Your Time to Focus on What Matters Most</p>
+                    </div>
+                    </div>
         <div className="feature-grid">
           
-          {/* Box 1: Innovative Essential Platforms */}
+         
           <div className="feature-card">
             <div className="card-header w3">
               <h3 className="card-title">Innovative Essential Platforms</h3>

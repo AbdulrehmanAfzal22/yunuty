@@ -7,7 +7,7 @@
 
 /* ================= ABOUT SECTION ================= */
 .about-section {
-  min-height: 100vh;
+  min-height: 74vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -36,6 +36,7 @@
   width: 100%;
   text-align: center;
   z-index: 1;
+  /* margin-top: -120px; */
 }
 
 /* Who we are */

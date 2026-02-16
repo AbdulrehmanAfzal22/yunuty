@@ -77,7 +77,7 @@ export default function TestimonialCards() {
         ))}
       </div>
 
-      <div className="container">
+      <div className="container1">
         <div className="center-content">
           <Image src={left} alt="Left Decoration" className="decoration-left" />
           <span className="testimonial-badge1">Testimonial</span>

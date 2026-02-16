@@ -28,14 +28,22 @@ React.useEffect(() => {
   return (
     <>
     
-    <div className="container">
+    <div className="container1">
+         <div className="feature-subtitle">
+               <div className="subtitles">
+                 <Image src={left} alt="Decorative left accent" width={79} height={17} className="no-shrink" />
+                
+                <p className="feature-text">Features</p>
+                <Image src={right} alt="Decorative right accent" width={79} height={17} className="no-shrink" />
+               </div>
+              <div className="feature-heading">
+                    <h1>Our Clients Love Us</h1>
+                <p>Free Up Your Time to Focus on What Matters Most</p>
+              </div>
+              </div>
+            
       <div className="grid">
-        {/* <div className="client-section">
-        <h1 className="heading">Our Clients Love Us</h1>
-        <p className="client-para">Free Up Your Time to Focus on What Matters Most
-
-</p >
-</div> */}
+    
         <div className="feature-box">
           
           
@@ -181,12 +189,23 @@ React.useEffect(() => {
     </div>
 
   <div className="built-right">
-  <div
-    className="card-preview"
-    style={{
-      backgroundImage: `url(${images[index]})`,
-    }}
-  ></div>
+  <div className="card-stack">
+  {images.map((img, i) => {
+    const position = (i - index + images.length) % images.length;
+
+    return (
+      <div
+        key={i}
+        className={`card card-${position}`}
+        style={{ backgroundImage: `url(${img})` }}
+      />
+    );
+  })}
+
+  <div className="box-image">
+    <Image src={box} alt="Illustrative box graphic" className="boximg" />
+  </div>
+</div>
 
   <div className="box-image">
     <Image src={box} alt="Illustrative box graphic" className="boximg"/>

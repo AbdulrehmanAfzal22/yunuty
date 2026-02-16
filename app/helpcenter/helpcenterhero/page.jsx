@@ -6,6 +6,7 @@ import Image from "next/image";
 import right from "../../../public/assests/sub-title-right.svg";
 import left from "../../../public/assests/sub-title-left.svg";
 import FAQSection from "../faq/page";
+import DiscoverSection from "@/app/about/discover/page";
 import ProductivityHero from "../faqgrid/page";
 import Footer from "@/app/page/footer/page";
 
@@ -123,8 +124,8 @@ const Helpcenterhero = () => {
 
               </div>
 <FAQSection/>
- <ProductivityHero/> 
-    
+ {/* <ProductivityHero/>  */}
+    <DiscoverSection/>
       <Footer/>
     </>
   );

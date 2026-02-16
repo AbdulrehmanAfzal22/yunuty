@@ -140,7 +140,7 @@
 /* HELP CARD STYLING */
 .help-card {
     color: #fff;
-    background: linear-gradient(145deg, #020822, #001570);
+    background: linear-gradient(145deg, #0b0625, #001570);
     border: 1px solid #ffffff14;
     border-radius: 20px;
     flex-direction: column;
