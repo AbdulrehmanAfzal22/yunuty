@@ -95,7 +95,7 @@
   max-width: 80px;
 }
 
-h1 {
+.test {
   font-size: clamp(32px, 6vw, 56px);
   font-weight: 600;
   color: white;

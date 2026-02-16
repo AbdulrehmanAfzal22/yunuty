@@ -424,6 +424,9 @@
     cursor: pointer;
     transition: all 0.3s ease;
     letter-spacing: 0.5px;
+
+
+    
 }
 
 .explore-more-btn:hover {

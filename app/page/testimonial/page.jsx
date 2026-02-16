@@ -8,7 +8,7 @@ import left from "../../../public/assests/sub-title-left.svg";
 import evan from '../../../public/assests/evan.png'
 import ariyna from '../../../public/assests/ariyna.png'
 import girl from  '../../../public/assests/girl.png'
-
+import man from  '../../../public/assests/man.png'
 export default function TestimonialCards() {
   const [particles, setParticles] = useState([]);
   const [isMobile, setIsMobile] = useState(false);
@@ -37,7 +37,7 @@ export default function TestimonialCards() {
       author: "Sarah Johnson",
       title: "CEO",
       initial: "S",
-      image: ariyna,
+      image: man,
     },
   ];
 
@@ -84,7 +84,7 @@ export default function TestimonialCards() {
           <Image src={right} alt="Right Decoration" className="decoration-right" />
         </div>
 
-        <h1>
+        <h1 className="test">
           Our clients love to<br />use our products.
         </h1>
 
