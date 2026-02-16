@@ -18,7 +18,7 @@ function ScrollAnimatedParagraph({ text, className }) {
     const handleScroll = () => {
       if (!ref.current) return;
 
-      const words = ref.current.querySelectorAll(".word");
+      const words = ref.current.querySelectorAll(".scroll-word");
       if (words.length === 0) return;
 
       const rect = ref.current.getBoundingClientRect();
@@ -39,9 +39,9 @@ function ScrollAnimatedParagraph({ text, className }) {
         const threshold = wordPos * SPREAD - LEAD;
 
         if (progress > threshold - FADE_WINDOW) {
-          word.classList.add("active");
+          word.classList.add("scroll-word--active");
         } else {
-          word.classList.remove("active");
+          word.classList.remove("scroll-word--active");
         }
       });
     };
@@ -54,11 +54,11 @@ function ScrollAnimatedParagraph({ text, className }) {
   }, []);
 
   return (
-    <p ref={ref} className={`mission-paragraph ${className || ""}`}>
+    <p ref={ref} className={`hero-mission-text ${className || ""}`}>
       {text.split("\n").map((line, lineIndex) => (
-        <span key={lineIndex} className="line">
+        <span key={lineIndex} className="scroll-line">
           {line.split(" ").map((word, wordIndex) => (
-            <span key={`${lineIndex}-${wordIndex}`} className="word">
+            <span key={`${lineIndex}-${wordIndex}`} className="scroll-word">
               {word}&nbsp;
             </span>
           ))}
@@ -75,29 +75,29 @@ export default function Hero1() {
     <>
       {/* <Navbar /> */}
 
-      <section className="hero-about-section">
+      <section className="hero-about">
         {/* Subtitle */}
-        <div className="subtitle-row">
+        <div className="hero-about__subtitle">
           <Image src={decorLeft} alt="decor left" width={80} height={24} />
-            &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-          <p className="section-label">About Us</p>
+            &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          <p className="hero-about__label">About Us</p>
              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <Image src={decorRight} alt="decor right" width={80} height={24} />
         </div>
 
         {/* Hero content */}
-        <div className="hero-content-wrapper">
-          <h1 className="hero-main-title">
+        <div className="hero-about__content">
+          <h1 className="hero-about__title">
            <b> Experts Driven by Passion <br />and  Purpose</b>
           </h1>
 
-          <p className="hero-description">
+          <p className="hero-about__description">
             Explore our journey, expertise, and commitment to delivering exceptional results over years.
           </p>
 
-          <div className="cta-button-wrapper">
-            <button className="excellence-cta-button" type="button">
-              <span className="button-icon"><Timer />
+          <div className="hero-about__cta-wrapper">
+            <button className="hero-about__cta-button" type="button">
+              <span className="hero-about__cta-icon"><Timer />
               </span>
               Delivering Excellence for Over 10+ Years
             </button>
@@ -105,7 +105,7 @@ export default function Hero1() {
         </div>
 
         {/* Scroll-animated paragraphs with manual line breaks */}
-        <div className="text-container">
+        <div className="hero-about__text-container">
           <ScrollAnimatedParagraph
             text={`We're a passionate team of innovators obsessed with
  using AI to streamline content creation. We believe AI can 
@@ -114,7 +114,7 @@ export default function Hero1() {
           />
           <br/>
           <ScrollAnimatedParagraph
-            className="mission-second"
+            className="hero-mission-text--secondary"
             text={`Our mission is to address these challenges head-on by
  developing cutting-edge AI tools that enhance the 
  writing process.`}
