@@ -19,7 +19,7 @@ body {
     box-sizing: border-box;
     background: #05071c;
     width: 100%;
-    max-width: 1920px;
+    /* max-width: 1920px; */
     min-height: 83vh;
     margin-top: -81px;
     margin-left: auto;
@@ -833,7 +833,11 @@ body {
     max-width: 1500px;
   }
 }
-
+@media (min-width: 2700px) {
+  .container1 {
+    padding: 7rem 4rem;
+    width: 140%;
+  }}
 @media (min-width: 1920px) {
   .container1 {
     padding: 7rem 4rem;
