@@ -168,7 +168,6 @@ body {
   justify-content: space-between;
   gap: 20px;
 }
-
 .icon-circle {
     background: #1e293b80;
     border: 1px solid #33415580;
@@ -176,7 +175,7 @@ body {
     flex-shrink: 0;
     justify-content: center;
     align-items: center;
-    width: 5.5rem;
+    width: 4.5rem;
     height: 4.5rem;
     display: flex;
 }
@@ -188,11 +187,10 @@ body {
     flex-shrink: 0;
     justify-content: center;
     align-items: center;
-    width: 5rem;
+    width: 4.5rem;
     height: 4.5rem;
     display: flex;
 }
-
 .icon11 {
   width: 1.75rem;
   height: 1.75rem;
@@ -317,16 +315,16 @@ body {
 }
 
 .cta-banner {
-  box-sizing: border-box;
-  background: #0a0e27;
-  border: 1px solid #33415580;
-  border-radius: 12px;
-  width: 96%;
-  max-width: 1280px;
-  margin: 4rem auto;
-  padding: 2rem 1.5rem;
-  position: relative;
-  overflow: hidden;
+    box-sizing: border-box;
+    background: #0a0e27;
+    border: 1px solid #33415580;
+    border-radius: 12px;
+    width: 96%;
+    max-width: 1280px;
+    margin: 1rem auto;
+    padding: 2rem 1.5rem;
+    position: relative;
+    overflow: hidden;
 }
 
 .cta-banner:hover {
@@ -806,9 +804,9 @@ body {
    LARGE SCREEN OPTIMIZATIONS
    =================================== */
 @media (min-width: 1440px) {
-  .container1 {
-    padding: 5rem 2rem;
-  }
+    .container1 {
+        padding: 0rem 2rem;
+    }
 
   .grid {
     max-width: 1400px;

@@ -222,9 +222,8 @@
 
 .line1 img {
     max-width: 128%;
-    margin-top: -511px;
+    margin-top: -565px;
 }
-
 /* ================= RESPONSIVE ================= */
 
 @media (max-width: 869px) {

@@ -8,6 +8,7 @@ import bg from "../../../public/assests/bg-4.jpeg";
 import right from "../../../public/assests/sub-title-right.svg";
 import left from "../../../public/assests/sub-title-left.svg";
 import hero from "../../../public/assests/hero.png";
+
 export default function Hero() {
   const [email, setEmail] = useState("");
 
@@ -19,40 +20,58 @@ export default function Hero() {
 
   return (
     <section className="hero">
+      {/* Background */}
       <div className="hero-bg">
-<Image
-  src={bg}
-  alt="ERP Dashboard"
-  fill
-  priority
-  sizes="100vw"
-  quality={100}
-  unoptimized     // ⚠️ Use only for hero backgrounds
-  className="hero-bg-image"
-/>
+        <Image
+          src={bg}
+          alt="ERP Dashboard"
+          fill
+          priority
+          sizes="100vw"
+          quality={100}
+          unoptimized
+          className="hero-bg-image"
+        />
         <div className="hero-overlay" />
       </div>
 
-       <div className="hero-container">
+      <div className="hero-container">
         <div className="hero-content">
+
+          {/* ✅ SUBTITLE — fixed: consistent margin-bottom, no negative offsets */}
           <div className="hero-subtitle">
-            <Image src={left} alt="Decorative left accent" width={79} height={17} className="no-shrink" />
-            
+            <Image
+              src={left}
+              alt="Decorative left accent"
+              width={79}
+              height={17}
+              className="no-shrink"
+            />
             <p className="feature-text">Future-Ready ERP Solutions</p>
-            <Image src={right} alt="Decorative right accent" width={79} height={17} className="no-shrink" />
+            <Image
+              src={right}
+              alt="Decorative right accent"
+              width={79}
+              height={17}
+              className="no-shrink"
+            />
           </div>
-<h1 className="heading-hero">
-            The Future of Supply Chain <br />
-            Digital Transformation
+
+          {/* ✅ HEADING — removed <br> tags, CSS handles line breaks */}
+          <h1 className="heading-hero">
+            The Future of Supply Chain Digital Transformation
           </h1>
 
+          {/* ✅ DESCRIPTION — removed <br> tags, text wraps naturally */}
           <p className="hero-desc">
-            Refining an organization&apos;s comprehensive strategy <br />for its entire supply chain
-            and operational processes to promote <br /> growth, streamline operations, and ensure
-            protection with a <br /> cloud-based ERP solution.
+            Refining an organization&apos;s comprehensive strategy for its
+            entire supply chain and operational processes to promote growth,
+            streamline operations, and ensure protection with a cloud-based
+            ERP solution.
           </p>
 
-          <div className="email-wrapper mt-10">
+          {/* Email Form */}
+          <div className="email-wrapper">
             <form className="email-form" onSubmit={handleSubmit}>
               <input
                 type="email"
@@ -68,22 +87,22 @@ export default function Hero() {
             </form>
           </div>
 
-        
+          {/* Hero Image */}
+          <div className="dark-img">
+            <Image
+              src={hero}
+              alt="Illustration of supply chain digital transformation"
+              width={1000}
+              height={600}
+              className="dark-image"
+              priority
+              sizes="(max-width: 768px) 100vw, 1000px"
+              style={{ width: "100%", height: "auto", borderRadius: "20px" }}
+            />
+          </div>
 
-        <div className="dark-img">
-          <Image
-            src={hero}
-            alt="Illustration of supply chain digital transformation"
-            width={1000}
-            height={600}
-            className="dark-image"
-            priority
-            sizes="(max-width: 768px) 100vw, 1000px"
-            style={{ width: '100%', height: 'auto', borderRadius: '20px' }}
-          />
         </div>
-        </div>
-        </div>
+      </div>
     </section>
   );
 }
