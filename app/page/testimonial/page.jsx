@@ -5,10 +5,11 @@ import "./testimonial.css";
 import Image from "next/image";
 import right from "../../../public/assests/sub-title-right.svg";
 import left from "../../../public/assests/sub-title-left.svg";
-import evan from '../../../public/assests/evan.png'
-import ariyna from '../../../public/assests/ariyna.png'
-import girl from  '../../../public/assests/girl.png'
-import man from  '../../../public/assests/man.png'
+import evan from '../../../public/assests/evan.png';
+import ariyna from '../../../public/assests/ariyna.png';
+import girl from '../../../public/assests/girl.png';
+import man from '../../../public/assests/man.png';
+
 export default function TestimonialCards() {
   const [particles, setParticles] = useState([]);
   const [isMobile, setIsMobile] = useState(false);
@@ -50,14 +51,13 @@ export default function TestimonialCards() {
     }));
     setParticles(particleArray);
 
-    // Check if mobile
+    // ✅ Match CSS breakpoint exactly (768px)
     const checkMobile = () => {
       setIsMobile(window.innerWidth <= 768);
     };
 
     checkMobile();
     window.addEventListener('resize', checkMobile);
-
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
@@ -109,16 +109,6 @@ export default function TestimonialCards() {
           <div className="dot active"></div>
           <div className="dot"></div>
         </div>
-
-        {/* <div className="cta-section">
-          <h2 className="cta-title">
-            Discover the future of productivity, optimize your processes and make every minute count.
-          </h2>
-          <p className="cta-subtitle">
-            Harness AI-powered automation for a more efficient and high-yield work in great importance
-          </p>
-          <button className="cta-button">Start a Project</button>
-        </div> */}
       </div>
     </div>
   );
@@ -133,25 +123,29 @@ function DraggableCard({ testimonial, index, containerRef, isMobile }) {
   const dragStart = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
+    // ✅ Skip JS positioning entirely on mobile — CSS handles layout
     if (isMobile || !containerRef.current || !cardRef.current) return;
 
     const containerWidth = containerRef.current.offsetWidth;
     const containerHeight = containerRef.current.offsetHeight;
-    const cardWidth = 320;
+    const cardWidth = cardRef.current.offsetWidth || 320;
 
     let left, top, rot;
 
     if (index === 0) {
-      left = containerWidth / 2 - 500;
-      top = containerHeight / 2 - 150;
+      // Left card
+      left = containerWidth / 2 - cardWidth - 160;
+      top = containerHeight / 2 - 200;
       rot = -5;
     } else if (index === 1) {
+      // Center card (front)
       left = containerWidth / 2 - cardWidth / 2;
-      top = containerHeight / 2 - 200;
+      top = containerHeight / 2 - 220;
       rot = 0;
     } else {
-      left = containerWidth / 2 + 180;
-      top = containerHeight / 2 - 150;
+      // Right card
+      left = containerWidth / 2 + 160;
+      top = containerHeight / 2 - 200;
       rot = 5;
     }
 
@@ -172,25 +166,17 @@ function DraggableCard({ testimonial, index, containerRef, isMobile }) {
 
   const handleMouseMove = (e) => {
     if (!isDragging || isMobile) return;
-
     const clientX = e.clientX || e.touches?.[0]?.clientX;
     const clientY = e.clientY || e.touches?.[0]?.clientY;
-
     const deltaX = clientX - dragStart.current.x;
     const deltaY = clientY - dragStart.current.y;
-
-    setPosition({
-      x: initialPosition.x + deltaX,
-      y: initialPosition.y + deltaY
-    });
-
+    setPosition({ x: initialPosition.x + deltaX, y: initialPosition.y + deltaY });
     setRotation(deltaX / 20);
   };
 
   const handleMouseUp = () => {
     if (!isDragging || isMobile) return;
     setIsDragging(false);
-
     setTimeout(() => {
       setPosition(initialPosition);
       setRotation(index === 0 ? -5 : index === 1 ? 0 : 5);
@@ -203,7 +189,6 @@ function DraggableCard({ testimonial, index, containerRef, isMobile }) {
       document.addEventListener("mouseup", handleMouseUp);
       document.addEventListener("touchmove", handleMouseMove);
       document.addEventListener("touchend", handleMouseUp);
-
       return () => {
         document.removeEventListener("mousemove", handleMouseMove);
         document.removeEventListener("mouseup", handleMouseUp);
@@ -213,6 +198,8 @@ function DraggableCard({ testimonial, index, containerRef, isMobile }) {
     }
   }, [isDragging, isMobile]);
 
+  // ✅ On mobile: no inline styles — pure CSS controls layout
+  // ✅ On desktop: JS absolute positioning for draggable fan layout
   const cardStyle = isMobile ? {} : {
     left: `${position.x}px`,
     top: `${position.y}px`,
@@ -222,7 +209,6 @@ function DraggableCard({ testimonial, index, containerRef, isMobile }) {
   };
 
   return (
-    <>
     <div
       ref={cardRef}
       className={`testimonial-card card-float-${index}`}
@@ -232,8 +218,8 @@ function DraggableCard({ testimonial, index, containerRef, isMobile }) {
     >
       <div className="card-content">{testimonial.content}</div>
       <div className="card-author">
-        <Image 
-          src={testimonial.image} 
+        <Image
+          src={testimonial.image}
           alt={testimonial.author}
           className="author-avatar"
           width={40}
@@ -246,7 +232,5 @@ function DraggableCard({ testimonial, index, containerRef, isMobile }) {
       </div>
       <div className="quote-icon">"</div>
     </div>
-
-    </>
   );
 }

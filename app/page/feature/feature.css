@@ -871,9 +871,6 @@ body {
 
 }
 
-/* ===================================
-   RESPONSIVE BREAKPOINTS
-   =================================== */
 @media (max-width: 1111px) {
   .layers-bg {
     padding: 40px 0;
