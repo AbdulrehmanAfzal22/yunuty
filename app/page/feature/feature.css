@@ -486,7 +486,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.7;
+  /* opacity: 0.7; */
   z-index: 0;
 }
 
@@ -535,9 +535,11 @@ body {
     z-index: 2;
     flex: 1;
     width: 100%;
-    margin-top: clamp(-322px, -15vw, -290px);
+    margin-top: clamp(-322px, -15vw, -241px);
     position: relative;
 }
+
+
 /* Remove negative margin on smaller screens */
 @media (max-width: 1024px) {
   .built-left {
@@ -686,7 +688,7 @@ body {
   z-index: 3;
   transform: translateY(0) scale(1);
   opacity: 1;
-  box-shadow: 0 35px 90px rgba(0, 0, 0, 0.55);
+  /* box-shadow: 0 35px 90px rgba(0, 0, 0, 0.55); */
 }
 
 /* SECOND */
@@ -694,7 +696,7 @@ body {
   z-index: 2;
   transform: translateY(-25px) scale(0.98);
   opacity: 0.95;
-  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.5);
+  /* box-shadow: 0 25px 70px rgba(0, 0, 0, 0.5); */
 }
 
 /* THIRD */
@@ -702,7 +704,7 @@ body {
   z-index: 1;
   transform: translateY(-50px) scale(0.96);
   opacity: 0.9;
-  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.45);
+  /* box-shadow: 0 20px 55px rgba(0, 0, 0, 0.45); */
 }
 
 /* Box Image - BACK LAYER */
