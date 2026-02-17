@@ -207,9 +207,7 @@ React.useEffect(() => {
   </div>
 </div>
 
-  <div className="box-image">
-    <Image src={box} alt="Illustrative box graphic" className="boximg"/>
-  </div>
+
 </div>
 
   </div>
