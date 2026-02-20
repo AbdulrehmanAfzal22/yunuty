@@ -241,7 +241,9 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: url("../../../public/assests/barcode.png") center/cover no-repeat;
+  
+  background: url("../../../public/assests/shaping.png") center/cover no-repeat;
+
     opacity: 0.50;
   z-index: 0;
 }
@@ -350,7 +352,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: url("../../../public/assests/shaping.png") center/cover no-repeat;
+background: url("../../../public/assests/barcode.png") center/cover no-repeat;
  opacity: 0.50;
   z-index: 0;
 }
