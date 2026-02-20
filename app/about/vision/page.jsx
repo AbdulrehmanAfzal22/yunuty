@@ -17,13 +17,12 @@ export default function Vision() {
           if (entry.isIntersecting) {
             entry.target.classList.add("visible");
           } else {
-            // Remove class when out of view → animation can replay when scrolling back
             entry.target.classList.remove("visible");
           }
         });
       },
       {
-        threshold: 0.18,           // trigger a bit earlier
+        threshold: 0.18,
         rootMargin: "0px 0px -10% 0px",
       }
     );
@@ -44,7 +43,7 @@ export default function Vision() {
       <div className="subtitle-row1">
         <Image src={decorLeft} alt="decor left" width={80} height={24} />
         &nbsp;&nbsp;&nbsp;
-        <p className="section-label1">Values</p>
+        <p className="hero-about__label">Values</p>
         &nbsp;&nbsp;&nbsp;
         <Image src={decorRight} alt="decor right" width={80} height={24} />
       </div>
@@ -66,7 +65,7 @@ export default function Vision() {
       <div className="firstsecond">
         <section className="mission-section">
           <div
-            className="mission-card animate-on-scroll"
+            className="mission-card animate-on-scroll mission-bg-card"
             ref={(el) => (cardRefs.current[0] = el)}
           >
             <div className="mission-icon">
@@ -80,8 +79,7 @@ export default function Vision() {
             <div className="mission-text-box">
               <p>
                 To empower organizations with integrated, future-ready solutions
-                that meet today's challenges and enable scalable, resilient
-                growth.
+                that meet today's challenges and enable scalable, resilient growth.
               </p>
             </div>
           </div>
@@ -89,7 +87,7 @@ export default function Vision() {
 
         <section className="mission-section">
           <div
-            className="mission-card animate-on-scroll"
+            className="mission-card animate-on-scroll digital-bg-card"
             ref={(el) => (cardRefs.current[1] = el)}
           >
             <div className="mission-icon">
@@ -113,7 +111,7 @@ export default function Vision() {
       <div className="thirdfourth">
         <section className="mission-section">
           <div
-            className="mission-card animate-on-scroll"
+            className="mission-card animate-on-scroll process-bg-card"
             ref={(el) => (cardRefs.current[2] = el)}
           >
             <div className="mission-icon">
@@ -134,7 +132,7 @@ export default function Vision() {
 
         <section className="mission-section">
           <div
-            className="mission-card animate-on-scroll"
+            className="mission-card animate-on-scroll yunutyconnect"
             ref={(el) => (cardRefs.current[3] = el)}
           >
             <div className="mission-icon">
@@ -158,7 +156,7 @@ export default function Vision() {
       <div className="fifthsixth">
         <section className="mission-section">
           <div
-            className="mission-card animate-on-scroll"
+            className="mission-card animate-on-scroll shaping"
             ref={(el) => (cardRefs.current[4] = el)}
           >
             <div className="mission-icon">
@@ -168,7 +166,9 @@ export default function Vision() {
               </div>
               <CloudDownload size={30} strokeWidth={1.5} />
             </div>
-            <h2 className="mission-title">Shaping Supply Chains for Better Tomorrow</h2>
+            <h2 className="mission-title">
+              Shaping Supply Chains for Better Tomorrow
+            </h2>
             <div className="mission-text-box">
               <p>
                 We design supply chain and operational strategies that unlock efficiency, resilience, and sustainable growth
@@ -179,7 +179,7 @@ export default function Vision() {
 
         <section className="mission-section">
           <div
-            className="mission-card animate-on-scroll"
+            className="mission-card animate-on-scroll patnership"
             ref={(el) => (cardRefs.current[5] = el)}
           >
             <div className="mission-icon">
@@ -189,7 +189,9 @@ export default function Vision() {
               </div>
               <Handshake size={30} strokeWidth={1.5} />
             </div>
-            <h2 className="mission-title">Partnerships Built on Trust and Result</h2>
+            <h2 className="mission-title">
+              Partnerships Built on Trust and Result
+            </h2>
             <div className="mission-text-box">
               <p>
                 We foster relationships built on trust and collaboration, transforming goals into results that last.

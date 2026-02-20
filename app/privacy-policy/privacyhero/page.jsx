@@ -32,7 +32,7 @@ export default function Privacy() {
           <div className="privacy-cta-wrapper">
             <button className="privacy-cta-button" type="button">
               <span className="privacy-button-icon"><Timer className="watch" /></span>
-              Last Updated on June 19, 2024
+              Last Updated on February 20, 2026
             </button>
           </div>
         </div>
@@ -43,7 +43,7 @@ export default function Privacy() {
               <p className="privacy-mission-text">
                 We are committed to protecting your privacy of your personal information.This policy <br/>outlines the types of information we collect and your rights regarding your data.
               </p>
-              <button className="privacy-cta-buttons">Report an Issue</button>
+  -                <button className="privacy-cta-buttons">Report an Issue</button>
             </div>
           </div>
         </section>

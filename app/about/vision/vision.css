@@ -156,10 +156,11 @@ body {
 }
 
 .circle {
-  position: absolute;
-  border-radius: 50%;
-  border: 1.5px solid #5a6eff;
+    border: 3px solid #ffffff;
+    border-radius: 50%;
+    position: absolute;
 }
+
 
 .circle.middle { inset: -18px; opacity: 0.65; }
 .circle.inner  { inset: -9px;  opacity: 0.9; }
@@ -225,4 +226,136 @@ body {
     max-width: 1220px;
     gap: 3px;
   }
+}
+
+
+/* ================= PROCESS ENGINEERING BG IMAGE ================= */
+
+.process-bg-card {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background Image */
+.process-bg-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../../../public/assests/barcode.png") center/cover no-repeat;
+    opacity: 0.50;
+  z-index: 0;
+}
+
+/* Keep content above image */
+.process-bg-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+
+
+
+/* ================= OUR MISSION BG IMAGE ================= */
+
+.mission-bg-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.mission-bg-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../../../public/assests/ourmission.png") center/cover no-repeat;
+  z-index: 0;
+  opacity: 0.50;
+}
+
+/* Keep content above image */
+.mission-bg-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* ================= DIGITAL TRANSFORMATION BG ================= */
+
+.digital-bg-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.digital-bg-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../../../public/assests/transformation.png") center/cover no-repeat;
+ opacity: 0.50;
+  z-index: 0;
+}
+
+.digital-bg-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+
+
+.yunutyconnect {
+  position: relative;
+  overflow: hidden;
+}
+
+.yunutyconnect::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../../../public/assests/connect.png") center/cover no-repeat;
+ opacity: 0.50;
+  z-index: 0;
+}
+
+.yunutyconnect > * {
+  position: relative;
+  z-index: 2;
+}
+
+
+.patnership {
+  position: relative;
+  overflow: hidden;
+}
+
+.patnership::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../../../public/assests/tablet.png") center/cover no-repeat;
+ opacity: 0.50;
+  z-index: 0;
+}
+
+.patnership > * {
+  position: relative;
+  z-index: 2;
+}
+
+
+.shaping {
+  position: relative;
+  overflow: hidden;
+}
+
+.shaping::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../../../public/assests/shaping.png") center/cover no-repeat;
+ opacity: 0.50;
+  z-index: 0;
+}
+
+.shaping > * {
+  position: relative;
+  z-index: 2;
 }

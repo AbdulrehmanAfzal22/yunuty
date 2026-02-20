@@ -80,12 +80,12 @@ export default function TestimonialCards() {
       <div className="container1">
         <div className="center-content">
           <Image src={left} alt="Left Decoration" className="decoration-left" />
-          <span className="testimonial-badge1">Testimonial</span>
+          <span className="testimonial-badge1">Testimonials</span>
           <Image src={right} alt="Right Decoration" className="decoration-right" />
         </div>
 
         <h1 className="test">
-          Our clients love to<br />use our products.
+          Whats Our Clients Say
         </h1>
 
         <p className="subtitle">

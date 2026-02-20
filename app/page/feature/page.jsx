@@ -141,7 +141,7 @@ React.useEffect(() => {
       <div className="cta-container">
         <div className="cta-content">
           <h2 className="cta-text">
-            Stop writer's block and generate fresh content ideas with our AI assistant. Take your content to next level!
+      Discover the future of productivity, optimize your processes and make every minute count.
           </h2>
         </div>
         

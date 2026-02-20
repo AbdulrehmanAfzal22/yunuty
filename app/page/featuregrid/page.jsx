@@ -44,11 +44,11 @@ const FeatureGrid = () => {
                      <div className="subtitles">
                        <Image src={left} alt="Decorative left accent" width={79} height={17} className="no-shrink" />
                       
-                      <p className="feature-text">Features</p>
+                      <p className="feature-text">Benefits</p>
                       <Image src={right} alt="Decorative right accent" width={79} height={17} className="no-shrink" />
                      </div>
                     <div className="feature-heading">
-                          <h1>Our Clients Love Us</h1>
+                          <h1>Your Benefits</h1>
                       <p>Free Up Your Time to Focus on What Matters Most</p>
                     </div>
                     </div>

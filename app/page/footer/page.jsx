@@ -26,18 +26,17 @@ const Footer = () => {
         <div className="footer-center">
           <div>
             <h4>Phone Number</h4>
-            <p>(757) 814-4949</p>
+            <p>+1 (561) 648-5791</p>
           </div>
 
           <div>
             <h4>Email</h4>
             <p>notify@yunuak.com</p>
-            <p>asenol.yunuakinstitute@gmail.com</p>
           </div>
         </div>
 
         {/* RIGHT — Newsletter */}
-        <div className="footer-right">
+        {/* <div className="footer-right">
           <p>Subscribe to our newsletter</p>
 
           <div className="newsletter">
@@ -50,14 +49,13 @@ const Footer = () => {
           <div className="social-icons">
             <div className="icon1"><FaInstagram /></div>
             <div className="icon1"><FaLinkedinIn /></div>
-            {/* <div className="icon1"><FaDribbble /></div> */}
           </div>
-        </div>
+        </div> */}
 
       </div>
 
       <div className="footer-bottom">
-        <p className="year">© 2025 | All Rights Reserved.</p>
+        <p className="year">© 2026 | All Rights Reserved.</p>
         <a href="#top">Back to top ↑</a>
       </div>
     </footer>
