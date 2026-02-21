@@ -11,7 +11,7 @@ const Footer = () => {
 
       <div className="footer-container">
         
-        {/* LEFT SIDE — Logo Area (Empty) */}
+   
         <div className="footer-left">
           <div className="logo-placeholder">
            <Image src={logo} alt="Company Logo" />
@@ -22,21 +22,26 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* CENTER — Contact Info */}
+
+     
         <div className="footer-center">
           <div>
             <h4>Phone Number</h4>
             <p>+1 (561) 648-5791</p>
           </div>
 
-          <div>
+           <div>
             <h4>Email</h4>
+            <p>notify@yunuak.com</p>
+          </div>
+
+           <div>
+            <h4>Location</h4>
             <p>notify@yunuak.com</p>
           </div>
         </div>
 
-        {/* RIGHT — Newsletter */}
-        {/* <div className="footer-right">
+        <div className="footer-right">
           <p>Subscribe to our newsletter</p>
 
           <div className="newsletter">
@@ -46,11 +51,11 @@ const Footer = () => {
             </button>
           </div>
 
-          <div className="social-icons">
+          {/* <div className="social-icons">
             <div className="icon1"><FaInstagram /></div>
             <div className="icon1"><FaLinkedinIn /></div>
-          </div>
-        </div> */}
+          </div> */}
+        </div>
 
       </div>
 

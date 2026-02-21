@@ -46,7 +46,6 @@ html {
 .hero-overlay {
     position: absolute;
     inset: 0;
-    /* background: rgba(5, 7, 28, 0.4); */
     z-index: 1;
 }
 
@@ -71,17 +70,13 @@ html {
 }
 
 /* ================= SUBTITLE ROW ================= */
-/* 
-  FIX: Removed all negative margins and conflicting offsets.
-  Use consistent margin-bottom and let heading-hero sit naturally below it.
-*/
 .hero-subtitle {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1.25rem;
-    margin-bottom: 20px;    /* ✅ Consistent spacing below subtitle */
-    flex-wrap: nowrap;       /* ✅ Never wrap on desktop */
+    margin-bottom: 20px;
+    flex-wrap: nowrap;
     padding: 0 10px;
     width: 100%;
 }
@@ -98,14 +93,10 @@ html {
     font-size: clamp(13px, 1.2vw, 17px);
     line-height: 1.4;
     font-family: sans-serif;
-    white-space: nowrap;     /* ✅ Keep text on one line */
+    white-space: nowrap;
 }
 
 /* ================= HEADING ================= */
-/*
-  FIX: Removed margin-top: -53px which caused overlap with subtitle.
-  Use padding-top: 0 and let normal flow handle spacing.
-*/
 .heading-hero {
     font-size: clamp(32px, 5vw, 72px);
     line-height: 1.1;
@@ -335,12 +326,17 @@ html {
 }
 
 /* ================= DESKTOP STANDARD (1024px - 1439px) ================= */
+/* ✅ FIX: Removed negative margin-top, reduced padding-top, added padding-bottom */
 @media (min-width: 1024px) and (max-width: 1439px) {
-    .hero { padding-top: 160px; }
+    .hero { 
+        padding-top: 140px;
+        padding-bottom: 60px;
+        min-height: auto;
+    }
     .hero-container { padding: 0 5vw; max-width: 1400px; }
    .hero-content {
         max-width: 1100px;
-        margin-top: -83px;
+        margin-top: 0;
     }
 
     .hero-subtitle {
@@ -359,13 +355,18 @@ html {
     .email-input { font-size: 15px; padding-right: 130px; }
     .submit-btn { padding: 10px 28px; font-size: 14px; }
 
-    .dark-img { margin-top: 80px; }
+    .dark-img { margin-top: 60px; }
     .dark-image { max-width: 1100px; }
 }
 
 /* ================= TABLET LANDSCAPE (768px - 1023px) ================= */
+/* ✅ FIX: Reduced padding-top, added padding-bottom, set min-height: auto */
 @media (min-width: 768px) and (max-width: 1023px) {
-    .hero { padding-top: 120px; }
+    .hero { 
+        padding-top: 100px;
+        padding-bottom: 50px;
+        min-height: auto;
+    }
     .hero-container { padding: 0 30px; }
     .hero-content { max-width: 900px; }
 
@@ -388,8 +389,6 @@ html {
         margin: 18px auto 32px;
         padding: 0 20px;
     }
-
-    /* ✅ Hide <br> tags on tablet to prevent awkward breaks */
     .hero-desc br { display: none; }
 
     .email-wrapper { max-width: 480px; padding: 0 20px; }
@@ -397,13 +396,17 @@ html {
     .email-input { font-size: 14px; padding-right: 130px; }
     .submit-btn { padding: 9px 22px; font-size: 13px; }
 
-    .dark-img { margin-top: 60px; }
+    .dark-img { margin-top: 50px; }
     .dark-image { max-width: 800px; }
 }
 
 /* ================= TABLET PORTRAIT (640px - 767px) ================= */
 @media (min-width: 640px) and (max-width: 767px) {
-    .hero { padding-top: 100px; }
+    .hero { 
+        padding-top: 90px;
+        padding-bottom: 40px;
+        min-height: auto;
+    }
     .hero-container { padding: 0 24px; }
 
     .hero-subtitle {
@@ -420,7 +423,7 @@ html {
         letter-spacing: -1px;
         padding: 0 8px;
     }
-    .heading-hero br { display: none; } /* ✅ No breaks on small screens */
+    .heading-hero br { display: none; }
 
     .hero-desc {
         font-size: 14px;
@@ -434,19 +437,23 @@ html {
     .email-input { font-size: 13px; padding-right: 120px; }
     .submit-btn { padding: 8px 18px; font-size: 13px; }
 
-    .dark-img { margin-top: 50px; }
+    .dark-img { margin-top: 44px; }
     .dark-image { max-width: 680px; }
 }
 
 /* ================= MOBILE LARGE (480px - 639px) ================= */
 @media (min-width: 480px) and (max-width: 639px) {
-    .hero { padding-top: 90px; }
+    .hero { 
+        padding-top: 80px;
+        padding-bottom: 35px;
+        min-height: auto;
+    }
     .hero-container { padding: 0 20px; }
 
     .hero-subtitle {
         gap: 0.7rem;
         margin-bottom: 16px;
-        flex-wrap: nowrap;      /* ✅ Keep on one line */
+        flex-wrap: nowrap;
     }
     .hero-subtitle .no-shrink { width: 56px; }
     .feature-text { font-size: 12px; }
@@ -471,26 +478,31 @@ html {
     .email-input { font-size: 13px; padding-right: 110px; }
     .submit-btn { padding: 7px 16px; font-size: 12px; }
 
-    .dark-img { margin-top: 44px; }
+    .dark-img { margin-top: 40px; }
     .dark-image { max-width: 580px; }
 }
-
+@media (max-width: 790px) {
+    .line1 img{
+        display: none;
+    }
+}
 /* ================= MOBILE PORTRAIT (375px - 479px) ================= */
 @media (min-width: 375px) and (max-width: 479px) {
-    .hero { padding-top: 80px; }
+    .hero { 
+        padding-top: 70px;
+        padding-bottom: 30px;
+        min-height: auto;
+    }
     .hero-container { padding: 0 18px; }
 
-    /* ✅ KEY FIX: On small mobile, let it wrap gracefully */
     .hero-subtitle {
         gap: 0.5rem;
         margin-bottom: 14px;
-        flex-wrap: nowrap;          /* ✅ Still no wrap - just shrink images */
+        flex-wrap: nowrap;
         padding: 0 8px;
         justify-content: center;
     }
-    .hero-subtitle .no-shrink {
-        width: 48px;                /* ✅ Smaller accent images */
-    }
+    .hero-subtitle .no-shrink { width: 48px; }
     .feature-text {
         font-size: 11px;
         white-space: nowrap;
@@ -517,13 +529,17 @@ html {
     .email-input { font-size: 12px; padding: 0 14px; padding-right: 105px; }
     .submit-btn { padding: 7px 14px; font-size: 12px; right: 5px; }
 
-    .dark-img { margin-top: 38px; }
+    .dark-img { margin-top: 34px; }
     .dark-image { max-width: 480px; }
 }
 
 /* ================= MOBILE SMALL (320px - 374px) ================= */
 @media (min-width: 320px) and (max-width: 374px) {
-    .hero { padding-top: 70px; }
+    .hero { 
+        padding-top: 60px;
+        padding-bottom: 25px;
+        min-height: auto;
+    }
     .hero-container { padding: 0 14px; }
 
     .hero-subtitle {
@@ -532,9 +548,7 @@ html {
         flex-wrap: nowrap;
         padding: 0 4px;
     }
-    .hero-subtitle .no-shrink {
-        width: 40px;               /* ✅ Very small accent images */
-    }
+    .hero-subtitle .no-shrink { width: 40px; }
     .feature-text {
         font-size: 10.5px;
         white-space: nowrap;
@@ -561,13 +575,17 @@ html {
     .email-input { font-size: 11px; padding: 0 12px; padding-right: 100px; }
     .submit-btn { padding: 6px 12px; font-size: 11px; right: 4px; }
 
-    .dark-img { margin-top: 32px; }
+    .dark-img { margin-top: 30px; }
     .dark-image { max-width: 100%; }
 }
 
 /* ================= MOBILE EXTRA SMALL (< 320px) ================= */
 @media (max-width: 319px) {
-    .hero { padding-top: 60px; }
+    .hero { 
+        padding-top: 50px;
+        padding-bottom: 20px;
+        min-height: auto;
+    }
     .hero-container { padding: 0 12px; }
 
     .hero-subtitle {
@@ -600,7 +618,7 @@ html {
     .email-input { font-size: 10px; padding: 0 10px; padding-right: 94px; }
     .submit-btn { padding: 5px 10px; font-size: 10px; right: 4px; }
 
-    .dark-img { margin-top: 28px; }
+    .dark-img { margin-top: 26px; }
     .dark-image { max-width: 100%; }
 }
 
@@ -608,14 +626,14 @@ html {
 @media (max-height: 500px) and (orientation: landscape) {
     .hero {
         min-height: auto;
-        padding-top: 80px;
-        padding-bottom: 40px;
+        padding-top: 70px;
+        padding-bottom: 35px;
     }
 
     .hero-subtitle { margin-bottom: 12px; }
     .heading-hero { font-size: 32px; }
     .hero-desc { margin: 12px auto 20px; font-size: 13px; }
-    .dark-img { margin-top: 30px; }
+    .dark-img { margin-top: 28px; }
 }
 
 /* ================= ACCESSIBILITY ================= */

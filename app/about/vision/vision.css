@@ -268,7 +268,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: url("../../../public/assests/ourmission.png") center/cover no-repeat;
+  background: url("../../../public/assests/transformation.png") center/cover no-repeat;
   z-index: 0;
   opacity: 0.50;
 }
@@ -291,7 +291,8 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: url("../../../public/assests/transformation.png") center/cover no-repeat;
+  background: url("../../../public/assests/ourmission.png") center/cover no-repeat;
+
  opacity: 0.50;
   z-index: 0;
 }
@@ -360,4 +361,11 @@ background: url("../../../public/assests/barcode.png") center/cover no-repeat;
 .shaping > * {
   position: relative;
   z-index: 2;
+}
+
+.values-label{
+      text-align: center;
+    color: #959efe;
+    white-space: nowrap;
+    font-size: 14px;
 }

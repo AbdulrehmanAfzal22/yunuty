@@ -43,7 +43,7 @@ export default function Vision() {
       <div className="subtitle-row1">
         <Image src={decorLeft} alt="decor left" width={80} height={24} />
         &nbsp;&nbsp;&nbsp;
-        <p className="hero-about__label">Values</p>
+        <p className="values-label">Values</p>
         &nbsp;&nbsp;&nbsp;
         <Image src={decorRight} alt="decor right" width={80} height={24} />
       </div>

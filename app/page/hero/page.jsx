@@ -20,7 +20,6 @@ export default function Hero() {
 
   return (
     <section className="hero">
-      {/* Background */}
       <div className="hero-bg">
         <Image
           src={bg}
