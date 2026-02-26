@@ -82,6 +82,17 @@ export default function Navbar() {
             </Link>
           </li>
 
+     <li>
+            <Link
+              href="/contactus/contact"
+              className={
+                pathname === "/contactus/contact" ? "active" : ""
+              }
+              onClick={closeMenu}
+            >
+             Contact us
+            </Link>
+          </li>
           <li>
             <Link
               href="/privacy-policy/privacybox"
@@ -111,6 +122,7 @@ export default function Navbar() {
                   FAQ
                 </Link>
               </li>
+              
             </>
           )}
 
