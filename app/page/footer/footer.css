@@ -12,7 +12,8 @@
 .footer-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.75), transparent 45%);
+  /* background: linear-gradient(to top, rgba(0,0,0,0.75), transparent 45%); */
+  background: radial-gradient(circle at bottom center, #05071c 60%, #181953 100%);
   z-index: 1;
 }
 
@@ -22,7 +23,7 @@
   display: flex;
   justify-content: space-between;
   gap: 50px;
-  flex-wrap: wrap; /* important */
+  flex-wrap: wrap;
 }
 
 /* ===================================
@@ -32,7 +33,7 @@
 .footer-center,
 .footer-right {
   flex: 1;
-  min-width: 260px; /* makes it responsive automatically */
+  min-width: 240px;
 }
 
 /* ===================================
@@ -51,23 +52,35 @@
 .footer-description {
   font-size: 14px;
   line-height: 1.6;
-  opacity: 0.85;
+  opacity: 0.75;
+  max-width: 280px;
 }
 
 /* ===================================
-   CENTER
+   CENTER — matches reference layout
 =================================== */
+.footer-contact-item {
+  margin-bottom: 24px;
+}
+
+.footer-contact-item:last-child {
+  margin-bottom: 0;
+}
+
 .footer-center h4 {
   font-size: 13px;
-  opacity: 0.7;
-  margin-bottom: 5px;
+  font-weight: 400;
+  opacity: 0.6;
+  margin: 0 0 6px 0;
+  letter-spacing: 0.02em;
 }
 
 .footer-center p {
   font-size: 16px;
-  margin-bottom: 20px;
+  font-weight: 600;
+  margin: 0;
   cursor: pointer;
-  transition: 0.3s;
+  transition: color 0.3s;
 }
 
 .footer-center p:hover {
@@ -77,17 +90,22 @@
 /* ===================================
    RIGHT
 =================================== */
-.footer-right > p {
-  margin-bottom: 15px;
+.newsletter-label {
+  font-size: 14px;
   color: #aaa;
+  margin-bottom: 18px;
 }
 
+/* Input sits on a bottom-border line, button is pill-shaped beside it */
 .newsletter {
-    border-bottom: 2px solid #fff;
-    gap: -8px;
-    width: 67%;
-    padding-bottom: 10px;
-    display: flex;
+  display: flex;
+  align-items: center;
+  border-bottom: 1.5px solid rgba(255,255,255,0.5);
+  padding-bottom: 12px;
+  gap: 12px;
+  width: 100%;
+  max-width: 340px;
+  margin-bottom: 32px;
 }
 
 .newsletter input {
@@ -97,21 +115,55 @@
   outline: none;
   color: white;
   font-size: 14px;
+  padding: 4px 0;
+}
+
+.newsletter input::placeholder {
+  color: rgba(255,255,255,0.3);
 }
 
 .newsletter button {
   background: transparent;
-  border: 1px solid white;
-  padding: 8px 18px;
+  border: 1.5px solid white;
+  padding: 8px 20px;
   border-radius: 20px;
   color: white;
   cursor: pointer;
-  transition: 0.3s;
+  font-size: 13px;
+  white-space: nowrap;
+  transition: background 0.25s, color 0.25s;
 }
 
 .newsletter button:hover {
   background: white;
-  color: black;
+  color: #050a1f;
+}
+
+/* ===================================
+   SOCIAL ICONS — circular bordered
+=================================== */
+.social-icons {
+  display: flex;
+  gap: 12px;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255,255,255,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 15px;
+  color: white;
+  transition: border-color 0.25s, background 0.25s;
+}
+
+.social-icon:hover {
+  border-color: white;
+  background: rgba(255,255,255,0.1);
 }
 
 /* ===================================
@@ -122,22 +174,23 @@
   z-index: 2;
   margin-top: 60px;
   padding-top: 20px;
-  border-top: 1px solid rgba(255,255,255,0.15);
+  border-top: 1px solid rgba(255,255,255,0.12);
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 10px;
   font-size: 14px;
-  opacity: 0.7;
+  opacity: 0.65;
 }
 
 .footer-bottom a {
   color: white;
   text-decoration: none;
+  opacity: 1;
 }
 
 .footer-bottom a:hover {
-  opacity: 1;
+  opacity: 0.9;
 }
 
 /* ===================================
@@ -167,14 +220,8 @@
   }
 
   .newsletter {
-    flex-direction: column;
-    align-items: stretch;
+    max-width: 100%;
   }
-
-     .newsletter button {
-        width: 26%;
-        margin-left: 240px;
-    }
 
   .footer-bottom {
     flex-direction: column;
@@ -195,7 +242,7 @@
   }
 
   .footer-center p {
-    font-size: 14px;
+    font-size: 15px;
   }
 
   .footer-bottom {
