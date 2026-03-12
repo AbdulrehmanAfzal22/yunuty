@@ -1,10 +1,18 @@
 "use client";
 import React from "react";
 import "./discover.css";
-
+import Image from "next/image";
+import boat from "../../../public/assests/boat.jpeg";  
 export default function DiscoverSection() {
   return (
     <section className="custom-hero-section">
+      <Image
+        src={boat}
+        alt=""
+        className="custom-hero-bg-img"
+        aria-hidden="true"
+      />
+      <div className="custom-hero-bg-overlay" />
       <div className="custom-hero-container">
         <h1 className="custom-hero-title">
           Discover the future of productivity, 
@@ -17,7 +25,6 @@ export default function DiscoverSection() {
         </p>
         <button className="custom-hero-button">Get A Demo</button>
       </div>
-      <div className="custom-hero-grid"></div>
     </section>
   );
 }

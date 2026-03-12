@@ -172,10 +172,12 @@ body{
   gap: 2px; 
 } 
 
-.star { 
-  color: #fbbf24; 
-  font-size: 16px; 
-} 
+.star {
+    color: #fbbf24;
+    font-size: 16px;
+    margin-top: -9px;
+    background: transparent;
+}
 
 .rating-text { 
   font-size: 14px; 

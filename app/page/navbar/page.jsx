@@ -128,14 +128,20 @@ export default function Navbar() {
 
           {/* Mobile Get Started Button */}
           <li className="mobile-btn-wrapper">
-            <button className="get-started-btn mobile" onClick={closeMenu}>
+            <Link
+              href="/contactus/contact"
+              className="get-started-btn mobile"
+              onClick={closeMenu}
+            >
               Get Started
-            </button>
+            </Link>
           </li>
         </ul>
 
         {/* Desktop Get Started Button */}
-        <button className="get-started-btn desktop">Get Started</button>
+        <Link href="/contactus/contact" className="get-started-btn desktop">
+          Get Started
+        </Link>
       </div>
 
       {/* Overlay for mobile menu */}
