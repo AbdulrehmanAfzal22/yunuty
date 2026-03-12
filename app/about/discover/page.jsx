@@ -1,29 +1,26 @@
-"use client";
+"use client"
 import React from "react";
 import "./discover.css";
 import Image from "next/image";
-import boat from "../../../public/assests/boat.jpeg";  
+import boat from "../../../public/assests/boat.jpeg";
+
 export default function DiscoverSection() {
   return (
     <section className="custom-hero-section">
       <Image
         src={boat}
         alt=""
-        className="custom-hero-bg-img"
+        fill
+        priority
+        style={{ objectFit: "cover", objectPosition: "center", zIndex: 0 }}
         aria-hidden="true"
       />
       <div className="custom-hero-bg-overlay" />
       <div className="custom-hero-container">
         <h1 className="custom-hero-title">
-          Discover the future of productivity, 
-          optimize your processes and make 
-          every minute count.
+          Row Toward the Future Together Where Teamwork and Technology Drives Productivity.
         </h1>
-        <p className="custom-hero-subtitle">
-          Get a demo and unleash your productivity. Explore the latest technology
-          and have a great experience!
-        </p>
-        <button className="custom-hero-button">Get A Demo</button>
+        <button className="custom-hero-button">Request A Demo</button>
       </div>
     </section>
   );

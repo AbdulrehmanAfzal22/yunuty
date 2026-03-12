@@ -9,6 +9,7 @@ import evan from '../../../public/assests/evan.png'
 import ariyna from '../../../public/assests/ariyna.png'
 import girl from  '../../../public/assests/girl.png'
 import man from  '../../../public/assests/man.png'
+
 export default function TestimonialCards() {
   const [particles, setParticles] = useState([]);
   const [isMobile, setIsMobile] = useState(false);
@@ -16,24 +17,21 @@ export default function TestimonialCards() {
 
   const testimonials = [
     {
-      content:
-        "YunutyConnect has streamlined our order-to-delivery process, keeping sales and operations perfectly aligned. It helps us move deals faster, reduce team friction, improve the customer experience, and close more efficiently.",
+      content: "YunutyConnect has streamlined our order-to-delivery process, keeping sales and operations perfectly aligned. It helps us move deals faster, reduce team friction, improve the customer experience, and close more efficiently.",
       author: "Jennifer Reed",
       title: "Operations Manager",
       initial: "J",
       image: evan,
     },
     {
-      content:
-        "YunutyConnect gave us the structure and scalability our branch operations desperately needed. The system supports our growth, improves cross-departmental collaboration, and delivers clear operational insights. It's not just software.",
+      content: "YunutyConnect gave us the structure and scalability our branch operations desperately needed. The system supports our growth, improves cross-departmental collaboration, and delivers clear operational insights. It's not just software.",
       author: "Marcus Chen",
       title: "Marketing Director",
       initial: "M",
       image: girl,
     },
     {
-      content:
-        "YunutyConnect has streamlined our entire order-to-delivery workflow, keeping sales and operations perfectly aligned. We can now move deals forward faster, reduce friction between teams, deliver a better customer experience, and close more deals efficiently.",
+      content: "YunutyConnect has streamlined our entire order-to-delivery workflow, keeping sales and operations perfectly aligned. We can now move deals forward faster, reduce friction between teams, deliver a better customer experience, and close more deals efficiently.",
       author: "Sarah Johnson",
       title: "CEO",
       initial: "S",
@@ -50,24 +48,19 @@ export default function TestimonialCards() {
     }));
     setParticles(particleArray);
 
-    // Check if mobile
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
     checkMobile();
     window.addEventListener('resize', checkMobile);
-
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
   return (
-    <div className="testimonial-section">
-      <div className="particles">
+    <div className="tsc-section">
+      <div className="tsc-particles">
         {particles.map((particle) => (
           <div
             key={particle.id}
-            className="particle"
+            className="tsc-particle"
             style={{
               left: `${particle.left}%`,
               animationDelay: `${particle.delay}s`,
@@ -77,22 +70,19 @@ export default function TestimonialCards() {
         ))}
       </div>
 
-      <div className="container1">
-        <div className="center-content">
-          <Image src={left} alt="Left Decoration" className="decoration-left" />
-          <span className="testimonial-badge1">Testimonials</span>
-          <Image src={right} alt="Right Decoration" className="decoration-right" />
+      <div className="tsc-container">
+        <div className="tsc-center">
+          <Image src={left} alt="Left Decoration" className="tsc-deco-left" />
+          <span className="tsc-badge-label">Testimonials</span>
+          <Image src={right} alt="Right Decoration" className="tsc-deco-right" />
         </div>
 
-        <h1 className="test">
+        <h1 className="tsc-heading">
           Whats Our Clients Say
         </h1>
 
-        <p className="subtitle">
-          Elevate Your Inbox: Uncover our Most Valued Content Now.
-        </p>
-
-        <div className="cards-container" ref={cardsContainerRef}>
+     
+        <div className="tsc-cards-wrap" ref={cardsContainerRef}>
           {testimonials.map((testimonial, index) => (
             <DraggableCard
               key={index}
@@ -104,21 +94,11 @@ export default function TestimonialCards() {
           ))}
         </div>
 
-        <div className="navigation-dots">
-          <div className="dot"></div>
-          <div className="dot active"></div>
-          <div className="dot"></div>
+        <div className="tsc-dots">
+          <div className="tsc-dot"></div>
+          <div className="tsc-dot active"></div>
+          <div className="tsc-dot"></div>
         </div>
-
-        {/* <div className="cta-section">
-          <h2 className="cta-title">
-            Discover the future of productivity, optimize your processes and make every minute count.
-          </h2>
-          <p className="cta-subtitle">
-            Harness AI-powered automation for a more efficient and high-yield work in great importance
-          </p>
-          <button className="cta-button">Start a Project</button>
-        </div> */}
       </div>
     </div>
   );
@@ -172,25 +152,17 @@ function DraggableCard({ testimonial, index, containerRef, isMobile }) {
 
   const handleMouseMove = (e) => {
     if (!isDragging || isMobile) return;
-
     const clientX = e.clientX || e.touches?.[0]?.clientX;
     const clientY = e.clientY || e.touches?.[0]?.clientY;
-
     const deltaX = clientX - dragStart.current.x;
     const deltaY = clientY - dragStart.current.y;
-
-    setPosition({
-      x: initialPosition.x + deltaX,
-      y: initialPosition.y + deltaY
-    });
-
+    setPosition({ x: initialPosition.x + deltaX, y: initialPosition.y + deltaY });
     setRotation(deltaX / 20);
   };
 
   const handleMouseUp = () => {
     if (!isDragging || isMobile) return;
     setIsDragging(false);
-
     setTimeout(() => {
       setPosition(initialPosition);
       setRotation(index === 0 ? -5 : index === 1 ? 0 : 5);
@@ -203,7 +175,6 @@ function DraggableCard({ testimonial, index, containerRef, isMobile }) {
       document.addEventListener("mouseup", handleMouseUp);
       document.addEventListener("touchmove", handleMouseMove);
       document.addEventListener("touchend", handleMouseUp);
-
       return () => {
         document.removeEventListener("mousemove", handleMouseMove);
         document.removeEventListener("mouseup", handleMouseUp);
@@ -222,31 +193,28 @@ function DraggableCard({ testimonial, index, containerRef, isMobile }) {
   };
 
   return (
-    <>
     <div
       ref={cardRef}
-      className={`testimonial-card card-float-${index}`}
+      className={`tsc-card tsc-float-${index}`}
       onMouseDown={handleMouseDown}
       onTouchStart={handleMouseDown}
       style={cardStyle}
     >
-      <div className="card-content">{testimonial.content}</div>
-      <div className="card-author">
-        <Image 
-          src={testimonial.image} 
+      <div className="tsc-card-body">{testimonial.content}</div>
+      <div className="tsc-author">
+        <Image
+          src={testimonial.image}
           alt={testimonial.author}
-          className="author-avatar"
+          className="tsc-avatar"
           width={40}
           height={40}
         />
-        <div className="author-info">
-          <div className="author-name">{testimonial.author}</div>
-          <div className="author-title">{testimonial.title}</div>
+        <div className="tsc-author-info">
+          <div className="tsc-author-name">{testimonial.author}</div>
+          <div className="tsc-author-role">{testimonial.title}</div>
         </div>
       </div>
-      <div className="quote-icon">"</div>
+      <div className="tsc-quote-mark">"</div>
     </div>
-
-    </>
   );
 }
