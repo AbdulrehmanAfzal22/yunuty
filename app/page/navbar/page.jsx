@@ -28,13 +28,13 @@ export default function Navbar() {
     <nav className="navbar">
       <div className="navbar-container">
         <div className="logo">
-         <Image
-  src={logo}
-  alt="Logo"
-  width={250}
-  height={100}
-  className="logo-image"
-/>
+          <Image
+            src={logo}
+            alt="Logo"
+            width={250}
+            height={100}
+            className="logo-image"
+          />
         </div>
 
         {/* Hamburger Menu */}
@@ -82,7 +82,7 @@ export default function Navbar() {
             </Link>
           </li>
 
-     <li>
+          <li>
             <Link
               href="/contactus/contact"
               className={
@@ -90,7 +90,7 @@ export default function Navbar() {
               }
               onClick={closeMenu}
             >
-             Contact us
+              Contact us
             </Link>
           </li>
           <li>
@@ -122,26 +122,20 @@ export default function Navbar() {
                   FAQ
                 </Link>
               </li>
-              
+
             </>
           )}
 
           {/* Mobile Get Started Button */}
           <li className="mobile-btn-wrapper">
-            <Link
-              href="/contactus/contact"
-              className="get-started-btn mobile"
-              onClick={closeMenu}
-            >
+            <button className="get-started-btn mobile" onClick={closeMenu}>
               Get Started
-            </Link>
+            </button>
           </li>
         </ul>
 
         {/* Desktop Get Started Button */}
-        <Link href="/contactus/contact" className="get-started-btn desktop">
-          Get Started
-        </Link>
+        <button className="get-started-btn desktop">Get Started</button>
       </div>
 
       {/* Overlay for mobile menu */}

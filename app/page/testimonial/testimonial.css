@@ -47,10 +47,10 @@
 
 .tsc-container {
     z-index: 2;
+    background: #fff;
     width: 100%;
-    background: #F7F7F5;
     margin: 0 auto;
-    padding: 80px 20px;
+    padding: 24px 5px;
     position: relative;
 }
 
