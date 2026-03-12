@@ -32,7 +32,7 @@
 .custom-hero-bg-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(5, 7, 28, 0.60);
+  /* background: rgba(5, 7, 28, 0.60); */
   z-index: 1;
 }
 
