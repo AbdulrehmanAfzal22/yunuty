@@ -18,7 +18,7 @@ export default function DiscoverSection() {
       <div className="custom-hero-bg-overlay" />
       <div className="custom-hero-container">
         <h1 className="custom-hero-title">
-          Row Toward the Future Together Where Teamwork and Technology Drives Productivity.
+          Transform Insights into Action with Smart, Data-Driven Decisions.
         </h1>
         <button className="custom-hero-button">Request A Demo</button>
       </div>

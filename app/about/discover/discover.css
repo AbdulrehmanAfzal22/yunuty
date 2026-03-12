@@ -199,11 +199,11 @@
     padding: 40px;
   }
 
-  .custom-hero-container {
-    max-width: 700px;
-    padding: 0 20px;
-    margin-right: 216px;
-  }
+    .custom-hero-container {
+        max-width: 700px;
+        margin-right: 41px;
+        padding: 0 20px;
+    }
 
   .custom-hero-title {
     width: 120%;
