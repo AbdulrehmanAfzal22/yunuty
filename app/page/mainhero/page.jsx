@@ -9,6 +9,7 @@ import Feature from '../feature/page'
 import Footer from '../footer/page'
 import DiscoverSection from "@/app/about/discover/page";
 import DemoSection from '@/app/demo/page'
+import OracleSection from '../test/page'
 
 function Mainhero() {
   return (
@@ -20,7 +21,8 @@ function Mainhero() {
 <Feature/>
 <FeatureGrid/>
  <Indicator/>
-       <TestimonialCards/> 
+ <OracleSection/>
+       {/* <TestimonialCards/>  */}
        <DemoSection/>
 <Footer/>
 
