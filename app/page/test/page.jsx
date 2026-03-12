@@ -13,11 +13,13 @@ export default function OracleSection() {
       {/* ── Top bar ── */}
       <div className="ors__topbar">
         <Image src={img2} alt="Oracle Partner Logo" className="ors__logo" />
-        <div className="ors__tags-top1">
-          <span className="ors__tag1">SECURITY</span>
-          <span className="ors__tag1">SCALABILITY</span>
-          <span className="ors__tag1">CLOUD INNOVATION</span>
-        </div>
+         <div className="ors__tags-top">
+            <span className="ors__tag">SECURITY</span>
+            <span className="ors__tag-sep">/</span>
+            <span className="ors__tag">SCALABILITY</span>
+            <span className="ors__tag-sep">/</span>
+            <span className="ors__tag">CLOUD INNOVATION</span>
+          </div>
       </div>
 
       {/* ── White box ── */}
@@ -35,13 +37,7 @@ export default function OracleSection() {
 
         {/* Right — content */}
         <div className="ors__content">
-          <div className="ors__tags-top">
-            <span className="ors__tag">SECURITY</span>
-            <span className="ors__tag-sep">/</span>
-            <span className="ors__tag">SCALABILITY</span>
-            <span className="ors__tag-sep">/</span>
-            <span className="ors__tag">CLOUD INNOVATION</span>
-          </div>
+        
           <p className="ors__para">
             We harness the power of Amazon Web Services (AWS) to deliver scalable, secure, and high-performance cloud solutions that drive business growth and digital transformation. Yunuak, powered by AWS, helps organizations streamline operations, accelerate innovation, and improve sales performance through reliable cloud infrastructure.
           </p>
