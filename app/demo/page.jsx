@@ -18,7 +18,7 @@ export default function DemoSection() {
       <div className="dmo-bg-overlay" />
       <div className="dmo-container">
         <h1 className="dmo-title">
-          Row Toward the Future Together Where Teamwork and Technology Drives Productivity.
+          Row Toward the Future Together <br /> Where Teamwork and Technology Drives Productivity.
         </h1>
         <button className="dmo-button">Request A Demo</button>
       </div>
