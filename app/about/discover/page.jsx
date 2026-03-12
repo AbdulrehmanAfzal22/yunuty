@@ -2,13 +2,13 @@
 import React from "react";
 import "./discover.css";
 import Image from "next/image";
-import boat from "../../../public/assests/boat.jpeg";
+import moving from "../../../public/assests/moving.jpeg";
 
 export default function DiscoverSection() {
   return (
     <section className="custom-hero-section">
       <Image
-        src={boat}
+        src={moving}
         alt=""
         fill
         priority

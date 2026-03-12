@@ -1,6 +1,6 @@
-.custom-hero-section {
+.dmo-section {
   position: relative;
-  height: 60vh;
+  min-height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -8,18 +8,18 @@
   overflow: hidden;
   font-family: 'Segoe UI', Roboto, sans-serif;
   text-align: center;
-  padding: 40px 20px;
+  padding: 60px 20px;
 }
 
 @font-face {
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 100;
-  src: url(https://fonts.gstatic.com/s/poppins/v24/pxiGyp8kv8JHgFVrLPTucXtAOvWDSHFF.woff2) format('woff2');
-  unicode-range: U+0900-097F, U+1CD0-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B09;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 100;
+    src: url(https://fonts.gstatic.com/s/poppins/v24/pxiGyp8kv8JHgFVrLPTucXtAOvWDSHFF.woff2) format('woff2');
+    unicode-range: U+0900-097F, U+1CD0-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B09;
 }
 
-.custom-hero-bg-img {
+.dmo-bg-img {
   position: absolute !important;
   inset: 0 !important;
   width: 100% !important;
@@ -29,13 +29,13 @@
   z-index: 0;
 }
 
-.custom-hero-bg-overlay {
+.dmo-bg-overlay {
   position: absolute;
   inset: 0;
   z-index: 1;
 }
 
-.custom-hero-container {
+.dmo-container {
   position: relative;
   max-width: 700px;
   width: 100%;
@@ -43,7 +43,7 @@
   padding: 0 20px;
 }
 
-.custom-hero-title {
+.dmo-title {
   font-family: 'Poppins', sans-serif;
   margin-bottom: 20px;
   font-weight: 600;
@@ -53,13 +53,13 @@
   margin-left: 0;
 }
 
-.custom-hero-subtitle {
+.dmo-subtitle {
   color: #c0c0c0;
   line-height: 1.6;
   margin-bottom: 40px;
 }
 
-.custom-hero-button {
+.dmo-button {
   padding: 12px 28px;
   font-weight: 600;
   color: #0a0a2a;
@@ -72,37 +72,37 @@
   text-decoration: none;
 }
 
-.custom-hero-button:hover {
+.dmo-button:hover {
   background: #ffffff;
   transform: translateY(-2px);
 }
 
-.custom-hero-button:active {
+.dmo-button:active {
   transform: translateY(0);
 }
 
 @media (max-width: 480px) {
-  .custom-hero-section {
-    height: 70vh;
-    padding: 30px 16px;
+  .dmo-section {
+    min-height: 100vh;
+    padding: 40px 16px;
   }
 
-  .custom-hero-container {
+  .dmo-container {
     padding: 0 12px;
   }
 
-  .custom-hero-title {
+  .dmo-title {
     font-size: 28px;
     line-height: 36px;
     margin-bottom: 16px;
   }
 
-  .custom-hero-subtitle {
+  .dmo-subtitle {
     font-size: 14px;
     margin-bottom: 30px;
   }
 
-  .custom-hero-button {
+  .dmo-button {
     padding: 11px 24px;
     font-size: 14px;
     width: 100%;
@@ -111,101 +111,101 @@
 }
 
 @media (min-width: 481px) and (max-width: 599px) {
-  .custom-hero-section {
-    height: 65vh;
-    padding: 40px 20px;
+  .dmo-section {
+    min-height: 90vh;
+    padding: 50px 20px;
   }
 
-  .custom-hero-container {
+  .dmo-container {
     padding: 0 16px;
   }
 
-  .custom-hero-title {
+  .dmo-title {
     font-size: 32px;
     line-height: 40px;
     margin-bottom: 18px;
   }
 
-  .custom-hero-subtitle {
+  .dmo-subtitle {
     font-size: 15px;
     margin-bottom: 35px;
   }
 
-  .custom-hero-button {
+  .dmo-button {
     padding: 12px 26px;
     font-size: 15px;
   }
 }
 
 @media (min-width: 600px) and (max-width: 768px) {
-  .custom-hero-section {
-    height: 60vh;
-    padding: 40px 30px;
+  .dmo-section {
+    min-height: 85vh;
+    padding: 60px 30px;
   }
 
-  .custom-hero-container {
+  .dmo-container {
     padding: 0 20px;
     max-width: 600px;
   }
 
-  .custom-hero-title {
+  .dmo-title {
     font-size: 36px;
     line-height: 44px;
     margin-bottom: 20px;
   }
 
-  .custom-hero-subtitle {
+  .dmo-subtitle {
     font-size: 16px;
     margin-bottom: 38px;
   }
 
-  .custom-hero-button {
+  .dmo-button {
     padding: 12px 28px;
     font-size: 16px;
   }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
-  .custom-hero-section {
-    height: 60vh;
-    padding: 40px;
+  .dmo-section {
+    min-height: 80vh;
+    padding: 60px 40px;
   }
 
-  .custom-hero-container {
+  .dmo-container {
     padding: 0 20px;
     max-width: 650px;
   }
 
-  .custom-hero-title {
+  .dmo-title {
     font-size: 42px;
     line-height: 50px;
     margin-bottom: 20px;
   }
 
-  .custom-hero-subtitle {
+  .dmo-subtitle {
     font-size: 17px;
     margin-bottom: 40px;
   }
 
-  .custom-hero-button {
+  .dmo-button {
     padding: 12px 28px;
     font-size: 16px;
   }
 }
 
 @media (min-width: 1025px) and (max-width: 1366px) {
-  .custom-hero-section {
-    height: 70vh;
-    padding: 40px;
+  .dmo-section {
+    min-height: 557px;
+    padding: 60px 40px;
+    width: 1412px;
   }
 
-  .custom-hero-container {
-    max-width: 700px;
+  .dmo-container {
     padding: 0 20px;
-    margin-right: 216px;
+    max-width: 700px;
   }
 
-  .custom-hero-title {
+  .dmo-title {
     width: 120%;
     margin-left: -10%;
     font-size: 45px;
@@ -213,29 +213,29 @@
     margin-bottom: 20px;
   }
 
-  .custom-hero-subtitle {
+  .dmo-subtitle {
     font-size: 18px;
     margin-bottom: 40px;
   }
 
-  .custom-hero-button {
+  .dmo-button {
     padding: 12px 28px;
     font-size: 16px;
   }
 }
 
 @media (min-width: 1367px) and (max-width: 1920px) {
-  .custom-hero-section {
-    height: 60vh;
-    padding: 50px 40px;
+  .dmo-section {
+    min-height: 80vh;
+    padding: 60px 40px;
   }
 
-  .custom-hero-container {
+  .dmo-container {
     padding: 0 20px;
     max-width: 700px;
   }
 
-  .custom-hero-title {
+  .dmo-title {
     width: 149%;
     margin-left: -25%;
     font-size: 47px;
@@ -243,29 +243,29 @@
     margin-bottom: 20px;
   }
 
-  .custom-hero-subtitle {
+  .dmo-subtitle {
     font-size: 18px;
     margin-bottom: 40px;
   }
 
-  .custom-hero-button {
+  .dmo-button {
     padding: 12px 28px;
     font-size: 16px;
   }
 }
 
 @media (min-width: 1921px) {
-  .custom-hero-section {
-    height: 65vh;
-    padding: 60px 40px;
+  .dmo-section {
+    min-height: 75vh;
+    padding: 80px 40px;
   }
 
-  .custom-hero-container {
+  .dmo-container {
     padding: 0 20px;
     max-width: 800px;
   }
 
-  .custom-hero-title {
+  .dmo-title {
     width: 149%;
     margin-left: -25%;
     font-size: 56px;
@@ -273,47 +273,47 @@
     margin-bottom: 24px;
   }
 
-  .custom-hero-subtitle {
+  .dmo-subtitle {
     font-size: 20px;
     margin-bottom: 48px;
   }
 
-  .custom-hero-button {
+  .dmo-button {
     padding: 14px 32px;
     font-size: 18px;
   }
 }
 
 @media (hover: none) and (pointer: coarse) {
-  .custom-hero-button:hover {
+  .dmo-button:hover {
     transform: none;
     background: #dce4ff;
   }
 
-  .custom-hero-button:active {
+  .dmo-button:active {
     background: #ffffff;
     transform: scale(0.98);
   }
 }
 
 @media (max-height: 500px) and (orientation: landscape) {
-  .custom-hero-section {
-    height: 100vh;
+  .dmo-section {
+    min-height: 100vh;
     padding: 30px 20px;
   }
 
-  .custom-hero-title {
+  .dmo-title {
     font-size: 24px !important;
     line-height: 32px !important;
     margin-bottom: 12px !important;
   }
 
-  .custom-hero-subtitle {
+  .dmo-subtitle {
     font-size: 13px !important;
     margin-bottom: 20px !important;
   }
 
-  .custom-hero-button {
+  .dmo-button {
     padding: 10px 22px !important;
     font-size: 13px !important;
   }
