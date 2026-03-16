@@ -33,7 +33,7 @@ const Footer = () => {
             </a> */}
             <Image src={linkedin} alt="LinkedIn" height={19} width={22} />
  <p className="footer-social-label">
-        YunutyConnect
+        Yunuak
           </p>
             <a
               href="https://www.instagram.com/yunutyconnect?igsh=ZTMwZGRhdHQwcWJ5"
