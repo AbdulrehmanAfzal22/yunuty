@@ -12,7 +12,6 @@
 .footer-overlay {
   position: absolute;
   inset: 0;
-  /* background: linear-gradient(to top, rgba(0,0,0,0.75), transparent 45%); */
   background: radial-gradient(circle at bottom center, #05071c 60%, #181953 100%);
   z-index: 1;
 }
@@ -45,8 +44,8 @@
 }
 
 .logo-placeholder img {
-    width: 134%;
-    height: auto;
+  width: 134%;
+  height: auto;
 }
 
 .footer-description {
@@ -57,7 +56,7 @@
 }
 
 /* ===================================
-   CENTER — matches reference layout
+   CENTER
 =================================== */
 .footer-contact-item {
   margin-bottom: 24px;
@@ -96,7 +95,6 @@
   margin-bottom: 18px;
 }
 
-/* Input sits on a bottom-border line, button is pill-shaped beside it */
 .newsletter {
   display: flex;
   align-items: center;
@@ -140,7 +138,7 @@
 }
 
 /* ===================================
-   SOCIAL ICONS — circular bordered
+   SOCIAL ICONS
 =================================== */
 .social-icons {
   display: flex;
@@ -230,6 +228,22 @@
 }
 
 /* ===================================
+   LOGO HEIGHT FIX ≤750px
+=================================== */
+@media (max-width: 750px) {
+  .logo-placeholder {
+    width: 190px;
+    height: auto;
+  }
+
+  .logo-placeholder img {
+    width: 100%;
+    height: auto;
+    min-height: 64px;
+  }
+}
+
+/* ===================================
    SMALL MOBILE
 =================================== */
 @media (max-width: 480px) {
@@ -238,7 +252,11 @@
   }
 
   .logo-placeholder {
-    width: 140px;
+    width: 160px;
+  }
+
+  .logo-placeholder img {
+    min-height: 52px;
   }
 
   .footer-center p {
