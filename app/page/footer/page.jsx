@@ -41,16 +41,37 @@ const Footer = () => {
         <div className="footer-right">
           <p className="newsletter-label">Subscribe to our newsletter</p>
 
-          <div className="newsletter">
-            <input type="email" placeholder="" />
-            <button>Submit ↗</button>
-          </div>
+          {/* FORM SUBMIT INTEGRATION */}
+          <form
+            action="https://formsubmit.co/YOUR_EMAIL_HERE"
+            method="POST"
+            className="newsletter"
+          >
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+            />
 
-          {/* <div className="social-icons">
+            {/* Disable captcha */}
+            <input type="hidden" name="_captcha" value="false" />
+
+            {/* Optional success redirect */}
+            {/* <input type="hidden" name="_next" value="https://yourwebsite.com/thankyou" /> */}
+
+            <button type="submit">Submit ↗</button>
+          </form>
+
+          {/* Social icons if needed */}
+          {/* 
+          <div className="social-icons">
             <div className="social-icon"><FaFacebookF /></div>
             <div className="social-icon"><FaLinkedinIn /></div>
             <div className="social-icon"><FaDribbble /></div>
-          </div> */}
+          </div> 
+          */}
+
         </div>
 
       </div>

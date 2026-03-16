@@ -60,9 +60,10 @@
 /* ── Title — fluid scaling ── */
 .custom-hero-title {
   font-family: 'Poppins', 'Segoe UI', sans-serif;
-  font-weight: 600;
-  line-height: 1.35;
-  letter-spacing: -0.02em;
+  font-weight: 800;           /* very bold like screenshot */
+  text-transform: uppercase;  /* all caps */
+  line-height: 1.1;           /* tight — lines close together */
+  letter-spacing: 0.01em;     /* slight spacing between letters */
   margin-bottom: 28px;
   color: #ffffff;
   font-size: clamp(20px, 4vw, 48px);
@@ -86,17 +87,20 @@
 
 /* ── Button ── */
 .custom-hero-button {
-  padding: 12px 28px;
-  font-weight: 600;
+  padding: 14px 48px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: #0a0a2a;
   background: #dce4ff;
   border: none;
-  border-radius: 30px;
+  border-radius: 6px;        /* less rounded, more like screenshot */
   cursor: pointer;
   transition: all 0.3s ease;
   display: inline-block;
   text-decoration: none;
-  font-size: clamp(13px, 1.2vw, 16px);
+  font-size: clamp(12px, 1.2vw, 15px);
+  min-width: 200px;
 }
 
 .custom-hero-button:hover {
@@ -127,7 +131,7 @@
   .custom-hero-title {
     font-size: clamp(20px, 3.8vw, 40px);
     margin-bottom: 22px;
-    line-height: 1.4;
+    line-height: 1.1;
   }
 
   .custom-hero-button {
@@ -148,10 +152,10 @@
   }
 
   .custom-hero-title {
-    font-size: clamp(18px, 5.5vw, 30px);
-    line-height: 1.45;
+    font-size: clamp(17px, 5.5vw, 28px);
+    line-height: 1.12;       /* keep tight on mobile too */
     margin-bottom: 18px;
-    letter-spacing: -0.01em;
+    letter-spacing: 0.01em;
   }
 
   .custom-hero-subtitle {
@@ -167,11 +171,25 @@
   }
 }
 
+/* ── 480px – 500px: ensure max 3 lines, proper height ── */
+@media (max-width: 500px) {
+  .custom-hero-section {
+    height: clamp(340px, 65vh, 520px); /* enough room for 3 tight lines */
+    padding: 24px 14px;
+  }
+
+  .custom-hero-title {
+    font-size: clamp(17px, 5.6vw, 24px);
+    line-height: 1.12;
+    margin-bottom: 18px;
+  }
+}
+
 /* ── Below 480px: small phones ── */
 @media (max-width: 480px) {
   .custom-hero-title {
-    font-size: clamp(16px, 5.8vw, 24px);
-    line-height: 1.5;
+    font-size: clamp(16px, 5.8vw, 23px);
+    line-height: 1.12;
     margin-bottom: 14px;
   }
 
@@ -185,7 +203,7 @@
 @media (min-width: 1367px) and (max-width: 1920px) {
   .custom-hero-title {
     font-size: 47px;
-    line-height: 56px;
+    line-height: 1.1;
   }
 
   .custom-hero-subtitle { font-size: 18px; }
@@ -198,7 +216,7 @@
 
   .custom-hero-title {
     font-size: 56px;
-    line-height: 64px;
+    line-height: 1.1;
     margin-bottom: 24px;
   }
 

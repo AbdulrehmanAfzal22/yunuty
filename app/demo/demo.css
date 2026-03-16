@@ -3,7 +3,7 @@
 ════════════════════════════════════════ */
 .dmo-section {
   position: relative;
-  height: clamp(380px, 60vh, 720px);
+  height: clamp(340px, 58vh, 620px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -58,12 +58,12 @@
 /* ── Title — fluid, 2 lines on laptop, max 3 on mobile ── */
 .dmo-title {
   font-family: 'Poppins', 'Segoe UI', sans-serif;
-  font-weight: 600;
-  line-height: 1.4;
-  letter-spacing: -0.02em;
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
   margin-bottom: 28px;
   color: #ffffff;
-  /* capped at 38px so both spans fit on 2 lines on laptop */
   font-size: clamp(18px, 2.6vw, 38px);
   width: 100%;
   margin-left: 0;
@@ -82,17 +82,20 @@
 }
 
 .dmo-button {
-  padding: 12px 28px;
-  font-weight: 600;
+  padding: 14px 48px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: #0a0a2a;
   background: #dce4ff;
   border: none;
-  border-radius: 30px;
+  border-radius: 6px;
   cursor: pointer;
   transition: all 0.3s ease;
   display: inline-block;
   text-decoration: none;
-  font-size: clamp(13px, 1.2vw, 16px);
+  font-size: clamp(12px, 1.2vw, 15px);
+  min-width: 200px;
 }
 
 .dmo-button:hover {
@@ -111,7 +114,7 @@
 /* ── 700px–1000px: tighten up ── */
 @media (max-width: 1000px) {
   .dmo-section {
-    height: clamp(340px, 55vh, 560px);
+    height: clamp(300px, 50vh, 480px);
     padding: 32px 20px;
   }
 
@@ -123,7 +126,7 @@
   .dmo-title {
     font-size: clamp(18px, 3.2vw, 32px);
     margin-bottom: 18px;
-    line-height: 1.42;
+    line-height: 1.1;
   }
 
   .dmo-button {
@@ -134,8 +137,8 @@
 /* ── Below 700px: mobile ── */
 @media (max-width: 700px) {
   .dmo-section {
-    height: clamp(320px, 60vh, 500px);
-    padding: 28px 16px;
+    height: clamp(300px, 58vh, 460px);
+    padding: 24px 16px;
   }
 
   .dmo-container {
@@ -143,14 +146,13 @@
     padding: 0 14px;
   }
 
-  /* On mobile spans stack naturally — up to 3 lines is fine */
+  /* Max 3 lines on mobile */
   .dmo-title {
-    font-size: clamp(16px, 5vw, 26px);
-    line-height: 1.5;
+    font-size: clamp(16px, 5vw, 24px);
+    line-height: 1.12;
     margin-bottom: 16px;
-    letter-spacing: -0.01em;
+    letter-spacing: 0.01em;
   }
-  /* Let lines wrap naturally on mobile */
   .dmo-line1 { display: block; }
   .dmo-line1::after { content: none; }
   .dmo-line2 { display: block; }
@@ -171,14 +173,28 @@
 /* ── Below 480px: small phone ── */
 @media (max-width: 480px) {
   .dmo-title {
-    font-size: clamp(15px, 5.2vw, 22px);
-    line-height: 1.55;
+    font-size: clamp(15px, 5.2vw, 21px);
+    line-height: 1.12;
     margin-bottom: 12px;
   }
 
   .dmo-subtitle {
     font-size: 13px;
     margin-bottom: 22px;
+  }
+}
+
+/* ── ≤500px: ensure max 3 lines, proper height ── */
+@media (max-width: 500px) {
+  .dmo-section {
+    height: clamp(320px, 63vh, 500px);
+    padding: 22px 14px;
+  }
+
+  .dmo-title {
+    font-size: clamp(16px, 5.5vw, 22px);
+    line-height: 1.12;
+    margin-bottom: 16px;
   }
 }
 
