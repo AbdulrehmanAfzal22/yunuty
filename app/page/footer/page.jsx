@@ -3,7 +3,7 @@ import "./footer.css";
 import Image from "next/image";
 import logo from "../../../public/assests/logo12.png";
 import { Linkedin, Instagram, MapPin, Phone, Mail } from "lucide-react";
-
+import linkedin from "../../../public/assests/linkedin.png"
 const Footer = () => {
   return (
     <footer className="footer">
@@ -23,15 +23,18 @@ const Footer = () => {
           <div className="footer-social-row">
             <span className="footer-social-label">Keep in touch:</span>
 
-            <a
+            {/* <a
               href="https://linkedin.com/company/yunuak"
               target="_blank"
               rel="noopener noreferrer"
               // className="footer-social-pill footer-social-pill--linkedin"
             >
               <Linkedin size={15} strokeWidth={2} />
-            </a>
-
+            </a> */}
+            <Image src={linkedin} alt="LinkedIn" height={19} width={22} />
+ <p className="footer-social-label">
+            Yunuak
+          </p>
             <a
               href="https://instagram.com/yunuak"
               target="_blank"
@@ -40,7 +43,7 @@ const Footer = () => {
             >
               <Instagram size={15} strokeWidth={2} />
             </a>
-             <p className="footer-description">
+             <p className="footer-social-label">
             Yunuak
           </p>
           </div>
