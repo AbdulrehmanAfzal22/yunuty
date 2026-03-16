@@ -6,6 +6,7 @@ import { Grid2x2 , Zap, Fan, DiamondPlus,Users} from "lucide-react";
 import Footer from "@/app/page/footer/page";
 import Privacy from "../privacyhero/page";
 import "./privacybox.css";
+import DiscoverSection from "@/app/about/discover/page";
 
 export default function Vision() {
   const cardRefs = useRef([]);
@@ -177,7 +178,7 @@ and we strictly limit access to authorized personnel only.
     
 
 
-<section className="hero-section-v2">
+{/* <section className="hero-section-v2">
   <div className="hero-container-v2">
     <h1 className="hero-title-v2">
       Discover the future of productivity, 
@@ -193,8 +194,8 @@ and we strictly limit access to authorized personnel only.
   <div className="hero-grid-v2"></div>
 </section>
 
- 
-
+  */}
+<DiscoverSection/>
 <Footer/>
     </>
   );

@@ -2,24 +2,25 @@
    ORACLE SECTION
 ════════════════════════════════════════ */
 .ors__section {
-  background: #F7F7F5;
+  background: #f2f2f0;
   padding: 0 60px 60px;
   font-family: 'Segoe UI', Roboto, sans-serif;
   max-width: 1800px;
   margin: 0 auto;
 }
 
+/* ── Top bar ── */
 .ors__topbar {
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    gap: 5px;
-    max-width: 1280px;
-    margin-bottom: -5px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 24px 0 32px;
-    display: flex;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 0 32px;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 32px;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .ors__logo {
@@ -29,21 +30,23 @@
 }
 
 .ors__tags-top {
-    background: #fff;
-    border-radius: 6px;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 16px;
-    padding: 12px 11px;
-    display: flex;
+  background: #fff;
+  border-radius: 6px;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  padding: 13px 16px;
+  display: flex;
 }
+
 .ors__tag {
-    letter-spacing: .1em;
-    text-transform: uppercase;
-    color: #111;
-    font-size: 19px;
-    font-weight: 700;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: #111;
 }
+
 .ors__tags-top1 {
   display: flex;
   align-items: center;
@@ -101,9 +104,9 @@
 }
 
 .ors__para {
-    color: #2c2c2c;
-    font-size: 21px;
-    line-height: 1.8;
+  font-size: 15.5px;
+  color: #2c2c2c;
+  line-height: 1.80;
 }
 
 .ors__btn {
@@ -145,19 +148,29 @@
   .ors__img-panel { flex: 0 0 50%; min-height: 420px; }
 }
 
-@media (max-width: 900px) {
+/* Side-by-side stays intact down to 730px.
+   Only stacks vertically on ≤730px. */
+@media (max-width: 730px) {
   .ors__box {
     flex-direction: column;
   }
   .ors__img-panel {
     flex: 0 0 auto;
     width: 100%;
-    min-height: 300px;
+    min-height: 260px;
   }
   .ors__content {
     flex: 1;
-    padding: 36px 32px;
+    padding: 32px 24px;
   }
+}
+
+/* Tighten padding on medium screens (731px–900px) but keep side-by-side */
+@media (min-width: 731px) and (max-width: 900px) {
+  .ors__section { padding: 0 20px 48px; }
+  .ors__img-panel { flex: 0 0 42%; min-height: 360px; }
+  .ors__content { padding: 28px 28px; gap: 16px; }
+  .ors__para { font-size: 13.5px; line-height: 1.7; }
 }
 
 @media (max-width: 768px) {
@@ -184,4 +197,21 @@
   .ors__content { padding: 22px 16px; }
   .ors__para { font-size: 13px; }
   .ors__tag { font-size: 10px; }
+}
+
+/* ── Responsive image swap ──────────────────── */
+
+/* Desktop image: visible by default, hidden below 600px */
+.ors__img-desktop {
+  display: block;
+}
+
+/* Mobile image: hidden by default, visible below 600px */
+.ors__img-mobile {
+  display: none;
+}
+
+@media (max-width: 730px) {
+  .ors__img-desktop { display: none; }
+  .ors__img-mobile  { display: block; }
 }

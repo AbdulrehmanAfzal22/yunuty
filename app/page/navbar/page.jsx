@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import logo from "../../../public/assests/logo.png";
+import logo from "../../../public/assests/logo12.png";
 import "./navbar.css";
 
 export default function Navbar() {
