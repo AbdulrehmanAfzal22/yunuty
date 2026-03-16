@@ -67,11 +67,11 @@
   font-family: 'Poppins', 'Segoe UI', sans-serif;
   font-weight: 800;
   text-transform: uppercase;
-  line-height: 1.15;
+  line-height: 1.1;           /* same as discover */
   letter-spacing: 0.01em;
   margin-bottom: 28px;
   color: #ffffff;
-  font-size: clamp(20px, 2.6vw, 34px);
+  font-size: clamp(20px, 4vw, 48px); /* same as discover */
   width: 100%;
 }
 
@@ -112,10 +112,9 @@
    700px – 900px  →  still 2 lines
    (reduce font a little, keep inline)
 ════════════════════════════════════════ */
-@media (max-width: 900px) {
-  .dmo-section  { height: clamp(300px, 52vh, 500px); padding: 30px 20px; }
-  .dmo-title    { font-size: clamp(18px, 3vw, 28px); margin-bottom: 20px; }
-  /* keep 2-line layout */
+@media (max-width: 1000px) {
+  .dmo-section  { height: clamp(320px, 55vh, 560px); padding: 32px 20px; }
+  .dmo-title    { font-size: clamp(20px, 3.8vw, 40px); margin-bottom: 22px; line-height: 1.1; }
   .dmo-line1 { display: inline; }
   .dmo-line2 { display: inline; }
   .dmo-line3 { display: block;  }
@@ -125,26 +124,27 @@
    ≤700px  →  3 spans each block = 3 lines
 ════════════════════════════════════════ */
 @media (max-width: 700px) {
-  .dmo-section  { height: clamp(310px, 60vh, 480px); padding: 24px 16px; }
+  .dmo-section   { height: clamp(300px, 58vh, 480px); padding: 28px 16px; }
   .dmo-container { padding: 0 14px; }
 
   .dmo-title {
-    font-size: clamp(15px, 5vw, 22px);
-    line-height: 1.15;
+    font-size: clamp(17px, 5.5vw, 28px);
+    line-height: 1.12;
     margin-bottom: 18px;
+    letter-spacing: 0.01em;
   }
 
-  /* All 3 spans stack → exactly 3 lines */
+  /* 3 blocks = 3 lines */
   .dmo-line1 { display: block; }
-  .dmo-line1::after { content: none; } /* remove space */
+  .dmo-line1::after { content: none; }
   .dmo-line2 { display: block; }
   .dmo-line3 { display: block; }
 
   .dmo-button {
-    padding: 12px 28px;
-    font-size: 13px;
+    padding: 11px 24px;
+    font-size: 14px;
     width: 100%;
-    max-width: 240px;
+    max-width: 260px;
   }
 }
 
@@ -152,15 +152,15 @@
    ≤500px  →  smaller font, same 3-line cap
 ════════════════════════════════════════ */
 @media (max-width: 500px) {
-  .dmo-section { height: clamp(320px, 64vh, 480px); padding: 20px 12px; }
-  .dmo-title   { font-size: clamp(13px, 4.8vw, 18px); margin-bottom: 14px; }
+  .dmo-section { height: clamp(340px, 65vh, 520px); padding: 24px 14px; }
+  .dmo-title   { font-size: clamp(17px, 5.6vw, 24px); line-height: 1.12; margin-bottom: 18px; }
 }
 
 /* ════════════════════════════════════════
    ≤400px
 ════════════════════════════════════════ */
-@media (max-width: 400px) {
-  .dmo-title { font-size: clamp(12px, 4.5vw, 16px); line-height: 1.18; }
+@media (max-width: 480px) {
+  .dmo-title { font-size: clamp(16px, 5.8vw, 23px); line-height: 1.12; margin-bottom: 14px; }
 }
 
 /* ── Touch ── */

@@ -278,12 +278,20 @@ element.style {
   color: rgba(255,255,255,0.42);
 }
 
-.footer-bottom p { margin: 0; }
+.footer-bottom p { 
+  color: white;
+    margin-bottom: 0;
+    font-family: Montserrat, sans-serif;
+    font-size: 1.1em;
+    font-weight: 400;
+  margin: 0; }
 
 .footer-bottom a {
-  color: rgba(255,255,255,0.42);
-  text-decoration: none;
-  transition: color 0.2s;
+color: white;
+    margin-bottom: 0;
+    font-family: Montserrat, sans-serif;
+    font-size: 1.1em;
+    font-weight: 400;
 }
 
 .footer-bottom a:hover { color: #ffffff; }

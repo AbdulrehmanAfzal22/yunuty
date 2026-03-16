@@ -44,7 +44,8 @@
 }
 
 .feature-card1 {
-    background: linear-gradient(135deg, rgba(20, 24, 50, 0.7), rgba(15, 19, 40, 0.5));
+    /* background: linear-gradient(135deg, rgba(20, 24, 50, 0.7), rgba(15, 19, 40, 0.5)); */
+    background-color: #04041E;
     border: 1px solid rgba(79, 70, 229, 0.3);
     border-radius: 1.25rem;
     padding: 2rem;
@@ -638,4 +639,31 @@
         flex: 1;
         min-width: 0; /* Allow flex items to shrink below content size */
     }
+}
+/* ════════════════════════════════════════
+   INSIGHT CARD — image fills entire box
+════════════════════════════════════════ */
+.insight-card-full {
+  position: relative;
+  overflow: hidden;
+  padding: 0 !important;       /* remove inner padding so image goes edge-to-edge */
+  min-height: 500px;
+}
+
+.insight-fill-image {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center top !important;   /* show top of image — where the chart is */
+  border-radius: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  .insight-card-full { min-height: 320px; }
+}
+
+@media (max-width: 480px) {
+  .insight-card-full { min-height: 260px; }
 }

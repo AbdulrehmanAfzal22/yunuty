@@ -36,7 +36,7 @@ const Footer = () => {
             Yunuak
           </p>
             <a
-              href="https://instagram.com/yunuak"
+              href="https://www.instagram.com/yunutyconnect?igsh=ZTMwZGRhdHQwcWJ5"
               target="_blank"
               rel="noopener noreferrer"
               // className="footer-social-pill footer-social-pill--instagram"
@@ -44,7 +44,7 @@ const Footer = () => {
               <Instagram size={15} strokeWidth={2} />
             </a>
              <p className="footer-social-label">
-            Yunuak
+            Yunuak Connect
           </p>
           </div>
 
@@ -105,7 +105,7 @@ const Footer = () => {
       </div>
 
       <div className="footer-bottom">
-        <p>© 2026 Copyright – Yunuak | All Rights Reserved.</p>
+        <p>Copyright © 2026 Yunuak LLC. All rights reserved.</p>
         <a href="#top">Back to top ↑</a>
       </div>
     </footer>
