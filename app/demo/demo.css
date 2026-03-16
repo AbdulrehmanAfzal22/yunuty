@@ -1,7 +1,9 @@
-.custom-hero-section,
-.dmo-section{
+/* ════════════════════════════════════════
+   DEMO SECTION
+════════════════════════════════════════ */
+.dmo-section {
   position: relative;
-  height: clamp(420px,60vh,720px);
+  height: clamp(380px, 60vh, 720px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,218 +14,202 @@
   padding: 40px 20px;
 }
 
-@font-face{
-  font-family:'Poppins';
-  font-style:normal;
-  font-weight:100;
-  src:url(https://fonts.gstatic.com/s/poppins/v24/pxiGyp8kv8JHgFVrLPTucXtAOvWDSHFF.woff2) format('woff2');
-  unicode-range:U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09;
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 100;
+  src: url(https://fonts.gstatic.com/s/poppins/v24/pxiGyp8kv8JHgFVrLPTucXtAOvWDSHFF.woff2) format('woff2');
 }
 
-.custom-hero-bg-img,
-.dmo-bg-img{
-  position:absolute!important;
-  inset:0!important;
-  width:100%!important;
-  height:100%!important;
-  object-fit:cover!important;
-  object-position:center!important;
-  z-index:0;
+.dmo-bg-img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  z-index: 0;
 }
 
-.custom-hero-bg-overlay,
-.dmo-bg-overlay{
-  position:absolute;
-  inset:0;
-  z-index:1;
+/* ── Image swap at 700px ── */
+.dmo-bg-desktop { display: block; }
+.dmo-bg-mobile  { display: none;  }
+
+@media (max-width: 700px) {
+  .dmo-bg-desktop { display: none;  }
+  .dmo-bg-mobile  { display: block; }
 }
 
-.custom-hero-container,
-.dmo-container{
-  position:relative;
-  max-width:700px;
-  width:100%;
-  z-index:2;
-  padding:0 20px;
+.dmo-bg-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.35);
 }
 
-.custom-hero-title, .dmo-title {
-    letter-spacing: -.03em;
-    width: 161%;
-    margin-bottom: 27px;
-    margin-left: -183px;
-    font-family: Poppins, sans-serif;
-    font-weight: 600;
-    line-height: 1.4;
+.dmo-container {
+  position: relative;
+  max-width: 900px;
+  width: 100%;
+  z-index: 2;
+  padding: 0 24px;
 }
 
-.custom-hero-subtitle,
-.dmo-subtitle{
-  color:#c0c0c0;
-  line-height:1.6;
-  margin-bottom:40px;
+/* ── Title — fluid, 2 lines on laptop, max 3 on mobile ── */
+.dmo-title {
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  margin-bottom: 28px;
+  color: #ffffff;
+  /* capped at 38px so both spans fit on 2 lines on laptop */
+  font-size: clamp(18px, 2.6vw, 38px);
+  width: 100%;
+  margin-left: 0;
 }
 
-.custom-hero-button,
-.dmo-button{
-  padding:12px 28px;
-  font-weight:600;
-  color:#0a0a2a;
-  background:#dce4ff;
-  border:none;
-  border-radius:30px;
-  cursor:pointer;
-  transition:all .3s ease;
-  display:inline-block;
-  text-decoration:none;
+/* Inline on desktop — one forced newline between spans = exactly 2 lines */
+.dmo-line1 { display: inline; white-space: normal; }
+.dmo-line2 { display: inline; white-space: normal; }
+.dmo-line1::after { content: "\A"; white-space: pre; }
+
+.dmo-subtitle {
+  color: #c0c0c0;
+  line-height: 1.6;
+  margin-bottom: 36px;
+  font-size: clamp(14px, 1.6vw, 18px);
 }
 
-.custom-hero-button:hover,
-.dmo-button:hover{
-  background:#ffffff;
-  transform:translateY(-2px);
+.dmo-button {
+  padding: 12px 28px;
+  font-weight: 600;
+  color: #0a0a2a;
+  background: #dce4ff;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
+  font-size: clamp(13px, 1.2vw, 16px);
 }
 
-.custom-hero-button:active,
-.dmo-button:active{
-  transform:translateY(0);
+.dmo-button:hover {
+  background: #ffffff;
+  transform: translateY(-2px);
 }
 
-@media(max-width:480px){
-  .custom-hero-section,
-  .dmo-section{
-    height:65vh;
-    padding:30px 16px;
+.dmo-button:active {
+  transform: translateY(0);
+}
+
+/* ════════════════════════════════════════
+   RESPONSIVE BREAKPOINTS
+════════════════════════════════════════ */
+
+/* ── 700px–1000px: tighten up ── */
+@media (max-width: 1000px) {
+  .dmo-section {
+    height: clamp(340px, 55vh, 560px);
+    padding: 32px 20px;
   }
 
-  .custom-hero-container,
-  .dmo-container{
-    padding:0 12px;
+  .dmo-container {
+    max-width: 720px;
+    padding: 0 20px;
   }
 
-  .custom-hero-title,
-  .dmo-title{
-    font-size:28px;
-    line-height:36px;
-    margin-bottom:16px;
+  .dmo-title {
+    font-size: clamp(18px, 3.2vw, 32px);
+    margin-bottom: 18px;
+    line-height: 1.42;
   }
 
-  .custom-hero-subtitle,
-  .dmo-subtitle{
-    font-size:14px;
-    margin-bottom:30px;
-  }
-
-  .custom-hero-button,
-  .dmo-button{
-    padding:11px 24px;
-    font-size:14px;
-    width:100%;
-    max-width:280px;
-  }
-}
-
-@media(min-width:481px) and (max-width:768px){
-  .custom-hero-section,
-  .dmo-section{
-    height:60vh;
-    padding:40px 30px;
-  }
-
-  .custom-hero-title,
-  .dmo-title{
-    font-size:36px;
-    line-height:44px;
-  }
-
-  .custom-hero-subtitle,
-  .dmo-subtitle{
-    font-size:16px;
+  .dmo-button {
+    padding: 11px 26px;
   }
 }
 
-@media(min-width:769px) and (max-width:1366px){
-  .custom-hero-section,
-  .dmo-section{
-    height:65vh;
+/* ── Below 700px: mobile ── */
+@media (max-width: 700px) {
+  .dmo-section {
+    height: clamp(320px, 60vh, 500px);
+    padding: 28px 16px;
   }
 
-  .custom-hero-title,
-  .dmo-title{
-    font-size:42px;
-    line-height:50px;
-  }
-}
-
-@media(min-width:1367px){
-  .custom-hero-section,
-  .dmo-section{
-    height:60vh;
+  .dmo-container {
+    max-width: 100%;
+    padding: 0 14px;
   }
 
-  .custom-hero-title,
-  .dmo-title{
-    font-size:47px;
-    line-height:56px;
+  /* On mobile spans stack naturally — up to 3 lines is fine */
+  .dmo-title {
+    font-size: clamp(16px, 5vw, 26px);
+    line-height: 1.5;
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
   }
-}
+  /* Let lines wrap naturally on mobile */
+  .dmo-line1 { display: block; }
+  .dmo-line1::after { content: none; }
+  .dmo-line2 { display: block; }
 
-@media(min-width:1921px){
-  .custom-hero-section,
-  .dmo-section{
-    height:65vh;
-  }
-
-  .custom-hero-title,
-  .dmo-title{
-    font-size:56px;
-    line-height:64px;
+  .dmo-subtitle {
+    font-size: 14px;
+    margin-bottom: 28px;
   }
 
-  .custom-hero-button,
-  .dmo-button{
-    padding:14px 32px;
-    font-size:18px;
+  .dmo-button {
+    padding: 11px 24px;
+    font-size: 14px;
+    width: 100%;
+    max-width: 260px;
   }
 }
 
-@media(hover:none) and (pointer:coarse){
-  .custom-hero-button:hover,
-  .dmo-button:hover{
-    transform:none;
-    background:#dce4ff;
+/* ── Below 480px: small phone ── */
+@media (max-width: 480px) {
+  .dmo-title {
+    font-size: clamp(15px, 5.2vw, 22px);
+    line-height: 1.55;
+    margin-bottom: 12px;
   }
 
-  .custom-hero-button:active,
-  .dmo-button:active{
-    background:#ffffff;
-    transform:scale(.98);
+  .dmo-subtitle {
+    font-size: 13px;
+    margin-bottom: 22px;
   }
 }
 
-@media(max-height:500px) and (orientation:landscape){
-  .custom-hero-section,
-  .dmo-section{
-    height:100vh;
-    padding:30px 20px;
+/* ── Touch device: disable hover lift ── */
+@media (hover: none) and (pointer: coarse) {
+  .dmo-button:hover {
+    transform: none;
+    background: #dce4ff;
   }
 
-  .custom-hero-title,
-  .dmo-title{
-    font-size:24px!important;
-    line-height:32px!important;
-    margin-bottom:12px!important;
+  .dmo-button:active {
+    background: #ffffff;
+    transform: scale(0.98);
+  }
+}
+
+/* ── Landscape on short screens ── */
+@media (max-height: 500px) and (orientation: landscape) {
+  .dmo-section {
+    height: 100vh;
+    padding: 24px 20px;
   }
 
-  .custom-hero-subtitle,
-  .dmo-subtitle{
-    font-size:13px!important;
-    margin-bottom:20px!important;
+  .dmo-title {
+    font-size: 20px !important;
+    line-height: 28px !important;
+    margin-bottom: 10px !important;
   }
 
-  .custom-hero-button,
-  .dmo-button{
-    padding:10px 22px!important;
-    font-size:13px!important;
+  .dmo-button {
+    padding: 9px 20px !important;
+    font-size: 13px !important;
   }
 }
