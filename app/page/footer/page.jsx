@@ -47,7 +47,7 @@ const Footer = () => {
 
           {/* Description */}
           <p className="footer-description">
-            Advanced Supply Chain, Engineering, and Technology Solutions.
+    ADVANCED SUPPLY CHAIN, ENGINEERING, AND TECHNOLOGY SOLUTIONS.
           </p>
 
         </div>
