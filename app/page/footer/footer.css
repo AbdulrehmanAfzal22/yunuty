@@ -49,12 +49,11 @@
 }
 
 .footer-description {
-  font-size: 14px;
-  line-height: 1.6;
-  opacity: 0.75;
-  max-width: 280px;
+    opacity: .75;
+    max-width: 280px;
+    font-size: 17px;
+    line-height: 1.6;
 }
-
 /* ===================================
    CENTER
 =================================== */

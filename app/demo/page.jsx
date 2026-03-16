@@ -4,10 +4,6 @@ import "./demo.css";
 import Image from "next/image";
 import boat from "../../public/assests/boat.jpeg";
 import refine from "../../public/assests/refine.jpeg";
-// ─────────────────────────────────────────────────────
-// 👇 IMPORT YOUR MOBILE IMAGE HERE (shown below 700px)
-// import boatMobile from "../../public/assests/YOUR_MOBILE_IMAGE.jpeg";
-// ─────────────────────────────────────────────────────
 
 export default function DemoSection() {
   return (
@@ -24,13 +20,7 @@ export default function DemoSection() {
         aria-hidden="true"
       />
 
-      {/* ─────────────────────────────────────────────────
-          Mobile image — shown below 700px
-          STEP 1: Add your import at the top of this file
-          STEP 2: Uncomment the block below and replace
-                  boatMobile with your imported variable
-      ───────────────────────────────────────────────── */}
-      
+      {/* Mobile image — shown below 700px */}
       <Image
         src={refine}
         alt=""
@@ -40,13 +30,15 @@ export default function DemoSection() {
         style={{ objectFit: "cover", objectPosition: "center", zIndex: 0 }}
         aria-hidden="true"
       />
-     
 
       <div className="dmo-bg-overlay" />
       <div className="dmo-container">
         <h1 className="dmo-title">
-          <span className="dmo-line1">Row Toward the Future Together </span>
-          <span className="dmo-line2"> Where Teamwork and Technology Drive Productivity.</span>
+          {/* Desktop: line1 + line2 on same row → 2 lines total
+              Mobile:  each span is a block → max 3 lines        */}
+          <span className="dmo-line1">Row Toward the Future Together</span>
+          <span className="dmo-line2">Where Teamwork and Technology</span>
+          <span className="dmo-line3">Drive Productivity.</span>
         </h1>
         <button className="dmo-button">Request A Demo</button>
       </div>

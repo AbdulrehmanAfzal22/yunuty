@@ -1,6 +1,13 @@
 /* ════════════════════════════════════════
    DEMO SECTION
 ════════════════════════════════════════ */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 800;
+  src: url(https://fonts.gstatic.com/s/poppins/v24/pxiGyp8kv8JHgFVrLPTucXtAOvWDSHFF.woff2) format('woff2');
+}
+
 .dmo-section {
   position: relative;
   height: clamp(340px, 58vh, 620px);
@@ -14,13 +21,7 @@
   padding: 40px 20px;
 }
 
-@font-face {
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 100;
-  src: url(https://fonts.gstatic.com/s/poppins/v24/pxiGyp8kv8JHgFVrLPTucXtAOvWDSHFF.woff2) format('woff2');
-}
-
+/* ── Background images ── */
 .dmo-bg-img {
   position: absolute !important;
   inset: 0 !important;
@@ -31,7 +32,6 @@
   z-index: 0;
 }
 
-/* ── Image swap at 700px ── */
 .dmo-bg-desktop { display: block; }
 .dmo-bg-mobile  { display: none;  }
 
@@ -40,47 +40,50 @@
   .dmo-bg-mobile  { display: block; }
 }
 
+/* ── Overlay ── */
 .dmo-bg-overlay {
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: rgba(0, 0, 0, 0.35);
+  background: rgba(0,0,0,0.35);
 }
 
+/* ── Container ── */
 .dmo-container {
   position: relative;
-  max-width: 900px;
+  max-width: 860px;
   width: 100%;
   z-index: 2;
   padding: 0 24px;
 }
 
-/* ── Title — fluid, 2 lines on laptop, max 3 on mobile ── */
+/* ════════════════════════════════════════
+   TITLE — base (desktop ≥900px)
+   line1 + line2 inline  = row 1
+   line3 block           = row 2
+   → exactly 2 lines on desktop
+════════════════════════════════════════ */
 .dmo-title {
   font-family: 'Poppins', 'Segoe UI', sans-serif;
   font-weight: 800;
   text-transform: uppercase;
-  line-height: 1.1;
+  line-height: 1.15;
   letter-spacing: 0.01em;
   margin-bottom: 28px;
   color: #ffffff;
-  font-size: clamp(18px, 2.6vw, 38px);
+  font-size: clamp(20px, 2.6vw, 34px);
   width: 100%;
-  margin-left: 0;
 }
 
-/* Inline on desktop — one forced newline between spans = exactly 2 lines */
-.dmo-line1 { display: inline; white-space: normal; }
-.dmo-line2 { display: inline; white-space: normal; }
-.dmo-line1::after { content: "\A"; white-space: pre; }
+/* Desktop layout: line1 & line2 share row 1, line3 is row 2 */
+.dmo-line1 { display: inline; }
+.dmo-line2 { display: inline; }
+.dmo-line3 { display: block;  }
 
-.dmo-subtitle {
-  color: #c0c0c0;
-  line-height: 1.6;
-  margin-bottom: 36px;
-  font-size: clamp(14px, 1.6vw, 18px);
-}
+/* Add a space between line1 and line2 when they sit inline */
+.dmo-line1::after { content: " "; }
 
+/* ── Button ── */
 .dmo-button {
   padding: 14px 48px;
   font-weight: 700;
@@ -103,129 +106,72 @@
   transform: translateY(-2px);
 }
 
-.dmo-button:active {
-  transform: translateY(0);
+.dmo-button:active { transform: translateY(0); }
+
+/* ════════════════════════════════════════
+   700px – 900px  →  still 2 lines
+   (reduce font a little, keep inline)
+════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .dmo-section  { height: clamp(300px, 52vh, 500px); padding: 30px 20px; }
+  .dmo-title    { font-size: clamp(18px, 3vw, 28px); margin-bottom: 20px; }
+  /* keep 2-line layout */
+  .dmo-line1 { display: inline; }
+  .dmo-line2 { display: inline; }
+  .dmo-line3 { display: block;  }
 }
 
 /* ════════════════════════════════════════
-   RESPONSIVE BREAKPOINTS
+   ≤700px  →  3 spans each block = 3 lines
 ════════════════════════════════════════ */
-
-/* ── 700px–1000px: tighten up ── */
-@media (max-width: 1000px) {
-  .dmo-section {
-    height: clamp(300px, 50vh, 480px);
-    padding: 32px 20px;
-  }
-
-  .dmo-container {
-    max-width: 720px;
-    padding: 0 20px;
-  }
-
-  .dmo-title {
-    font-size: clamp(18px, 3.2vw, 32px);
-    margin-bottom: 18px;
-    line-height: 1.1;
-  }
-
-  .dmo-button {
-    padding: 11px 26px;
-  }
-}
-
-/* ── Below 700px: mobile ── */
 @media (max-width: 700px) {
-  .dmo-section {
-    height: clamp(300px, 58vh, 460px);
-    padding: 24px 16px;
-  }
+  .dmo-section  { height: clamp(310px, 60vh, 480px); padding: 24px 16px; }
+  .dmo-container { padding: 0 14px; }
 
-  .dmo-container {
-    max-width: 100%;
-    padding: 0 14px;
-  }
-
-  /* Max 3 lines on mobile */
   .dmo-title {
-    font-size: clamp(16px, 5vw, 24px);
-    line-height: 1.12;
-    margin-bottom: 16px;
-    letter-spacing: 0.01em;
+    font-size: clamp(15px, 5vw, 22px);
+    line-height: 1.15;
+    margin-bottom: 18px;
   }
+
+  /* All 3 spans stack → exactly 3 lines */
   .dmo-line1 { display: block; }
-  .dmo-line1::after { content: none; }
+  .dmo-line1::after { content: none; } /* remove space */
   .dmo-line2 { display: block; }
-
-  .dmo-subtitle {
-    font-size: 14px;
-    margin-bottom: 28px;
-  }
+  .dmo-line3 { display: block; }
 
   .dmo-button {
-    padding: 11px 24px;
-    font-size: 14px;
-    width: 100%;
-    max-width: 260px;
-  }
-}
-
-/* ── Below 480px: small phone ── */
-@media (max-width: 480px) {
-  .dmo-title {
-    font-size: clamp(15px, 5.2vw, 21px);
-    line-height: 1.12;
-    margin-bottom: 12px;
-  }
-
-  .dmo-subtitle {
+    padding: 12px 28px;
     font-size: 13px;
-    margin-bottom: 22px;
+    width: 100%;
+    max-width: 240px;
   }
 }
 
-/* ── ≤500px: ensure max 3 lines, proper height ── */
+/* ════════════════════════════════════════
+   ≤500px  →  smaller font, same 3-line cap
+════════════════════════════════════════ */
 @media (max-width: 500px) {
-  .dmo-section {
-    height: clamp(320px, 63vh, 500px);
-    padding: 22px 14px;
-  }
-
-  .dmo-title {
-    font-size: clamp(16px, 5.5vw, 22px);
-    line-height: 1.12;
-    margin-bottom: 16px;
-  }
+  .dmo-section { height: clamp(320px, 64vh, 480px); padding: 20px 12px; }
+  .dmo-title   { font-size: clamp(13px, 4.8vw, 18px); margin-bottom: 14px; }
 }
 
-/* ── Touch device: disable hover lift ── */
+/* ════════════════════════════════════════
+   ≤400px
+════════════════════════════════════════ */
+@media (max-width: 400px) {
+  .dmo-title { font-size: clamp(12px, 4.5vw, 16px); line-height: 1.18; }
+}
+
+/* ── Touch ── */
 @media (hover: none) and (pointer: coarse) {
-  .dmo-button:hover {
-    transform: none;
-    background: #dce4ff;
-  }
-
-  .dmo-button:active {
-    background: #ffffff;
-    transform: scale(0.98);
-  }
+  .dmo-button:hover  { transform: none; background: #dce4ff; }
+  .dmo-button:active { background: #ffffff; transform: scale(0.98); }
 }
 
-/* ── Landscape on short screens ── */
+/* ── Landscape / short ── */
 @media (max-height: 500px) and (orientation: landscape) {
-  .dmo-section {
-    height: 100vh;
-    padding: 24px 20px;
-  }
-
-  .dmo-title {
-    font-size: 20px !important;
-    line-height: 28px !important;
-    margin-bottom: 10px !important;
-  }
-
-  .dmo-button {
-    padding: 9px 20px !important;
-    font-size: 13px !important;
-  }
+  .dmo-section { height: 100vh; padding: 20px; }
+  .dmo-title   { font-size: 18px !important; line-height: 1.15 !important; margin-bottom: 10px !important; }
+  .dmo-button  { padding: 9px 20px !important; font-size: 12px !important; }
 }
