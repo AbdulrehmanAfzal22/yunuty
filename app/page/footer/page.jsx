@@ -33,7 +33,7 @@ const Footer = () => {
             </a> */}
             <Image src={linkedin} alt="LinkedIn" height={19} width={22} />
  <p className="footer-social-label">
-            Yunuak
+        YunutyConnect
           </p>
             <a
               href="https://www.instagram.com/yunutyconnect?igsh=ZTMwZGRhdHQwcWJ5"
@@ -44,7 +44,7 @@ const Footer = () => {
               <Instagram size={15} strokeWidth={2} />
             </a>
              <p className="footer-social-label">
-            YunuakConnect
+            YunutyConnect
           </p>
           </div>
 
