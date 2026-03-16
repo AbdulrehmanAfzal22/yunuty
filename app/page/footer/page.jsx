@@ -2,82 +2,107 @@ import React from "react";
 import "./footer.css";
 import Image from "next/image";
 import logo from "../../../public/assests/logo12.png";
-import { FaFacebookF, FaLinkedinIn, FaDribbble } from "react-icons/fa";
+import { Linkedin, Instagram, MapPin, Phone, Mail } from "lucide-react";
 
 const Footer = () => {
   return (
     <footer className="footer">
-      <div className="footer-overlay"></div>
+      <div className="footer-overlay" />
 
       <div className="footer-container">
 
-        {/* LEFT */}
+        {/* ── LEFT ── */}
         <div className="footer-left">
+
+          {/* Logo only — no partner image */}
           <div className="logo-placeholder">
-            <Image src={logo} alt="Company Logo" />
+            <Image src={logo} alt="Yunuak Logo" height={44} style={{ width: "auto", height: "44px" }} />
           </div>
+
+          {/* Keep in touch — LinkedIn + Instagram */}
+          <div className="footer-social-row">
+            <span className="footer-social-label">Keep in touch:</span>
+
+            <a
+              href="https://linkedin.com/company/yunuak"
+              target="_blank"
+              rel="noopener noreferrer"
+              // className="footer-social-pill footer-social-pill--linkedin"
+            >
+              <Linkedin size={15} strokeWidth={2} />
+            </a>
+
+            <a
+              href="https://instagram.com/yunuak"
+              target="_blank"
+              rel="noopener noreferrer"
+              // className="footer-social-pill footer-social-pill--instagram"
+            >
+              <Instagram size={15} strokeWidth={2} />
+            </a>
+             <p className="footer-description">
+            Yunuak
+          </p>
+          </div>
+
+          {/* Description */}
           <p className="footer-description">
             Advanced Supply Chain, Engineering, and Technology Solutions.
           </p>
+
         </div>
 
-        {/* CENTER */}
+        {/* ── CENTER — HQ block ── */}
         <div className="footer-center">
-          <div className="footer-contact-item">
-            <h4>Email</h4>
-            <p>notify@yunuak.com</p>
-          </div>
-          <div className="footer-contact-item">
-            <h4>Phone Number</h4>
-            <p>+1 (561) 648-5791</p>
-          </div>
-          <div className="footer-contact-item">
-            <h4>Location</h4>
-            <p>Doral, Florida</p>
+          <div className="footer-hq">
+
+            <div className="footer-hq-title">
+              <span className="footer-hq-slash">/</span>
+              <span>MIAMI — HEADQUARTERS</span>
+            </div>
+
+            <div className="footer-hq-item">
+              <span className="footer-hq-icon footer-hq-icon--pin">
+                <MapPin size={14} strokeWidth={2} />
+              </span>
+              <span>Doral, Florida</span>
+            </div>
+
+            <div className="footer-hq-item">
+              <span className="footer-hq-icon footer-hq-icon--phone">
+                <Phone size={13} strokeWidth={2} />
+              </span>
+              <span>+1 (561) 648-5791</span>
+            </div>
+
+            <div className="footer-hq-item">
+              <span className="footer-hq-icon footer-hq-icon--mail">
+                <Mail size={13} strokeWidth={2} />
+              </span>
+              <span>notify@yunuak.com</span>
+            </div>
+
           </div>
         </div>
 
-        {/* RIGHT */}
+        {/* ── RIGHT — newsletter ── */}
         <div className="footer-right">
           <p className="newsletter-label">Subscribe to our newsletter</p>
-
-          {/* FORM SUBMIT INTEGRATION */}
           <form
             action="https://formsubmit.co/YOUR_EMAIL_HERE"
             method="POST"
             className="newsletter"
           >
-            <input
-              type="email"
-              name="email"
-              placeholder="Enter your email"
-              required
-            />
-
-            {/* Disable captcha */}
+            <input type="email" name="email" placeholder="Enter your email" required />
             <input type="hidden" name="_captcha" value="false" />
-
-            {/* Optional success redirect */}
-            {/* <input type="hidden" name="_next" value="https://yourwebsite.com/thankyou" /> */}
-
             <button type="submit">Submit ↗</button>
           </form>
-
-          {/* Social icons if needed */}
-          {/* 
-          <div className="social-icons">
-            <div className="social-icon"><FaFacebookF /></div>
-            <div className="social-icon"><FaLinkedinIn /></div>
-            <div className="social-icon"><FaDribbble /></div>
-          </div> 
-          */}
-
         </div>
 
       </div>
 
       <div className="footer-bottom">
-        <p className="year">© 2026 Copyright – Yunuak | All Rights Reserved.</p>
+        <p>© 2026 Copyright – Yunuak | All Rights Reserved.</p>
         <a href="#top">Back to top ↑</a>
       </div>
     </footer>
