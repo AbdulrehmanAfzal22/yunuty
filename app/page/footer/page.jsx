@@ -44,7 +44,7 @@ const Footer = () => {
               <Instagram size={15} strokeWidth={2} />
             </a>
              <p className="footer-social-label">
-            Yunuak Connect
+            YunuakConnect
           </p>
           </div>
 
