@@ -1,10 +1,35 @@
+"use client";
 import React from "react";
 import "./footer.css";
 import Image from "next/image";
 import logo from "../../../public/assests/logo12.png";
 import { Linkedin, Instagram, MapPin, Phone, Mail } from "lucide-react";
-import linkedin from "../../../public/assests/linkedin.png"
+import linkedin from "../../../public/assests/linkedin.png";
+
 const Footer = () => {
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+    const data = new FormData(form);
+
+    try {
+      await fetch("https://formsubmit.co/abdulrehmanafzal60@gmail.com", {
+        method: "POST",
+        body: data,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      // alert("Thank you! You have subscribed.");
+      form.reset();
+    } catch (error) {
+      // alert("Something went wrong. Please try again.");
+    }
+  };
+
   return (
     <footer className="footer">
       <div className="footer-overlay" />
@@ -14,43 +39,34 @@ const Footer = () => {
         {/* ── LEFT ── */}
         <div className="footer-left">
 
-          {/* Logo only — no partner image */}
           <div className="logo-placeholder">
             <Image src={logo} alt="Yunuak Logo" height={44} style={{ width: "auto", height: "44px" }} />
           </div>
 
-          {/* Keep in touch — LinkedIn + Instagram */}
           <div className="footer-social-row">
             <span className="footer-social-label">Keep in touch:</span>
 
-            {/* <a
-              href="https://linkedin.com/company/yunuak"
-              target="_blank"
-              rel="noopener noreferrer"
-              // className="footer-social-pill footer-social-pill--linkedin"
-            >
-              <Linkedin size={15} strokeWidth={2} />
-            </a> */}
             <Image src={linkedin} alt="LinkedIn" height={19} width={22} />
- <p className="footer-social-label">
-        Yunuak
-          </p>
+
+            <p className="footer-social-label">
+              Yunuak
+            </p>
+
             <a
               href="https://www.instagram.com/yunutyconnect?igsh=ZTMwZGRhdHQwcWJ5"
               target="_blank"
               rel="noopener noreferrer"
-              // className="footer-social-pill footer-social-pill--instagram"
             >
               <Instagram size={15} strokeWidth={2} />
             </a>
-             <p className="footer-social-label">
-            YunutyConnect
-          </p>
+
+            <p className="footer-social-label">
+              YunutyConnect
+            </p>
           </div>
 
-          {/* Description */}
           <p className="footer-description">
-    ADVANCED SUPPLY CHAIN, ENGINEERING, AND TECHNOLOGY SOLUTIONS.
+            ADVANCED SUPPLY CHAIN, ENGINEERING, AND TECHNOLOGY SOLUTIONS.
           </p>
 
         </div>
@@ -91,15 +107,18 @@ const Footer = () => {
         {/* ── RIGHT — newsletter ── */}
         <div className="footer-right">
           <p className="newsletter-label">Subscribe to our newsletter</p>
+
           <form
-            action="https://formsubmit.co/YOUR_EMAIL_HERE"
+            action="https://formsubmit.co/abdulrehnamafzal60@gmail.com"
             method="POST"
             className="newsletter"
+            onSubmit={handleSubmit}
           >
             <input type="email" name="email" placeholder="Enter your email" required />
             <input type="hidden" name="_captcha" value="false" />
             <button type="submit">Submit ↗</button>
           </form>
+
         </div>
 
       </div>
@@ -108,6 +127,7 @@ const Footer = () => {
         <p>Copyright © 2026 Yunuak LLC. All rights reserved.</p>
         <a href="#top">Back to top ↑</a>
       </div>
+
     </footer>
   );
 };

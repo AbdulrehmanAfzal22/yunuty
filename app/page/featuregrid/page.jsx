@@ -1,10 +1,8 @@
 import React from 'react';
 import './featuregrid.css';
 import Image from 'next/image';
-import helmet from '../../../public/assests/insight5.jpeg';
-import wheel from '../../../public/assests/wheel.png';
-import dashboard from '../../../public/assests/Dashboard.png';
-import twelve from '../../../public/assests/twelve.jpg';
+import helmet from '../../../public/assests/insight600.png';
+import wheel from '../../../public/assests/insigth6002.png';
 import write from '../../../public/assests/write.png';
 import effort from '../../../public/assests/effort.png';
 import apple from '../../../public/assests/Apple1.svg'
@@ -16,6 +14,12 @@ import cloud from '../../../public/assests/googlecloud.svg'
 import book from '../../../public/assests/Quickbooks.svg'
 import right from "../../../public/assests/sub-title-right.svg";
 import left from "../../../public/assests/sub-title-left.svg";
+
+// ─────────────────────────────────────────────────────
+// 👇 ADD YOUR TWO BOTTOM BOX IMAGES HERE
+// import bottomLeft  from "../../../public/assests/YOUR_LEFT_IMAGE.png";
+// import bottomRight from "../../../public/assests/YOUR_RIGHT_IMAGE.png";
+// ─────────────────────────────────────────────────────
 
 const FeatureGrid = () => {
   const platformIcons = [
@@ -47,8 +51,8 @@ const FeatureGrid = () => {
           </div>
         </div>
 
+        {/* ── Top row: 3 cards ── */}
         <div className="feature-grid">
-          {/* Box 1: Innovative Essential Platforms */}
           <div className="feature-card">
             <div className="card-header w3">
               <h3 className="card-title">Innovative Essential Platforms</h3>
@@ -90,7 +94,6 @@ const FeatureGrid = () => {
             </div>
           </div>
 
-          {/* Box 2: Effortless Personalization */}
           <div className="feature-card">
             <div className="card-header w3">
               <h3 className="card-title">Effortless Personalization</h3>
@@ -105,7 +108,6 @@ const FeatureGrid = () => {
             </div>
           </div>
 
-          {/* Box 3: Continual Improvement */}
           <div className="feature-card">
             <div className="card-header">
               <h3 className="card-title">Continual Improvement</h3>
@@ -121,32 +123,41 @@ const FeatureGrid = () => {
           </div>
         </div>
 
-        <div className="flex">
-          {/* Box 4: Boost Efficiency */}
-          <div className="feature-card feature-card-wide w1">
-            <div className="card-header">
-              <h3 className="card-title">Boost Efficiency & Productivity</h3>
-              <p className="card-description">
-                Automate routine tasks, streamline communication, and focus your team's time on driving growth.
-              </p>
-            </div>
-            <div className="card-content">
-              <div className="dashboard-container">
-                <Image src={wheel} alt="Wheel" className="dashboard-image"/>
-              </div>
+        {/* ── Bottom row: 2 equal image cards ── */}
+        <div className="bottom-row">
+
+          {/* Bottom Left — image card */}
+          {/* IMAGE SIZE: 680px × 500px recommended */}
+          <div className="bottom-card">
+            <Image
+              src={wheel}
+              alt="Boost Efficiency"
+              className="bottom-card-img"
+            />
+           
+            {/* Placeholder shown until image is added */}
+            <div className="bottom-card-placeholder">
+              <span>680 × 500 px</span>
+              <p>Import <code>bottomLeft</code> and uncomment the img above</p>
             </div>
           </div>
 
-          {/* Box 5: Actionable Insights — image fills full card, no text */}
-          <div className="feature-card1 feature-card-wide w2 insight-card-full">
+          {/* Bottom Right — image card */}
+          {/* IMAGE SIZE: 680px × 500px recommended */}
+          <div className="bottom-card">
             <Image
               src={helmet}
               alt="Actionable Insights"
-              fill
-              className="insight-fill-image"
-              style={{ objectFit: "cover", objectPosition: "center top" }}
+              className="bottom-card-img"
             />
+           
+            {/* Placeholder shown until image is added */}
+            <div className="bottom-card-placeholder">
+              <span>680 × 500 px</span>
+              <p>Import <code>bottomRight</code> and uncomment the img above</p>
+            </div>
           </div>
+
         </div>
 
         <div className="explore-more-container">
