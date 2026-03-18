@@ -40,12 +40,10 @@
     min-height: 500px;
     box-sizing: border-box;
     width: 100%;
-    overflow: hidden; /* Important for scrolling animation */
 }
 
 .feature-card1 {
-    /* background: linear-gradient(135deg, rgba(20, 24, 50, 0.7), rgba(15, 19, 40, 0.5)); */
-    background-color: #04041E;
+    background: linear-gradient(135deg, rgba(20, 24, 50, 0.7), rgba(15, 19, 40, 0.5));
     border: 1px solid rgba(79, 70, 229, 0.3);
     border-radius: 1.25rem;
     padding: 2rem;
@@ -54,7 +52,7 @@
     flex-direction: column;
     min-height: 500px;
     box-sizing: border-box;
-    width: 100%;
+    width: 711px;
 }
 
 .feature-card:hover {
@@ -62,13 +60,6 @@
     transform: translateY(-4px);
     box-shadow: 0 10px 40px rgba(99, 102, 241, 0.2);
 }
-
-.feature-card1:hover {
-    border-color: rgba(99, 102, 241, 0.6);
-    transform: translateY(-4px);
-    box-shadow: 0 10px 40px rgba(99, 102, 241, 0.2);
-}
-
 
 /* Desktop Layout - 3 columns on top, 2 columns on bottom */
 @media (min-width: 1201px) {
@@ -189,121 +180,29 @@
     width: 100%;
 }
 
-/* Platform Grid Container with Scroll Animation */
+/* Platform Grid (Box 1) */
 .platform-grid {
-    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
     width: 100%;
-    overflow: hidden;
-    padding: 1rem 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-}
-
-/* Row wrapper for two rows */
-.platform-grid-row {
-    display: flex;
-    overflow: hidden;
-}
-
-/* Inner scrolling container */
-.platform-grid-scroll {
-    display: flex;
-    gap: 0.75rem;
-    animation: scroll 20s linear infinite;
-    width: max-content;
-}
-
-/* Second row scrolls in opposite direction */
-.platform-grid-scroll.reverse {
-    animation: scrollReverse 20s linear infinite;
-}
-
-.platform-grid-scroll:hover {
-    animation-play-state: paused;
-}
-
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
-}
-
-@keyframes scrollReverse {
-    0% {
-        transform: translateX(-50%);
-    }
-    100% {
-        transform: translateX(0);
-    }
 }
 
 .platform-icon {
-    flex-shrink: 0;
-    width: 80px;
-    height: 80px;
+    aspect-ratio: 1;
     background: rgba(30, 35, 60, 0.5);
+    border: 1px solid rgba(79, 70, 229, 0.2);
     border-radius: 0.75rem;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.2s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-/* Animated border for each icon */
-.platform-icon::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 0.75rem;
-    padding: 2px;
-    background: linear-gradient(90deg, 
-        rgba(79, 70, 229, 0.6),
-        rgba(99, 102, 241, 0.8),
-        rgba(139, 92, 246, 0.6),
-        rgba(99, 102, 241, 0.8),
-        rgba(79, 70, 229, 0.6)
-    );
-    background-size: 200% 100%;
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    animation: iconBorderMove 3s linear infinite;
-}
-
-@keyframes iconBorderMove {
-    0% {
-        background-position: 0% 50%;
-    }
-    100% {
-        background-position: 200% 50%;
-    }
 }
 
 .platform-icon:hover {
     background: rgba(40, 45, 70, 0.7);
+    border-color: rgba(99, 102, 241, 0.4);
     transform: scale(1.05);
-}
-
-.platform-icon:hover::before {
-    animation-play-state: paused;
-}
-
-.w1 {
-    width: 100%;
-}
-
-.w2 {
-    width: 100%;
-}
-
-.w3 {
-    overflow: visible; /* Allow border animation to show */
 }
 
 .icon-placeholder {
@@ -342,24 +241,6 @@
     border-radius: 0.75rem;
 }
 
-/* Specific adjustments for dashboard and insight images */
-.dashboard-container,
-.insights-container {
-    width: 100%;
-    max-width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.dashboard-image,
-.insight-image {
-    max-width: 90%;
-    height: auto;
-    object-fit: contain;
-}
-
 /* Responsive image adjustments */
 @media (max-width: 1200px) {
     .visualization-image,
@@ -367,11 +248,6 @@
     .dashboard-image,
     .insight-image {
         max-height: 280px;
-    }
-    
-    .dashboard-image,
-    .insight-image {
-        max-width: 100%;
     }
 }
 
@@ -383,9 +259,8 @@
         max-height: 250px;
     }
 
-    .platform-icon {
-        width: 70px;
-        height: 70px;
+    .platform-grid {
+        gap: 0.5rem;
     }
 }
 
@@ -397,9 +272,8 @@
         max-height: 200px;
     }
 
-    .platform-icon {
-        width: 60px;
-        height: 60px;
+    .platform-grid {
+        gap: 0.4rem;
     }
 }
 
@@ -425,44 +299,6 @@
     cursor: pointer;
     transition: all 0.3s ease;
     letter-spacing: 0.5px;
-
-
-    
-}
-
-
-
-.featuregrid-subtitle {
-    justify-content: center;
-    align-items: center;
-    gap: 14px;
-    display: flex;
-    margin-bottom: 83px;
-    flex-direction: column;
-}
-.featuregrid-heading{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.featuregrid-heading h1{
-  font-size: 48px;
-    font-weight: 500;
-    line-height: 56px;
-    letter-spacing: -0.03em;
-}
-.featuregrid-heading p{
-  font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    margin-top: 20px;
-}
-.subtitles{
-  display: flex;
-  flex-direction: row;
-  gap: 14px;
 }
 
 .explore-more-btn:hover {
@@ -531,9 +367,8 @@
         font-size: 0.8125rem;
     }
 
-    .platform-icon {
-        width: 50px;
-        height: 50px;
+    .platform-grid {
+        gap: 0.3rem;
     }
 
     .visualization-image,
@@ -584,7 +419,8 @@
 }
 
 .feature-grid,
-.feature-card {
+.feature-card,
+.platform-grid {
     transition: all 0.3s ease;
 }
 
@@ -612,259 +448,14 @@
     height: 100%;
 }
 
-.flex{
+
+.w1 {
+    width: 611px;
+}
+
+.flex {
+    gap: 20px;
     display: flex;
-    gap: 1.5rem;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 20px;
-    box-sizing: border-box;
+    justify-content: center;
 }
 
-/* Responsive adjustments for flex container */
-@media (max-width: 1200px) {
-    .flex {
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-    
-    .feature-card1 {
-        width: 100%;
-    }
-}
-
-@media (min-width: 1201px) {
-    .flex .feature-card,
-    .flex .feature-card1 {
-        flex: 1;
-        min-width: 0; /* Allow flex items to shrink below content size */
-    }
-}
-/* ════════════════════════════════════════
-   INSIGHT CARD — image fills entire box
-════════════════════════════════════════ */
-.insight-card-full {
-  position: relative;
-  overflow: hidden;
-  padding: 0 !important;       /* remove inner padding so image goes edge-to-edge */
-  min-height: 500px;
-}
-
-.insight-fill-image {
-  position: absolute !important;
-  inset: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  object-position: center top !important;   /* show top of image — where the chart is */
-  border-radius: 1.25rem;
-}
-
-@media (max-width: 768px) {
-  .insight-card-full { min-height: 320px; }
-}
-
-@media (max-width: 480px) {
-  .insight-card-full { min-height: 260px; }
-}
-
-/* ════════════════════════════════════════
-   INSIGHT CARD — image fills like content
-════════════════════════════════════════ */
-.insight-card-full {
-  position: relative;
-  overflow: hidden;
-  padding: 0 !important;
-  /* match the other card height */
-  min-height: 500px;
-  /* stretch to fill flex row */
-  flex: 1;
-  align-self: stretch;
-}
-
-/* Use a regular img instead of Next fill — controlled by CSS */
-.insight-fill-image {
-  position: absolute !important;
-  inset: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  object-position: center center !important;
-  border-radius: 1.25rem;
-  display: block;
-}
-
-@media (max-width: 1200px) {
-  .insight-card-full { min-height: 400px; }
-}
-
-@media (max-width: 768px) {
-  .insight-card-full { min-height: 320px; }
-}
-
-@media (max-width: 480px) {
-  .insight-card-full { min-height: 260px; }
-}
-
-
-/* ════════════════════════════════════════
-   UNIFIED 3-COL GRID — all 5 cards even
-════════════════════════════════════════ */
-.feature-grid-all {
-  max-width: 1400px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  padding: 0 20px;
-  box-sizing: border-box;
-  align-items: stretch;
-}
-
-/* Box 1, 2, 3 — 1 col each */
-.fg-col-1 { grid-column: span 1; }
-
-/* Box 4 — 2 cols */
-.fg-col-2 { grid-column: span 2; }
-
-/* All cards same min-height */
-.feature-grid-all .feature-card,
-.feature-grid-all .feature-card1 {
-  min-height: 500px;
-  height: 100%;
-}
-
-/* ── Tablet (769–1200px): 2 cols, all span 1 ── */
-@media (min-width: 769px) and (max-width: 1200px) {
-  .feature-grid-all {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.25rem;
-    padding: 0 15px;
-  }
-  .fg-col-1, .fg-col-2 { grid-column: span 1; }
-
-  .feature-grid-all .feature-card,
-  .feature-grid-all .feature-card1 {
-    min-height: 420px;
-  }
-}
-
-/* ── Mobile (≤768px): 1 col ── */
-@media (max-width: 768px) {
-  .feature-grid-all {
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-    padding: 0 10px;
-  }
-  .fg-col-1, .fg-col-2 { grid-column: span 1; }
-
-  .feature-grid-all .feature-card,
-  .feature-grid-all .feature-card1 {
-    min-height: 380px;
-  }
-}
-
-/* ── Small mobile (≤480px) ── */
-@media (max-width: 480px) {
-  .feature-grid-all {
-    gap: 1rem;
-    padding: 0 5px;
-  }
-
-  .feature-grid-all .feature-card,
-  .feature-grid-all .feature-card1 {
-    min-height: 320px;
-  }
-}
-
-/* ════════════════════════════════════════
-   BOTTOM ROW — 2 equal image cards
-   Each card: 680px × 500px on desktop
-════════════════════════════════════════ */
-.bottom-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;   /* exactly equal halves */
-  gap: 1.5rem;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 20px;
-  box-sizing: border-box;
-}
-
-.bottom-card {
-  position: relative;
-  height: 500px;                    /* fixed height — matches top row cards */
-  border-radius: 1.25rem;
-  overflow: hidden;
-  border: 1px solid rgba(79, 70, 229, 0.3);
-  background: #04041E;
-  transition: all 0.3s ease;
-}
-
-.bottom-card:hover {
-  border-color: rgba(99, 102, 241, 0.6);
-  transform: translateY(-4px);
-  box-shadow: 0 10px 40px rgba(99, 102, 241, 0.2);
-}
-
-/* Image fills the full card */
-.bottom-card-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-  border-radius: 1.25rem;
-}
-
-/* Placeholder shown before image is added */
-.bottom-card-placeholder {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  color: rgba(255,255,255,0.3);
-  border: 2px dashed rgba(99,102,241,0.25);
-  border-radius: 1.25rem;
-}
-
-.bottom-card-placeholder span {
-  font-size: 22px;
-  font-weight: 700;
-  color: rgba(99,102,241,0.6);
-}
-
-.bottom-card-placeholder p {
-  font-size: 13px;
-  color: rgba(255,255,255,0.3);
-  text-align: center;
-  padding: 0 24px;
-}
-
-.bottom-card-placeholder code {
-  color: rgba(99,102,241,0.8);
-}
-
-/* ── Tablet ── */
-@media (max-width: 1200px) {
-  .bottom-row { gap: 1.25rem; padding: 0 15px; }
-  .bottom-card { height: 420px; }
-}
-
-/* ── Mobile: stack vertically ── */
-@media (max-width: 768px) {
-  .bottom-row {
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-    padding: 0 10px;
-  }
-  .bottom-card { height: 360px; }
-}
-
-@media (max-width: 480px) {
-  .bottom-row { gap: 1rem; padding: 0 5px; }
-  .bottom-card { height: 280px; }
-}
