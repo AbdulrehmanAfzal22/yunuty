@@ -1,7 +1,7 @@
 import React from 'react';
 import './featuregrid.css';
 import Image from 'next/image';
-import helmet from '../../../public/assests/helmet.png';
+// import helmet from '../../../public/assests/helmet.png';
 import wheel from '../../../public/assests/yunutyconnect.png';
 import write from '../../../public/assests/write.png';
 import effort from '../../../public/assests/effort.png';
@@ -13,7 +13,7 @@ import googlecloud from '../../../public/assests/googlecloud.svg';
 import stripe from '../../../public/assests/Stripe.svg';
 import apple from "../../../public/assests/Apple1.svg";
 import android from "../../../public/assests/Android.svg";
-
+import helmet from "../../../public/assests/alper.png";
 // Row 1 icons (scrolls right → left)
 const row1 = [
   { src: aws,         alt: "AWS" },
@@ -142,7 +142,7 @@ const FeatureGrid = () => {
           <div className="card-header">
             <h3 className="card-title">Actionable Insights</h3>
             <p className="card-description">
-              Turn real-time data into clear actions that drive smarter decisions.
+              Turn real-time data into clear actions that drive smarter decisions. YunutyConnect transforms operational metrics into meaningful insights, helping businesses identify trends, improve performance, and act with precision.
             </p>
           </div>
           <div className="card-content">
