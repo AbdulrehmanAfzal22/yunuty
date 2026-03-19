@@ -1,226 +1,141 @@
 "use client";
-
-import { useState, useEffect, useRef } from "react";
-import { User, Phone, Mail, MessageSquare, Send, Zap, Lock, X } from "lucide-react";
+import React, { useState } from "react";
 import "./contact.css";
+import Navbar from "@/app/page/navbar/page";
+import connect from "../../../public/assests/connect.png";
+import Image from "next/image";
+import Footer1 from "../contact-footer/page";
 
-export default function ContactForm() {
-  const [focused, setFocused] = useState("");
-  const [submitted, setSubmitted] = useState(false);
-  const [visible, setVisible] = useState(true);
-  const [closing, setClosing] = useState(false);
-  const [particles, setParticles] = useState([]);
-  const formRef = useRef(null);
+export default function ContactPage() {
+  const [form, setForm] = useState({ name: "", email: "", phone: "" });
 
-  useEffect(() => {
-    const pts = Array.from({ length: 28 }, (_, i) => ({
-      id: i,
-      x: Math.random() * 100,
-      y: Math.random() * 100,
-      size: Math.random() * 2.5 + 0.5,
-      opacity: Math.random() * 0.5 + 0.1,
-      duration: Math.random() * 8 + 4,
-      delay: Math.random() * 6,
-    }));
-    setParticles(pts);
-  }, []);
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-
-    const formData = new FormData(formRef.current);
-
-    await fetch("https://formsubmit.co/ajax/abdulrehmanafzal60@gmail.com", {
-      method: "POST",
-      body: formData,
-    });
-
-    setSubmitted(true);
-
-    // Clear all inputs
-    formRef.current.reset();
-
-    setTimeout(() => setSubmitted(false), 4000);
+    console.log("Form submitted:", form);
   };
-
-  const handleClose = () => {
-    setClosing(true);
-    setTimeout(() => setVisible(false), 400);
-  };
-
-  if (!visible) {
-    return (
-      <div className="cf-closed-screen">
-        <div className="blob blob-1" />
-        <div className="blob blob-2" />
-        <div className="grid-overlay" />
-        <div className="cf-closed-content">
-          <div className="cf-closed-icon">
-            <Mail size={28} strokeWidth={1.5} color="#8C5FFF" />
-          </div>
-          <h2 className="cf-closed-title">See you soon!</h2>
-          <p className="cf-closed-sub">The contact form has been closed.</p>
-          <button
-            className="cf-reopen-btn"
-            onClick={() => {
-              setVisible(true);
-              setClosing(false);
-            }}
-          >
-            Reopen Form
-          </button>
-        </div>
-      </div>
-    );
-  }
 
   return (
-    <div className={`cf-root ${closing ? "cf-root--closing" : ""}`}>
-      <div className="blob blob-1" />
-      <div className="blob blob-2" />
-      <div className="blob blob-3" />
-      <div className="grid-overlay" />
+    <>
+      <Navbar />
+      <div className="cnt__page">
 
-      {particles.map((p) => (
-        <div
-          key={p.id}
-          className="star"
-          style={{
-            left: `${p.x}%`,
-            top: `${p.y}%`,
-            width: `${p.size}px`,
-            height: `${p.size}px`,
-            "--op": p.opacity,
-            "--dur": `${p.duration}s`,
-            "--delay": `${p.delay}s`,
-          }}
-        />
-      ))}
+        {/* ── Background mesh ── */}
+        <div className="cnt__bg-mesh" />
 
-      <div className={`cf-card ${closing ? "cf-card--closing" : ""}`}>
-
-        <a href="/">
-          <button className="cf-close-btn" aria-label="Close form">
-            <X size={16} strokeWidth={2.5} />
-          </button>
-        </a>
-
-        <div className="cf-badge">
-          <span className="cf-badge-dot" />
-          Get in Touch
+        {/* ── Page header ── */}
+        <div className="cnt__header">
+          <p className="cnt__kicker">YOUR GATEWAY TO B2B SAAS EXCELLENCE</p>
+          <h1 className="cnt__title">CONTACT US</h1>
+          <p className="cnt__subtitle">
+            Infinite possibilities, One Solution: Your B2B SaaS Partner
+          </p>
+          <div className="cnt__divider" />
         </div>
 
-        <h1 className="cf-heading">
-          Contact <span>Us</span>
-        </h1>
+        {/* ── Main content ── */}
+        <div className="cnt__body">
 
-        <p className="cf-sub">
-          Have a project in mind or just want to say hello?
-          We'd love to hear from you!
-        </p>
+          {/* Left — image + address */}
+          <div className="cnt__left">
 
-        <div className="cf-divider" />
+            {/* City image — fixed container */}
+            <div className="cnt__img-wrap">
+              <Image
+                src={connect}
+                alt="City"
+                width={600}
+                height={220}
+                className="cnt__city-img"
+              />
+            </div>
 
-        <form ref={formRef} onSubmit={handleSubmit}>
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_subject" value="New Contact Message" />
-          <input type="hidden" name="_template" value="table" />
+            {/* Address block */}
+            <div className="cnt__address">
+              <div className="cnt__addr-title">
+                <span className="cnt__addr-slash">/</span>
+                <span>MIAMI — HEADQUARTERS</span>
+              </div>
 
-          <div className="cf-row">
-            <div className={`cf-field ${focused === "name" ? "is-focused" : ""}`}>
-              <label className="cf-label">Full Name</label>
-              <div className="cf-input-wrap">
-                <User className="cf-icon" size={15} strokeWidth={1.8} />
+              <div className="cnt__addr-item">
+                <span className="cnt__addr-icon cnt__addr-icon--pin">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+                  </svg>
+                </span>
+                <span>Doral, Florida</span>
+              </div>
+
+              <div className="cnt__addr-item">
+                <span className="cnt__addr-icon cnt__addr-icon--phone">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14">
+                    <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C10.61 21 3 13.39 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.24 1.01l-2.21 2.2z"/>
+                  </svg>
+                </span>
+                <span>+1 (561) 648-5791</span>
+              </div>
+
+              <div className="cnt__addr-item">
+                <span className="cnt__addr-icon cnt__addr-icon--mail">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14">
+                    <path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                  </svg>
+                </span>
+                <span>notify@yunuak.com</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Right — form */}
+          <div className="cnt__right">
+            <form className="cnt__form" onSubmit={handleSubmit}>
+              <h2 className="cnt__form-title">Contact Us</h2>
+
+              <div className="cnt__field">
+                <label className="cnt__label">Name:</label>
                 <input
                   type="text"
                   name="name"
-                  placeholder="Enter your full name"
-                  className="cf-input"
+                  value={form.name}
+                  onChange={handleChange}
+                  className="cnt__input"
                   required
-                  onFocus={() => setFocused("name")}
-                  onBlur={() => setFocused("")}
                 />
-                <div className="cf-field-glow" />
               </div>
-            </div>
 
-            <div className={`cf-field ${focused === "phone" ? "is-focused" : ""}`}>
-              <label className="cf-label">Phone Number</label>
-              <div className="cf-input-wrap">
-                <Phone className="cf-icon" size={15} strokeWidth={1.8} />
+              <div className="cnt__field">
+                <label className="cnt__label">Email Address:</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={form.email}
+                  onChange={handleChange}
+                  className="cnt__input"
+                  required
+                />
+              </div>
+
+              <div className="cnt__field">
+                <label className="cnt__label">Phone:</label>
                 <input
                   type="tel"
                   name="phone"
-                  placeholder="Enter your phone number"
-                  className="cf-input"
-                  onFocus={() => setFocused("phone")}
-                  onBlur={() => setFocused("")}
+                  value={form.phone}
+                  onChange={handleChange}
+                  className="cnt__input"
                 />
-                <div className="cf-field-glow" />
               </div>
-            </div>
+
+              <button type="submit" className="cnt__submit">SUBMIT</button>
+            </form>
           </div>
 
-          <div className={`cf-field ${focused === "email" ? "is-focused" : ""}`}>
-            <label className="cf-label">Email Address</label>
-            <div className="cf-input-wrap">
-              <Mail className="cf-icon" size={15} strokeWidth={1.8} />
-              <input
-                type="email"
-                name="email"
-                placeholder="Enter your email address"
-                className="cf-input"
-                required
-                onFocus={() => setFocused("email")}
-                onBlur={() => setFocused("")}
-              />
-              <div className="cf-field-glow" />
-            </div>
-          </div>
-
-          <div className={`cf-field ${focused === "message" ? "is-focused" : ""}`}>
-            <label className="cf-label">Your Message</label>
-            <div className="cf-input-wrap">
-              <MessageSquare className="cf-icon cf-icon--textarea" size={15} strokeWidth={1.8} />
-              <textarea
-                name="message"
-                placeholder="Write your message here..."
-                className="cf-textarea"
-                required
-                onFocus={() => setFocused("message")}
-                onBlur={() => setFocused("")}
-              />
-              <div className="cf-field-glow" />
-            </div>
-          </div>
-
-          <button type="submit" className="cf-btn">
-            <div className="cf-btn-shimmer" />
-            <Send size={15} strokeWidth={2} />
-            Send Message
-          </button>
-        </form>
-
-        <div className="cf-info-row">
-          <div className="cf-info-item">
-            <div className="cf-info-icon">
-              <Zap size={13} strokeWidth={2} color="#a78bff" />
-            </div>
-            <span>Reply within 24 hours</span>
-          </div>
-          <div className="cf-info-item">
-            <div className="cf-info-icon">
-              <Lock size={13} strokeWidth={2} color="#a78bff" />
-            </div>
-            <span>Your info stays private</span>
-          </div>
         </div>
       </div>
-
-      <div className={`cf-toast ${submitted ? "show" : ""}`}>
-        <Send size={14} strokeWidth={2} />
-        Message sent successfully!
-      </div>
-    </div>
+      <Footer1 />
+    </>
   );
 }

@@ -5,16 +5,17 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #05061c;
 }
 
 .feature-grid-container {
-    background-color: #05061c;
-    min-height: 100vh;
-    padding: 4rem 2rem;
-    width: 100%;
-    overflow: hidden;
-    margin: 0;
     box-sizing: border-box;
+    background-color: #05061c;
+    width: 100%;
+    min-height: 38vh;
+    margin: 0;
+    padding: 4rem 2rem;
+    overflow: hidden;
 }
 
 .feature-grid {
@@ -23,12 +24,12 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
     padding: 0 20px;
     box-sizing: border-box;
 }
 
-/* Feature Cards - All same height and aligned */
+/* ── Feature Cards ── */
 .feature-card {
     background: linear-gradient(135deg, rgba(20, 24, 50, 0.7), rgba(15, 19, 40, 0.5));
     border: 1px solid rgba(79, 70, 229, 0.3);
@@ -40,6 +41,8 @@
     min-height: 500px;
     box-sizing: border-box;
     width: 100%;
+    overflow: hidden;
+    /* clips scrolling icons inside */
 }
 
 .feature-card1 {
@@ -52,39 +55,55 @@
     flex-direction: column;
     min-height: 500px;
     box-sizing: border-box;
-    width: 711px;
+    width: 100%;
+    /* ← was 711px, now fluid */
 }
 
-.feature-card:hover {
+.feature-card:hover,
+.feature-card1:hover {
     border-color: rgba(99, 102, 241, 0.6);
     transform: translateY(-4px);
     box-shadow: 0 10px 40px rgba(99, 102, 241, 0.2);
 }
 
-/* Desktop Layout - 3 columns on top, 2 columns on bottom */
+/* ════════════════════════════════════════
+   BOTTOM ROW — both cards perfectly even
+════════════════════════════════════════ */
+.flex {
+    display: flex;
+    gap: 1.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    align-items: stretch;
+    /* same height */
+    margin-bottom: 0;
+}
+
+/* Both bottom cards share width equally */
+.w1,
+.w2 {
+    flex: 1 1 0;
+    /* equal flex basis */
+    min-width: 0;
+    /* allow shrink below content */
+    min-height: 500px;
+    /* match top cards */
+}
+
+/* ════════════════════════════════════════
+   DESKTOP (≥1201px)
+════════════════════════════════════════ */
 @media (min-width: 1201px) {
     .feature-grid {
         grid-template-columns: repeat(3, 1fr);
     }
-
-    /* First 3 cards take 1 column each */
-    .feature-card:nth-child(1),
-    .feature-card:nth-child(2),
-    .feature-card:nth-child(3) {
-        grid-column: span 1;
-    }
-
-    /* Box 4 spans 2 columns */
-      .feature-card:nth-child(4) {
-        grid-column: span 2; /* Box 4 */
-    }
-
-    .feature-card:nth-child(5) {
-        grid-column: span 1; /* Box 5 */
-    }
 }
 
-/* Tablet Layout (769px - 1200px) */
+/* ════════════════════════════════════════
+   TABLET (769px–1200px)
+════════════════════════════════════════ */
 @media (min-width: 769px) and (max-width: 1200px) {
     .feature-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -97,17 +116,22 @@
         padding: 1.75rem;
     }
 
-    /* All cards span 1 column */
-    .feature-card:nth-child(1),
-    .feature-card:nth-child(2),
-    .feature-card:nth-child(3),
-    .feature-card:nth-child(4),
-    .feature-card:nth-child(5) {
-        grid-column: span 1;
+    .flex {
+        flex-direction: column;
+        gap: 1.25rem;
+        padding: 0 15px;
+    }
+
+    .w1,
+    .w2 {
+        width: 100%;
+        min-height: 450px;
     }
 }
 
-/* Mobile Layout (max 768px) */
+/* ════════════════════════════════════════
+   MOBILE (≤768px)
+════════════════════════════════════════ */
 @media (max-width: 768px) {
     .feature-grid-container {
         padding: 3rem 1rem;
@@ -117,6 +141,7 @@
         grid-template-columns: 1fr;
         gap: 1.25rem;
         padding: 0 10px;
+        margin-bottom: 1.25rem;
     }
 
     .feature-card {
@@ -124,16 +149,22 @@
         padding: 1.5rem;
     }
 
-    .feature-card:nth-child(1),
-    .feature-card:nth-child(2),
-    .feature-card:nth-child(3),
-    .feature-card:nth-child(4),
-    .feature-card:nth-child(5) {
-        grid-column: span 1;
+    .flex {
+        flex-direction: column;
+        gap: 1.25rem;
+        padding: 0 10px;
+    }
+
+    .w1,
+    .w2 {
+        width: 100%;
+        min-height: 400px;
     }
 }
 
-/* Small Mobile (max 480px) */
+/* ════════════════════════════════════════
+   SMALL MOBILE (≤480px)
+════════════════════════════════════════ */
 @media (max-width: 480px) {
     .feature-grid-container {
         padding: 2rem 0.75rem;
@@ -144,13 +175,25 @@
         padding: 0 5px;
     }
 
+    .flex {
+        gap: 1rem;
+        padding: 0 5px;
+    }
+
     .feature-card {
         min-height: 350px;
         padding: 1.25rem;
     }
+
+    .w1,
+    .w2 {
+        min-height: 350px;
+    }
 }
 
-/* Card Header - Consistent spacing */
+/* ════════════════════════════════════════
+   CARD HEADER
+════════════════════════════════════════ */
 .card-header {
     margin-bottom: 1.5rem;
 }
@@ -170,7 +213,9 @@
     margin: 0;
 }
 
-/* Card Content - Centered and aligned */
+/* ════════════════════════════════════════
+   CARD CONTENT
+════════════════════════════════════════ */
 .card-content {
     flex: 1;
     display: flex;
@@ -178,46 +223,112 @@
     justify-content: center;
     margin-top: auto;
     width: 100%;
+    overflow: hidden;
+    /* prevent scroll content from escaping */
+    min-width: 0;
 }
 
-/* Platform Grid (Box 1) */
-.platform-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+/* ════════════════════════════════════════
+   PLATFORM SCROLL (Box 1)
+════════════════════════════════════════ */
+.platform-scroll-wrap {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
     gap: 0.75rem;
+    overflow: hidden;
+}
+
+.platform-scroll-row {
+    overflow: hidden;
     width: 100%;
 }
 
+/* The moving track — duplicated icons for seamless loop */
+.platform-scroll-track {
+    display: flex;
+    gap: 0.75rem;
+    width: max-content;
+}
+
+/* Row 1: right → left */
+.track--ltr {
+    animation: scrollLTR 18s linear infinite;
+}
+
+/* Row 2: left → right */
+.track--rtl {
+    animation: scrollRTL 18s linear infinite;
+}
+
+.platform-scroll-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scrollLTR {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes scrollRTL {
+    0% {
+        transform: translateX(-50%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
 .platform-icon {
-    aspect-ratio: 1;
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
     background: rgba(30, 35, 60, 0.5);
     border: 1px solid rgba(79, 70, 229, 0.2);
     border-radius: 0.75rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.2s ease;
+    transition: background 0.2s ease, border-color 0.2s ease;
+    padding: 12px;
 }
 
 .platform-icon:hover {
-    background: rgba(40, 45, 70, 0.7);
-    border-color: rgba(99, 102, 241, 0.4);
-    transform: scale(1.05);
+    background: rgba(40, 45, 70, 0.8);
+    border-color: rgba(99, 102, 241, 0.5);
 }
 
-.icon-placeholder {
+.platform-icon img {
     width: 100%;
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: clamp(0.6rem, 1vw, 0.7rem);
-    color: #64748b;
-    text-align: center;
-    padding: 0.5rem;
+    object-fit: contain;
 }
 
-/* Image Containers - All aligned */
+@media (max-width: 768px) {
+    .platform-icon {
+        width: 68px;
+        height: 68px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .platform-icon {
+        width: 56px;
+        height: 56px;
+        padding: 8px;
+    }
+}
+
+/* ════════════════════════════════════════
+   IMAGE CONTAINERS
+════════════════════════════════════════ */
 .visualization-container,
 .ideas-container,
 .dashboard-container,
@@ -228,21 +339,22 @@
     justify-content: center;
 }
 
-/* Images - Properly sized and aligned */
 .visualization-image,
 .ideas-image,
 .dashboard-image,
 .insight-image {
-    width: 100%;
-    height: auto;
+    object-fit: cover;
+    border-radius: .75rem;
+    width: 91%;
     max-width: 100%;
+    height: auto;
     max-height: 300px;
-    object-fit: contain;
-    border-radius: 0.75rem;
+    margin: 0 auto;
+    display: block;
 }
 
-/* Responsive image adjustments */
 @media (max-width: 1200px) {
+
     .visualization-image,
     .ideas-image,
     .dashboard-image,
@@ -252,6 +364,7 @@
 }
 
 @media (max-width: 768px) {
+
     .visualization-image,
     .ideas-image,
     .dashboard-image,
@@ -265,6 +378,7 @@
 }
 
 @media (max-width: 480px) {
+
     .visualization-image,
     .ideas-image,
     .dashboard-image,
@@ -277,12 +391,14 @@
     }
 }
 
-/* Explore More Button */
+/* ════════════════════════════════════════
+   EXPLORE MORE BUTTON
+════════════════════════════════════════ */
 .explore-more-container {
     text-align: center;
     margin-top: 3rem;
+    margin-bottom: 61px;
     padding: 0 20px;
-    margin-bottom: 2rem;
 }
 
 .explore-more-btn {
@@ -323,7 +439,6 @@
     transform: translateX(4px);
 }
 
-/* Mobile Button Adjustments */
 @media (max-width: 768px) {
     .explore-more-btn {
         padding: 0.875rem 2rem;
@@ -344,42 +459,9 @@
     }
 }
 
-/* Platform icon images */
-.platform-icon img {
-    width: 80%;
-    height: 80%;
-    object-fit: contain;
-}
-
-/* Very small screens */
-@media (max-width: 360px) {
-    .feature-card {
-        padding: 1rem;
-        min-height: 320px;
-    }
-
-    .card-title {
-        font-size: 1.125rem;
-        margin-bottom: 0.75rem;
-    }
-
-    .card-description {
-        font-size: 0.8125rem;
-    }
-
-    .platform-grid {
-        gap: 0.3rem;
-    }
-
-    .visualization-image,
-    .ideas-image,
-    .dashboard-image,
-    .insight-image {
-        max-height: 180px;
-    }
-}
-
-/* Full-width image support */
+/* ════════════════════════════════════════
+   TWELVE IMAGE (full width)
+════════════════════════════════════════ */
 .twelve-image {
     width: 100vw;
     height: auto;
@@ -413,7 +495,9 @@
     }
 }
 
-/* Smooth transitions */
+/* ════════════════════════════════════════
+   MISC
+════════════════════════════════════════ */
 * {
     box-sizing: border-box;
 }
@@ -424,22 +508,6 @@
     transition: all 0.3s ease;
 }
 
-/* Touch device optimizations */
-@media (hover: none) and (pointer: coarse) {
-    .feature-card:hover {
-        transform: none;
-    }
-
-    .platform-icon:hover {
-        transform: none;
-    }
-
-    .explore-more-btn:hover {
-        transform: none;
-    }
-}
-
-/* Ensure all cards align properly */
 .feature-grid {
     align-items: stretch;
 }
@@ -448,25 +516,48 @@
     height: 100%;
 }
 
+@media (hover: none) and (pointer: coarse) {
 
-.w1 {
-    width: 611px;
+    .feature-card:hover,
+    .feature-card1:hover,
+    .platform-icon:hover,
+    .explore-more-btn:hover {
+        transform: none;
+    }
 }
 
-.flex {
-    gap: 20px;
-    display: flex; 
-    
+/* Very small screens */
+@media (max-width: 360px) {
+    .feature-card {
+        padding: 1rem;
+        min-height: 320px;
+    }
+
+    .card-title {
+        font-size: 1.125rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .card-description {
+        font-size: 0.8125rem;
+    }
+
+    .platform-grid {
+        gap: 0.3rem;
+    }
+
+    .visualization-image,
+    .ideas-image,
+    .dashboard-image,
+    .insight-image {
+        max-height: 180px;
+    }
+}
+
+.subtitles1 {
+    display: flex;
+    flex-direction: row;
+    gap: 14px;
+    align-items: center;
     justify-content: center;
 }
-
- 
-
-
-
-
-
-
-
-
-
