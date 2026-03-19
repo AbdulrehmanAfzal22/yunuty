@@ -31,7 +31,7 @@
 
 /* ── Feature Cards ── */
 .feature-card {
-    background: linear-gradient(135deg, rgba(20, 24, 50, 0.7), rgba(15, 19, 40, 0.5));
+    background: linear-gradient(145deg, #0b0625, #001570);
     border: 1px solid rgba(79, 70, 229, 0.3);
     border-radius: 1.25rem;
     padding: 2rem;
@@ -46,7 +46,7 @@
 }
 
 .feature-card1 {
-    background: linear-gradient(135deg, rgba(20, 24, 50, 0.7), rgba(15, 19, 40, 0.5));
+   background: linear-gradient(145deg, #0b0625, #001570);
     border: 1px solid rgba(79, 70, 229, 0.3);
     border-radius: 1.25rem;
     padding: 2rem;
@@ -286,17 +286,17 @@
 }
 
 .platform-icon {
+    background: #13151d80;
+    border: 1px solid #4f46e533;
+    border-radius: .75rem;
     flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
     width: 80px;
     height: 80px;
-    background: rgba(30, 35, 60, 0.5);
-    border: 1px solid rgba(79, 70, 229, 0.2);
-    border-radius: 0.75rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.2s ease, border-color 0.2s ease;
     padding: 12px;
+    transition: background .2s, border-color .2s;
+    display: flex;
 }
 
 .platform-icon:hover {
@@ -339,16 +339,13 @@
     justify-content: center;
 }
 
-.visualization-image,
-.ideas-image,
-.dashboard-image,
-.insight-image {
+.visualization-image, .ideas-image, .dashboard-image, .insight-image {
     object-fit: cover;
     border-radius: .75rem;
-    width: 91%;
+    width: 104%;
     max-width: 100%;
     height: auto;
-    max-height: 300px;
+    max-height: 306px;
     margin: 0 auto;
     display: block;
 }

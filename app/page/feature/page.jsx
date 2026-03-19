@@ -211,7 +211,7 @@ function Page() {
             <button className="built-btn">Explore More →</button>
           </div>
 
-          <div className="built-right">
+          {/* <div className="built-right">
             <div className="card-stack">
               {builtImages.map((img, i) => {
                 const position = (i - builtIndex + builtImages.length) % builtImages.length;
@@ -227,7 +227,7 @@ function Page() {
                 <Image src={box} alt="Illustrative box graphic" className="boximg" />
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </>
