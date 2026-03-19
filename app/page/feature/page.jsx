@@ -13,7 +13,6 @@ import benefit from "../../../public/assests/Benfits.png";
 import box from "../../../public/assests/box.png";
 import fan from "../../../public/assests/fan.png";
 
-// ── Gallery images — import your 9 images here ────────────────────────────
 import g1 from "../../../public/assests/machine.png";
 import g3 from "../../../public/assests/truck.png";
 import g2 from "../../../public/assests/stone.png";
@@ -26,7 +25,23 @@ import g9 from "../../../public/assests/lady.png";
 
 import "./feature.css";
 
-const GALLERY_IMAGES = [g1, g2, g3, g4, g5, g6,g7,g8,g9];  
+const GALLERY_IMAGES = [g1, g2, g3, g4, g5, g6, g7, g8, g9];
+
+// ── Accordion items ───────────────────────────────────────────────────────
+const ACCORDION_ITEMS = [
+  {
+    heading: "For Purchasing",
+    text: "Streamline  supplier coordination, procurement processes, and inventory planning to ensure cost efficiency and timely supply across your entire operation",
+  },
+  {
+    heading: "For Warehouse",
+    text: "Enhance inventory visibility with barcode scanning, lot tracking, and location control, while enabling multi-warehouse operations and seamless transfers for accurate, efficient fulfillment.",
+  },
+  {
+    heading: "For Sales ",
+    text: "Streamline your distribution network with automated workflows, route optimization, and live delivery tracking across all channels.",
+  },
+];
 
 function Page() {
   // ── Built-right card carousel ─────────────────────────────────────────
@@ -51,10 +66,12 @@ function Page() {
     return () => clearInterval(interval);
   }, [total]);
 
-  // Compute which 3 images sit at front / mid / back
   const front = galleryIndex % total;
   const mid   = (galleryIndex + 1) % total;
   const back  = (galleryIndex + 2) % total;
+
+  // ── Accordion state ───────────────────────────────────────────────────
+  const [activeAccordion, setActiveAccordion] = useState(1); // default: For Retailers
 
   return (
     <>
@@ -123,42 +140,31 @@ function Page() {
       {/* ── Layers section ── */}
       <div className="layers-bg">
         <div className="layers">
-
-          {/* Absolute text overlay — visible on ≥1112px alongside bg image */}
           <div className="clearbg">
             <h2 className="clear-h2">Seamless Client Communication</h2>
             <p className="clear-p">YunutyConnect enhances trust and alignment with seamless updates, clear insights, and teamwork.</p>
           </div>
 
-          {/* Full-width background screenshot — hidden on ≤1111px */}
           <Image src={Layers} alt="Feature Image" />
 
-          {/* ── Mobile Gallery — shown only on ≤1111px ── */}
           <div className="layers-mobile-gallery">
-
-            {/* Text (replaces the absolute .clearbg) */}
             <div className="layers-gallery-text">
               <h2>Seamless Client Communication</h2>
               <p>YunutyConnect enhances trust and alignment with seamless updates, clear insights, and teamwork.</p>
             </div>
 
-            {/* Card stack — same design as built-right */}
             <div className="layers-gallery-stack">
-              {/* Back card */}
               <div className="lg-card lg-card-2">
                 <Image src={GALLERY_IMAGES[back]} alt={`Gallery image ${back + 1}`} fill style={{ objectFit: "cover", borderRadius: "18px" }} />
               </div>
-              {/* Mid card */}
               <div className="lg-card lg-card-1">
                 <Image src={GALLERY_IMAGES[mid]} alt={`Gallery image ${mid + 1}`} fill style={{ objectFit: "cover", borderRadius: "18px" }} />
               </div>
-              {/* Front card */}
               <div className="lg-card lg-card-0">
                 <Image src={GALLERY_IMAGES[front]} alt={`Gallery image ${front + 1}`} fill style={{ objectFit: "cover", borderRadius: "18px" }} />
               </div>
             </div>
 
-            {/* Dot indicators */}
             <div className="layers-gallery-dots">
               {GALLERY_IMAGES.map((_, i) => (
                 <button
@@ -169,10 +175,7 @@ function Page() {
                 />
               ))}
             </div>
-
           </div>
-          {/* end .layers-mobile-gallery */}
-
         </div>
       </div>
 
@@ -196,38 +199,51 @@ function Page() {
       {/* ── Built section ── */}
       <div className="built-section">
         <div className="built-container">
+
+          {/* Left */}
           <div className="built-left">
-            <div className="built-subtitle">
+            {/* <div className="built-subtitle">
               <Image src={left} alt="Decorative left accent" width={79} height={17} className="no-shrink" />
               &nbsp;&nbsp;&nbsp;
               <p>Built for you</p>
               &nbsp;&nbsp;&nbsp;
               <Image src={right} alt="Decorative right accent" width={79} height={17} className="no-shrink" />
-            </div>
-            <h2>What We've Built for You</h2>
-            <p className="built-desc">
+            </div> */}
+            <h2>SUCCESS IN DIGITAL TRANSFORMATION IS A MATTER OF BALANCE</h2>
+            {/* <p className="built-desc">
               Designed to simplify operations, accelerate growth, and help businesses thrive in an ever-evolving digital world.
-            </p>
-            <button className="built-btn">Explore More →</button>
+            </p> */}
+            <button className="built-btn">Request a Demo →</button>
           </div>
 
-          {/* <div className="built-right">
-            <div className="card-stack">
-              {builtImages.map((img, i) => {
-                const position = (i - builtIndex + builtImages.length) % builtImages.length;
-                return (
-                  <div
+          {/* Right — accordion */}
+          <div className="built-right bac__right">
+            <div className="bac__wrap">
+
+              {/* Left column — headings */}
+              <div className="bac__list">
+                {ACCORDION_ITEMS.map((item, i) => (
+                  <button
                     key={i}
-                    className={`card card-${position}`}
-                    style={{ backgroundImage: `url(${img})` }}
-                  />
-                );
-              })}
-              <div className="box-image">
-                <Image src={box} alt="Illustrative box graphic" className="boximg" />
+                    className={`bac__item${activeAccordion === i ? " bac__item--active" : ""}`}
+                    onClick={() => setActiveAccordion(i)}
+                  >
+                    <span className="bac__slash">/</span>
+                    <span className="bac__heading">{item.heading}</span>
+                  </button>
+                ))}
               </div>
+
+              {/* Right column — description */}
+              <div className="bac__content">
+                <p className="bac__text" key={activeAccordion}>
+                  {ACCORDION_ITEMS[activeAccordion].text}
+                </p>
+              </div>
+
             </div>
-          </div> */}
+          </div>
+
         </div>
       </div>
     </>
