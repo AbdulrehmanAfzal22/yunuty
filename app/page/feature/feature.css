@@ -953,15 +953,15 @@ element.style {
 
 /* Pink slash — slides in on active */
 .bac__slash {
-  font-size: 48px;
-  font-weight: 900;
-  color: #e0366e;
-  line-height: 1;
-  width: 36px;
-  opacity: 0;
-  transform: translateX(-8px);
-  transition: opacity 0.25s ease, transform 0.25s ease;
-  flex-shrink: 0;
+    color: #e0366e;
+    opacity: 0;
+    flex-shrink: 0;
+    width: 12px;
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1;
+    transition: opacity .25s, transform .25s;
+    transform: translateX(-8px);
 }
 
 .bac__item--active .bac__slash {

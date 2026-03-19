@@ -8,7 +8,7 @@
 .cnt__page {
   position: relative;
   min-height: 100vh;
-  background: rgba(6, 6, 32, 0.98);
+  background: radial-gradient(ellipse 80% 60% at 50% 30%, #0f1a5e 0%, #080d2e 45%, #05071c 100%);
   font-family: 'Barlow', sans-serif;
   overflow: hidden;
   padding-bottom: 80px;
@@ -20,6 +20,12 @@
   inset: 0;
   pointer-events: none;
   z-index: 0;
+  background: radial-gradient(
+    ellipse 55% 45% at 50% 28%,
+    rgba(80, 100, 230, 0.18) 0%,
+    rgba(50, 70, 180, 0.08) 45%,
+    transparent 70%
+  );
 }
 
 .cnt__header {
@@ -51,7 +57,6 @@
     line-height: 1.1;
 }
 
-
 .cnt__subtitle {
     color: #fff;
     margin-top: .2em;
@@ -61,8 +66,6 @@
     font-weight: 500;
     line-height: 1.36;
 }
-
-
 
 .cnt__divider {
   width: 100%;
@@ -89,7 +92,7 @@
    LEFT COLUMN — exactly 50 %
 ════════════════════════════════════════ */
 .cnt__left {
-  flex: 1 1 0;          /* both sides flex: 1 1 0 → equal width */
+  flex: 1 1 0;
   min-width: 0;
   display: flex;
   flex-direction: column;
@@ -107,7 +110,7 @@
 
 .cnt__city-img {
   width: 100% !important;
-  height: 260px !important;      /* slightly taller to match form height better */
+  height: 260px !important;
   object-fit: cover !important;
   object-position: center !important;
   display: block !important;
@@ -169,7 +172,7 @@
    RIGHT COLUMN — exactly 50 %
 ════════════════════════════════════════ */
 .cnt__right {
-  flex: 1 1 0;          /* matches left → perfect 50 / 50 */
+  flex: 1 1 0;
   min-width: 0;
 }
 
@@ -182,8 +185,8 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 40px 48px 44px;   /* comfortable, proportional padding */
-  height: 100%;               /* stretches to match left column */
+  padding: 40px 48px 44px;
+  height: 100%;
   box-sizing: border-box;
 }
 
@@ -267,7 +270,6 @@
     margin-top: 36px;
   }
 
-  /* Full width on mobile */
   .cnt__left,
   .cnt__right {
     flex: none;
