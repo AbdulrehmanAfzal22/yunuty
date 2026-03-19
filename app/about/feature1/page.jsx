@@ -94,7 +94,7 @@ const FeatureChips = () => {
         <div className="grid-background"></div>
       </section> */}
 
-      <section className="features-tags-section">
+      {/* <section className="features-tags-section">
         <div className="features-tags-container">
           <div className="tags-row row-1">
              <div className="feature-tag">
@@ -147,11 +147,7 @@ const FeatureChips = () => {
             </div>
           </div>
 
-          <div className="tags-row row-5">
-            {/* <div className="feature-tag">
-              <span className="tag-icon green">🔶</span>
-              <span className="tag-text">Real-Time Analytics & Reporting</span>
-            </div> */}
+          
             <div className="feature-tag">
               <span className="tag-icon green">🔶</span>
               <span className="tag-text">Online Payment</span>
@@ -167,7 +163,7 @@ const FeatureChips = () => {
           </div>
         </div>
       </section>
-    
+     */}
     </>
   );
 };

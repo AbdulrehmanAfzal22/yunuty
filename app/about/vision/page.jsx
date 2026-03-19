@@ -52,12 +52,10 @@ export default function Vision() {
 
       {/* Heading section */}
       <div className="vision-page-container">
-        <h5>The Values That Drives You</h5>
+        <h5>The Values That Drive Success</h5>
         <p className="subtitle">
-          Harnessing the power of artificial intelligence to revolutionize
-          industries
-          <br />
-          and enhance human experiences.
+         Driving performance through intelligent systems, operational excellence, and data-driven decision making.
+          
         </p>
       </div>
 

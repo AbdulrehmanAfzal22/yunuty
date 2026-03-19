@@ -107,17 +107,12 @@ export default function Hero1() {
         {/* Scroll-animated paragraphs with manual line breaks */}
         <div className="hero-about__text-container">
           <ScrollAnimatedParagraph
-            text={`We're a passionate team of innovators obsessed with
- using AI to streamline content creation. We believe AI can 
- revolutionise the writing industry by making high-quality
-  content generation faster and more accessible.`}
+            text={`Yunuak helps businesses transform their supply chains into smart, connected ecosystems built for speed, efficiency, and growth. Backed by a team with deep industry experience across supply chain, logistics, and operations, we deliver integrated solutions using data analytics and AI along with Cloud-based ERP, EDI integration, and mobile technologies to streamline operations, reduce complexity, and drive measurable results in a rapidly evolving digital age.`}
           />
           <br/>
           <ScrollAnimatedParagraph
             className="hero-mission-text--secondary"
-            text={`Our mission is to address these challenges head-on by
- developing cutting-edge AI tools that enhance the 
- writing process.`}
+            text={``}
           />
         </div>
       </section>

@@ -39,7 +39,7 @@ const ACCORDION_ITEMS = [
   },
   {
     heading: "For Sales ",
-    text: "Streamline your distribution network with automated workflows, route optimization, and live delivery tracking across all channels.",
+    text: "Optimize sales operations with real-time visibility. Streamline quoting, order processing, and fulfillment to drive accuracy, speed, and smarter revenue decisions.",
   },
 ];
 

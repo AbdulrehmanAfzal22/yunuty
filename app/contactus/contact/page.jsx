@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import "./contact.css";
 import Navbar from "@/app/page/navbar/page";
-import connect from "../../../public/assests/connect.png";
+import connect from "../../../public/assests/city.png";
 import Image from "next/image";
 import Footer1 from "../contact-footer/page";
 
@@ -28,10 +28,10 @@ export default function ContactPage() {
 
         {/* ── Page header ── */}
         <div className="cnt__header">
-          <p className="cnt__kicker">YOUR GATEWAY TO B2B SAAS EXCELLENCE</p>
+          <p className="cnt__kicker">YOUR COMPASS TO ERP EXCELLENCE</p>
           <h1 className="cnt__title">CONTACT US</h1>
           <p className="cnt__subtitle">
-            Infinite possibilities, One Solution: Your B2B SaaS Partner
+            Navigating smarter systems and seamless operations.
           </p>
           <div className="cnt__divider" />
         </div>
