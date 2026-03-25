@@ -29,12 +29,12 @@ export default function Privacy() {
             See how we protect your information and ensure your privacy policy.
           </p>
 
-          <div className="privacy-cta-wrapper">
+          {/* <div className="privacy-cta-wrapper">
             <button className="privacy-cta-button" type="button">
               <span className="privacy-button-icon"><Timer className="watch" /></span>
               Last Updated on February 20, 2026
             </button>
-          </div>
+          </div> */}
         </div>
 
         <section className="privacy-mission-section">
