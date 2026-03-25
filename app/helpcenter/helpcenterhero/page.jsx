@@ -15,52 +15,52 @@ import wms from "../../../public/assests/WMS.png";
 import sale from "../../../public/assests/Sales.png";
 import accounting from "../../../public/assests/Accounting.png";
 import purchase from "../../../public/assests/Purchasing.png";
-
+import qb from "../../../public/assests/qb.png";
 const cardData = [
   {
     title: "Dashboards",
-    description: "View real-time business insights through customizable dashboards",
+    description: "Gain real-time insights with fully customizable business dashboards.",
     img: dashboard,
   },
   {
     title: "Contacts",
-    description: "Centralize and manage all customer and vendor information",
+    description: " Centralize and manage all customer and vendor information in one place.",
     img: contact,
   },
   {
     title: "Products",
-    description: "Track product details, pricing, and availability in real time.",
+    description: "Monitor product details, pricing, and availability in real time.",
     img: products,
   },
   {
     title: "CRM",
-    description: "Manage leads, track engagement, and strengthen relationships",
+    description: "Manage leads, generate estimates, and build stronger customer relationships.",
     img: crm,
   },
   {
     title: "Sales",
-    description: "Streamline quotes, invoices, and sales performance",
+    description: "Track orders, accept online payments, capture e-signatures, and update customers in real time.",
     img: sale,
   },
   {
     title: "Accounting",
-    description: "Automate bookkeeping, reporting, and payment processing",
+    description: "Automate bookkeeping, reporting, and payment processes efficiently.",
     img: accounting,
   },
   {
     title: "WMS",
-    description: "Control inventory, orders, and warehouse operations efficiently",
+    description: "Manage inventory with barcode scanning, lot tracking, and multi-warehouse support.",
     img: wms,
   },
   {
     title: "Purchase",
-    description: "Manage suppliers, purchase orders, and procurement processes",
+    description: " Streamline supplier management, purchase orders, and procurement workflows.",
     img: purchase,
   },
   {
     title: "Quickbooks Sync",
-    description: "Generate comprehensive analytics and performance reports",
-    img: dashboard,
+    description: "Enable real-time synchronization for financial and operational alignment.",
+    img: qb,
   },
 ];
 
