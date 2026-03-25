@@ -12,6 +12,7 @@
   overflow: hidden;
   font-family: poppins, sans-serif;
   margin-top: 30px;
+  background: radial-gradient(80% 60% at 50% 30%, #0f1a5e 0%, #080d2e 45%, #05071c 100%);
 }
 
 /* Subtitle */

@@ -2,7 +2,7 @@
 .help-hero {
   width: 100%;
   min-height: 53vh;
-  background: radial-gradient(circle at top center, #0f1a4f, #020617 70%);
+ background: radial-gradient(80% 60% at 50% 30%, #0f1a5e 0%, #080d2e 45%, #05071c 100%);
   display: flex;
   justify-content: center;
   align-items: center;
