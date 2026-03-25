@@ -1,6 +1,5 @@
 import React from "react";
 import "./helpcenterhero.css";
-import { FaSearch } from "react-icons/fa";
 import Navbar from "@/app/page/navbar/page";
 import Image from "next/image";
 import right from "../../../public/assests/sub-title-right.svg";
@@ -70,6 +69,7 @@ const Helpcenterhero = () => {
     <>
       <Navbar />
 
+      {/* ── Hero ── */}
       <section className="help-hero">
         <div className="help-hero-content">
           <div className="help-section-img">
@@ -93,54 +93,51 @@ const Helpcenterhero = () => {
         </div>
       </section>
 
-      <div className="help-section-cards">
+      {/* ── Full-width dark background wrapper (fixes white sides) ── */}
+      <div className="help-section-cards-outer">
+        <div className="help-section-cards">
 
-        {/* ── Featured Large Box ── */}
-        <div className="help-featured-card">
-
-          {/* Pink slash + title — same pattern as small cards */}
-          <div className="help-card-header">
-            <span className="help-card-slash">/</span>
-            <h2>Empowering Smarter Connections for Better Business</h2>
-          </div>
-
-          <p>
-        Ready, set, succeed! Navigate YunutyConnect and turn connections into measurable growth
-          </p>
-
-          <div className="help-featured-video">
-            <div className="help-video-placeholder">
-              <div className="help-play-button">▶</div>
-              <span>Watch Tutorial Video</span>
+          {/* Featured Large Box */}
+          <div className="help-featured-card">
+            <div className="help-card-header">
+              <span className="help-card-slash">/</span>
+              <h2>Empowering Smarter Connections for Better Business</h2>
+            </div>
+            <p>
+              Ready, set, succeed! Navigate YunutyConnect and turn connections
+              into measurable growth
+            </p>
+            <div className="help-featured-video">
+              <div className="help-video-placeholder">
+                <div className="help-play-button">▶</div>
+                <span>Watch Tutorial Video</span>
+              </div>
             </div>
           </div>
+
+          {/* 3×3 Grid of 9 Cards */}
+          <section className="help-grid-container">
+            {cardData.map((card, index) => (
+              <div className="help-card" key={index}>
+                <div className="help-card-header">
+                  <span className="help-card-slash">/</span>
+                  <h2>{card.title}</h2>
+                </div>
+                <p>{card.description}</p>
+                <div className="help-card-img-wrapper">
+                  <Image
+                    src={card.img}
+                    alt={card.title}
+                    width={600}
+                    height={180}
+                    style={{ width: "100%", height: "180px", objectFit: "cover" }}
+                  />
+                </div>
+              </div>
+            ))}
+          </section>
+
         </div>
-
-        {/* ── 3×3 Grid of 9 Cards ── */}
-        <section className="help-grid-container">
-          {cardData.map((card, index) => (
-            <div className="help-card" key={index}>
-
-              <div className="help-card-header">
-                <span className="help-card-slash">/</span>
-                <h2>{card.title}</h2>
-              </div>
-
-              <p>{card.description}</p>
-
-              <div className="help-card-img-wrapper">
-                <Image
-                  src={card.img}
-                  alt={card.title}
-                  width={600}
-                  height={180}
-                  style={{ width: "100%", height: "180px", objectFit: "cover" }}
-                />
-              </div>
-
-            </div>
-          ))}
-        </section>
       </div>
 
       <FAQSection />

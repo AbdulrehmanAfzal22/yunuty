@@ -109,9 +109,14 @@
   opacity: 0.9;
 }
 
-/* HELP SECTION CARDS CONTAINER */
-.help-section-cards {
+/* HELP SECTION CARDS OUTER — full-width dark background, no max-width */
+.help-section-cards-outer {
+  width: 100%;
   background-color: #020617;
+}
+
+/* HELP SECTION CARDS INNER — centered max-width content */
+.help-section-cards {
   padding: 60px 20px;
   display: flex;
   flex-direction: column;
@@ -171,11 +176,10 @@
     letter-spacing: .5px;
     text-transform: uppercase;
     margin: 0;
-    font-size: clamp(20px, 3vw, 29px);
+    font-size: clamp(20px, 3vw, 30px);
     font-weight: 700;
     line-height: 1.25;
 }
-
 /* Featured card slash — slightly larger to match */
 .help-featured-card .help-card-slash {
   font-size: clamp(26px, 3.5vw, 40px);
