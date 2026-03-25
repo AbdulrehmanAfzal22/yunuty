@@ -7,13 +7,69 @@ import right from "../../../public/assests/sub-title-right.svg";
 import left from "../../../public/assests/sub-title-left.svg";
 import FAQSection from "../faq/page";
 import DiscoverSection from "@/app/about/discover/page";
-import ProductivityHero from "../faqgrid/page";
 import Footer from "@/app/page/footer/page";
+import dashboard from "../../../public/assests/Dashboards.png";
+import contact from "../../../public/assests/Contacts.png"
+import products from "../../../public/assests/Products.png";
+import crm from "../../../public/assests/CRM.png";
+import wms from "../../../public/assests/WMS.png";
+import sale from "../../../public/assests/Sales.png";
+import accounting from "../../../public/assests/Accounting.png";
+import purchase from "../../../public/assests/Purchasing.png";
+import qb from "../../../public/assests/qb.png";
+const cardData = [
+  {
+    title: "Dashboards",
+    description: "View real-time business insights through customizable dashboards",
+    img: dashboard,
+  },
+  {
+    title: "Contacts",
+    description: "Centralize and manage all customer and vendor information",
+    img: contact, // replace with: contactsImg
+  },
+  {
+    title: "Products",
+    description: "Track product details, pricing, and availability in real time.",
+    img: products, // replace with: productsImg
+  },
+  {
+    title: "CRM",
+    description: "Manage leads, track engagement, and strengthen relationships",
+    img: crm, // replace with: crmImg
+  },
+  {
+    title: "Sales",
+    description: "Streamline quotes, invoices, and sales performance",
+    img: sale, // replace with: salesImg
+  },
+  {
+    title: "Accounting",
+    description: "Automate bookkeeping, reporting, and payment processing",
+    img: accounting, // replace with: accountingImg
+  },
+  {
+    title: "WMS",
+    description: "Control inventory, orders, and warehouse operations efficiently",
+    img: wms, // replace with: wmsImg
+  },
+  {
+    title: "Purchase",
+    description: "Manage suppliers, purchase orders, and procurement processes",
+    img: purchase, // replace with: purchaseImg
+  },
+  {
+    title: "Quickbooks Sync",
+    description: "Generate comprehensive analytics and performance reports",
+    img: qb, // replace with: reportsImg
+  },
+];
 
 const Helpcenterhero = () => {
   return (
     <>
-      <Navbar/>
+      <Navbar />
+
       <section className="help-hero">
         <div className="help-hero-content">
           <div className="help-section-img">
@@ -35,98 +91,64 @@ const Helpcenterhero = () => {
             you need to make the most of your ERP.
           </p>
 
-          <div className="help-search-box">
+          {/* <div className="help-search-box">
             <div className="help-search-input">
               <FaSearch className="help-search-icon" />
               <input type="text" placeholder="Search Here..." />
             </div>
             <button>Search</button>
-          </div>
+          </div> */}
         </div>
       </section>
 
       <div className="help-section-cards">
-        <section className="help-categories">
-
-<div className="help-card">
-            <h2>Dashboards</h2>
-            <p>
-              View real-time business insights
-              <br />
-              through customizable
-            </p>
+        {/* Featured Large Box */}
+        <div className="help-featured-card">
+          <h2>Empowering Smarter Connections for Better Business</h2>
+          <p>
+            Ready, set, succeed! Navigate YunutyConnect and turn connections into measurable growth
+          </p>
+          <div className="help-featured-video">
+            <div className="help-video-placeholder">
+              <div className="help-play-button">▶</div>
+              <span>Watch Tutorial Video</span>
+            </div>
           </div>
+        </div>
 
-          <div className="help-card">
-            <h2>Contacts</h2>
-            <p>
-              Centralize and manage all
-              <br />
-              customer and vendor...
-            </p>
-          </div>
+        {/* 3x3 Grid of 9 Cards */}
+        <section className="help-grid-container">
+          {cardData.map((card, index) => (
+            <div className="help-card" key={index}>
 
-          <div className="help-card">
-            <h2>Products</h2>
-            <p>
-              Track product details, pricing,
-              <br />
-              and availability in real time.
-            </p>
-          </div>
-
-          <div className="help-card">
-            <h2>CRM</h2>
-            <p>
-              Manage leads, track 
-              <br />
-              engagement, and strengthen
-            </p>
-          </div>
-        </section>
-
-        <section className="help-categories">
-          <div className="help-card">
-            <h2>Sales</h2>
-            <p>
-              Streamline quotes, invoices, and
-              <br />
-              sales performance tracking..
-            </p>
-          </div>
-
-          <div className="help-card">
-            <h2>Accounting</h2>
-            <p>
-              Automate bookkeeping,
-              <br />
-              reporting, and payment...
-            </p>
-          </div>
-
-          <div className="help-card">
-            <h2>WMS</h2>
-            <p>
-              Control inventory, orders, and
-              <br />
-              warehouse operations efficiently.
-            </p>
-          </div>
-            <div className="help-card">
-            <h2>Purchase</h2>
-            <p>
-              Manage suppliers, purchase
-              <br />
-              orders, and procurement...
-            </p>
-          </div>
-        </section>
-
+              {/* Slash accent + Title */}
+              <div className="help-card-header">
+                <span className="help-card-slash">/</span>
+                <h2>{card.title}</h2>
               </div>
-<FAQSection/>
- {/* <ProductivityHero/>  */}
-    <DiscoverSection/>
-      <Footer/>
+
+              {/* Description */}
+              <p>{card.description}</p>
+
+              {/* Image — always renders, no null check */}
+              <div className="help-card-img-wrapper">
+                <Image
+                  src={card.img}
+                  alt={card.title}
+                  width={600}
+                  height={180}
+                  style={{ width: "100%", height: "180px", objectFit: "cover" }}
+                />
+              </div>
+
+            </div>
+          ))}
+        </section>
+      </div>
+
+      <FAQSection />
+      <DiscoverSection />
+      <Footer />
     </>
   );
 };

@@ -3,16 +3,15 @@
 }
 
 .faq-hero {
-  width: 100%;
-  padding: 100px 20px 60px 20px;
-  background: #020617;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+    text-align: center;
+    background: #020617;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 11px 20px 60px;
+    display: flex;
 }
-
 .faq-hero-content {
   max-width: 1000px;
   width: 100%;
