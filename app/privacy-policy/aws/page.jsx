@@ -1,18 +1,18 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import "./test.css";
+import "./aws.css";
 
-import img1 from "../../../public/assests/sas.jpeg";
+import img1 from "../../../public/assests/Computer.png";
 import img2 from "../../../public/assests/patner1.png";
-import second from "../../../public/assests/second.jpeg";
+import second from "../../../public/assests/ipad.png";
 // ─────────────────────────────────────────────
 // 👇 IMPORT YOUR MOBILE IMAGE HERE
 // Replace the path below with your actual image
 // import imgMobile from "../../../public/assests/YOUR_MOBILE_IMAGE.jpeg";
 // ─────────────────────────────────────────────
 
-export default function OracleSection() {
+export default function AwsSection() {
   return (
     <section className="ors__section">
 
@@ -20,11 +20,13 @@ export default function OracleSection() {
       <div className="ors__topbar">
         <Image src={img2} alt="Oracle Partner Logo" className="ors__logo" />
         <div className="ors__tags-top">
+          <span className="ors__tag">PRIVACY</span>
+          <span className="ors__tag-sep">/</span>
           <span className="ors__tag">SECURITY</span>
           <span className="ors__tag-sep">/</span>
-          <span className="ors__tag">SCALABILITY</span>
-          <span className="ors__tag-sep">/</span>
-          <span className="ors__tag">CLOUD INNOVATION</span>
+          <span className="ors__tag">DATA PROTECTION</span>
+              <span className="ors__tag-sep">/</span>
+          <span className="ors__tag">FRAUD PREVENTION</span>
         </div>
       </div>
 
@@ -66,11 +68,18 @@ export default function OracleSection() {
         {/* Right — content */}
         <div className="ors__content">
           <p className="ors__para">
-            We harness the power of Amazon Web Services (AWS) to deliver scalable, secure, and high-performance cloud solutions that drive business growth and digital transformation. Yunuak, powered by AWS, helps organizations streamline operations, accelerate innovation, and improve sales performance through reliable cloud infrastructure.
+        <span className="ors__highlight">Contact Us with Your Questions or Concerns</span>
+
+
+
+
           </p>
           <p className="ors__para">
-            Following industry-leading security standards and compliance frameworks such as GDPR, HIPAA, and PCI-DSS, Yunuak ensures your data remains protected, resilient, and fully aligned with global regulatory requirements.
+            If you have any questions, concerns, or requests related to this Privacy Policy or how your data is handled, please contact us. We are committed to addressing privacy-related inquiries promptly and transparently. You may reach us by email, and we will respond within a reasonable timeframe to assist with access, corrections, or general information regarding your data. 
+       
+
           </p>
+          <p className="ors__para">  Please do not hesitate to contact us at <span className="ors__email">notify@yunuak.com</span></p>
         </div>
 
       </div>

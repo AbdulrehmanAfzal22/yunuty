@@ -7,7 +7,7 @@ import Footer from "@/app/page/footer/page";
 import Privacy from "../privacyhero/page";
 import "./privacybox.css";
 import DiscoverSection from "@/app/about/discover/page";
-
+import AwsSection from "../aws/page";
 export default function Vision() {
   const cardRefs = useRef([]);
 
@@ -145,7 +145,7 @@ and we strictly limit access to authorized personnel only.
         </section>
       </div>
 
-      {/* Fifth & Sixth Cards */}
+      {/* Fifth & Sixth Cards
       <div className="vision-row vision-row-3">
         <section className="vision-section">
           <div
@@ -175,7 +175,7 @@ and we strictly limit access to authorized personnel only.
           </div>
         </section>
       </div>
-    
+     */}
 
 
 {/* <section className="hero-section-v2">
@@ -195,6 +195,7 @@ and we strictly limit access to authorized personnel only.
 </section>
 
   */}
+  <AwsSection/>
 <DiscoverSection/>
 <Footer/>
     </>

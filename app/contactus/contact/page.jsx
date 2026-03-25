@@ -9,13 +9,45 @@ import Footer1 from "../contact-footer/page";
 export default function ContactPage() {
   const [form, setForm] = useState({ name: "", email: "", phone: "" });
 
+  // ✅ NEW STATES
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState("");
+
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", form);
+
+    // ✅ START LOADING
+    setLoading(true);
+    setMessage("");
+
+    try {
+      // 🔁 Replace this URL with your backend / API route
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        setMessage("✅ Message sent successfully!");
+        setForm({ name: "", email: "", phone: "" }); // reset form
+      } else {
+        setMessage("❌ Failed to send message");
+      }
+    } catch (error) {
+      console.error(error);
+      setMessage("❌ Something went wrong");
+    }
+
+    setLoading(false);
   };
 
   return (
@@ -23,10 +55,8 @@ export default function ContactPage() {
       <Navbar />
       <div className="cnt__page">
 
-        {/* ── Background mesh ── */}
         <div className="cnt__bg-mesh" />
 
-        {/* ── Page header ── */}
         <div className="cnt__header">
           <p className="cnt__kicker">YOUR COMPASS TO ERP EXCELLENCE</p>
           <h1 className="cnt__title">CONTACT US</h1>
@@ -36,13 +66,10 @@ export default function ContactPage() {
           <div className="cnt__divider" />
         </div>
 
-        {/* ── Main content ── */}
         <div className="cnt__body">
 
-          {/* Left — image + address */}
           <div className="cnt__left">
 
-            {/* City image — fixed container */}
             <div className="cnt__img-wrap">
               <Image
                 src={connect}
@@ -53,7 +80,6 @@ export default function ContactPage() {
               />
             </div>
 
-            {/* Address block */}
             <div className="cnt__address">
               <div className="cnt__addr-title">
                 <span className="cnt__addr-slash">/</span>
@@ -89,7 +115,6 @@ export default function ContactPage() {
             </div>
           </div>
 
-          {/* Right — form */}
           <div className="cnt__right">
             <form className="cnt__form" onSubmit={handleSubmit}>
               <h2 className="cnt__form-title">Contact Us</h2>
@@ -129,7 +154,12 @@ export default function ContactPage() {
                 />
               </div>
 
-              <button type="submit" className="cnt__submit">SUBMIT</button>
+              <button type="submit" className="cnt__submit">
+                {loading ? "Sending..." : "SUBMIT"}
+              </button>
+
+              {/* ✅ MESSAGE DISPLAY */}
+              {message && <p style={{ marginTop: "10px" }}>{message}</p>}
             </form>
           </div>
 
