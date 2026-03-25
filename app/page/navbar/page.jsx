@@ -78,7 +78,7 @@ export default function Navbar() {
               }
               onClick={closeMenu}
             >
-              Help Center
+              Resources
             </Link>
           </li>
 

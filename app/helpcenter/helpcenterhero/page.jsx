@@ -74,9 +74,9 @@ const Helpcenterhero = () => {
         <div className="help-hero-content">
           <div className="help-section-img">
             <Image src={left} alt="Decorative left accent" />
-            &nbsp;&nbsp;&nbsp;
-            <p>Help</p>
-            &nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <p>Resources</p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <Image src={right} alt="Decorative right accent" />
           </div>
 
@@ -84,12 +84,12 @@ const Helpcenterhero = () => {
             All-in-One Intellectual <br />
             Resource Hub
           </h1>
-
+{/* 
           <p>
             Where knowledge meets efficiency, everything
             <br />
             you need to make the most of your ERP.
-          </p>
+          </p> */}
         </div>
       </section>
 
