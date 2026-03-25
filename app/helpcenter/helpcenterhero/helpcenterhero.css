@@ -34,15 +34,6 @@
   line-height: 1.5;
 }
 
-.help-subtitle-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 30px;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
 .help-leftsvg,
 .help-rightsvg {
   width: auto;
@@ -118,15 +109,38 @@
   opacity: 0.9;
 }
 
+/* HELP SECTION CARDS CONTAINER */
 .help-section-cards {
-    background-color: #020617;
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: -24px 20px;
-    display: flex;
+  background-color: #020617;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ═══════════════════════════════════════
+   SHARED: slash + title header row
+   (used in both featured card & grid cards)
+═══════════════════════════════════════ */
+.help-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.help-card-slash {
+  color: #e91e8c;
+  font-size: clamp(22px, 2.8vw, 32px);
+  font-weight: 900;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 2px;
+  font-style: normal;
+  -webkit-text-stroke: 1px #e91e8c;
 }
 
 /* ═══════════════════════════════════════
@@ -135,7 +149,7 @@
 .help-featured-card {
   width: 100%;
   max-width: 1200px;
-     background: linear-gradient(145deg, #0b0625, #001570); 
+  background: linear-gradient(145deg, #0b0625, #001570);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 24px;
   padding: 50px 60px;
@@ -152,16 +166,27 @@
   border-color: rgba(100, 130, 255, 0.3);
 }
 
-.help-featured-card h2 {
-  font-size: clamp(24px, 3.5vw, 36px);
-  color: #ffffff;
-  margin: 0;
-  font-weight: 600;
-  letter-spacing: 0.5px;
+.help-featured-card .help-card-header h2 {
+    color: #fff;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    margin: 0;
+    font-size: clamp(20px, 3vw, 29px);
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+/* Featured card slash — slightly larger to match */
+.help-featured-card .help-card-slash {
+  font-size: clamp(26px, 3.5vw, 40px);
+  font-weight: 900;
+  font-style: normal;
+  -webkit-text-stroke: 1.5px #e91e8c;
+  margin-top: 0;
 }
 
 .help-featured-card > p {
-  font-size: clamp(16px, 2vw, 20px);
+  font-size: clamp(15px, 2vw, 18px);
   color: #b3c2ff;
   margin: 0;
   line-height: 1.6;
@@ -169,9 +194,8 @@
 }
 
 .help-featured-video {
-  margin-top: 20px;
+  margin-top: 10px;
   width: 100%;
-  max-width: 100%;
 }
 
 .help-video-placeholder {
@@ -238,7 +262,7 @@
 }
 
 /* ═══════════════════════════════════════
-   3x3 GRID CONTAINER (9 Cards)
+   3×3 GRID CONTAINER
 ═══════════════════════════════════════ */
 .help-grid-container {
   width: 100%;
@@ -250,7 +274,7 @@
 }
 
 /* ═══════════════════════════════════════
-   HELP CARD STYLING (Grid Items)
+   GRID CARD STYLING
 ═══════════════════════════════════════ */
 .help-card {
   color: #fff;
@@ -265,32 +289,17 @@
   overflow: hidden;
 }
 
-/* Card header row: slash accent + title */
-.help-card-header {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  margin-bottom: 14px;
-}
-
-.help-card-slash {
-  color: #e91e8c;
-  font-size: clamp(22px, 2.8vw, 28px);
-  font-weight: 700;
-  line-height: 1;
-  flex-shrink: 0;
-  margin-top: 2px;
-  font-style: italic;
-}
-
+/* Grid card title — smaller than featured */
 .help-card h2 {
-    letter-spacing: .3px;
-    text-transform: uppercase;
-    margin-top: 5px;
-    font-size: clamp(14px, 1.8vw, 17px);
-    font-weight: 700;
-    line-height: 1.35;
+  font-size: clamp(14px, 1.8vw, 17px);
+  margin: 0;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  margin-top: 5px;
 }
+
 .help-card p {
   font-size: clamp(13px, 1.5vw, 15px);
   color: #b0b8d1;
@@ -322,27 +331,13 @@
   transform: scale(1.04);
 }
 
-/* Fallback placeholder when no image is provided */
-.help-card-img-placeholder {
-  width: 100%;
-  height: 180px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, #1a2456, #0d1a3a);
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #4a5580;
-  font-size: 13px;
-  letter-spacing: 0.5px;
-}
-
 .help-card:hover {
   transform: translateY(-8px);
   border: 1px solid rgba(100, 130, 255, 0.4);
   box-shadow: 0 10px 30px rgba(100, 130, 255, 0.2);
 }
 
+/* Hero section label row */
 .help-section-img {
   width: 100%;
   display: flex;
@@ -371,311 +366,89 @@
 /* ═══════════════════════════════════════
    RESPONSIVE DESIGN
 ═══════════════════════════════════════ */
-
-/* Large Desktop */
 @media (max-width: 1400px) {
-  .help-grid-container {
-    max-width: 1100px;
-  }
-
-  .help-featured-card {
-    max-width: 1100px;
-  }
+  .help-grid-container { max-width: 1100px; }
+  .help-featured-card  { max-width: 1100px; }
 }
 
-/* Desktop */
 @media (max-width: 1200px) {
-  .help-grid-container {
-    gap: 20px;
-  }
-
-  .help-featured-card {
-    padding: 40px 50px;
-  }
-
-  .help-video-placeholder {
-    height: 300px;
-  }
-
-  .help-card-img-wrapper img,
-  .help-card-img-placeholder {
-    height: 160px;
-  }
+  .help-grid-container { gap: 20px; }
+  .help-featured-card  { padding: 40px 50px; }
+  .help-video-placeholder { height: 300px; }
+  .help-card-img-wrapper img { height: 160px; }
 }
 
-/* Tablet Large */
 @media (max-width: 1024px) {
-  .help-hero {
-    padding: 100px 20px 50px 20px;
-  }
-
-  .help-section-cards {
-    padding: 0px 20px;
-    gap: 35px;
-  }
-
-  .help-grid-container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
-  }
-
-  .help-featured-card {
-    padding: 35px 40px;
-  }
-
-  .help-video-placeholder {
-    height: 280px;
-  }
-
-  .help-card {
-    padding: 28px 24px 22px 24px;
-  }
-
-  .help-card-img-wrapper img,
-  .help-card-img-placeholder {
-    height: 170px;
-  }
+  .help-hero { padding: 100px 20px 50px 20px; }
+  .help-section-cards { padding: 50px 20px; gap: 35px; }
+  .help-grid-container { grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  .help-featured-card { padding: 35px 40px; }
+  .help-video-placeholder { height: 280px; }
+  .help-card { padding: 28px 24px 22px 24px; }
+  .help-card-img-wrapper img { height: 170px; }
 }
 
-/* Tablet */
 @media (max-width: 768px) {
-  .help-hero {
-    min-height: 90vh;
-    padding: 90px 20px 17px 20px;
-  }
+  .help-hero { min-height: 90vh; padding: 90px 20px 40px 20px; }
+  .help-hero h1 br, .help-hero p br { display: none; }
 
-  .help-hero h1 br,
-  .help-hero p br {
-    display: none;
-  }
+  .help-search-box { flex-direction: column; border-radius: 25px; padding: 15px; gap: 15px; }
+  .help-search-input { width: 100%; padding: 10px 15px; background: rgba(255,255,255,0.05); border-radius: 25px; }
+  .help-search-box button { width: 100%; padding: 14px 30px; }
 
-  .help-search-box {
-    flex-direction: column;
-    border-radius: 25px;
-    padding: 15px;
-    gap: 15px;
-  }
-
-  .help-search-input {
-    width: 100%;
-    padding: 10px 15px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 25px;
-  }
-
-  .help-search-box button {
-    width: 100%;
-    padding: 14px 30px;
-  }
-
-  .help-section-cards {
-    padding: 0px 15px;
-    gap: 30px;
-  }
-
-  .help-featured-card {
-    padding: 30px 25px;
-  }
-
-  .help-featured-card h2 {
-    text-align: center;
-  }
-
-  .help-featured-card > p {
-    text-align: center;
-  }
-
-  .help-video-placeholder {
-    height: 250px;
-  }
-
-  .help-play-button {
-    width: 70px;
-    height: 70px;
-    font-size: 28px;
-  }
-
-  .help-grid-container {
-    gap: 16px;
-  }
-
-  .help-card {
-    padding: 24px 20px 20px 20px;
-  }
-
-  .help-card-img-wrapper img,
-  .help-card-img-placeholder {
-    height: 160px;
-  }
+  .help-section-cards { padding: 40px 15px; gap: 30px; }
+  .help-featured-card { padding: 30px 25px; }
+  .help-featured-card .help-card-header h2 { text-align: left; }
+  .help-featured-card > p { text-align: left; }
+  .help-video-placeholder { height: 250px; }
+  .help-play-button { width: 70px; height: 70px; font-size: 28px; }
+  .help-grid-container { gap: 16px; }
+  .help-card { padding: 24px 20px 20px 20px; }
+  .help-card-img-wrapper img { height: 160px; }
 }
 
-/* Mobile Large */
 @media (max-width: 640px) {
-  .help-grid-container {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-
-  .help-featured-card {
-    padding: 25px 20px;
-  }
-
-  .help-video-placeholder {
-    height: 220px;
-  }
-
-  .help-play-button {
-    width: 60px;
-    height: 60px;
-    font-size: 24px;
-  }
-
-  .help-card-img-wrapper img,
-  .help-card-img-placeholder {
-    height: 200px;
-  }
+  .help-grid-container { grid-template-columns: 1fr; gap: 15px; }
+  .help-featured-card { padding: 25px 20px; }
+  .help-video-placeholder { height: 220px; }
+  .help-play-button { width: 60px; height: 60px; font-size: 24px; }
+  .help-card-img-wrapper img { height: 200px; }
 }
 
-/* Mobile */
 @media (max-width: 480px) {
-  .help-hero {
-    min-height: 85vh;
-    padding: 80px 15px 30px 15px;
-  }
-
-  .help-hero-content {
-    padding: 0 10px;
-  }
-
-  .help-leftsvg,
-  .help-rightsvg {
-    max-width: 50px;
-  }
-
-  .help-search-box {
-    padding: 12px;
-    gap: 12px;
-  }
-
-  .help-search-input {
-    padding: 8px 12px;
-  }
-
-  .help-search-icon {
-    font-size: 16px;
-    margin-right: 8px;
-  }
-
-  .help-search-box button {
-    padding: 12px 25px;
-  }
-
-  .help-section-cards {
-    padding: 30px 12px;
-  }
-
-  .help-featured-card {
-    padding: 20px 18px;
-    border-radius: 20px;
-  }
-
-  .help-video-placeholder {
-    height: 200px;
-    border-radius: 14px;
-  }
-
-  .help-play-button {
-    width: 55px;
-    height: 55px;
-    font-size: 22px;
-  }
-
-  .help-card {
-    padding: 20px 16px 18px 16px;
-    border-radius: 16px;
-  }
-
-  .help-card-img-wrapper img,
-  .help-card-img-placeholder {
-    height: 180px;
-  }
+  .help-hero { min-height: 85vh; padding: 80px 15px 30px 15px; }
+  .help-hero-content { padding: 0 10px; }
+  .help-search-box { padding: 12px; gap: 12px; }
+  .help-search-input { padding: 8px 12px; }
+  .help-search-icon { font-size: 16px; margin-right: 8px; }
+  .help-search-box button { padding: 12px 25px; }
+  .help-section-cards { padding: 30px 12px; }
+  .help-featured-card { padding: 20px 18px; border-radius: 20px; }
+  .help-video-placeholder { height: 200px; border-radius: 14px; }
+  .help-play-button { width: 55px; height: 55px; font-size: 22px; }
+  .help-card { padding: 20px 16px 18px 16px; border-radius: 16px; }
+  .help-card-img-wrapper img { height: 180px; }
 }
 
-/* Extra Small Mobile */
 @media (max-width: 360px) {
-  .help-hero {
-    padding: 70px 10px 25px 10px;
-  }
-
-  .help-leftsvg,
-  .help-rightsvg {
-    max-width: 40px;
-  }
-
-  .help-search-box {
-    padding: 10px;
-  }
-
-  .help-featured-card {
-    padding: 18px 15px;
-  }
-
-  .help-video-placeholder {
-    height: 180px;
-  }
-
-  .help-play-button {
-    width: 50px;
-    height: 50px;
-    font-size: 20px;
-  }
-
-  .help-card {
-    padding: 18px 14px 16px 14px;
-  }
-
-  .help-card-img-wrapper img,
-  .help-card-img-placeholder {
-    height: 160px;
-  }
+  .help-hero { padding: 70px 10px 25px 10px; }
+  .help-search-box { padding: 10px; }
+  .help-featured-card { padding: 18px 15px; }
+  .help-video-placeholder { height: 180px; }
+  .help-play-button { width: 50px; height: 50px; font-size: 20px; }
+  .help-card { padding: 18px 14px 16px 14px; }
+  .help-card-img-wrapper img { height: 160px; }
 }
 
-/* Touch Device Optimization */
+/* Touch devices */
 @media (hover: none) and (pointer: coarse) {
-  .help-card:hover {
-    transform: none;
-  }
-
-  .help-card:active {
-    transform: translateY(-5px);
-    border: 1px solid rgba(100, 130, 255, 0.4);
-  }
-
-  .help-card:hover .help-card-img-wrapper img {
-    transform: none;
-  }
-
-  .help-featured-card:hover {
-    transform: none;
-  }
-
-  .help-featured-card:active {
-    transform: translateY(-3px);
-  }
-
-  .help-video-placeholder:hover {
-    transform: none;
-  }
-
-  .help-video-placeholder:active {
-    transform: scale(0.99);
-  }
-
-  .help-search-box button:hover {
-    opacity: 1;
-  }
-
-  .help-search-box button:active {
-    opacity: 0.85;
-  }
+  .help-card:hover { transform: none; }
+  .help-card:active { transform: translateY(-5px); border: 1px solid rgba(100,130,255,0.4); }
+  .help-card:hover .help-card-img-wrapper img { transform: none; }
+  .help-featured-card:hover { transform: none; }
+  .help-featured-card:active { transform: translateY(-3px); }
+  .help-video-placeholder:hover { transform: none; }
+  .help-video-placeholder:active { transform: scale(0.99); }
+  .help-search-box button:hover { opacity: 1; }
+  .help-search-box button:active { opacity: 0.85; }
 }

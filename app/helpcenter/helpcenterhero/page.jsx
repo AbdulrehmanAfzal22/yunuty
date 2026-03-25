@@ -9,14 +9,14 @@ import FAQSection from "../faq/page";
 import DiscoverSection from "@/app/about/discover/page";
 import Footer from "@/app/page/footer/page";
 import dashboard from "../../../public/assests/Dashboards.png";
-import contact from "../../../public/assests/Contacts.png"
+import contact from "../../../public/assests/Contacts.png";
 import products from "../../../public/assests/Products.png";
 import crm from "../../../public/assests/CRM.png";
 import wms from "../../../public/assests/WMS.png";
 import sale from "../../../public/assests/Sales.png";
 import accounting from "../../../public/assests/Accounting.png";
 import purchase from "../../../public/assests/Purchasing.png";
-import qb from "../../../public/assests/qb.png";
+
 const cardData = [
   {
     title: "Dashboards",
@@ -26,42 +26,42 @@ const cardData = [
   {
     title: "Contacts",
     description: "Centralize and manage all customer and vendor information",
-    img: contact, // replace with: contactsImg
+    img: contact,
   },
   {
     title: "Products",
     description: "Track product details, pricing, and availability in real time.",
-    img: products, // replace with: productsImg
+    img: products,
   },
   {
     title: "CRM",
     description: "Manage leads, track engagement, and strengthen relationships",
-    img: crm, // replace with: crmImg
+    img: crm,
   },
   {
     title: "Sales",
     description: "Streamline quotes, invoices, and sales performance",
-    img: sale, // replace with: salesImg
+    img: sale,
   },
   {
     title: "Accounting",
     description: "Automate bookkeeping, reporting, and payment processing",
-    img: accounting, // replace with: accountingImg
+    img: accounting,
   },
   {
     title: "WMS",
     description: "Control inventory, orders, and warehouse operations efficiently",
-    img: wms, // replace with: wmsImg
+    img: wms,
   },
   {
     title: "Purchase",
     description: "Manage suppliers, purchase orders, and procurement processes",
-    img: purchase, // replace with: purchaseImg
+    img: purchase,
   },
   {
     title: "Quickbooks Sync",
     description: "Generate comprehensive analytics and performance reports",
-    img: qb, // replace with: reportsImg
+    img: dashboard,
   },
 ];
 
@@ -90,24 +90,24 @@ const Helpcenterhero = () => {
             <br />
             you need to make the most of your ERP.
           </p>
-
-          {/* <div className="help-search-box">
-            <div className="help-search-input">
-              <FaSearch className="help-search-icon" />
-              <input type="text" placeholder="Search Here..." />
-            </div>
-            <button>Search</button>
-          </div> */}
         </div>
       </section>
 
       <div className="help-section-cards">
-        {/* Featured Large Box */}
+
+        {/* ── Featured Large Box ── */}
         <div className="help-featured-card">
-          <h2>Empowering Smarter Connections for Better Business</h2>
+
+          {/* Pink slash + title — same pattern as small cards */}
+          <div className="help-card-header">
+            <span className="help-card-slash">/</span>
+            <h2>Empowering Smarter Connections for Better Business</h2>
+          </div>
+
           <p>
-            Ready, set, succeed! Navigate YunutyConnect and turn connections into measurable growth
+        Ready, set, succeed! Navigate YunutyConnect and turn connections into measurable growth
           </p>
+
           <div className="help-featured-video">
             <div className="help-video-placeholder">
               <div className="help-play-button">▶</div>
@@ -116,21 +116,18 @@ const Helpcenterhero = () => {
           </div>
         </div>
 
-        {/* 3x3 Grid of 9 Cards */}
+        {/* ── 3×3 Grid of 9 Cards ── */}
         <section className="help-grid-container">
           {cardData.map((card, index) => (
             <div className="help-card" key={index}>
 
-              {/* Slash accent + Title */}
               <div className="help-card-header">
                 <span className="help-card-slash">/</span>
                 <h2>{card.title}</h2>
               </div>
 
-              {/* Description */}
               <p>{card.description}</p>
 
-              {/* Image — always renders, no null check */}
               <div className="help-card-img-wrapper">
                 <Image
                   src={card.img}
