@@ -603,3 +603,347 @@ body{
 .metrics-grid { 
   will-change: contents; 
 }
+
+/* ================= ADDITIONAL RESPONSIVE ENHANCEMENTS ================= */
+/* Added for better fluid responsiveness without removing any original code */
+
+/* Extra Large Desktop (1920px+) */
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1600px;
+    padding: 100px 60px;
+  }
+  
+  .content-wrapper {
+    gap: 100px;
+    min-height: 70vh;
+  }
+  
+  .left-section {
+    padding-left: clamp(60px, 8vw, 120px);
+  }
+  
+  .metrics-grid {
+    max-width: 600px;
+    gap: 10px;
+  }
+  
+  .metric-card {
+    padding: 28px;
+  }
+  
+  .main-heading {
+    font-size: clamp(3rem, 5vw, 72px);
+  }
+  
+  .metric-value {
+    font-size: clamp(50px, 7vw, 100px);
+  }
+  
+  .metric-label {
+    font-size: clamp(16px, 2vw, 24px);
+  }
+}
+
+/* Large Desktop (1440px - 1919px) */
+@media (min-width: 1440px) and (max-width: 1919px) {
+  .container {
+    max-width: 1400px;
+    padding: 90px 50px;
+  }
+  
+  .content-wrapper {
+    gap: 90px;
+  }
+  
+  .left-section {
+    padding-left: clamp(50px, 6vw, 100px);
+  }
+  
+  .metrics-grid {
+    max-width: 550px;
+  }
+  
+  .metric-card {
+    padding: 26px;
+  }
+}
+
+/* Fix for very small mobile screens (320px - 374px) */
+@media (min-width: 320px) and (max-width: 374px) {
+  .performance-dashboard {
+    margin-top: -30px;
+  }
+  
+  .container {
+    padding: 20px 8px;
+  }
+  
+  .content-wrapper {
+    gap: 24px;
+    margin-bottom: 30px;
+  }
+  
+  .main-heading {
+    font-size: clamp(1.5rem, 8vw, 2rem);
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+  
+  .main-heading br {
+    display: none;
+  }
+  
+  .indicator-badge {
+    font-size: 11px;
+    gap: 6px;
+    margin-bottom: 20px;
+  }
+  
+  .decoration-img {
+    height: 12px;
+  }
+  
+  .metrics-grid {
+    gap: 10px;
+  }
+  
+  .metric-card {
+    padding: 12px;
+    border-radius: 12px;
+  }
+  
+  .metric-value {
+    font-size: clamp(32px, 10vw, 40px);
+  }
+  
+  .metric-label {
+    font-size: 12px;
+  }
+  
+  .profile-img {
+    width: 28px;
+    height: 28px;
+    border-width: 1px;
+  }
+  
+  .profile-img:not(:first-child) {
+    margin-left: -8px;
+  }
+  
+  .rating-section {
+    gap: 8px;
+    padding: 8px;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .rating-number {
+    font-size: 14px;
+  }
+  
+  .star {
+    font-size: 12px;
+  }
+  
+  .rating-text {
+    font-size: 11px;
+  }
+}
+
+/* Extra Small Mobile (< 320px) */
+@media (max-width: 319px) {
+  .performance-dashboard {
+    margin-top: -20px;
+  }
+  
+  .container {
+    padding: 15px 6px;
+  }
+  
+  .main-heading {
+    font-size: 22px;
+  }
+  
+  .metric-value {
+    font-size: 28px;
+  }
+  
+  .metric-label {
+    font-size: 11px;
+  }
+  
+  .indicator-badge {
+    font-size: 10px;
+  }
+  
+  .decoration-img {
+    height: 10px;
+  }
+}
+
+/* Landscape Mode */
+@media (max-height: 500px) and (orientation: landscape) {
+  .performance-dashboard {
+    min-height: auto;
+    margin-top: 0;
+  }
+  
+  .container {
+    padding: 30px 20px;
+  }
+  
+  .content-wrapper {
+    min-height: auto;
+    gap: 30px;
+  }
+  
+  .left-section {
+    margin-top: 0;
+  }
+  
+  .main-heading {
+    font-size: clamp(1.5rem, 4vh, 2.5rem);
+    margin-bottom: 20px;
+  }
+  
+  .main-heading br {
+    display: none;
+  }
+  
+  .metrics-grid {
+    max-width: 100%;
+    gap: 10px;
+  }
+  
+  .metric-card {
+    padding: 15px;
+  }
+  
+  .metric-value {
+    font-size: clamp(28px, 5vh, 48px);
+  }
+}
+
+/* Tablet Landscape (1024px - 1200px) */
+@media (min-width: 1024px) and (max-width: 1200px) and (orientation: landscape) {
+  .content-wrapper {
+    gap: 50px;
+  }
+  
+  .left-section {
+    padding-left: 40px;
+  }
+  
+  .metrics-grid {
+    max-width: 420px;
+  }
+}
+
+/* Fix for iOS Safari 100vh issue */
+@supports (-webkit-touch-callout: none) {
+  .performance-dashboard {
+    min-height: -webkit-fill-available;
+  }
+}
+
+/* Print styles */
+@media print {
+  .performance-dashboard {
+    background: white;
+    color: black;
+    margin-top: 0;
+  }
+  
+  .background-pattern,
+  .background-pattern::before {
+    display: none;
+  }
+  
+  .metric-card {
+    border: 1px solid #ccc;
+    break-inside: avoid;
+  }
+  
+  .metric-value {
+    -webkit-text-fill-color: #333;
+    color: #333;
+  }
+  
+  .main-heading {
+    color: #333;
+  }
+  
+  .rating-section {
+    border: 1px solid #ccc;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .metric-card {
+    border: 2px solid currentColor;
+  }
+  
+  .profile-img {
+    border-width: 3px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .metric-value.counting {
+    transition: none;
+  }
+  
+  .metric-value.counting.animating {
+    animation: none;
+  }
+  
+  .metric-card,
+  .profile-img,
+  .decoration-img {
+    transition: none;
+  }
+}
+
+/* Dark mode support (system preference) */
+@media (prefers-color-scheme: light) {
+  .performance-dashboard {
+    background-color: #05061c;
+  }
+  
+  .container {
+    background-color: #05061c;
+  }
+}
+
+/* Ensure images are responsive */
+.decoration-img,
+.profile-img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Fix for metric cards on wide but short viewports */
+@media (min-aspect-ratio: 21/9) {
+  .content-wrapper {
+    min-height: auto;
+    padding: 40px 0;
+  }
+  
+  .metrics-grid {
+    max-width: 400px;
+  }
+}
+
+/* Fix for metric cards on narrow but tall viewports */
+@media (max-aspect-ratio: 9/16) {
+  .performance-dashboard {
+    min-height: auto;
+  }
+  
+  .content-wrapper {
+    min-height: auto;
+  }
+}

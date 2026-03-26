@@ -7,7 +7,8 @@ import "./hero.css";
 import bg from "../../../public/assests/bg-4.jpeg";
 import right from "../../../public/assests/sub-title-right.svg";
 import left from "../../../public/assests/sub-title-left.svg";
-import hero from "../../../public/assests/hero.png";
+import hero from "../../../public/assests/com.png";
+import heroMobile from "../../../public/assests/com-mobile.png";
 
 export default function Hero() {
   const [email, setEmail] = useState("");
@@ -36,8 +37,6 @@ export default function Hero() {
 
       <div className="hero-container">
         <div className="hero-content">
-
-          {/* ✅ SUBTITLE — fixed: consistent margin-bottom, no negative offsets */}
           <div className="hero-subtitle">
             <Image
               src={left}
@@ -56,38 +55,19 @@ export default function Hero() {
             />
           </div>
 
-          {/* ✅ HEADING — removed <br> tags, CSS handles line breaks */}
           <h1 className="heading-hero">
             The Future of Supply Chain Digital Transformation
           </h1>
 
-          {/* ✅ DESCRIPTION — removed <br> tags, text wraps naturally */}
           <p className="hero-desc">
-            Refining an organization&apos;s comprehensive strategy for its
+            Refining an organization's comprehensive strategy for its
             entire supply chain and operational processes to promote growth,
             streamline operations, and ensure protection with a cloud-based
             ERP solution.
           </p>
 
-          {/* Email Form */}
-          <div className="email-wrapper">
-            <form className="email-form" onSubmit={handleSubmit}>
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Your Email Address"
-                className="email-input"
-                required
-              />
-              <button type="submit" className="submit-btn">
-                Submit
-              </button>
-            </form>
-          </div>
-
-          {/* Hero Image */}
-          <div className="dark-img">
+          {/* Desktop Image - shows on 769px and up */}
+          <div className="dark-img desktop-hero">
             <Image
               src={hero}
               alt="Illustration of supply chain digital transformation"
@@ -95,11 +75,24 @@ export default function Hero() {
               height={600}
               className="dark-image"
               priority
-              sizes="(max-width: 768px) 100vw, 1000px"
+              sizes="(min-width: 769px) 100vw, 0px"
               style={{ width: "100%", height: "auto", borderRadius: "20px" }}
             />
           </div>
 
+          {/* Mobile Image - shows on 768px and below */}
+          <div className="dark-img mobile-hero">
+            <Image
+              src={heroMobile}
+              alt="Illustration of supply chain digital transformation"
+              width={600}
+              height={800}
+              className="dark-image"
+              priority
+              sizes="(max-width: 768px) 100vw, 0px"
+              style={{ width: "100%", height: "auto", borderRadius: "20px" }}
+            />
+          </div>
         </div>
       </div>
     </section>

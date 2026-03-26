@@ -6,7 +6,7 @@ import Layers from ".././../../public/assests/layerbg.png";
 import right from "../../../public/assests/sub-title-right.svg";
 import left from "../../../public/assests/sub-title-left.svg";
 import mobile from "../../../public/assests/mobile.png";
-import laptop from "../../../public/assests/laptop.png";
+import laptop from "../../../public/assests/computer-img.png";
 import ten from "../../../public/assests/ten.png";
 import layer from "../../../public/assests/Layer.png";
 import benefit from "../../../public/assests/Benfits.png";

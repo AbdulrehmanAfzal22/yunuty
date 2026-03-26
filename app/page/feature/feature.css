@@ -97,8 +97,6 @@ body {
 
 /* ===================================
    LAYERS MOBILE GALLERY
-   Shown only when ≤1111px (bg img hidden)
-   Same card-stack design as built-right
    =================================== */
 .layers-mobile-gallery {
   display: none;
@@ -109,7 +107,6 @@ body {
   gap: 2.5rem;
 }
 
-/* Text block */
 .layers-gallery-text {
   text-align: center;
   max-width: 620px;
@@ -129,7 +126,6 @@ body {
   line-height: 1.65;
 }
 
-/* Card stack — mirrors built-right card-stack */
 .layers-gallery-stack {
   position: relative;
   width: 100%;
@@ -151,7 +147,6 @@ body {
   overflow: hidden;
 }
 
-/* Position classes match built-right: 0=front 1=mid 2=back */
 .lg-card-0 {
   z-index: 3;
   transform: translateY(0px) scale(1);
@@ -170,7 +165,6 @@ body {
   opacity: 0.4;
 }
 
-/* Dot indicators */
 .layers-gallery-dots {
   display: flex;
   gap: 8px;
@@ -231,6 +225,8 @@ body {
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 }
 
 .feature-box:hover {
@@ -296,21 +292,24 @@ body {
 }
 
 /* ===================================
-   IMAGE PLACEHOLDER
+   IMAGE PLACEHOLDER - FULLY RESPONSIVE
    =================================== */
 .image-placeholder {
   position: relative;
   border-radius: 1rem;
-  padding: 1.5rem;
-  min-height: 200px;
+  padding: 1rem;
+  min-height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+  flex: 1;
 }
 
-@media (min-width: 768px) { .image-placeholder { min-height: 250px; } }
-@media (min-width: 1024px) { .image-placeholder { min-height: 300px; } }
+@media (min-width: 768px) { .image-placeholder { padding: 1.25rem; } }
+@media (min-width: 1024px) { .image-placeholder { padding: 1.5rem; } }
 
 .placeholder-content {
   text-align: center;
@@ -318,29 +317,52 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100%;
 }
 
 /* ===================================
-   LAPTOP & MOBILE IMAGES
+   LAPTOP & MOBILE IMAGES - FULLY RESPONSIVE
    =================================== */
 .laptop, .mobile {
   width: 100%;
   height: auto;
   max-width: 100%;
   object-fit: contain;
+  display: block;
 }
 
-.laptop { max-height: 200px; }
-.mobile { max-height: 250px; }
+/* Responsive height using clamp for smooth scaling */
+.laptop { 
+  max-height: clamp(120px, 25vw, 280px); 
+}
+
+.mobile { 
+  max-height: clamp(150px, 30vw, 350px); 
+}
 
 @media (min-width: 768px) {
-  .laptop { max-height: 250px; }
-  .mobile { max-height: 300px; }
+  .laptop { max-height: clamp(150px, 22vw, 260px); }
+  .mobile { max-height: clamp(180px, 26vw, 320px); }
 }
 
 @media (min-width: 1024px) {
-  .laptop { max-height: 300px; }
-  .mobile { max-height: 350px; }
+  .laptop { max-height: clamp(180px, 20vw, 300px); }
+  .mobile { max-height: clamp(220px, 24vw, 380px); }
+}
+
+@media (min-width: 1440px) {
+  .laptop { max-height: 320px; }
+  .mobile { max-height: 400px; }
+}
+
+@media (max-width: 480px) {
+  .laptop { max-height: clamp(100px, 30vw, 140px); }
+  .mobile { max-height: clamp(130px, 35vw, 180px); }
+}
+
+@media (max-width: 360px) {
+  .laptop { max-height: 90px; }
+  .mobile { max-height: 120px; }
 }
 
 /* ===================================
@@ -528,6 +550,7 @@ body {
   color: #a5b4fc;
   margin: 0;
 }
+
 .built-left h2 {
     text-align: center;
     color: #fff;
@@ -535,7 +558,6 @@ body {
     margin-bottom: 20px;
     font-size: 48px;
     line-height: 1.2;
-    /* width: 178px; */
 }
 
 @media (min-width: 768px) { .built-left h2 { text-align: left; } }
@@ -555,11 +577,9 @@ body {
     z-index: 1;
     color: #fff;
     background: #00031c;
-    /* font-size: 19px; */
     border-radius: 100px;
     margin: 0 auto;
     overflow: visible;
-
     letter-spacing: .08em;
     text-transform: uppercase;
     cursor: pointer;
@@ -579,22 +599,23 @@ body {
   transform: translateY(-2px);
 }
 
-element.style {
-}
 .bac__right {
     justify-content: center !important;
     align-items: center !important;
 }
+
 @media (min-width: 1024px) {
     .built-right {
         min-height: 420px;
     }
 }
+
 @media (min-width: 768px) {
     .built-right {
         min-height: 400px;
     }
 }
+
 .built-right {
     z-index: 2;
     flex: 1;
@@ -651,7 +672,6 @@ element.style {
   filter: none;
 }
 
-/* Clear bg headings */
 .clear-h2 {
   font-size: clamp(1.75rem, 4vw, 2.5rem);
   position: relative;
@@ -811,7 +831,7 @@ element.style {
   .container1 { padding: 2rem 0.5rem; }
   .grid { gap: 1.25rem; }
   .feature-box { padding: 1.25rem; }
-  .image-placeholder { min-height: 180px; padding: 1rem; }
+  .image-placeholder { min-height: auto; padding: 1rem; }
   .built-section { padding: 3rem 0; }
   .built-container { gap: 2rem; }
   .built-right { min-height: 260px; }
@@ -823,9 +843,7 @@ element.style {
 @media (max-width: 480px) {
   .container1 { padding: 1.75rem 0.5rem; }
   .feature-box { padding: 1rem; }
-  .image-placeholder { min-height: 160px; }
-  .laptop { max-height: 150px; }
-  .mobile { max-height: 180px; }
+  .image-placeholder { padding: 0.75rem; }
   .layers-bg { padding: 20px 0; }
   .layers { width: 100%; border-radius: 10px; }
   .layers:hover { box-shadow: 0 -6px 24px rgba(99,102,241,.2), 0 6px 24px rgba(99,102,241,.2); }
@@ -854,9 +872,7 @@ element.style {
 @media (max-width: 360px) {
   .container1 { padding: 1.5rem 0.25rem; }
   .feature-box { padding: 0.875rem; }
-  .image-placeholder { min-height: 140px; }
-  .laptop { max-height: 130px; }
-  .mobile { max-height: 160px; }
+  .image-placeholder { padding: 0.5rem; }
   .layers-gallery-stack { height: 200px; }
 }
 
@@ -900,11 +916,9 @@ element.style {
 
 * { box-sizing: border-box; }
 
-/* ════════════════════════════════════════
+/* ===================================
    BUILT ACCORDION
-════════════════════════════════════════ */
-
-/* ── FIXED: removed position:absolute + bottom offset ── */
+   =================================== */
 .bac__right {
   align-items: center !important;
   justify-content: center !important;
@@ -917,18 +931,14 @@ element.style {
   width: 100%;
   display: flex;
   height: 100%;
-  /* position: absolute and bottom: -151px removed — these collapsed the section height */
 }
 
-/* ── Left: stacked headings ── */
 .bac__list {
   display: flex;
   flex-direction: column;
   gap: 0;
   flex-shrink: 0;
 }
-
-
 
 .bac__item {
     cursor: pointer;
@@ -937,7 +947,6 @@ element.style {
     border: none;
     align-items: center;
     gap: 10px;
-    /* font-size: 29px; */
     padding: 15px 0;
     transition: opacity .25s;
     display: flex;
@@ -951,7 +960,6 @@ element.style {
   opacity: 0.6;
 }
 
-/* Pink slash — slides in on active */
 .bac__slash {
     color: #e0366e;
     opacity: 0;
@@ -969,7 +977,6 @@ element.style {
   transform: translateX(0);
 }
 
-/* Heading */
 .bac__heading {
   color: #fff;
   white-space: nowrap;
@@ -984,7 +991,6 @@ element.style {
   font-weight: 800;
 }
 
-/* ── Right: description ── */
 .bac__content {
   flex: 1;
   min-width: 0;
@@ -1000,12 +1006,12 @@ element.style {
     line-height: 1.8;
     animation: .3s bacFadeIn;
 }
+
 @keyframes bacFadeIn {
   from { opacity: 0; transform: translateY(8px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ── Responsive ── */
 @media (max-width: 768px) {
   .bac__wrap {
     flex-direction: column;
@@ -1014,4 +1020,289 @@ element.style {
   }
   .bac__heading { white-space: normal; }
 }
+/* ===================================
+   BUILT ACCORDION - FIXED RESPONSIVE
+   =================================== */
+.bac__right {
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100%;
+}
 
+.bac__wrap {
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  width: 100%;
+  display: flex;
+  height: 100%;
+  flex-wrap: wrap;
+}
+
+/* Left column — headings */
+.bac__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  flex-shrink: 0;
+}
+
+.bac__item {
+  cursor: pointer;
+  text-align: left;
+  background: none;
+  border: none;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 0;
+  transition: opacity .25s;
+  display: flex;
+}
+
+.bac__item:not(.bac__item--active) {
+  opacity: 0.35;
+}
+
+.bac__item:not(.bac__item--active):hover {
+  opacity: 0.6;
+}
+
+/* Pink slash — slides in on active */
+.bac__slash {
+  color: #e0366e;
+  opacity: 0;
+  flex-shrink: 0;
+  width: 12px;
+  font-size: clamp(24px, 3vw, 48px);
+  font-weight: 900;
+  line-height: 1;
+  transition: opacity .25s, transform .25s;
+  transform: translateX(-8px);
+}
+
+.bac__item--active .bac__slash {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Heading */
+.bac__heading {
+  color: #fff;
+  white-space: nowrap;
+  font-size: clamp(18px, 2.5vw, 31px);
+  font-weight: 600;
+  line-height: 1.2;
+  transition: font-size .25s, font-weight .25s;
+}
+
+.bac__item--active .bac__heading {
+  font-size: clamp(22px, 3vw, 35px);
+  font-weight: 800;
+}
+
+/* Right column — description */
+.bac__content {
+  flex: 1;
+  min-width: 280px;
+  max-width: 420px;
+}
+
+.bac__text {
+  color: #ffffffbf;
+  font-weight: 700;
+  margin: 0;
+  font-size: clamp(14px, 1.5vw, 20px);
+  line-height: 1.6;
+  animation: .3s bacFadeIn;
+  height: auto;
+  min-height: 80px;
+}
+
+@keyframes bacFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===================================
+   BUILT LEFT - BUTTON FIX
+   =================================== */
+.built-left {
+  color: #fff;
+  z-index: 2;
+  flex: 1;
+  width: 100%;
+  margin-top: clamp(-322px, -15vw, -241px);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.built-left h2 {
+  text-align: left;
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: clamp(28px, 4vw, 48px);
+  line-height: 1.2;
+  width: 100%;
+}
+
+.built-btn {
+  z-index: 1;
+  color: #fff;
+  background: #00031c;
+  border-radius: 100px;
+  margin: 0;
+  overflow: visible;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  min-width: 180px;
+  padding: 12px 32px;
+  font-weight: 700;
+  font-size: clamp(12px, 1.2vw, 14px);
+  text-decoration: none;
+  transition: all .3s;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* ===================================
+   TABLET BREAKPOINT
+   =================================== */
+@media (max-width: 1024px) {
+  .bac__wrap {
+    gap: 30px;
+  }
+  .bac__content {
+    min-width: 240px;
+  }
+}
+
+/* ===================================
+   MOBILE BREAKPOINT - SIDE BY SIDE FIX
+   =================================== */
+@media (max-width: 768px) {
+  .built-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .built-left {
+    margin-top: 0;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .built-left h2 {
+    text-align: center;
+    font-size: clamp(24px, 6vw, 32px);
+  }
+  
+  .built-btn {
+    margin: 0 auto;
+    padding: 14px 28px;
+    font-size: 13px;
+  }
+  
+  .built-right {
+    min-height: auto;
+    bottom: 0;
+  }
+  
+  .bac__wrap {
+    flex-direction: row;
+    gap: 20px;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+  
+  .bac__list {
+    flex-shrink: 0;
+  }
+  
+  .bac__item {
+    padding: 10px 0;
+  }
+  
+  .bac__heading {
+    white-space: nowrap;
+    font-size: clamp(16px, 4vw, 20px);
+  }
+  
+  .bac__item--active .bac__heading {
+    font-size: clamp(18px, 4.5vw, 22px);
+  }
+  
+  .bac__slash {
+    font-size: 24px;
+  }
+  
+  .bac__content {
+    flex: 1;
+    min-width: 0;
+    max-width: none;
+  }
+  
+  .bac__text {
+    font-size: clamp(13px, 3vw, 16px);
+    line-height: 1.5;
+    height: auto;
+  }
+}
+
+/* ===================================
+   SMALL MOBILE
+   =================================== */
+@media (max-width: 480px) {
+  .bac__wrap {
+    gap: 15px;
+  }
+  
+  .bac__heading {
+    font-size: clamp(14px, 3.5vw, 16px);
+  }
+  
+  .bac__item--active .bac__heading {
+    font-size: clamp(16px, 4vw, 18px);
+  }
+  
+  .bac__item {
+    padding: 8px 0;
+    gap: 6px;
+  }
+  
+  .bac__slash {
+    font-size: 20px;
+    width: 8px;
+  }
+  
+  .bac__text {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  
+  .built-btn {
+    padding: 12px 24px;
+    font-size: 12px;
+    min-width: 160px;
+  }
+}
+
+@media (max-width: 360px) {
+  .bac__wrap {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .bac__content {
+    text-align: center;
+  }
+  
+  .bac__text {
+    font-size: 12px;
+  }
+}
