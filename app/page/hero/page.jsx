@@ -7,7 +7,7 @@ import "./hero.css";
 import bg from "../../../public/assests/bg-4.jpeg";
 import right from "../../../public/assests/sub-title-right.svg";
 import left from "../../../public/assests/sub-title-left.svg";
-import hero from "../../../public/assests/com.png";
+import hero from "../../../public/assests/hero-img1.png";
 import heroMobile from "../../../public/assests/com-mobile.png";
 
 export default function Hero() {
