@@ -27,11 +27,15 @@
 }
 
 .privacy-section-label {
-  color: rgb(149, 158, 254);
-  text-align: center;
-  font-size: 1rem;
+    text-align: center;
+    color: #959efe;
+    white-space: nowrap;
+    font-size: 19px;
+    font-weight: 500;
+    position: absolute;
+    top: -3px;
+    right: 97px;
 }
-
 /* Privacy content */
 .privacy-content-wrapper {
   text-align: center;
@@ -398,25 +402,24 @@
 
 /* Desktop XL (1440px - 1919px) */
 @media (min-width: 1440px) and (max-width: 1919px) {
-  .privacy-hero-section {
-    padding: 80px 40px;
-    padding-bottom: 60px;
-    margin-top: 30px;
-  }
+    .privacy-hero-section {
+        margin-top: 0px;
+        padding: 80px 40px 60px;
+    }
   
-  .privacy-subtitle-row {
-    top: -65px;
-  }
+     .privacy-subtitle-row {
+        top: 25px;
+    }
   
   .privacy-content-wrapper {
     max-width: 920px;
   }
   
-  .privacy-main-title {
-    margin-top: -95px;
-    font-size: 64px;
-    line-height: 56px;
-  }
+      .privacy-main-title {
+        margin-top: 5px;
+        font-size: 64px;
+        line-height: 56px;
+    }
   
   .privacy-text-container {
     margin-top: 80px;

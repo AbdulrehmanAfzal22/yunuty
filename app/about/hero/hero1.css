@@ -1,38 +1,35 @@
-/* ================= HERO ABOUT SECTION ================= */
 .hero-about {
-  position: relative;
-  min-height: 100vh;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 60px 20px;
-  background: radial-gradient(ellipse 80% 60% at 50% 30%, #0f1a5e 0%, #080d2e 45%, #05071c 100%);
-  overflow: hidden;
-  font-family: poppins, sans-serif;
-  margin-top: 40px;
+    color: #fff;
+    background: radial-gradient(80% 60% at 50% 30%, #0f1a5e 0%, #080d2e 45%, #05071c 100%);
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin-top: -2px;
+    padding: 162px 20px;
+    font-family: poppins, sans-serif;
+    display: flex;
+    position: relative;
+    overflow: hidden;
 }
-
-/* ================= SUBTITLE ================= */
 .hero-about__subtitle {
-  align-items: center;
-  gap: 20px;
-  margin-bottom: 32px;
-  display: flex;
-  position: absolute;
-  top: 1px;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 32px;
+    display: flex;
+    position: absolute;
+    top: 106px;
 }
 
 .hero-about__label {
-  text-align: center;
-  position: absolute;
-  top: 2px;
-  right: 107px;
-  color: #959efe;
-  font-size: 14px;
-  white-space: nowrap;
+    text-align: center;
+    color: #959efe;
+    white-space: nowrap;
+    font-size: 19px;
+    font-weight: 500;
+    position: absolute;
+    top: -1px;
+    right: 99px;
 }
-
 /* ================= CONTENT ================= */
 .hero-about__content {
   text-align: center;

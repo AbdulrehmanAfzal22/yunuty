@@ -2,13 +2,13 @@
 .help-hero {
   width: 100%;
   min-height: 53vh;
- background: radial-gradient(80% 60% at 50% 30%, #0f1a5e 0%, #080d2e 45%, #05071c 100%);
+  background: radial-gradient(circle at top center, #0f1a4f, #020617 70%);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   text-align: center;
-  padding: 120px 20px 60px 20px;
+  padding: var(--navbar-height) 20px 60px 20px;
   position: relative;
 }
 
@@ -109,13 +109,12 @@
   opacity: 0.9;
 }
 
-/* HELP SECTION CARDS OUTER — full-width dark background, no max-width */
+/* HELP SECTION CARDS — full-width background wrapper */
 .help-section-cards-outer {
   width: 100%;
   background-color: #020617;
 }
 
-/* HELP SECTION CARDS INNER — centered max-width content */
 .help-section-cards {
   padding: 60px 20px;
   display: flex;
@@ -128,7 +127,6 @@
 
 /* ═══════════════════════════════════════
    SHARED: slash + title header row
-   (used in both featured card & grid cards)
 ═══════════════════════════════════════ */
 .help-card-header {
   display: flex;
@@ -149,7 +147,7 @@
 }
 
 /* ═══════════════════════════════════════
-   FEATURED LARGE BOX (Top)
+   FEATURED LARGE BOX
 ═══════════════════════════════════════ */
 .help-featured-card {
   width: 100%;
@@ -172,15 +170,15 @@
 }
 
 .help-featured-card .help-card-header h2 {
-    color: #fff;
-    letter-spacing: .5px;
-    text-transform: uppercase;
-    margin: 0;
-    font-size: clamp(20px, 3vw, 30px);
-    font-weight: 700;
-    line-height: 1.25;
+  color: #fff;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin: 0;
+  font-size: clamp(20px, 3vw, 29px);
+  font-weight: 700;
+  line-height: 1.25;
 }
-/* Featured card slash — slightly larger to match */
+
 .help-featured-card .help-card-slash {
   font-size: clamp(26px, 3.5vw, 40px);
   font-weight: 900;
@@ -189,7 +187,7 @@
   margin-top: 0;
 }
 
-.help-featured-card > p {
+.help-featured-card>p {
   font-size: clamp(15px, 2vw, 18px);
   color: #b3c2ff;
   margin: 0;
@@ -293,7 +291,6 @@
   overflow: hidden;
 }
 
-/* Grid card title — smaller than featured */
 .help-card h2 {
   font-size: clamp(14px, 1.8vw, 17px);
   margin: 0;
@@ -311,7 +308,6 @@
   margin: 0 0 20px 0;
 }
 
-/* Card image wrapper */
 .help-card-img-wrapper {
   width: 100%;
   border-radius: 12px;
@@ -341,7 +337,6 @@
   box-shadow: 0 10px 30px rgba(100, 130, 255, 0.2);
 }
 
-/* Hero section label row */
 .help-section-img {
   width: 100%;
   display: flex;
@@ -352,13 +347,17 @@
   gap: 10px;
 }
 
+
+
 .help-section-img p {
-  font-size: clamp(13px, 2.5vw, 17px);
-  line-height: 1.47;
-  color: rgb(149, 158, 254);
-  white-space: nowrap;
-  position: absolute;
-  top: -2px;
+    text-align: center;
+    color: #959efe;
+    white-space: nowrap;
+    font-size: 19px;
+    font-weight: 500;
+    position: absolute;
+    top: -6px;
+    right: 406px;
 }
 
 .help-section-img img {
@@ -368,91 +367,298 @@
 }
 
 /* ═══════════════════════════════════════
-   RESPONSIVE DESIGN
+   RESPONSIVE
 ═══════════════════════════════════════ */
 @media (max-width: 1400px) {
-  .help-grid-container { max-width: 1100px; }
-  .help-featured-card  { max-width: 1100px; }
+  .help-grid-container {
+    max-width: 1100px;
+  }
+
+  .help-featured-card {
+    max-width: 1100px;
+  }
 }
 
 @media (max-width: 1200px) {
-  .help-grid-container { gap: 20px; }
-  .help-featured-card  { padding: 40px 50px; }
-  .help-video-placeholder { height: 300px; }
-  .help-card-img-wrapper img { height: 160px; }
+  .help-grid-container {
+    gap: 20px;
+  }
+
+  .help-featured-card {
+    padding: 40px 50px;
+  }
+
+  .help-video-placeholder {
+    height: 300px;
+  }
+
+  .help-card-img-wrapper img {
+    height: 160px;
+  }
 }
 
 @media (max-width: 1024px) {
-  .help-hero { padding: 100px 20px 50px 20px; }
-  .help-section-cards { padding: 50px 20px; gap: 35px; }
-  .help-grid-container { grid-template-columns: repeat(2, 1fr); gap: 18px; }
-  .help-featured-card { padding: 35px 40px; }
-  .help-video-placeholder { height: 280px; }
-  .help-card { padding: 28px 24px 22px 24px; }
-  .help-card-img-wrapper img { height: 170px; }
+  .help-hero {
+    padding: calc(var(--navbar-height) + 20px) 20px 50px 20px;
+  }
+
+  .help-section-cards {
+    padding: 50px 20px;
+    gap: 35px;
+  }
+
+  .help-grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .help-featured-card {
+    padding: 35px 40px;
+  }
+
+  .help-video-placeholder {
+    height: 280px;
+  }
+
+  .help-card {
+    padding: 28px 24px 22px 24px;
+  }
+
+  .help-card-img-wrapper img {
+    height: 170px;
+  }
 }
 
 @media (max-width: 768px) {
-  .help-hero { min-height: 90vh; padding: 90px 20px 40px 20px; }
-  .help-hero h1 br, .help-hero p br { display: none; }
+  .help-hero {
+    min-height: 60vh;
+    padding: calc(var(--navbar-height) + 20px) 20px 40px 20px;
+  }
 
-  .help-search-box { flex-direction: column; border-radius: 25px; padding: 15px; gap: 15px; }
-  .help-search-input { width: 100%; padding: 10px 15px; background: rgba(255,255,255,0.05); border-radius: 25px; }
-  .help-search-box button { width: 100%; padding: 14px 30px; }
+  .help-hero h1 br,
+  .help-hero p br {
+    display: none;
+  }
 
-  .help-section-cards { padding: 40px 15px; gap: 30px; }
-  .help-featured-card { padding: 30px 25px; }
-  .help-featured-card .help-card-header h2 { text-align: left; }
-  .help-featured-card > p { text-align: left; }
-  .help-video-placeholder { height: 250px; }
-  .help-play-button { width: 70px; height: 70px; font-size: 28px; }
-  .help-grid-container { gap: 16px; }
-  .help-card { padding: 24px 20px 20px 20px; }
-  .help-card-img-wrapper img { height: 160px; }
+  .help-search-box {
+    flex-direction: column;
+    border-radius: 25px;
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .help-search-input {
+    width: 100%;
+    padding: 10px 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 25px;
+  }
+
+  .help-search-box button {
+    width: 100%;
+    padding: 14px 30px;
+  }
+
+  .help-section-cards {
+    padding: 40px 15px;
+    gap: 30px;
+  }
+
+  .help-featured-card {
+    padding: 30px 25px;
+  }
+
+  .help-featured-card .help-card-header h2 {
+    text-align: left;
+  }
+
+  .help-featured-card>p {
+    text-align: left;
+  }
+
+  .help-video-placeholder {
+    height: 250px;
+  }
+
+  .help-play-button {
+    width: 70px;
+    height: 70px;
+    font-size: 28px;
+  }
+
+  .help-grid-container {
+    gap: 16px;
+  }
+
+  .help-card {
+    padding: 24px 20px 20px 20px;
+  }
+
+  .help-card-img-wrapper img {
+    height: 160px;
+  }
 }
 
 @media (max-width: 640px) {
-  .help-grid-container { grid-template-columns: 1fr; gap: 15px; }
-  .help-featured-card { padding: 25px 20px; }
-  .help-video-placeholder { height: 220px; }
-  .help-play-button { width: 60px; height: 60px; font-size: 24px; }
-  .help-card-img-wrapper img { height: 200px; }
+  .help-grid-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .help-featured-card {
+    padding: 25px 20px;
+  }
+
+  .help-video-placeholder {
+    height: 220px;
+  }
+
+  .help-play-button {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+  }
+
+  .help-card-img-wrapper img {
+    height: 200px;
+  }
 }
 
 @media (max-width: 480px) {
-  .help-hero { min-height: 85vh; padding: 80px 15px 30px 15px; }
-  .help-hero-content { padding: 0 10px; }
-  .help-search-box { padding: 12px; gap: 12px; }
-  .help-search-input { padding: 8px 12px; }
-  .help-search-icon { font-size: 16px; margin-right: 8px; }
-  .help-search-box button { padding: 12px 25px; }
-  .help-section-cards { padding: 30px 12px; }
-  .help-featured-card { padding: 20px 18px; border-radius: 20px; }
-  .help-video-placeholder { height: 200px; border-radius: 14px; }
-  .help-play-button { width: 55px; height: 55px; font-size: 22px; }
-  .help-card { padding: 20px 16px 18px 16px; border-radius: 16px; }
-  .help-card-img-wrapper img { height: 180px; }
+  .help-hero {
+    padding: calc(var(--navbar-height) + 10px) 15px 30px 15px;
+  }
+
+  .help-hero-content {
+    padding: 0 10px;
+  }
+
+  .help-leftsvg,
+  .help-rightsvg {
+    max-width: 50px;
+  }
+
+  .help-search-box {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .help-search-input {
+    padding: 8px 12px;
+  }
+
+  .help-search-icon {
+    font-size: 16px;
+    margin-right: 8px;
+  }
+
+  .help-search-box button {
+    padding: 12px 25px;
+  }
+
+  .help-section-cards {
+    padding: 30px 12px;
+  }
+
+  .help-featured-card {
+    padding: 20px 18px;
+    border-radius: 20px;
+  }
+
+  .help-video-placeholder {
+    height: 200px;
+    border-radius: 14px;
+  }
+
+  .help-play-button {
+    width: 55px;
+    height: 55px;
+    font-size: 22px;
+  }
+
+  .help-card {
+    padding: 20px 16px 18px 16px;
+    border-radius: 16px;
+  }
+
+  .help-card-img-wrapper img {
+    height: 180px;
+  }
 }
 
 @media (max-width: 360px) {
-  .help-hero { padding: 70px 10px 25px 10px; }
-  .help-search-box { padding: 10px; }
-  .help-featured-card { padding: 18px 15px; }
-  .help-video-placeholder { height: 180px; }
-  .help-play-button { width: 50px; height: 50px; font-size: 20px; }
-  .help-card { padding: 18px 14px 16px 14px; }
-  .help-card-img-wrapper img { height: 160px; }
+  .help-hero {
+    padding: calc(var(--navbar-height) + 10px) 10px 25px 10px;
+  }
+
+  .help-leftsvg,
+  .help-rightsvg {
+    max-width: 40px;
+  }
+
+  .help-search-box {
+    padding: 10px;
+  }
+
+  .help-featured-card {
+    padding: 18px 15px;
+  }
+
+  .help-video-placeholder {
+    height: 180px;
+  }
+
+  .help-play-button {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+
+  .help-card {
+    padding: 18px 14px 16px 14px;
+  }
+
+  .help-card-img-wrapper img {
+    height: 160px;
+  }
 }
 
 /* Touch devices */
 @media (hover: none) and (pointer: coarse) {
-  .help-card:hover { transform: none; }
-  .help-card:active { transform: translateY(-5px); border: 1px solid rgba(100,130,255,0.4); }
-  .help-card:hover .help-card-img-wrapper img { transform: none; }
-  .help-featured-card:hover { transform: none; }
-  .help-featured-card:active { transform: translateY(-3px); }
-  .help-video-placeholder:hover { transform: none; }
-  .help-video-placeholder:active { transform: scale(0.99); }
-  .help-search-box button:hover { opacity: 1; }
-  .help-search-box button:active { opacity: 0.85; }
+  .help-card:hover {
+    transform: none;
+  }
+
+  .help-card:active {
+    transform: translateY(-5px);
+    border: 1px solid rgba(100, 130, 255, 0.4);
+  }
+
+  .help-card:hover .help-card-img-wrapper img {
+    transform: none;
+  }
+
+  .help-featured-card:hover {
+    transform: none;
+  }
+
+  .help-featured-card:active {
+    transform: translateY(-3px);
+  }
+
+  .help-video-placeholder:hover {
+    transform: none;
+  }
+
+  .help-video-placeholder:active {
+    transform: scale(0.99);
+  }
+
+  .help-search-box button:hover {
+    opacity: 1;
+  }
+
+  .help-search-box button:active {
+    opacity: 0.85;
+  }
 }

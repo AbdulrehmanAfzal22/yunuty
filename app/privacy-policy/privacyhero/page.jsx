@@ -14,7 +14,9 @@ export default function Privacy() {
         {/* Subtitle */}
         <div className="privacy-subtitle-row">
           <Image src={img1} alt="decor left" width={80} height={24} />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <p className="privacy-section-label">Privacy Policy</p>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <Image src={img2} alt="decor right" width={80} height={24} />
         </div>
 
