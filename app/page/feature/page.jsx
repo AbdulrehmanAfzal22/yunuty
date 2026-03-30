@@ -142,10 +142,10 @@ function Page() {
       <div className="layers-bg">
         <div className="layers">
           <div className="clearbg">
-            <h2 className="clear-h2">Seamless Client Communication</h2>
-            <p className="clear-p">YunutyConnect enhances trust and alignment with seamless updates, clear insights, and teamwork.</p>
+            <h2 className="clear-h2">Smarter Inbound, Stronger Outcomes
+</h2>
+            <p className="clear-p">From vendor management to ROI, YunutyConnect drives efficiency, accuracy, and visibility.</p>
           </div>
-
           <Image src={Layers} alt="Feature Image" />
           <div className="layers-mobile-gallery">
             <div className="layers-gallery-text">
@@ -182,11 +182,12 @@ function Page() {
   <div className="layers-bg">
         <div className="layers">
           <div className="clearbg">
-            <h2 className="clear-h2">Seamless Client Communication</h2>
-            <p className="clear-p">YunutyConnect enhances trust and alignment with seamless updates, clear insights, and teamwork.</p>
+            <h2 className="clear-h2">Powering Smarter Fulfillment
+</h2>
+            <p className="clear-p">Bring CRM, sales, fulfillment, invoicing, and inventory together for seamless execution and full visibility.</p>
           </div>
 
-          <Image src={Layers2} alt="Feature Image" />
+          <Image src={Layers} alt="Feature Image" />
           <div className="layers-mobile-gallery">
             <div className="layers-gallery-text">
               <h2>Seamless Client Communication</h2>
