@@ -187,7 +187,7 @@ function Page() {
             <p className="clear-p">Bring CRM, sales, fulfillment, invoicing, and inventory together for seamless execution and full visibility.</p>
           </div>
 
-          <Image src={Layers} alt="Feature Image" />
+          <Image src={Layers2} alt="Feature Image" />
           <div className="layers-mobile-gallery">
             <div className="layers-gallery-text">
               <h2>Seamless Client Communication</h2>
