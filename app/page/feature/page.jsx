@@ -2,7 +2,8 @@
 import React, { useState } from "react";
 import Image from 'next/image';
 import fourth from ".././../../public/assests/fourth.jpg";
-import Layers from ".././../../public/assests/layerbg.png";
+import Layers from ".././../../public/assests/seamless-first.png";
+import Layers2 from ".././../../public/assests/seamless-second.png";
 import right from "../../../public/assests/sub-title-right.svg";
 import left from "../../../public/assests/sub-title-left.svg";
 import mobile from "../../../public/assests/mobile.png";
@@ -146,7 +147,6 @@ function Page() {
           </div>
 
           <Image src={Layers} alt="Feature Image" />
-
           <div className="layers-mobile-gallery">
             <div className="layers-gallery-text">
               <h2>Seamless Client Communication</h2>
@@ -178,6 +178,48 @@ function Page() {
           </div>
         </div>
       </div>
+
+  <div className="layers-bg">
+        <div className="layers">
+          <div className="clearbg">
+            <h2 className="clear-h2">Seamless Client Communication</h2>
+            <p className="clear-p">YunutyConnect enhances trust and alignment with seamless updates, clear insights, and teamwork.</p>
+          </div>
+
+          <Image src={Layers2} alt="Feature Image" />
+          <div className="layers-mobile-gallery">
+            <div className="layers-gallery-text">
+              <h2>Seamless Client Communication</h2>
+              <p>YunutyConnect enhances trust and alignment with seamless updates, clear insights, and teamwork.</p>
+            </div>
+
+            <div className="layers-gallery-stack">
+              <div className="lg-card lg-card-2">
+                <Image src={GALLERY_IMAGES[back]} alt={`Gallery image ${back + 1}`} fill style={{ objectFit: "cover", borderRadius: "18px" }} />
+              </div>
+              <div className="lg-card lg-card-1">
+                <Image src={GALLERY_IMAGES[mid]} alt={`Gallery image ${mid + 1}`} fill style={{ objectFit: "cover", borderRadius: "18px" }} />
+              </div>
+              <div className="lg-card lg-card-0">
+                <Image src={GALLERY_IMAGES[front]} alt={`Gallery image ${front + 1}`} fill style={{ objectFit: "cover", borderRadius: "18px" }} />
+              </div>
+            </div>
+
+            <div className="layers-gallery-dots">
+              {GALLERY_IMAGES.map((_, i) => (
+                <button
+                  key={i}
+                  className={`lg-dot${i === galleryIndex ? " active" : ""}`}
+                  onClick={() => setGalleryIndex(i)}
+                  aria-label={`Go to image ${i + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+
 
       {/* ── CTA ── */}
       <div className="cta">
