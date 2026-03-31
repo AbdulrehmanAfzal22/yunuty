@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Image from 'next/image';
 import fourth from ".././../../public/assests/fourth.jpg";
 import Layers from ".././../../public/assests/seamless-first.png";
-import Layers2 from ".././../../public/assests/seamless-second.png";
+import Layers2 from ".././../../public/assests/seamless8.png";
 import right from "../../../public/assests/sub-title-right.svg";
 import left from "../../../public/assests/sub-title-left.svg";
 import mobile from "../../../public/assests/mobile.png";
