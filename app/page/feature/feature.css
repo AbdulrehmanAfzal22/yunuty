@@ -1777,8 +1777,8 @@ body {
 /* Mobile Medium */
 @media (max-width: 479px) {
        .hero-subtitle-row {
-        gap: 8px;
-        max-width: 367px;
+        gap: 12px;
+        max-width: 100%;
         top: 65px;
     }
     .decor-image { width: 52px; height: 17px; }
@@ -1787,10 +1787,10 @@ body {
 
 /* Mobile Small */
 @media (max-width: 375px) {
-    .hero-subtitle-row { 
-        top: 60px; 
-        gap: 6px; 
-        max-width: 300px; 
+      .hero-subtitle-row {
+        gap: 6px;
+        max-width: 100%;
+        top: 60px;
     }
     .decor-image { width: 48px; height: 16px; }
     .hero-label { font-size: 14.5px; }
