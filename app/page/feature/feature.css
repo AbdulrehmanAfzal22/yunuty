@@ -118,55 +118,54 @@ body {
 
 /* ===================================
    MOBILE VERSION (≤768px)
-   Completely different layout
+   LARGE BOX WITH FULL IMAGE - NO CROPPING
    =================================== */
 .layers-mobile {
-  display: none; /* Hidden by default on desktop */
-  /* border: 1px solid #33415580; */
-  /* background: radial-gradient(#05071c 60%, #181953 100%); */
-  border-radius: 15px;
-  width: 95%;
+  display: none;
+  border: 1px solid #33415580;
+  background: radial-gradient(#05071c 60%, #181953 100%);
+  border-radius: 20px;
+  width: 98%;                    /* INCREASED: was 95% */
+  max-width: 600px;            /* ADDED: larger max width */
   margin: 0 auto;
-  padding: 30px 20px;
+  padding: 40px 25px;          /* INCREASED: was 25px 20px */
   position: relative;
-  overflow: hidden;
-}
-
-.mobile-content {
-  display: flex;
+  overflow: visible;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
-  width: 100%;
+  gap: 25px;                   /* INCREASED: was 20px */
 }
 
 .mobile-h2 {
-  font-size: clamp(1.5rem, 5vw, 2rem);
+  font-size: clamp(1.6rem, 5vw, 2.2rem);  /* INCREASED: was 1.4rem-1.8rem */
   color: #ffffff;
   text-align: center;
-  margin: 0;
+  margin: 0 0 20px 0;          /* INCREASED: was 15px */
   line-height: 1.3;
-}
-
-.mobile-p {
-  color: #94a3b8;
-  text-align: center;
-  font-size: clamp(0.9rem, 3vw, 1.1rem);
-  line-height: 1.6;
-  margin: 0;
-  max-width: 90%;
-}
-
-.mobile-img-wrapper {
-  position: relative;
   width: 100%;
-  max-width: 400px;
-  height: 250px;
-  border-radius: 18px;
-  overflow: hidden;
-  /* border: 1px solid rgba(99, 102, 241, 0.3); */
-  /* box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5); */
-  margin-top: 10px;
+}
+
+/* LARGE Image container - FULL HEIGHT */
+.mobile-img-container {
+  width: 100%;
+  max-width: 520px;           /* INCREASED: was 380px */
+  height: auto;
+  border-radius: 16px;         /* INCREASED: was 12px */
+  overflow: visible;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Full image - NO CROPPING */
+.mobile-tall-img {
+  width: 100% !important;
+  height: auto !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  border-radius: 16px;
+  display: block;
 }
 
 /* ===================================
@@ -191,44 +190,58 @@ body {
   }
   
   .layers-mobile {
-    display: block;
+    display: flex;
   }
   
   .layers-bg {
-    padding: 20px 0;
+    padding: 25px 0;          /* INCREASED: was 15px */
   }
 }
 
-/* Smaller mobile adjustments */
-@media (max-width: 480px) {
+/* Tablet/Medium mobile */
+@media (max-width: 640px) {
   .layers-mobile {
-    width: 100%;
-    border-radius: 10px;
-    padding: 25px 15px;
+    width: 98%;
+    padding: 35px 20px;
   }
   
-  .mobile-img-wrapper {
-    height: 200px;
+  .mobile-img-container {
     max-width: 100%;
   }
   
   .mobile-h2 {
-    font-size: clamp(1.3rem, 5vw, 1.6rem);
-  }
-  
-  .mobile-p {
-    font-size: 0.9rem;
-    max-width: 95%;
+    font-size: clamp(1.5rem, 5vw, 2rem);
   }
 }
 
-@media (max-width: 360px) {
-  .mobile-img-wrapper {
-    height: 180px;
+/* Smaller mobile */
+@media (max-width: 480px) {
+  .layers-mobile {
+    width: 100%;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    padding: 30px 15px;
   }
   
+  .mobile-img-container {
+    max-width: 100%;
+  }
+  
+  .mobile-h2 {
+    font-size: clamp(1.3rem, 5vw, 1.7rem);
+    margin-bottom: 15px;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 360px) {
   .layers-mobile {
-    padding: 20px 12px;
+    padding: 25px 12px;
+  }
+  
+  .mobile-h2 {
+    font-size: 1.2rem;
   }
 }
 
@@ -1528,72 +1541,58 @@ body {
   .bac__text {
     font-size: 12px;
   }
-}/* ===================================
-   MOBILE VERSION (≤768px)
-   Completely different layout - TALL IMAGES
-   =================================== */
-.layers-mobile {
-  display: none; /* Hidden by default on desktop */
-  border: 1px solid #33415580;
-  background: radial-gradient(#05071c 60%, #181953 100%);
-  border-radius: 15px;
-  width: 95%;
-  margin: 0 auto;
-  padding: 30px 20px;
-  position: relative;
-  overflow: hidden;
 }
 
-.mobile-content {
-  display: flex;
+/* ===================================
+   MOBILE VERSION (≤768px)
+   LARGE BOX WITH FULL IMAGE - NO CROPPING
+   =================================== */
+.layers-mobile {
+  display: none;
+  border: 1px solid #33415580;
+  background: radial-gradient(#05071c 60%, #181953 100%);
+  border-radius: 20px;
+  width: 98%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 40px 25px;
+  position: relative;
+  overflow: visible;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
-  width: 100%;
+  gap: 25px;
 }
 
 .mobile-h2 {
-  font-size: clamp(1.5rem, 5vw, 2rem);
+  font-size: clamp(1.6rem, 5vw, 2.2rem);
   color: #ffffff;
   text-align: center;
-  margin: 0;
+  margin: 0 0 20px 0;
   line-height: 1.3;
-}
-
-.mobile-p {
-  color: #94a3b8;
-  text-align: center;
-  font-size: clamp(0.9rem, 3vw, 1.1rem);
-  line-height: 1.6;
-  margin: 0;
-  max-width: 90%;
-}
-
-/* VERY TALL IMAGE CONTAINER - shows full vertical image */
-.mobile-img-wrapper {
-  position: relative;
   width: 100%;
-  max-width: 400px;
-  height: auto;
-  min-height: 500px; /* Increased from 400px */
-  max-height: 800px; /* Increased from 600px */
-  border-radius: 18px;
-  overflow: visible; /* Changed to visible to show overflow */
-  border: 1px solid rgba(99, 102, 241, 0.3);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-  margin-top: 10px;
-  margin-bottom: 20px;
 }
 
-/* Ensure image shows fully without cropping */
-.mobile-img-wrapper img {
-  position: relative !important;
+/* LARGE Image container - FULL HEIGHT */
+.mobile-img-container {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  border-radius: 16px;
+  overflow: visible;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Full image - NO CROPPING */
+.mobile-tall-img {
   width: 100% !important;
   height: auto !important;
-  max-height: none !important; /* Remove max-height limit */
+  max-height: none !important;
   object-fit: contain !important;
+  border-radius: 16px;
   display: block;
-  border-radius: 18px;
 }
 
 /* ===================================
@@ -1618,319 +1617,61 @@ body {
   }
   
   .layers-mobile {
-    display: block;
+    display: flex;
   }
   
   .layers-bg {
-    padding: 20px 0;
+    padding: 25px 0;
   }
 }
 
 /* Tablet/Medium mobile */
 @media (max-width: 640px) {
-  .mobile-img-wrapper {
-    min-height: 450px;
-    max-height: 700px;
-    max-width: 100%;
-  }
-}
-
-/* Smaller mobile adjustments */
-@media (max-width: 480px) {
   .layers-mobile {
-    width: 100%;
-    border-radius: 10px;
-    padding: 25px 15px;
-  }
-  
-  .mobile-img-wrapper {
-    min-height: 400px; /* Increased from 350px */
-    max-height: 650px; /* Increased from 500px */
-    max-width: 100%;
-  }
-  
-  .mobile-h2 {
-    font-size: clamp(1.3rem, 5vw, 1.6rem);
-  }
-  
-  .mobile-p {
-    font-size: 0.9rem;
-    max-width: 95%;
-  }
-}
-
-/* Very small screens */
-@media (max-width: 360px) {
-  .mobile-img-wrapper {
-    min-height: 350px; /* Increased from 300px */
-    max-height: 550px; /* Increased from 450px */
-  }
-  
-  .layers-mobile {
-    padding: 20px 12px;
-  }
-}
-
-
-/* UNLIMITED HEIGHT - shows entire image */
-.mobile-img-wrapper {
-  position: relative;
-  width: 100%;
-  max-width: 400px;
-  height: auto;
-  border-radius: 18px;
-  overflow: visible;
-  border: 1px solid rgba(99, 102, 241, 0.3);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
-
-.mobile-img-wrapper img {
-  position: relative !important;
-  width: 100% !important;
-  height: auto !important;
-  display: block;
-  border-radius: 18px;
-}
-
-
-
-/* ===================================
-   MOBILE VERSION (≤768px)
-   SINGLE BOX - HEADING + VERTICALLY TALL IMAGE
-   =================================== */
-.layers-mobile {
-  display: none; /* Hidden by default on desktop */
-  border: 1px solid #33415580;
-  background: radial-gradient(#05071c 60%, #181953 100%);
-  border-radius: 15px;
-  width: 95%;
-  margin: 0 auto;
-  padding: 25px 20px;
-  position: relative;
-  overflow: hidden;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-
-/* Mobile heading */
-.mobile-h2 {
-  font-size: clamp(1.4rem, 5vw, 1.8rem);
-  color: #ffffff;
-  text-align: center;
-  margin: 0 0 15px 0;
-  line-height: 1.3;
-  width: 100%;
-}
-
-/* Image container - vertically tall */
-.mobile-img-container {
-  width: 100%;
-  max-width: 380px;
-  height: auto;
-  min-height: 450px; /* Tall height for vertical images */
-  max-height: 700px;
-  border-radius: 12px;
-  overflow: hidden;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Tall image styling */
-.mobile-tall-img {
-  width: 100% !important;
-  height: auto !important;
-  object-fit: contain !important; /* Show full image without cropping */
-  border-radius: 12px;
-  display: block;
-}
-
-/* ===================================
-   RESPONSIVE BREAKPOINTS
-   =================================== */
-
-/* Desktop (>768px): Show desktop, hide mobile */
-@media (min-width: 769px) {
-  .layers-desktop {
-    display: flex;
-  }
-  
-  .layers-mobile {
-    display: none;
-  }
-}
-
-/* Mobile (≤768px): Hide desktop, show mobile single box */
-@media (max-width: 768px) {
-  .layers-desktop {
-    display: none !important;
-  }
-  
-  .layers-mobile {
-    display: flex; /* Use flex for single box layout */
-  }
-  
-  .layers-bg {
-    padding: 15px 0;
-  }
-}
-
-/* Smaller mobile adjustments */
-@media (max-width: 480px) {
-  .layers-mobile {
-    width: 100%;
-    border-radius: 0; /* Remove border radius for edge-to-edge */
-    border-left: none;
-    border-right: none;
-    padding: 20px 15px;
+    width: 98%;
+    padding: 35px 20px;
   }
   
   .mobile-img-container {
-    min-height: 400px; /* Slightly smaller */
-    max-height: 600px;
     max-width: 100%;
   }
   
   .mobile-h2 {
-    font-size: clamp(1.2rem, 5vw, 1.5rem);
+    font-size: clamp(1.5rem, 5vw, 2rem);
+  }
+}
+
+/* Smaller mobile - FIXED: Keep it looking like a box */
+@media (max-width: 480px) {
+  .layers-mobile {
+    width: 95%;                    /* Side margins so it looks like a box */
+    border-radius: 16px;           /* Rounded corners restored */
+    border-left: 1px solid #33415580;   /* Restore left border */
+    border-right: 1px solid #33415580;  /* Restore right border */
+    padding: 30px 15px;
+    margin: 10px auto;             /* Vertical spacing */
+  }
+  
+  .mobile-img-container {
+    max-width: 100%;
+  }
+  
+  .mobile-h2 {
+    font-size: clamp(1.3rem, 5vw, 1.7rem);
+    margin-bottom: 15px;
   }
 }
 
 /* Very small screens */
 @media (max-width: 360px) {
   .layers-mobile {
-    padding: 15px 10px;
-  }
-  
-  .mobile-img-container {
-    min-height: 350px;
-    max-height: 500px;
-  }
-  
-  .mobile-h2 {
-    font-size: 1.1rem;
-  }
-}/* ===================================
-   MOBILE VERSION (≤768px)
-   SINGLE BOX - HEADING + VERTICALLY TALL IMAGE
-   =================================== */
-.layers-mobile {
-  display: none; /* Hidden by default on desktop */
-  border: 1px solid #33415580;
-  background: radial-gradient(#05071c 60%, #181953 100%);
-  border-radius: 15px;
-  width: 95%;
-  margin: 0 auto;
-  padding: 25px 20px;
-  position: relative;
-  overflow: hidden;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-
-/* Mobile heading */
-.mobile-h2 {
-  font-size: clamp(1.4rem, 5vw, 1.8rem);
-  color: #ffffff;
-  text-align: center;
-  margin: 0 0 15px 0;
-  line-height: 1.3;
-  width: 100%;
-}
-
-/* Image container - vertically tall */
-.mobile-img-container {
-  width: 100%;
-  max-width: 380px;
-  height: auto;
-  min-height: 450px; /* Tall height for vertical images */
-  max-height: 700px;
-  border-radius: 12px;
-  overflow: hidden;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Tall image styling */
-.mobile-tall-img {
-  width: 100% !important;
-  height: auto !important;
-  object-fit: contain !important; /* Show full image without cropping */
-  border-radius: 12px;
-  display: block;
-}
-
-/* ===================================
-   RESPONSIVE BREAKPOINTS
-   =================================== */
-
-/* Desktop (>768px): Show desktop, hide mobile */
-@media (min-width: 769px) {
-  .layers-desktop {
-    display: flex;
-  }
-  
-  .layers-mobile {
-    display: none;
-  }
-}
-
-/* Mobile (≤768px): Hide desktop, show mobile single box */
-@media (max-width: 768px) {
-  .layers-desktop {
-    display: none !important;
-  }
-  
-  .layers-mobile {
-    display: flex; /* Use flex for single box layout */
-  }
-  
-  .layers-bg {
-    padding: 15px 0;
-  }
-}
-
-/* Smaller mobile adjustments */
-@media (max-width: 480px) {
-  .layers-mobile {
-    width: 100%;
-    border-radius: 0; /* Remove border radius for edge-to-edge */
-    border-left: none;
-    border-right: none;
-    padding: 20px 15px;
-  }
-  
-  .mobile-img-container {
-    min-height: 400px; /* Slightly smaller */
-    max-height: 600px;
-    max-width: 100%;
+    width: 94%;                    /* Slightly narrower */
+    padding: 25px 12px;
+    border-radius: 14px;
+    margin: 8px auto;
   }
   
   .mobile-h2 {
-    font-size: clamp(1.2rem, 5vw, 1.5rem);
+    font-size: 1.2rem;
   }
 }
-
-/* Very small screens */
-@media (max-width: 360px) {
-  .layers-mobile {
-    padding: 15px 10px;
-  }
-  
-  .mobile-img-container {
-    min-height: 350px;
-    max-height: 500px;
-  }
-  
-  .mobile-h2 {
-    font-size: 1.1rem;
-  }
-}
-
