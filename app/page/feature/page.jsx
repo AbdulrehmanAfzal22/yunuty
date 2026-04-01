@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Image from 'next/image';
 import fourth from ".././../../public/assests/fourth.jpg";
-import Layers from ".././../../public/assests/seamless-first.png";
+import Layers from ".././../../public/assests/vendor.png";
 import Layers2 from ".././../../public/assests/seamless8.png";
 import right from "../../../public/assests/sub-title-right.svg";
 import left from "../../../public/assests/sub-title-left.svg";
@@ -13,7 +13,8 @@ import layer from "../../../public/assests/Layer.png";
 import benefit from "../../../public/assests/Benfits.png";
 import box from "../../../public/assests/box.png";
 import fan from "../../../public/assests/fan.png";
-
+import smobile from "../../../public/assests/s-mobile.png";
+import smobile2 from "../../../public/assests/s-mobile2.png";
 import g1 from "../../../public/assests/machine.png";
 import g3 from "../../../public/assests/truck.png";
 import g2 from "../../../public/assests/stone.png";
@@ -25,8 +26,6 @@ import g8 from "../../../public/assests/talk.png";
 import g9 from "../../../public/assests/lady.png";
 
 import "./feature.css";
-
-const GALLERY_IMAGES = [g1, g2, g3, g4, g5, g6, g7, g8, g9];
 
 // ── Accordion items ───────────────────────────────────────────────────────
 const ACCORDION_ITEMS = [
@@ -56,23 +55,8 @@ function Page() {
     return () => clearInterval(interval);
   }, []);
 
-  // ── Layers gallery carousel ───────────────────────────────────────────
-  const [galleryIndex, setGalleryIndex] = useState(0);
-  const total = GALLERY_IMAGES.length;
-
-  React.useEffect(() => {
-    const interval = setInterval(() => {
-      setGalleryIndex((prev) => (prev + 1) % total);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, [total]);
-
-  const front = galleryIndex % total;
-  const mid   = (galleryIndex + 1) % total;
-  const back  = (galleryIndex + 2) % total;
-
   // ── Accordion state ───────────────────────────────────────────────────
-  const [activeAccordion, setActiveAccordion] = useState(1); // default: For Retailers
+  const [activeAccordion, setActiveAccordion] = useState(1);
 
   return (
     <>
@@ -102,7 +86,7 @@ function Page() {
               <div className="row">
                 <h3 className="title">High-Level Workflow Visibility</h3>
                 <p className="description">
-                  With YunutyConnect, clients gain real-time insights into inventory and operations across the entire supply chain.
+                    Real-time insights into inventory and operations across the entire supply chain.
                 </p>
               </div>
             </div>
@@ -138,89 +122,45 @@ function Page() {
         </div>
       </div>
 
-      {/* ── Layers section ── */}
+      {/* ── Section 1: DESKTOP = vendor.png | MOBILE = smobile ── */}
       <div className="layers-bg">
-        <div className="layers">
+        {/* DESKTOP VERSION (>768px) */}
+        <div className="layers layers-desktop">
           <div className="clearbg">
-            <h2 className="clear-h2">Smarter Inbound, Stronger Outcomes
-</h2>
+            <h2 className="clear-h2">Smarter Inbound, Stronger Outcomes</h2>
             <p className="clear-p">From vendor management to ROI, YunutyConnect drives efficiency, accuracy, and visibility.</p>
           </div>
-          <Image src={Layers} alt="Feature Image" />
-          <div className="layers-mobile-gallery">
-            <div className="layers-gallery-text">
-              <h2>Seamless Client Communication</h2>
-              <p>YunutyConnect enhances trust and alignment with seamless updates, clear insights, and teamwork.</p>
-            </div>
+          <Image src={Layers} alt="Feature Image" className="layers-desktop-img" />
+        </div>
 
-            <div className="layers-gallery-stack">
-              <div className="lg-card lg-card-2">
-                <Image src={GALLERY_IMAGES[back]} alt={`Gallery image ${back + 1}`} fill style={{ objectFit: "cover", borderRadius: "18px" }} />
-              </div>
-              <div className="lg-card lg-card-1">
-                <Image src={GALLERY_IMAGES[mid]} alt={`Gallery image ${mid + 1}`} fill style={{ objectFit: "cover", borderRadius: "18px" }} />
-              </div>
-              <div className="lg-card lg-card-0">
-                <Image src={GALLERY_IMAGES[front]} alt={`Gallery image ${front + 1}`} fill style={{ objectFit: "cover", borderRadius: "18px" }} />
-              </div>
-            </div>
-
-            <div className="layers-gallery-dots">
-              {GALLERY_IMAGES.map((_, i) => (
-                <button
-                  key={i}
-                  className={`lg-dot${i === galleryIndex ? " active" : ""}`}
-                  onClick={() => setGalleryIndex(i)}
-                  aria-label={`Go to image ${i + 1}`}
-                />
-              ))}
-            </div>
+        {/* MOBILE VERSION (≤768px) - SINGLE BOX WITH HEADING + TALL IMAGE */}
+        <div className="layers layers-mobile">
+          <h2 className="mobile-h2">Smarter Inbound, Stronger Outcomes</h2>
+          <div className="mobile-img-container">
+            <Image src={smobile} alt="Mobile feature" className="mobile-tall-img" />
           </div>
         </div>
       </div>
 
-  <div className="layers-bg">
-        <div className="layers">
+      {/* ── Section 2: DESKTOP = seamless8.png | MOBILE = smobile2 ── */}
+      <div className="layers-bg">
+        {/* DESKTOP VERSION (>768px) */}
+        <div className="layers layers-desktop">
           <div className="clearbg">
-            <h2 className="clear-h2">Powering Smarter Fulfillment
-</h2>
+            <h2 className="clear-h2">Powering Smarter Fulfillment</h2>
             <p className="clear-p">Bring CRM, sales, fulfillment, invoicing, and inventory together for seamless execution and full visibility.</p>
           </div>
+          <Image src={Layers2} alt="Feature Image" className="layers-desktop-img" />
+        </div>
 
-          <Image src={Layers2} alt="Feature Image" />
-          <div className="layers-mobile-gallery">
-            <div className="layers-gallery-text">
-              <h2>Seamless Client Communication</h2>
-              <p>YunutyConnect enhances trust and alignment with seamless updates, clear insights, and teamwork.</p>
-            </div>
-
-            <div className="layers-gallery-stack">
-              <div className="lg-card lg-card-2">
-                <Image src={GALLERY_IMAGES[back]} alt={`Gallery image ${back + 1}`} fill style={{ objectFit: "cover", borderRadius: "18px" }} />
-              </div>
-              <div className="lg-card lg-card-1">
-                <Image src={GALLERY_IMAGES[mid]} alt={`Gallery image ${mid + 1}`} fill style={{ objectFit: "cover", borderRadius: "18px" }} />
-              </div>
-              <div className="lg-card lg-card-0">
-                <Image src={GALLERY_IMAGES[front]} alt={`Gallery image ${front + 1}`} fill style={{ objectFit: "cover", borderRadius: "18px" }} />
-              </div>
-            </div>
-
-            <div className="layers-gallery-dots">
-              {GALLERY_IMAGES.map((_, i) => (
-                <button
-                  key={i}
-                  className={`lg-dot${i === galleryIndex ? " active" : ""}`}
-                  onClick={() => setGalleryIndex(i)}
-                  aria-label={`Go to image ${i + 1}`}
-                />
-              ))}
-            </div>
+        {/* MOBILE VERSION (≤768px) - SINGLE BOX WITH HEADING + TALL IMAGE */}
+        <div className="layers layers-mobile">
+          <h2 className="mobile-h2">Powering Smarter Fulfillment</h2>
+          <div className="mobile-img-container">
+            <Image src={smobile2} alt="Mobile feature" className="mobile-tall-img" />
           </div>
         </div>
       </div>
-
-
 
       {/* ── CTA ── */}
       <div className="cta">
@@ -242,28 +182,13 @@ function Page() {
       {/* ── Built section ── */}
       <div className="built-section">
         <div className="built-container">
-
-          {/* Left */}
           <div className="built-left">
-            {/* <div className="built-subtitle">
-              <Image src={left} alt="Decorative left accent" width={79} height={17} className="no-shrink" />
-              &nbsp;&nbsp;&nbsp;
-              <p>Built for you</p>
-              &nbsp;&nbsp;&nbsp;
-              <Image src={right} alt="Decorative right accent" width={79} height={17} className="no-shrink" />
-            </div> */}
             <h2>SUCCESS IN DIGITAL TRANSFORMATION IS A MATTER OF BALANCE</h2>
-            {/* <p className="built-desc">
-              Designed to simplify operations, accelerate growth, and help businesses thrive in an ever-evolving digital world.
-            </p> */}
             <button className="built-btn">Request a Demo →</button>
           </div>
 
-          {/* Right — accordion */}
           <div className="built-right bac__right">
             <div className="bac__wrap">
-
-              {/* Left column — headings */}
               <div className="bac__list">
                 {ACCORDION_ITEMS.map((item, i) => (
                   <button
@@ -277,16 +202,13 @@ function Page() {
                 ))}
               </div>
 
-              {/* Right column — description */}
               <div className="bac__content">
                 <p className="bac__text" key={activeAccordion}>
                   {ACCORDION_ITEMS[activeAccordion].text}
                 </p>
               </div>
-
             </div>
           </div>
-
         </div>
       </div>
     </>

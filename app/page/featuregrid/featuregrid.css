@@ -14,12 +14,11 @@
     box-sizing: border-box;
     background-color: #05061c;
     width: 100%;
-    min-height: 38vh;
+    min-height: 15vh;
     margin: 0;
     padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 3vw, 2rem);
     overflow: hidden;
 }
-
 .feature-grid {
     max-width: 1400px;
     margin: 0 auto;
@@ -336,14 +335,11 @@
     }
 }
 
-/* ===================================
-   EXPLORE MORE BUTTON
-   =================================== */
 .explore-more-container {
     text-align: center;
-    margin-top: clamp(2rem, 4vw, 3rem);
-    margin-bottom: clamp(40px, 5vw, 61px);
-    padding: 0 clamp(10px, 2vw, 20px);
+    margin-top: clamp(3rem, 4vw, 3rem);
+    margin-bottom: clamp(52px, 5vw, 61px);
+    padding: 19px clamp(0px, 2vw, 20px);
 }
 
 .explore-more-btn {

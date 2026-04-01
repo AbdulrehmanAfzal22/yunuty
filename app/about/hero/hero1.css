@@ -72,29 +72,25 @@
   margin-bottom: 1rem;
 }
 
-/* 🔥 ALWAYS-ACTIVE BUTTON STYLE */
 .hero-about__cta-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  padding: 12px 28px;
-  border-radius: 999px;
-  width: 360px;
-  max-width: 100%;
-  font-size: 1rem;
-  white-space: nowrap;
-  cursor: pointer;
-  
-  background: linear-gradient(#05071c 0% 82%, #181953 100%);
-  border: 1px solid rgba(58, 111, 196, 0.55);
-  color: #ffffff;
-  transform: translateY(-2px);
-  box-shadow: 0 12px 35px rgba(59, 130, 246, 0.28);
-
-  transition: all 0.35s ease;
+    white-space: nowrap;
+    cursor: pointer;
+    color: #fff;
+    background: linear-gradient(#05071c 0% 82%, #181953 100%);
+    border: 1px solid #3a6fc48c;
+    border-radius: 999px;
+    justify-content: center;
+    align-items: center;
+    gap: 1px;
+    width: 367px;
+    max-width: 100%;
+    padding: 12px 28px;
+    font-size: 14px;
+    transition: all .35s;
+    display: inline-flex;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px #3b82f647;
 }
-
 /* Optional extra interaction (can delete if not needed) */
 .hero-about__cta-button:hover {
   transform: translateY(-4px) scale(1.02);

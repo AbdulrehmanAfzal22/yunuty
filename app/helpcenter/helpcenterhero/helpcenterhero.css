@@ -662,3 +662,120 @@
     opacity: 0.85;
   }
 }
+
+
+
+ 
+.feature-subtitle {
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  display: flex;
+  margin-bottom: 83px;
+  flex-direction: column;
+  width: 100%;
+  position: relative; /* ⭐ Added for absolute positioning context */
+}
+ 
+.subtitles {
+  display: flex;
+  flex-direction: row;
+  gap: 14px;
+  align-items: center;
+  position: relative; /* ⭐ Create positioning context */
+  justify-content: center;
+  padding: 0 100px; /* ⭐ Space for decorative images */
+}
+ 
+/* Center text - always stays in place */
+.feature-text {
+  color: rgb(149, 158, 254);
+  font-weight: 500;
+  font-size: clamp(10px, 1.5vw, 13px);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  white-space: nowrap; /* ⭐ Prevents text wrapping */
+  position: relative;
+  z-index: 2;
+}
+ 
+/* Decorative images - positioned absolutely */
+.subtitles > img:first-child,
+.subtitles .no-shrink:first-of-type {
+  position: absolute !important;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 79px;
+  height: 17px;
+  flex-shrink: 0;
+}
+ 
+.subtitles > img:last-child,
+.subtitles .no-shrink:last-of-type {
+  position: absolute !important;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 79px;
+  height: 17px;
+  flex-shrink: 0;
+}
+ 
+/* Remove gap from flex since we're using absolute positioning */
+.subtitles {
+  gap: 0;
+}
+ 
+/* Feature heading - remains centered */
+.feature-heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+}
+ 
+.feature-heading h1 {
+  font-size: clamp(2rem, 5vw, 48px);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  text-align: center;
+  color: #ffffff;
+  margin: 0;
+}
+ 
+.feature-heading p {
+  font-size: clamp(14px, 2vw, 16px);
+  font-weight: 400;
+  line-height: 1.5;
+  margin-top: 20px;
+  text-align: center;
+  color: #94a3b8;
+}
+ 
+/* ===================================
+   RESPONSIVE - HIDE DECORATIVE IMAGES ON MOBILE
+   =================================== */
+ 
+@media (max-width: 768px) {
+  .subtitles {
+    padding: 0; /* Remove padding on mobile */
+  }
+  
+  /* Hide decorative images on smaller screens */
+  .subtitles > img:first-child,
+  .subtitles .no-shrink:first-of-type,
+  .subtitles > img:last-child,
+  .subtitles .no-shrink:last-of-type {
+    display: none;
+  }
+}
+ 
+@media (max-width: 480px) {
+  .feature-subtitle {
+    margin-bottom: 50px;
+  }
+}

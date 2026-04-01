@@ -4,7 +4,7 @@ import Image from 'next/image';
 // import helmet from '../../../public/assests/helmet.png';
 import wheel from '../../../public/assests/yunutyconnect.png';
 import write from '../../../public/assests/write.png';
-import effort from '../../../public/assests/effort.png';
+import effort from '../../../public/assests/qb.png';
 import right from "../../../public/assests/sub-title-right.svg";
 import left from "../../../public/assests/sub-title-left.svg";
 import aws from '../../../public/assests/AWS.svg';
@@ -90,9 +90,9 @@ const FeatureGrid = () => {
         {/* Box 2: Effortless Personalization */}
         <div className="feature-card">
           <div className="card-header w3">
-            <h3 className="card-title">Effortless Personalization</h3>
+            <h3 className="card-title">Smart Sync with QuickBooks</h3>
             <p className="card-description">
-              Our system adapts to each user's role, showing only what matters most.
+              Power your business with live QuickBooks synchronization and total visibility.
             </p>
           </div>
           <div className="card-content">

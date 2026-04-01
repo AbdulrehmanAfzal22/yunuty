@@ -454,9 +454,9 @@ body{
 
 /* Responsive Design - Extra Small Mobile */ 
 @media (max-width: 480px) { 
-  .container { 
-    padding: 30px 12px; 
-  } 
+     .container {
+        padding: 56px 12px;
+    }
   
   .content-wrapper { 
     gap: 30px; 
