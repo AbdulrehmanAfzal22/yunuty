@@ -1004,9 +1004,9 @@ body {
 }
 
 @media (min-width: 1920px) {
-  .container1 {
-    padding: 7rem 4rem;
-  }
+     .container1 {
+        padding: 3rem 4rem;
+    }
 
   .grid,
   .layers-desktop,
