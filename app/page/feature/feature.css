@@ -1005,7 +1005,8 @@ body {
 
 @media (min-width: 1920px) {
      .container1 {
-        padding: 3rem 4rem;
+        /* padding: 3rem 4rem; */
+        margin-bottom: -61px;
     }
 
   .grid,
