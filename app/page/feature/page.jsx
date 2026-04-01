@@ -150,6 +150,7 @@ function Page() {
         {/* MOBILE VERSION (≤768px) - SINGLE BOX WITH HEADING + TALL IMAGE */}
         <div className="layers layers-mobile">
           <h2 className="mobile-h2">Smarter Inbound, Stronger Outcomes</h2>
+             <p className="clear-p">From vendor management to ROI, YunutyConnect drives efficiency, accuracy, and visibility.</p>
           <div className="mobile-img-container">
             <Image src={smobile} alt="Mobile feature" className="mobile-tall-img" />
           </div>
@@ -170,6 +171,8 @@ function Page() {
         {/* MOBILE VERSION (≤768px) - SINGLE BOX WITH HEADING + TALL IMAGE */}
         <div className="layers layers-mobile">
           <h2 className="mobile-h2">Powering Smarter Fulfillment</h2>
+            <p className="clear-p">Bring CRM, sales, fulfillment, invoicing, and inventory together for seamless execution and full visibility.</p>
+
           <div className="mobile-img-container">
             <Image src={smobile2} alt="Mobile feature" className="mobile-tall-img" />
           </div>

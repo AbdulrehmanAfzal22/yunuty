@@ -1,12 +1,7 @@
-/* ===== REMOVE BODY PADDING - NOT NEEDED FOR NON-STICKY ===== */
-body {
-  margin: 0;
-  padding-top: 0; /* Remove padding since navbar is not fixed */
-}
+/* ================= NAVBAR - FULL RESPONSIVE ================= */
 
-/* ===== NAVBAR - RELATIVE POSITION (SCROLLS WITH PAGE) ===== */
 .navbar {
-  position: relative; /* Changed from fixed to relative */
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
@@ -30,16 +25,13 @@ body {
 }
 
 /* Logo */
-.logo {
-  z-index: 1002;
-}
 .logo-image {
-    object-fit: contain;
-    height: auto;
-    width: 200px;
+  object-fit: contain;
+  height: auto;
+  width: 200px;
 }
 
-/* Hamburger Menu */
+/* Hamburger */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -49,7 +41,6 @@ body {
   cursor: pointer;
   padding: 8px;
   z-index: 1002;
-  transition: transform 0.3s ease;
 }
 
 .hamburger span {
@@ -63,7 +54,6 @@ body {
 .hamburger.active span:nth-child(1) {
   transform: rotate(45deg) translate(8px, 8px);
   background: #8C5FFF;
-  
 }
 
 .hamburger.active span:nth-child(2) {
@@ -75,7 +65,7 @@ body {
   background: #8C5FFF;
 }
 
-/* Nav links */
+/* ================= NAV LINKS - RESPONSIVE FONT SIZE ================= */
 .nav-links {
   display: flex;
   align-items: center;
@@ -86,21 +76,23 @@ body {
 }
 
 .nav-links li a {
-    color: #7e83a8;
-    padding: 8px 4px;
-    font-size: 13px;
-    /* display: flex; */
-    /* gap: 45px; */
-    font-weight: 500;
-    text-decoration: none;
-    transition: color .3s;
-    position: relative;
+  color: #7e83a8;
+  padding: 8px 4px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  position: relative;
+  /* Responsive font size using clamp */
+  font-size: clamp(13px, 1.1vw, 17px);
+  white-space: nowrap;
 }
 
 .nav-links li a:hover {
-      line-height: 92px;
-    position: relative;
-    font-weight: 500;
+  color: #ffffff;
+}
+
+.nav-links li a.active {
+  color: white;
 }
 
 /* Gradient underline */
@@ -119,16 +111,16 @@ body {
 .nav-links li a:hover::after,
 .nav-links li a.active::after {
   width: 100%;
-  color: wheat;
 }
-/* Get started button */
+
+/* Get Started Button */
 .get-started-btn {
   padding: 12px 28px;
   border-radius: 999px;
   background: white;
   color: #351c75;
   font-family: 'Poppins', sans-serif;
-  font-size: 16px;
+  font-size: clamp(14px, 1.2vw, 16px);
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -140,17 +132,8 @@ body {
   box-shadow: 0 8px 25px rgba(91, 124, 255, 0.25);
 }
 
-/* Hide mobile button on desktop */
-.mobile-btn-wrapper {
-  display: none;
-}
-
-/* Overlay */
-.overlay {
-  display: none;
-}
-
-/* Desktop button visibility */
+/* Hide mobile elements on desktop */
+.mobile-btn-wrapper,
 .get-started-btn.mobile {
   display: none;
 }
@@ -159,7 +142,38 @@ body {
   display: block;
 }
 
-/* Tablet Styles */
+/* ================= RESPONSIVE BREAKPOINTS ================= */
+
+/* Large Desktop */
+@media (min-width: 1920px) {
+  .nav-links li a {
+    font-size: 17px;
+    gap: 48px;
+  }
+  .logo-image { width: 220px; }
+}
+
+/* Standard Desktop */
+@media (max-width: 1500px) {
+  .nav-links {
+    gap: 36px;
+  }
+  .nav-links li a {
+    font-size: clamp(14px, 1vw, 16px);
+  }
+}
+
+/* Tablet Landscape */
+@media (max-width: 1200px) {
+  .nav-links {
+    gap: 28px;
+  }
+  .nav-links li a {
+    font-size: clamp(13.5px, 0.95vw, 15.5px);
+  }
+}
+
+/* Tablet / Small Desktop */
 @media (max-width: 992px) {
   .navbar {
     height: 80px;
@@ -167,34 +181,32 @@ body {
   }
 
   .logo-image {
+    width: 180px;
     height: 60px;
   }
 
   .nav-links {
-    gap: 32px;
+    gap: 24px;
   }
 
   .nav-links li a {
-    font-size: 15px;
+    font-size: clamp(13px, 1.1vw, 15px);
   }
 
   .get-started-btn.desktop {
     padding: 10px 24px;
-    font-size: 15px;
+    font-size: clamp(14px, 1.1vw, 15px);
   }
 }
 
-/* Mobile Styles */
+/* ================= MOBILE MENU ================= */
 @media (max-width: 768px) {
   .navbar {
     height: 70px;
   }
 
-  .navbar-container {
-    gap: 20px;
-  }
-
   .logo-image {
+    width: 160px;
     height: 50px;
   }
 
@@ -208,7 +220,7 @@ body {
     display: none;
   }
 
-  /* Show mobile button inside menu */
+  /* Show mobile button */
   .mobile-btn-wrapper {
     display: block;
     width: 100%;
@@ -218,9 +230,10 @@ body {
   .get-started-btn.mobile {
     display: block;
     width: 100%;
+    font-size: 16px;
   }
 
-  /* Mobile menu - STILL FIXED for menu overlay */
+  /* Mobile Menu */
   .nav-links {
     position: fixed;
     top: 0;
@@ -234,8 +247,6 @@ body {
     gap: 0;
     padding: 100px 30px 30px;
     transition: right 0.4s ease;
-    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
-    overflow-y: auto;
     z-index: 10000;
   }
 
@@ -248,25 +259,16 @@ body {
     border-bottom: 1px solid rgba(207, 212, 255, 0.1);
   }
 
-  .nav-links li:last-child {
-    border-bottom: none;
-  }
-
   .nav-links li a {
     display: block;
     width: 100%;
     padding: 18px 12px;
-    font-size: 16px;
+    font-size: 17px;           /* Bigger & readable on mobile */
   }
 
   .nav-links li a::after {
     left: 12px;
     right: 12px;
-    width: calc(100% - 24px);
-  }
-
-  .nav-links li a:hover::after,
-  .nav-links li a.active::after {
     width: calc(100% - 24px);
   }
 }
@@ -279,7 +281,7 @@ body {
   }
 
   .logo-image {
-    height: 45px;
+    width: 150px;
   }
 
   .hamburger span {
@@ -293,8 +295,8 @@ body {
   }
 
   .nav-links li a {
+    font-size: 16px;
     padding: 16px 10px;
-    font-size: 15px;
   }
 }
 
@@ -305,7 +307,7 @@ body {
   }
 
   .logo-image {
-    height: 40px;
+    width: 140px;
   }
 
   .nav-links {
@@ -314,24 +316,16 @@ body {
   }
 
   .nav-links li a {
-    padding: 14px 8px;
-    font-size: 14px;
+    font-size: 15px;
+    padding: 15px 8px;
   }
 
   .get-started-btn.mobile {
-    padding: 10px 20px;
-    font-size: 14px;
+    font-size: 15px;
   }
 }
 
-/* Prevent body scroll when menu is open */
+/* Prevent body scroll when menu open */
 body:has(.nav-links.active) {
   overflow: hidden;
 }
-
-
-
-.nav-links li a.active {
-  color: white;
-}
-
