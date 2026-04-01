@@ -467,11 +467,10 @@ body {
 
 @media (max-width: 360px) {
   .laptop {
-    max-height: 90px;
-  }
-
+        max-height: 163px;
+    }
   .mobile {
-    max-height: 120px;
+       max-height: 163px;
   }
 }
 

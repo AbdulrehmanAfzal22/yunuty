@@ -331,7 +331,8 @@
     .ideas-image,
     .dashboard-image,
     .insight-image {
-        max-height: clamp(100px, 30vw, 150px);
+                width: 237px;
+        height: 143px;
     }
 }
 
