@@ -1217,7 +1217,7 @@ html {
 }
 
 
-.hero-subtitle-row{
+.hero-subtitle-row1{
     display: flex;
  justify-content: center;
  text-align: center;
@@ -1232,7 +1232,7 @@ html {
 
 @media (min-width: 2560px) {
     .hero { padding-top: 220px; }
-    .hero-subtitle-row { gap: 28px; top: 130px; max-width: 600px; }
+    .hero-subtitle-row1 { gap: 28px; top: 130px; max-width: 600px; }
     .decor-image { width: 110px; height: 32px; }
     .hero-label { font-size: 24px; }
     .heading-hero { font-size: 100px; letter-spacing: -4px; }
@@ -1241,21 +1241,21 @@ html {
 /* Large Desktop */
 @media (min-width: 1920px) and (max-width: 2559px) {
     .hero { padding-top: 200px; }
-    .hero-subtitle-row { gap: 24px; top: 120px; }
+    .hero-subtitle-row1 { gap: 24px; top: 120px; }
     .decor-image { width: 100px; height: 28px; }
     .hero-label { font-size: 22px; }
 }
 
 /* Desktop XL */
 @media (min-width: 1600px) and (max-width: 1919px) {
-    .hero-subtitle-row { top: 115px; gap: 20px; }
+    .hero-subtitle-row1 { top: 115px; gap: 20px; }
     .decor-image { width: 95px; height: 26px; }
     .hero-label { font-size: 21px; }
 }
 
 /* Desktop Standard */
 @media (min-width: 1440px) and (max-width: 1599px) {
-    .hero-subtitle-row { top: 110px; gap: 18px; }
+    .hero-subtitle-row1 { top: 110px; gap: 18px; }
     .decor-image { width: 90px; height: 25px; }
     .hero-label { font-size: 20px; }
 }
@@ -1263,14 +1263,14 @@ html {
 /* Tablet Landscape */
 @media (min-width: 768px) and (max-width: 1023px) {
     .hero { padding-top: 110px; padding-bottom: 60px; min-height: auto; }
-    .hero-subtitle-row { top: 90px; gap: 14px; max-width: 460px; }
+    .hero-subtitle-row1 { top: 90px; gap: 14px; max-width: 460px; }
     .decor-image { width: 72px; height: 22px; }
     .hero-label { font-size: 18px; }
 }
 
 /* Tablet Portrait */
 @media (min-width: 640px) and (max-width: 767px) {
-    .hero-subtitle-row { top: 80px; gap: 12px; max-width: 420px; }
+    .hero-subtitle-row1 { top: 80px; gap: 12px; max-width: 420px; }
     .decor-image { width: 64px; height: 20px; }
     .hero-label { font-size: 17px; }
 }
@@ -1278,7 +1278,7 @@ html {
 /* Mobile Large */
 @media (max-width: 639px) {
     .hero { padding-top: 100px; }
-    .hero-subtitle-row { 
+    .hero-subtitle-row1 { 
         top: 70px; 
         gap: 10px; 
         max-width: 380px; 
@@ -1290,7 +1290,7 @@ html {
 
 /* Mobile Medium */
 @media (max-width: 479px) {
-    .hero-subtitle-row { 
+    .hero-subtitle-row1 { 
         top: 65px; 
         gap: 8px; 
         max-width: 340px; 
@@ -1301,7 +1301,7 @@ html {
 
 /* Mobile Small */
 @media (max-width: 375px) {
-    .hero-subtitle-row { 
+    .hero-subtitle-row1 { 
         top: 60px; 
         gap: 6px; 
         max-width: 300px; 
@@ -1312,7 +1312,7 @@ html {
 
 /* Very Small Mobile */
 @media (max-width: 320px) {
-    .hero-subtitle-row { 
+    .hero-subtitle-row1 { 
         top: 55px; 
         gap: 5px; 
         max-width: 280px; 
@@ -1332,6 +1332,6 @@ html {
 
 /* Extra Safety */
 @media (max-width: 360px) {
-    .hero-subtitle-row { gap: 6px; }
+    .hero-subtitle-row1 { gap: 6px; }
     .hero-label { font-size: 14px; }
 }

@@ -38,7 +38,7 @@ export default function Hero() {
       <div className="hero-container">
         <div className="hero-content">
           {/* Improved Subtitle Row */}
-          <div className="hero-subtitle-row">
+          <div className="hero-subtitle-row1">
             <Image 
               src={left} 
               alt="decor left" 
