@@ -122,7 +122,7 @@ function Page() {
         </div>
       </div>
 
-      {/* ── Section 1: DESKTOP = vendor.png | MOBILE = smobile ── */}
+     <div className="twoboxes">
       <div className="layers-bg">
         {/* DESKTOP VERSION (>768px) */}
         <div className="layers layers-desktop">
@@ -161,7 +161,7 @@ function Page() {
           </div>
         </div>
       </div>
-
+</div>
       {/* ── CTA ── */}
       <div className="cta">
         <section className="cta-banner">

@@ -441,8 +441,8 @@ body {
   }
 
   .mobile {
-    max-height: clamp(220px, 24vw, 380px);
-  }
+        width: 449px;
+    }
 }
 
 @media (min-width: 1440px) {
@@ -1673,4 +1673,15 @@ body {
   .mobile-h2 {
     font-size: 1.2rem;
   }
+}
+
+
+.twoboxes{
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #00031c;
 }
