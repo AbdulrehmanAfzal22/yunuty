@@ -45,13 +45,13 @@ const AboutSection = () => {
     <>
       <section className="about-section" ref={sectionRef}>
         <div className="about-container">
-          <div className="about">
-            <Image src={left} alt="Left decoration" />
-            &nbsp;&nbsp;&nbsp;
-            <p>Who we are</p>
-            &nbsp;&nbsp;&nbsp;
-            <Image src={right} alt="Right decoration" />
-          </div>
+           <div className="hero-subtitle-row">
+                   <Image src={left} alt="decor left" width={80} height={24} />
+                     &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                   <p className="hero-label">Who we are</p>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                   <Image src={right} alt="decor right" width={80} height={24} />
+                 </div>
 
           <h1 className="about-heading">
             <span

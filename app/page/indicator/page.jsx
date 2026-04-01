@@ -27,9 +27,9 @@ const PerformanceDashboard = () => {
   const targets = {
     clientsRevenue: 11.5,
     profitIncrease: 21.9,
-    transactions: 21.9,
+    transactions: 54.5,
     costReduction: 300,
-    revenueIncrease: 300
+    revenueIncrease: 700
   };
 
   // Intersection Observer for scroll detection
@@ -147,11 +147,23 @@ const PerformanceDashboard = () => {
         <div className="content-wrapper">
           {/* Left Section */}
           <div className="left-section">
-            <div className="indicator-badge">
-              <Image src={left} alt="Left Decoration" className="decoration-img" />
-              <span className="text">Indicator</span>
-              <Image src={right} alt="Right Decoration" className="decoration-img" />
-            </div>
+              <div className="hero-subtitle-row">
+                       <Image 
+                         src={left} 
+                         alt="decor left" 
+                         width={80} 
+                         height={24} 
+                         className="decor-image" 
+                       />
+                       <p className="hero-label">Indicators</p>
+                       <Image 
+                         src={right} 
+                         alt="decor right" 
+                         width={80} 
+                         height={24} 
+                         className="decor-image" 
+                       />
+                     </div>
             
             <p className="main-heading">
               We are proud to have<br />

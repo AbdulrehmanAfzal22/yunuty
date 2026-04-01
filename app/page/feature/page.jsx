@@ -60,13 +60,27 @@ function Page() {
 
   return (
     <>
+       <div className="hero-subtitle-row">
+                     <Image 
+                       src={left} 
+                       alt="decor left" 
+                       width={80} 
+                       height={24} 
+                       className="decor-image" 
+                     />
+                     <p className="hero-label">Features</p>
+                     <Image 
+                       src={right} 
+                       alt="decor right" 
+                       width={80} 
+                       height={24} 
+                       className="decor-image" 
+                     />
+                   </div>
       <div className="container1">
+      
         <div className="feature-subtitle">
-          <div className="subtitles">
-            <Image src={left} alt="Decorative left accent" width={79} height={17} className="no-shrink" />
-            <p className="feature-text">Features</p>
-            <Image src={right} alt="Decorative right accent" width={79} height={17} className="no-shrink" />
-          </div>
+          
           <div className="feature-heading">
             <h1>Our Clients Love Us</h1>
             <p>Free Up Your Time to Focus on What Matters Most</p>

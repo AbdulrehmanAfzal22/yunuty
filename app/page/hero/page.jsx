@@ -37,21 +37,22 @@ export default function Hero() {
 
       <div className="hero-container">
         <div className="hero-content">
-          <div className="hero-subtitle">
-            <Image
-              src={left}
-              alt="Decorative left accent"
-              width={79}
-              height={17}
-              className="no-shrink"
+          {/* Improved Subtitle Row */}
+          <div className="hero-subtitle-row">
+            <Image 
+              src={left} 
+              alt="decor left" 
+              width={80} 
+              height={24} 
+              className="decor-image" 
             />
-            <p className="feature-text">Future-Ready ERP Solutions</p>
-            <Image
-              src={right}
-              alt="Decorative right accent"
-              width={79}
-              height={17}
-              className="no-shrink"
+            <p className="hero-label">Future-Ready ERP Solutions</p>
+            <Image 
+              src={right} 
+              alt="decor right" 
+              width={80} 
+              height={24} 
+              className="decor-image" 
             />
           </div>
 
@@ -66,7 +67,7 @@ export default function Hero() {
             ERP solution.
           </p>
 
-          {/* Desktop Image - shows on 769px and up */}
+          {/* Desktop Image */}
           <div className="dark-img desktop-hero">
             <Image
               src={hero}
@@ -80,7 +81,7 @@ export default function Hero() {
             />
           </div>
 
-          {/* Mobile Image - shows on 768px and below */}
+          {/* Mobile Image */}
           <div className="dark-img mobile-hero">
             <Image
               src={heroMobile}

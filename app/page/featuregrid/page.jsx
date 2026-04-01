@@ -36,11 +36,23 @@ const FeatureGrid = () => {
 
       {/* ── Header ── */}
       <div className="feature-grid-container">
-        <div className="subtitles1">
-          <Image src={left}  alt="" width={79} height={17} />
-          <p className="feature-text">Benefits</p>
-          <Image src={right} alt="" width={79} height={17} />
-        </div>
+          <div className="hero-subtitle-row">
+                   <Image 
+                     src={left} 
+                     alt="decor left" 
+                     width={80} 
+                     height={24} 
+                     className="decor-image" 
+                   />
+                   <p className="hero-label">Benefits</p>
+                   <Image 
+                     src={right} 
+                     alt="decor right" 
+                     width={80} 
+                     height={24} 
+                     className="decor-image" 
+                   />
+                 </div>
         <div className="feature-heading">
           <h1>Your Benefits</h1>
           <p>Free Up Your Time to Focus on What Matters Most</p>

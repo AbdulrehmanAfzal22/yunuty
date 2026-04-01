@@ -23,7 +23,7 @@ export default function Privacy() {
         {/* Privacy content */}
         <div className="privacy-content-wrapper">
           <h1 className="privacy-main-title">
-            Our Commitment to Your<br />
+            Our Commitment to Your
             Privacy And Data Security
           </h1>
 
