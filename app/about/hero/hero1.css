@@ -1,77 +1,103 @@
+/* ================= HERO ABOUT SECTION - FULLY RESPONSIVE ================= */
+
 .hero-about {
     color: #fff;
     background: radial-gradient(80% 60% at 50% 30%, #0f1a5e 0%, #080d2e 45%, #05071c 100%);
+    display: flex;
     flex-direction: column;
     align-items: center;
-    height: 87vh;
+    min-height: 100vh;                    /* Changed from fixed 153vh */
     margin-top: -2px;
-    padding: 165px 20px;
-    font-family: poppins, sans-serif;
-    display: flex;
+    padding: 140px 20px 100px;            /* Better top/bottom padding */
+    font-family: 'Poppins', sans-serif;
     position: relative;
     overflow: hidden;
 }
-.hero-about__subtitle {
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 32px;
-    display: flex;
-    position: absolute;
-    top: 106px;
 
-    
+/* Background Glow */
+.hero-about::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        ellipse 55% 45% at 50% 28%,
+        rgba(80, 100, 230, 0.18) 0%,
+        rgba(50, 70, 180, 0.08) 45%,
+        transparent 70%
+    );
+    pointer-events: none;
+}
+
+/* ================= SUBTITLE ================= */
+.hero-about__subtitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    width: 100%;
+    max-width: 460px;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 .hero-about__label {
-    text-align: center;
     color: #959efe;
-    white-space: nowrap;
     font-size: 19px;
     font-weight: 500;
-    position: absolute;
-    top: -1px;
-    right: 99px;
+    white-space: nowrap;
+    text-align: center;
+    flex-shrink: 0;
 }
-/* ================= CONTENT ================= */
+
+/* Decor images */
+.decor-left,
+.decor-right {
+    flex-shrink: 0;
+    width: 80px;
+    height: 24px;
+    object-fit: contain;
+}
+
+/* ================= MAIN CONTENT ================= */
 .hero-about__content {
-  text-align: center;
-  max-width: 920px;
-  margin-top: 10px;
-  width: 100%;
-  padding: 0 20px;
+    text-align: center;
+    max-width: 920px;
+    width: 100%;
+    padding: 0 20px;
+    z-index: 2;
+    position: relative;
+    margin-top: 40px;
 }
 
 .hero-about__title {
-  margin-top: -30px;
-  margin-bottom: 1rem;
-  font-family: poppins, sans-serif;
-  font-size: 54px;
-  font-weight: 400;
-  line-height: 52px;
+    margin-bottom: 1.2rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(38px, 6.5vw, 54px);
+    font-weight: 400;
+    line-height: 1.15;
 }
 
-/* Responsive font ONLY */
-@media (max-width: 768px) {
-  .hero-about__title {
-    font-size: clamp(32px, 7vw, 48px);
-    line-height: clamp(42px, 8vw, 60px);
-  }
-}
-
+/* Description */
 .hero-about__description {
-  color: #b6bdc6;
-  max-width: 680px;
-  margin: 0 auto 2.2rem;
-  font-size: 15px;
-  line-height: 1.6;
+    color: #b6bdc6;
+    max-width: 680px;
+    margin: 0 auto 2.2rem;
+    font-size: clamp(14.5px, 2.2vw, 16px);
+    line-height: 1.65;
 }
 
-/* ================= CTA ================= */
+/* ================= CTA BUTTON ================= */
 .hero-about__cta-wrapper {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    z-index: 2;
 }
 
 .hero-about__cta-button {
@@ -83,96 +109,151 @@
     border-radius: 999px;
     justify-content: center;
     align-items: center;
-    gap: 1px;
+    gap: 8px;
     width: 367px;
     max-width: 100%;
-    padding: 12px 28px;
-    font-size: 14px;
-    transition: all .35s;
+    padding: 14px 32px;
+    font-size: clamp(14px, 2.2vw, 16px);
+    transition: all 0.35s ease;
     display: inline-flex;
-    transform: translateY(-2px);
     box-shadow: 0 12px 35px #3b82f647;
 }
-/* Optional extra interaction (can delete if not needed) */
+
 .hero-about__cta-button:hover {
-  transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 18px 45px rgba(59, 130, 246, 0.4);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 18px 45px rgba(59, 130, 246, 0.4);
 }
 
 .hero-about__cta-icon {
-  color: #3a3cbe;
-  display: inline-block;
+    color: #3a3cbe;
 }
 
-/* ================= SCROLL WORD ANIMATION ================= */
+/* ================= SCROLL ANIMATED TEXT ================= */
 .hero-about__text-container {
-  max-width: 900px;
-  margin-top: 120px;
-  text-align: center;
-  width: 100%;
-  padding: 0 20px;
+    max-width: 900px;
+    margin-top: 80px;           /* Reduced from 120px for better balance */
+    text-align: center;
+    width: 100%;
+    padding: 0 20px;
+    z-index: 2;
+    position: relative;
 }
 
 .hero-mission-text {
-  font-size: 1.9rem;
-  line-height: 1.45;
-  font-weight: 500;
-  margin-bottom: 2.6rem;
-  margin-top: -26px;
+    font-size: clamp(1.55rem, 4vw, 1.9rem);
+    line-height: 1.45;
+    font-weight: 500;
+    margin-bottom: 2.2rem;
 }
 
-/* Responsive font ONLY */
-@media (max-width: 768px) {
-  .hero-mission-text {
-    font-size: clamp(1.3rem, 4.5vw, 1.9rem);
-  }
-}
-
-/* Default (grey) */
-.scroll-word {
-  display: inline-block;
-  opacity: 0.35;
-  transform: translateY(6px);
-  transition: opacity 0.45s ease, transform 0.45s ease;
-}
-
-/* Active (white) */
-.scroll-word--active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Second paragraph */
 .hero-mission-text--secondary {
-  font-size: 1.8rem;
+    font-size: clamp(1.4rem, 3.8vw, 1.8rem);
 }
 
-/* Responsive font ONLY */
+/* Scroll Word Animation */
+.scroll-word {
+    display: inline-block;
+    opacity: 0.35;
+    transform: translateY(6px);
+    transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.scroll-word--active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ================= RESPONSIVE ADJUSTMENTS ================= */
+
+/* Large Screens */
+@media (min-width: 1440px) {
+     .hero-about {
+        padding-top: 160px;
+        padding-bottom: 1px;
+    }
+    .hero-about__subtitle { top: 110px; }
+    .hero-about__text-container { margin-top: 100px; }
+}
+
+/* Desktop */
+@media (max-width: 1024px) {
+    .hero-about {
+        padding-top: 130px;
+        padding-bottom: 90px;
+    }
+    .hero-about__subtitle { top: 95px; gap: 14px; }
+}
+
+/* Tablet */
 @media (max-width: 768px) {
-  .hero-mission-text--secondary {
-    font-size: clamp(1.25rem, 4vw, 1.8rem);
-  }
+    .hero-about {
+        padding: 110px 16px 80px;
+        min-height: auto;
+    }
+    .hero-about__subtitle {
+        top: 80px;
+        gap: 12px;
+        max-width: 380px;
+    }
+    .hero-about__label {
+        font-size: 17px;
+    }
+    .hero-about__title {
+        margin-top: 20px;
+    }
+    .hero-about__text-container {
+        margin-top: 60px;
+    }
 }
 
-/* ================= BACKGROUND GLOW ================= */
-.hero-about::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    ellipse 55% 45% at 50% 28%,
-    rgba(80, 100, 230, 0.18) 0%,
-    rgba(50, 70, 180, 0.08) 45%,
-    transparent 70%
-  );
-  pointer-events: none;
-}
-
-/* ================= SMALL DEVICE SAFETY ================= */
+/* Mobile Large */
 @media (max-width: 480px) {
-  .hero-about__label {
-    max-width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
+    .hero-about {
+        padding: 90px 15px 70px;
+    }
+    .hero-about__subtitle {
+        top: 68px;
+        gap: 10px;
+        max-width: 320px;
+    }
+    .hero-about__label {
+        font-size: 15.5px;
+    }
+    .decor-left,
+    .decor-right {
+        width: 65px;
+        height: 20px;
+    }
+    .hero-about__text-container {
+        margin-top: 50px;
+    }
+}
+
+/* Very Small Mobile */
+@media (max-width: 360px) {
+    .hero-about {
+        padding: 80px 12px 60px;
+    }
+    .hero-about__subtitle {
+        top: 62px;
+        gap: 8px;
+        max-width: 290px;
+    }
+    .hero-about__label {
+        font-size: 14.5px;
+    }
+    .decor-left,
+    .decor-right {
+        width: 58px;
+        height: 18px;
+    }
+}
+
+/* Small Device Safety */
+@media (max-width: 480px) {
+    .hero-about__label {
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 }
