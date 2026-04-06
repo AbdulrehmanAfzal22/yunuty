@@ -13,7 +13,7 @@ import googlecloud from '../../../public/assests/googlecloud.svg';
 import stripe from '../../../public/assests/Stripe.svg';
 import apple from "../../../public/assests/Apple1.svg";
 import android from "../../../public/assests/Android.svg";
-import helmet from "../../../public/assests/yellow.png";
+import helmet from "../../../public/assests/yellow.png";  
 import improve from "../../../public/assests/improve.png";
 // Row 1 icons (scrolls right → left)
 const row1 = [
