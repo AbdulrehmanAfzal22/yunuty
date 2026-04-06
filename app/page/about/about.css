@@ -9,13 +9,12 @@
     background: linear-gradient(#05071c 0% 82%, #181953 100%);
     justify-content: center;
     align-items: center;
-    min-height: 74vh;
-    padding: 44px 20px;
+    min-height: 63vh;
+    padding: 22px 20px;
     display: flex;
     position: relative;
     overflow: hidden;
 }
-
 /* Grid Background */
 .grid-background {
   position: absolute;

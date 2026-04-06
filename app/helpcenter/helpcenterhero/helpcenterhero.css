@@ -388,11 +388,11 @@ position: relative;
     height: 180px;
   }
 }
-
+@media (max-width: 1778px) {
+  
+}
 @media (max-width: 360px) {
-  .help-hero {
-    /* padding: 162px 10px 25px 10px; */
-  }
+ 
   .help-leftsvg,
   .help-rightsvg {
     max-width: 40px;
