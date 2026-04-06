@@ -9,7 +9,7 @@
     font-family: poppins, sans-serif;
     display: flex;
     position: relative;
-    overflow: hidden;
+    overflow: hidden;   
 }
 .hero-about__subtitle {
     align-items: center;
