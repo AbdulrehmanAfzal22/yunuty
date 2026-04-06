@@ -174,15 +174,15 @@ body {
 
 /* ================= ICON WITH THREE CIRCLES ================= */
 .vision-icon {
-  width: 80px;
-  height: 80px;
-  margin: 0 auto 20px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  color: #ffffff;
+    color: #c72a83;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    display: flex;
+    position: relative;
 }
 
 .icon-ring {
