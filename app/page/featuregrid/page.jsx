@@ -14,6 +14,7 @@ import stripe from '../../../public/assests/Stripe.svg';
 import apple from "../../../public/assests/Apple1.svg";
 import android from "../../../public/assests/Android.svg";
 import helmet from "../../../public/assests/alper.png";
+import improve from "../../../public/assests/improve.png";
 // Row 1 icons (scrolls right → left)
 const row1 = [
   { src: aws,         alt: "AWS" },
@@ -124,7 +125,7 @@ const FeatureGrid = () => {
           </div>
           <div className="card-content">
             <div className="ideas-container">
-              <Image src={write} alt="Write" className="ideas-image" />
+              <Image src={improve} alt="Write" className="ideas-image" />
             </div>
           </div>
         </div>
