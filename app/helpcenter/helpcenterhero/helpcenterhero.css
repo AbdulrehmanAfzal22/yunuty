@@ -2,15 +2,14 @@
 text-align: center;
 background: radial-gradient(circle at top, #0f1a4f, #020617 70%);
 flex-direction: column;
-justify-content: flex-start;
+justify-content: center;
 align-items: center;
 width: 100%;
-min-height: 53vh;
-padding: 102px 20px 60px;
+min-height: 44vh;
+padding: 1px 20px 60px;
 display: flex;
 position: relative;
 }
-
 .help-hero-content {
   max-width: 900px;
   width: 100%;
