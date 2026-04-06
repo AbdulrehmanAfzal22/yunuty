@@ -985,7 +985,7 @@ body {
 
 @media (min-width: 1600px) {
   .container1 {
-    padding: 4rem 3rem;
+    padding: 2rem 3rem;
   }
 
   .grid,
@@ -998,7 +998,7 @@ body {
 
 @media (min-width: 2700px) {
   .container1 {
-    padding: 4rem 4rem;
+    padding: 2rem 4rem;
     width: 140%;
   }
 }
@@ -1033,7 +1033,7 @@ body {
 
 @media (max-width: 1024px) {
   .container1 {
-    padding: 3rem 1rem;
+    padding: 2rem 1rem;
   }
 
   .box-image {
