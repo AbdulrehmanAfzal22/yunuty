@@ -4,18 +4,16 @@
 *::after {
   box-sizing: border-box;
 }
-
-/* ================= ABOUT SECTION ================= */
 .about-section {
-  min-height: 74vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(#05071c 0% 82%, #181953 100%);
-  position: relative;
-  overflow: hidden;
-  padding: 100px 20px;
-  z-index: 1;
+    z-index: 1;
+    background: linear-gradient(#05071c 0% 82%, #181953 100%);
+    justify-content: center;
+    align-items: center;
+    min-height: 74vh;
+    padding: 44px 20px;
+    display: flex;
+    position: relative;
+    overflow: hidden;
 }
 
 /* Grid Background */
