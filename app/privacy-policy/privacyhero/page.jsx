@@ -45,7 +45,7 @@ export default function Privacy() {
               <p className="privacy-mission-text">
                 We are committed to protecting your privacy of your personal information.This policy <br/>outlines the types of information we collect and your rights regarding your data.
               </p>
-  -                <button className="privacy-cta-buttons">Report an Issue</button>
+             <button className="privacy-cta-buttons">Report an Issue</button>
             </div>
           </div>
         </section>
