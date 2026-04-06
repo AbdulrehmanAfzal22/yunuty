@@ -32,9 +32,8 @@
     white-space: nowrap;
     font-size: 19px;
     font-weight: 500;
-    position: absolute;
-    top: -3px;
-    right: 97px;
+    position: relative;
+    margin: 0;
 }
 /* Privacy content */
 .privacy-content-wrapper {
