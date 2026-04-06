@@ -134,11 +134,7 @@ and we strictly limit access to authorized personnel only.
             <h2 className="vision-title">Services from Third Parties</h2>
             <div className="vision-text">
               <p>
-               We may integrate with trusted third-party services such as accounting, ERP, or cloud 
-               infrastructure providers to support app functionality. Data shared with these 
-               services is limited to what is necessary for operations and is handled according
-                to their security and privacy standards. We do not allow third parties to use your
-                 data for marketing purposes.
+             We integrate with trusted 3rd-party services (e.g., accounting, ERP, and cloud providers) to support functionality. Data shared with these services is limited to what is necessary for operations and is handled according to their security and privacy standards. We do not allow third parties to use your data for marketing purposes.
               </p>
             </div>
           </div>
