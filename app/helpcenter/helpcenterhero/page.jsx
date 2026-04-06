@@ -109,8 +109,7 @@ const Helpcenterhero = () => {
             </p>
             <div className="help-featured-video">
               <div className="help-video-placeholder">
-                <div className="help-play-button">▶</div>
-                <span>Watch Tutorial Video</span>
+                <video src="/assests/Website.mp4" controls autoPlay muted loop playsInline style={{ width: '100%', height: '100%', objectFit: 'cover' }}></video>
               </div>
             </div>
           </div>
