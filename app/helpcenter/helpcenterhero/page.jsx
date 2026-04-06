@@ -75,9 +75,7 @@ const Helpcenterhero = () => {
         <div className="help-hero-content">
           <div className="help-section-img">
             <Image src={left} alt="Decorative left accent" />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <p>Resources</p>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <Image src={right} alt="Decorative right accent" />
           </div>
 
