@@ -52,7 +52,7 @@
     margin-top: 0;
     margin-bottom: 0;
     font-family: Montserrat, sans-serif;
-    font-size: 67px;
+    font-size: 65px;
     font-weight: 900;
     line-height: 1.1;
 }
@@ -309,6 +309,13 @@
     width: 100%;
     text-align: center;
   }
+}
+
+@media (max-width: 505px) {
+.cnt__title {
+    font-size: 54px;
+  
+}
 }
 
 @media (max-width: 400px) {
