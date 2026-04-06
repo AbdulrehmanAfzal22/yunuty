@@ -79,9 +79,7 @@ export default function Hero1() {
         {/* Subtitle */}
         <div className="hero-about__subtitle">
           <Image src={decorLeft} alt="decor left" width={80} height={24} />
-            &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
           <p className="hero-about__label">About Us</p>
-             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <Image src={decorRight} alt="decor right" width={80} height={24} />
         </div>
 
