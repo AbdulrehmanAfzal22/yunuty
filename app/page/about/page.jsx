@@ -47,9 +47,7 @@ const AboutSection = () => {
         <div className="about-container">
            <div className="hero-subtitle-row">
                    <Image src={left} alt="decor left" width={80} height={24} />
-                     &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
                    <p className="hero-label">Who we are</p>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                    <Image src={right} alt="decor right" width={80} height={24} />
                  </div>
 
