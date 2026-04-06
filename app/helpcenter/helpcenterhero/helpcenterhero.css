@@ -1,15 +1,17 @@
+
 .help-hero {
-text-align: center;
-    background: radial-gradient(80% 60% at 50% 30%, #0f1a5e 0%, #080d2e 45%, #05071c 100%);
-flex-direction: column;
-justify-content: center;
-align-items: center;
-width: 100%;
-min-height: 44vh;
-padding: 1px 20px 60px;
-display: flex;
-position: relative;
+    text-align: center;
+    background: radial-gradient(80% 60% at 50% 30%, #0f1a5e 0%, #080d2e 45%, #020418 100%);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 44vh;
+    padding: 1px 20px 60px;
+    display: flex;
+    position: relative;
 }
+
 .help-hero-content {
   max-width: 900px;
   width: 100%;
