@@ -2,7 +2,7 @@ import React from 'react';
 import './featuregrid.css';
 import Image from 'next/image';
 // import helmet from '../../../public/assests/helmet.png';
-import wheel from '../../../public/assests/yunutyconnect.png';
+import wheel from '../../../public/assests/arrow-top.png';
 import write from '../../../public/assests/write.png';
 import effort from '../../../public/assests/qb.png';
 import right from "../../../public/assests/sub-title-right.svg";
