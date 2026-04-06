@@ -155,7 +155,7 @@ const FeatureGrid = () => {
           <div className="card-header">
             <h3 className="card-title">Actionable Insights</h3>
             <p className="card-description">
-              Turn real-time data into clear actions that drive smarter decisions. YunutyConnect transforms operational metrics into meaningful insights, helping businesses identify trends, improve performance, and act with precision.
+              Turn real-time data into smart actions. YunutyConnect converts metrics into insights to improve performance and decision-making.
             </p>
           </div>
           <div className="card-content">
