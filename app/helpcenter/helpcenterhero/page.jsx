@@ -16,6 +16,7 @@ import sale from "../../../public/assests/Sales.png";
 import accounting from "../../../public/assests/Accounting.png";
 import purchase from "../../../public/assests/Purchasing.png";
 import qb from "../../../public/assests/qb.png";
+
 const cardData = [
   {
     title: "Dashboards",
@@ -24,7 +25,7 @@ const cardData = [
   },
   {
     title: "Contacts",
-    description: " Centralize and manage all customer and vendor information in one place.",
+    description: "Centralize and manage all customer and vendor information in one place.",
     img: contact,
   },
   {
@@ -54,7 +55,7 @@ const cardData = [
   },
   {
     title: "Purchase",
-    description: " Streamline supplier management, purchase orders, and procurement workflows.",
+    description: "Streamline supplier management, purchase orders, and procurement workflows.",
     img: purchase,
   },
   {
@@ -84,16 +85,10 @@ const Helpcenterhero = () => {
             All-in-One Intellectual <br />
             Resource Hub
           </h1>
-{/* 
-          <p>
-            Where knowledge meets efficiency, everything
-            <br />
-            you need to make the most of your ERP.
-          </p> */}
         </div>
       </section>
 
-      {/* ── Full-width dark background wrapper (fixes white sides) ── */}
+      {/* ── Full-width dark background wrapper ── */}
       <div className="help-section-cards-outer">
         <div className="help-section-cards">
 
@@ -108,9 +103,14 @@ const Helpcenterhero = () => {
               into measurable growth
             </p>
             <div className="help-featured-video">
-              <div className="help-video-placeholder">
-                <video src="/assests/Website.mp4" controls autoPlay muted loop playsInline style={{ width: '100%', height: '100%', objectFit: 'cover' }}></video>
-              </div>
+              <video
+                src="/assests/Website.mp4"
+                controls
+                autoPlay
+                muted
+                loop
+                playsInline
+              />
             </div>
           </div>
 
