@@ -527,4 +527,22 @@
   .feature-subtitle {
     margin-bottom: 50px;
   }
+}.help-section-img p {
+  text-align: center;
+  color: #959efe;
+  white-space: nowrap;
+  font-size: 19px;
+  font-weight: 500;
+  position: absolute;
+  top: -6px;
+  right: 406px;
+}
+.help-section-img p {
+  text-align: center;
+  color: #959efe;
+  white-space: nowrap;
+  font-size: 19px;
+  font-weight: 500;
+  position: static;
+  margin: 0;
 }
