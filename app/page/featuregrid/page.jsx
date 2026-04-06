@@ -120,7 +120,7 @@ const FeatureGrid = () => {
           <div className="card-header">
             <h3 className="card-title">Continual Improvement</h3>
             <p className="card-description">
-              Our ERP evolves with your business, analyzing performance and adapting workflows.
+              Making continuous, data-driven improvements to enhance efficiency and performance over time.
             </p>
           </div>
           <div className="card-content">
