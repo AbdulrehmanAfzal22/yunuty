@@ -1,15 +1,14 @@
-/* HELP CENTER HERO SECTION */
 .help-hero {
-  width: 100%;
-  min-height: 53vh;
-  background: radial-gradient(circle at top center, #0f1a4f, #020617 70%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  padding: var(--navbar-height) 20px 60px 20px;
-  position: relative;
+text-align: center;
+background: radial-gradient(circle at top, #0f1a4f, #020617 70%);
+flex-direction: column;
+justify-content: flex-start;
+align-items: center;
+width: 100%;
+min-height: 53vh;
+padding: 102px 20px 60px;
+display: flex;
+position: relative;
 }
 
 .help-hero-content {
@@ -278,7 +277,7 @@
 
 @media (max-width: 1024px) {
   .help-hero {
-    padding: calc(var(--navbar-height) + 20px) 20px 50px 20px;
+    padding: 162px 20px 50px 20px;
   }
   .help-section-cards {
     padding: 50px 20px;
@@ -302,7 +301,7 @@
 @media (max-width: 768px) {
   .help-hero {
     min-height: 60vh;
-    padding: calc(var(--navbar-height) + 20px) 20px 40px 20px;
+    padding: 162px 20px 40px 20px;
   }
   .help-hero h1 br,
   .help-hero p br {
@@ -359,7 +358,7 @@
 
 @media (max-width: 480px) {
   .help-hero {
-    padding: calc(var(--navbar-height) + 10px) 15px 30px 15px;
+    padding: 162px 15px 30px 15px;
   }
   .help-hero-content {
     padding: 0 10px;
@@ -392,7 +391,7 @@
 
 @media (max-width: 360px) {
   .help-hero {
-    padding: calc(var(--navbar-height) + 10px) 10px 25px 10px;
+    padding: 162px 10px 25px 10px;
   }
   .help-leftsvg,
   .help-rightsvg {
