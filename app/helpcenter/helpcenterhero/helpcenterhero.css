@@ -1,6 +1,6 @@
 .help-hero {
 text-align: center;
-background: radial-gradient(circle at top, #0f1a4f, #020617 70%);
+    background: radial-gradient(80% 60% at 50% 30%, #0f1a5e 0%, #080d2e 45%, #05071c 100%);
 flex-direction: column;
 justify-content: center;
 align-items: center;
