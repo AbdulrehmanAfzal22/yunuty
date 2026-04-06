@@ -3,9 +3,9 @@
     background: radial-gradient(80% 60% at 50% 30%, #0f1a5e 0%, #080d2e 45%, #05071c 100%);
     flex-direction: column;
     align-items: center;
-    min-height: 100vh;
+    height: 139vh;
     margin-top: -2px;
-    padding: 162px 20px;
+    padding: 165px 20px;
     font-family: poppins, sans-serif;
     display: flex;
     position: relative;

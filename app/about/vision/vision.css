@@ -15,21 +15,28 @@ body {
 }
 
 .vision-page-container h5 {
-  font-weight: 650;
-  margin-bottom: 0.4rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-family: poppins, sans-serif;
+  font-size: 54px;
+  font-weight: 600;
+  line-height: 52px;
   color: #ffffff;
-  font-size: 34px;
-  line-height: 1.2;
-  font-family: popin, sans-serif;
+}
+
+@media (max-width: 768px) {
+  .vision-page-container h5 {
+    font-size: clamp(32px, 7vw, 48px);
+    line-height: clamp(42px, 8vw, 60px);
+  }
 }
 
 .subtitle {
-  color: rgb(203, 213, 225);
-  max-width: 620px;
-  margin: 4px auto 1rem;
-  font-size: clamp(0.92rem, 2vw, 1rem);
-  line-height: 1.5;
-  font-weight: 300;
+  color: #b6bdc6;
+  max-width: 680px;
+  margin: 0 auto 2.2rem;
+  font-size: 15px;
+  line-height: 1.6;
 }
 
 /* ================= SECTION ================= */
@@ -363,8 +370,10 @@ background: url("../../../public/assests/barcode.png") center/cover no-repeat;
 }
 
 .values-label{
-      text-align: center;
+          text-align: center;
     color: #959efe;
     white-space: nowrap;
-    font-size: 14px;
+    font-size: 19px;
+    font-weight: 500;
+ 
 }
