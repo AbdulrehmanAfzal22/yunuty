@@ -18,7 +18,7 @@ const faqData = [
       "Yes. For monthly plans, you can change at any time, with updates applied to your next billing cycle. For annual plans, upgrades are available anytime with a prorated adjustment, while downgrades take effect at the end of the term. This way, YunutyConnect adapts to your business needs while keeping costs under control.",
   },
   {
-    question: "What resources does Yunak provide?",
+    question: "What resources does Yunuak provide?",
     answer:
       "Yunuak provides expert consulting, training, and ongoing support, along with access to YunutyConnect, mobile tools, and best-practice frameworks. These resources ensure your team can streamline operations, adapt quickly, and achieve long-term growth.",
   },
