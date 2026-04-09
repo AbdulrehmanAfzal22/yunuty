@@ -141,7 +141,7 @@ function Page() {
         {/* DESKTOP VERSION (>768px) */}
         <div className="layers layers-desktop">
           <div className="clearbg">
-            <h2 className="clear-h2">Smarter Inbound, Stronger Outcomes</h2>
+            <h2 className="clear-h2"> <span className="slash">/</span>&nbsp;Smarter Inbound, Stronger Outcomes</h2>
             <p className="clear-p">From vendor management to ROI, YunutyConnect drives efficiency, accuracy, and visibility.</p>
           </div>
           <Image src={Layers} alt="Feature Image" className="layers-desktop-img" />
@@ -149,7 +149,7 @@ function Page() {
 
         {/* MOBILE VERSION (≤768px) - SINGLE BOX WITH HEADING + TALL IMAGE */}
         <div className="layers layers-mobile">
-          <h2 className="mobile-h2">Smarter Inbound, Stronger Outcomes</h2>
+          <h2 className="mobile-h2"><span className="slash">/</span>&nbsp;Smarter Inbound, Stronger Outcomes</h2>
              <p className="clear-p">From vendor management to ROI, YunutyConnect drives efficiency, accuracy, and visibility.</p>
           <div className="mobile-img-container">
             <Image src={smobile} alt="Mobile feature" className="mobile-tall-img" />
@@ -162,7 +162,7 @@ function Page() {
         {/* DESKTOP VERSION (>768px) */}
         <div className="layers layers-desktop">
           <div className="clearbg">
-            <h2 className="clear-h2">Powering Smarter Fulfillment</h2>
+            <h2 className="clear-h2"> <span className="slash">/</span>&nbsp; Powering Smarter Fulfillment</h2>
             <p className="clear-p">Bring CRM, sales, fulfillment, invoicing, and inventory together for seamless execution and full visibility.</p>
           </div>
           <Image src={Layers2} alt="Feature Image" className="layers-desktop-img" />
@@ -170,7 +170,7 @@ function Page() {
 
         {/* MOBILE VERSION (≤768px) - SINGLE BOX WITH HEADING + TALL IMAGE */}
         <div className="layers layers-mobile">
-          <h2 className="mobile-h2">Powering Smarter Fulfillment</h2>
+          <h2 className="mobile-h2"><span className="slash">/</span>&nbsp;Powering Smarter Fulfillment</h2>
             <p className="clear-p">Bring CRM, sales, fulfillment, invoicing, and inventory together for seamless execution and full visibility.</p>
 
           <div className="mobile-img-container">

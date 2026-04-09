@@ -1821,3 +1821,13 @@ body {
     .hero-subtitle-row { gap: 6px; }
     .hero-label { font-size: 14px; }
 }
+
+.slash{
+  color: #e0366e;
+  font-size: clamp(24px, 5vw, 48px);
+  font-weight: 900;
+  line-height: 1;
+  transition: opacity .25s, transform .25s;
+  transform: translateX(-8px);
+  ;
+}
