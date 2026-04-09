@@ -142,9 +142,9 @@ body {
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(90, 110, 255, 0.28);
   
-  box-shadow:
+  /* box-shadow:
     inset 0 0 0 1px rgba(120, 140, 255, 0.12),
-    0 40px 120px rgba(0, 0, 0, 0.65);
+    0 40px 120px rgba(0, 0, 0, 0.65); */
   
   text-align: center;
   color: #ffffff;
@@ -154,9 +154,9 @@ body {
 
 .vision-card:hover {
   transform: translateY(-4px);
-  box-shadow:
+  /* box-shadow:
     inset 0 0 0 1px rgba(120, 140, 255, 0.2),
-    0 50px 140px rgba(0, 0, 0, 0.75);
+    0 50px 140px rgba(0, 0, 0, 0.75); */
 }
 
 /* Grid overlay */
