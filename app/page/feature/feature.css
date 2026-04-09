@@ -1460,7 +1460,7 @@ body {
         align-items: self-end;
         gap: 20px;
     }
-
+    
   .bac__list {
     flex-shrink: 0;
   }
