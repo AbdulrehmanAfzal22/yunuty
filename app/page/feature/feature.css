@@ -84,15 +84,15 @@ body {
 }
 
 .layers-desktop-img {
-  z-index: 5;
-  width: 93%;
-  height: auto;
-  max-height: 661px;
-  margin: 0 auto;
-  padding: 0;
-  display: block;
-  position: relative;
-  top: -40px;
+    z-index: 5;
+    width: 83%;
+    height: auto;
+    max-height: 661px;
+    margin: 0 auto;
+    padding: 0;
+    display: block;
+    position: relative;
+    top: -40px;
 }
 
 .clear-h2 {
