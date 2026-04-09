@@ -15,20 +15,29 @@ import apple from "../../../public/assests/Apple1.svg";
 import android from "../../../public/assests/Android.svg";
 import helmet from "../../../public/assests/yellow.png";  
 import improve from "../../../public/assests/improve.png";
+import platform from "../../../public/assests/platform.svg";
+import google from "../../../public/assests/google.svg";
+import amazon from "../../../public/assests/amazon.svg";
+import apple1 from "../../../public/assests/A.svg";
+import qbb from "../../../public/assests/qbb.svg";
+import plaid from "../../../public/assests/plaid.svg";
 // Row 1 icons (scrolls right → left)
 const row1 = [
   { src: aws,         alt: "AWS" },
   { src: github,      alt: "GitHub" },
   { src: googlecloud, alt: "Google Cloud" },
   { src: stripe,      alt: "Stripe" },
+   { src: google,      alt: "Stripe" },
 ];
 
 // Row 2 icons (scrolls left → right)
 const row2 = [
-  { src: apple,       alt: "Apple" },
   { src: android,     alt: "Android" },
-  { src: aws,         alt: "AWS" },
   { src: github,      alt: "GitHub" },
+  { src: amazon,      alt: "Amazon" },
+  { src: apple1,      alt: "Apple" },
+  { src: qbb,         alt: "QBB" },
+    { src: plaid,       alt: "Plaid" },
 ];
 
 const FeatureGrid = () => {
