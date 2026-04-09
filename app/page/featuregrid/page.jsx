@@ -23,11 +23,10 @@ import qbb from "../../../public/assests/qbb.svg";
 import plaid from "../../../public/assests/plaid.svg";
 // Row 1 icons (scrolls right → left)
 const row1 = [
-  { src: aws,         alt: "AWS" },
-  { src: github,      alt: "GitHub" },
   { src: googlecloud, alt: "Google Cloud" },
   { src: stripe,      alt: "Stripe" },
    { src: google,      alt: "Stripe" },
+    { src: amazon,      alt: "Amazon" },
 ];
 
 // Row 2 icons (scrolls left → right)
