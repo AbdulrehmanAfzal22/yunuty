@@ -1454,13 +1454,12 @@ body {
    MOBILE BREAKPOINT - SIDE BY SIDE FIX
    =================================== */
 @media (max-width: 768px) {
-  .bac__wrap {
-    flex-direction: row;
-    gap: 20px;
-    align-items: flex-start;
-    justify-content: center;
-    flex-wrap: nowrap;
-  }
+     .bac__wrap {
+        flex-flow: row;
+        justify-content: center;
+        align-items: self-end;
+        gap: 20px;
+    }
 
   .bac__list {
     flex-shrink: 0;

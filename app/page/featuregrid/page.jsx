@@ -4,7 +4,7 @@ import Image from 'next/image';
 // import helmet from '../../../public/assests/helmet.png';
 import wheel from '../../../public/assests/arrow-top.png';
 import write from '../../../public/assests/write.png';
-import effort from '../../../public/assests/qb.png';
+import efforts from '../../../public/assests/books.png';
 import right from "../../../public/assests/sub-title-right.svg";
 import left from "../../../public/assests/sub-title-left.svg";
 import aws from '../../../public/assests/AWS.svg';
@@ -110,7 +110,7 @@ const FeatureGrid = () => {
           </div>
           <div className="card-content">
             <div className="visualization-container">
-              <Image src={effort} alt="Effort" className="visualization-image" />
+              <Image src={efforts} alt="Effort" className="visualization-image" />
             </div>
           </div>
         </div>
