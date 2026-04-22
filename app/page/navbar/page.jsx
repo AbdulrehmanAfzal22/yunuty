@@ -128,7 +128,7 @@ export default function Navbar() {
 
           {/* Mobile Get Started Button */}
           <li className="mobile-btn-wrapper">
-            <button className="get-started-btn mobile" onClick={closeMenu}>
+            <button className="get-started-btn mobile" onClick={() => window.location.href = "/contactus/contact"}>
               Get Started
             </button>
           </li>

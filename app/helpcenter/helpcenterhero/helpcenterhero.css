@@ -261,6 +261,9 @@ position: relative;
   .help-featured-card {
     max-width: 1100px;
   }
+  .laptop{
+    width: 350px;
+  }
 }
 
 @media (max-width: 1200px) {

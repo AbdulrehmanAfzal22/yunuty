@@ -409,14 +409,12 @@ body {
   height: 100%;
 }
 
-.laptop,
-.mobile {
-  object-fit: contain;
-  width: 304px;
-  height: auto;
-  display: block;
+.laptop, .mobile {
+    object-fit: contain;
+    width: 444px;
+    height: auto;
+    display: block;
 }
-
 .laptop {
   max-height: clamp(120px, 25vw, 280px);
 }
@@ -425,9 +423,9 @@ body {
   max-height: clamp(150px, 30vw, 350px);
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .laptop {
-    max-height: clamp(150px, 22vw, 260px);
+    max-height: clamp(150px, 26vw, 260px);
   }
 
   .mobile {
@@ -435,9 +433,9 @@ body {
   }
 }
 
-@media (min-width: 1024px) {
+@media (max-width: 1024px) {
   .laptop {
-    max-height: clamp(180px, 20vw, 300px);
+    max-height: clamp(180px, 26vw, 300px);
   }
 
   .mobile {
@@ -447,7 +445,7 @@ body {
 
 @media (min-width: 1440px) {
   .laptop {
-    max-height: 320px;
+    max-height: 360px;
   }
 
   .mobile {
@@ -489,8 +487,8 @@ body {
 
 .cta-banner {
   box-sizing: border-box;
-  background: #0a0e27;
-  border: 1px solid #33415580;
+  background: #05061c;
+  /* border: 1px solid #33415580; */
   border-radius: 12px;
   width: 96%;
   max-width: 1280px;
@@ -500,11 +498,6 @@ body {
   overflow: hidden;
 }
 
-.cta-banner:hover {
-  border-color: rgba(99, 102, 241, 0.6);
-  transform: translateY(-4px);
-  box-shadow: 3px 10px 40px rgba(99, 102, 241, 0.2);
-}
 
 .cta-grid-bg {
   position: absolute;

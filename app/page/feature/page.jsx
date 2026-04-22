@@ -182,7 +182,7 @@ function Page() {
       {/* ── CTA ── */}
       <div className="cta">
         <section className="cta-banner">
-          <div className="cta-container">
+          {/* <div className="cta-container">
             <div className="cta-content">
               <h2 className="cta-text">
                 Discover the future of productivity, optimize your processes and make every minute count.
@@ -192,7 +192,7 @@ function Page() {
               <button className="cta-button">Get A Demo</button>
             </div>
           </div>
-          <div className="cta-grid-bg"></div>
+          <div className="cta-grid-bg"></div> */}
         </section>
       </div>
 
