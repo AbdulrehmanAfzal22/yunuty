@@ -1,5 +1,6 @@
 "use client"
 import React from "react";
+import Link from "next/link";
 import "./demo.css";
 import Image from "next/image";
 import boat from "../../public/assests/boat.jpeg";
@@ -40,7 +41,7 @@ export default function DemoSection() {
           <span className="dmo-line2">Where Teamwork and Technology</span>
           <span className="dmo-line3">Drive Productivity.</span>
         </h1>
-        <button className="dmo-button">Request A Demo</button>
+        <Link href="/contactus/contact" className="dmo-button">Request A Demo</Link>
       </div>
     </section>
   );      

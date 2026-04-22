@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from 'next/image';
+import Link from "next/link";
 import fourth from ".././../../public/assests/fourth.jpg";
 import Layers from ".././../../public/assests/vendor.png";
 import Layers2 from ".././../../public/assests/seamless8.png";
@@ -201,7 +202,7 @@ function Page() {
         <div className="built-container">
           <div className="built-left">
             <h2>SUCCESS IN DIGITAL TRANSFORMATION IS A MATTER OF BALANCE</h2>
-            <button className="built-btn">Request a Demo →</button>
+            <Link href="/contactus/contact" className="built-btn">Request a Demo →</Link>
           </div>
 
           <div className="built-right bac__right">

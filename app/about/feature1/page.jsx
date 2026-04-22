@@ -71,7 +71,7 @@ const FeatureChips = () => {
             </span>
           </h1>
 
-          <button className="about-button">
+          <Link href="/contactus/contact" className="about-button">
             More About Us
             <svg
               width="20"
@@ -88,7 +88,7 @@ const FeatureChips = () => {
                 strokeLinejoin="round"
               />
             </svg>
-          </button>
+          </Link>
         </div>
 
         <div className="grid-background"></div>

@@ -1,5 +1,6 @@
 "use client"
 import React from "react";
+import Link from "next/link";
 import "./discover.css";
 import Image from "next/image";
 import moving from "../../../public/assests/moving.jpeg";
@@ -49,7 +50,7 @@ export default function DiscoverSection() {
           <br className="custom-hero-br" />
           Data-Driven Decisions.
         </h1>
-        <button className="custom-hero-button">Request A Demo</button>
+        <Link href="/contactus/contact" className="custom-hero-button">Request A Demo</Link>
       </div>
     </section>
   );

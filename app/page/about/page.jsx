@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import "./about.css";
 import Image from "next/image";
 import acess from "../../../public/assests/acess.jpg";
@@ -69,7 +70,7 @@ const AboutSection = () => {
             </span>
           </h1>
 
-          <button className="about-button">
+          <Link href="/contactus/contact" className="about-button">
             More About Us
             <svg
               width="20"
@@ -86,7 +87,7 @@ const AboutSection = () => {
                 strokeLinejoin="round"
               />
             </svg>
-          </button>
+          </Link>
         </div>
 
         {/* Background Grid Effect */}

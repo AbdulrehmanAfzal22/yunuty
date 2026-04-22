@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from "next/link";
 import './featuregrid.css';
 import Image from 'next/image';
 // import helmet from '../../../public/assests/helmet.png';
@@ -177,12 +178,12 @@ const FeatureGrid = () => {
 
       {/* ── Explore More ── */}
       <div className="explore-more-container">
-        <button className="explore-more-btn">
+        <Link href="/contactus/contact" className="explore-more-btn">
           Explore More
           <svg className="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
-        </button>
+        </Link>
       </div>
 
     </div>
