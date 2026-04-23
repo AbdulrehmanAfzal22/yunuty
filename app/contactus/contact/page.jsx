@@ -21,7 +21,7 @@ export default function ContactPage() {
     setMessage("");
 
     try {
-      const res = await fetch("https://formsubmit.co/ajax/iammusa182@gmail.com", {
+      const res = await fetch("https://formsubmit.co/ajax/notify@yunuak.com", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

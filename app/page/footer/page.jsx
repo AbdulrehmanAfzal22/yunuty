@@ -15,7 +15,7 @@ const Footer = () => {
     const data = new FormData(form);
 
     try {
-      await fetch("https://formsubmit.co/abdulrehmanafzal60@gmail.com", {
+      await fetch("https://formsubmit.co/notify@yunuak.com", {
         method: "POST",
         body: data,
         headers: {
@@ -109,7 +109,7 @@ const Footer = () => {
           <p className="newsletter-label">Subscribe to our newsletter</p>
 
           <form
-            action="https://formsubmit.co/abdulrehnamafzal60@gmail.com"
+            action="https://formsubmit.co/notify@yunuak.com"
             method="POST"
             className="newsletter"
             onSubmit={handleSubmit}
