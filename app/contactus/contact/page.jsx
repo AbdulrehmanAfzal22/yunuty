@@ -8,8 +8,6 @@ import Footer1 from "../contact-footer/page";
 
 export default function ContactPage() {
   const [form, setForm] = useState({ name: "", email: "", phone: "" });
-
-  // ✅ NEW STATES
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
 
@@ -19,32 +17,36 @@ export default function ContactPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // ✅ START LOADING
     setLoading(true);
     setMessage("");
 
     try {
-      // 🔁 Replace this URL with your backend / API route
-      const res = await fetch("/api/contact", {
+      const res = await fetch("https://formsubmit.co/ajax/iammusa182@gmail.com", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          Accept: "application/json",
         },
-        body: JSON.stringify(form),
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          _subject: "New Contact Form Submission - Yunuak",
+          _captcha: false,
+        }),
       });
 
       const data = await res.json();
 
-      if (res.ok) {
+      if (data.success === "true" || data.success === true) {
         setMessage("✅ Message sent successfully!");
-        setForm({ name: "", email: "", phone: "" }); // reset form
+        setForm({ name: "", email: "", phone: "" });
       } else {
-        setMessage("❌ Failed to send message");
+        setMessage("❌ Failed to send message. Please try again.");
       }
     } catch (error) {
       console.error(error);
-      setMessage("❌ Something went wrong");
+      setMessage("❌ Something went wrong. Please try again.");
     }
 
     setLoading(false);
@@ -69,7 +71,6 @@ export default function ContactPage() {
         <div className="cnt__body">
 
           <div className="cnt__left">
-
             <div className="cnt__img-wrap">
               <Image
                 src={connect}
@@ -154,11 +155,10 @@ export default function ContactPage() {
                 />
               </div>
 
-              <button type="submit" className="cnt__submit">
+              <button type="submit" className="cnt__submit" disabled={loading}>
                 {loading ? "Sending..." : "SUBMIT"}
               </button>
 
-              {/* ✅ MESSAGE DISPLAY */}
               {message && <p style={{ marginTop: "10px" }}>{message}</p>}
             </form>
           </div>
