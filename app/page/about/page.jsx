@@ -53,7 +53,7 @@ const AboutSection = () => {
                  </div>
 
           <h1 className="about-heading">
-            <span
+          <span
               className="about-heading-fill"
               style={{
                 "--fill-percent": `${scrollProgress * 100}%`,
@@ -70,7 +70,7 @@ const AboutSection = () => {
             </span>
           </h1>
 
-          <Link href="/contactus/contact" className="about-button">
+          <Link href="/about/main" className="about-button">
             More About Us
             <svg
               width="20"
