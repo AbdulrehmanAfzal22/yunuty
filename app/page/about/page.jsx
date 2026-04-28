@@ -70,7 +70,7 @@ const AboutSection = () => {
             </span>
           </h1>
 
-          <Link href="/about/main" className="about-button">
+          <Link href="/about/mainabout" className="about-button">
             More About Us
             <svg
               width="20"
