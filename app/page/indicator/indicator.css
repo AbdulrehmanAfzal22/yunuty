@@ -1019,11 +1019,12 @@ body{
 
 /* Mobile Medium */
 @media (max-width: 479px) {
-    .hero-subtitle-row { 
-        top: 65px; 
-        gap: 8px; 
-        max-width: 340px; 
-    }
+       .hero-subtitle-row {
+        gap: 8px;
+        max-width: 475px;
+        top: 65px;
+    
+}
     .decor-image { width: 52px; height: 17px; }
     .hero-label { font-size: 15px; }
 }
