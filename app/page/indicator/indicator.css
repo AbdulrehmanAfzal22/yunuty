@@ -1010,7 +1010,7 @@ body{
     .hero-subtitle-row { 
         top: 70px; 
         gap: 10px; 
-        max-width: 380px; 
+        max-width: 680px; 
         padding: 0 12px;
     }
     .decor-image { width: 56px; height: 18px; }
